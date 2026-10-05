@@ -1,12 +1,5 @@
 [shortcut]
 type: setting
-data: dac_power_mode
-name: Gain
-icon: -1
-talkclip: 
-
-[shortcut]
-type: setting
 data: brightness
 name: Brightness
 icon: -1

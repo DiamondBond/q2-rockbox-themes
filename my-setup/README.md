@@ -19,8 +19,9 @@ port. Install by copying onto the card's root:
 - WPS/SBS/backdrop point at the ported LookAtMe, whose font is
   `16-Inter-Bold.fnt` (the H2 ran `16-SFPro-Bold-CJK.fnt` through the theme's
   Inter mapping).
-- The quick screen's bottom item became Gain (`dac_power_mode`) in place of
-  the H2's Filter; the Shortcuts menu gained a Gain entry too.
+- The quick screen's bottom item is left empty (the H2's Filter does not
+  exist on the Q2). A Gain shortcut was tried and removed: one accidental
+  press switches to high gain.
 
 ## Notes
 
