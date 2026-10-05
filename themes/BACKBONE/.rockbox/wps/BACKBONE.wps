@@ -1,0 +1,161 @@
+
+# Theme: BACKBONE
+# Version 1.0
+# Last Update: 01/17/2026
+# License: CC-BY-SA 3.0
+# By: Monica G.
+# Description: BACKBONE is a spinoff of the minimalist BONES theme by Chuck Nardo! Some additions / modifications include:
+# On the WPS, instead of track number, the playlist number is displayed / alternates with the time.
+# Battery level is displayed on the WPS and bitrate is also shown plus more file types.
+# Next song will display as the current track is ending.
+# If a song is currently playing it is displayed on the SBS as well as play status.
+# The menu title is displayed when navigating menus but will alternate to the time.
+# Quick menu utilizes a smaller font and displays time / play status.
+# A few lines are drawn in to add structure, but all icons remain unchanged.
+
+## WPS File ##
+
+#Hide The Status Bar
+%wd
+
+# Preload Fonts
+%Fl(2,15-ProFont.fnt)
+%Fl(3,22-ProFont.fnt)
+%Fl(4,29-ProFont.fnt)
+%Fl(5,47-ProFont.fnt)
+
+# Preload Images
+%xl(PBB,pb_back.bmp,0,0)
+%xl(PB,pb.bmp,0,0)
+%xl(VBB,vb_back.bmp,0,0)
+%xl(VB,vb.bmp,0,0)
+%xl(BBB,bb_back.bmp,0,0)
+%xl(BB,bb.bmp,0,0)
+%xl(T,stop_icon.bmp,0,0)
+%xl(L,play_icon.bmp,0,0)
+%xl(Z,pause_icon.bmp,0,0)
+
+# Show Main Display unless Hold Switch is on
+%?mh<%Vd(holdScreen)|%Vd(mainDisplay)>
+
+## Main Display ##
+
+# Clear Screen
+%Vl(mainDisplay,0,0,375,320,-)
+
+# Line
+%Vl(mainDisplay,36,34,303,1,-)
+%dr(0,0,303,1)
+
+# Playlist Number / Time
+%Vl(mainDisplay,36,40,140,280,2)
+%t(10)%?if(%pp, =, %pe)<%pp %Sx(of) %pe|%pp %Sx(of) %pe|%pp %Sx(of) %pe|%pp %Sx(of) %pe|%pp %Sx(of) %pe>;%t(10)%?cf<%cH|%cl>:%cM%?cf<|%cP>
+
+# Shuffle
+%Vl(mainDisplay,188,40,93,280,2)
+%ac%?ps<SHUFFLE ON>%Vs(invert)
+
+# Battery
+%Vl(mainDisplay,292,40,47,17,2)
+%ac%bl%%%Vs(invert)
+
+# Line
+%Vl(mainDisplay,36,64,303,1,-)
+%dr(0,0,303,1)
+
+# Track Title
+%Vl(mainDisplay,36,76,303,244,4)
+%s%it
+
+# Artist/Album
+%Vl(mainDisplay,36,118,303,202,3)
+%s%t(6)%ia;%s%t(6)%id
+
+# File Type
+%Vl(mainDisplay,36,150,140,170,2)
+%s%?fc<MP1|MP2|MP3|AIFF|WAV|VORBIS|FLAC|MPC|AC3|WAVPACK|ALAC|AAC|SHORTEN|SID|ADX|NSF|SPEEX|SPC|APE|WMA|WMAPRO|MOD|SAP|COOK|AAC|AC3|ATRAC3|CMC|CM3|CMR|CMS|DMC|DLT|MPT|MPD|RMT|TMC|TM8|TM2|ATRAC3|SMAF|AU|VOX|WAVE64|TRUEAUDIO|WMAVOICE|MUSEPACK|AAC-HE|AY|VTX|GBS|HES|SGC|VGM|KSS|OPUS|AAC|UNKNOWN?> %?fv<~>%fbkbps
+
+# Repeat
+%Vl(mainDisplay,199,150,117,170,2)
+%ar%?mm<|REPEAT|REPEAT|REPEAT|REPEAT> %?mm<|ALL|ONE|SHUFFLE|A-B>
+
+# Play/Pause Icons
+%Vl(mainDisplay,326,153,13,13,-)
+%?mp<%xd(T)|%xd(L)|%xd(Z)>
+
+# Volume Bar
+%Vl(mainDisplay,36,182,339,138,-)
+%pv(0,0,256,13,VB,backdrop,VBB)
+
+# Volume Text
+%Vl(mainDisplay,292,179,47,141,2)
+%ar%pvdb
+
+# Track Progress Bar
+%Vl(mainDisplay,36,202,339,118,-)
+%pb(0,0,303,24,PB,backdrop,PBB)
+
+# Time Elapsed
+%Vl(mainDisplay,36,232,70,18,2)
+%al%pc
+
+# Time Total
+%Vl(mainDisplay,269,232,70,18,2)
+%ar%pt
+
+# Line
+%Vl(mainDisplay,36,256,303,1,-)
+%dr(0,0,303,1)
+
+# Next track
+%Vl(mainDisplay,36,266,303,18,2)
+%?pE(20)<%?It<%s%Sx(Next Track:) %It - %Ia|>|>
+
+## Hold Screen ##
+
+# Clear Screen
+%Vl(holdScreen,0,0,375,320,-)
+
+# Line
+%Vl(holdScreen,36,34,303,1,-)
+%dr(0,0,303,1)
+
+# Time
+%Vl(holdScreen,36,88,186,72,5)
+%?cf<%cH|%cI>:%cM
+
+# Hold Status
+%Vl(holdScreen,246,124,93,26,3)
+%ar%?cf<HOLD|%cP>
+
+# Line
+%Vl(holdScreen,36,190,303,1,-)
+%dr(0,0,303,1)
+
+# Battery Label
+%Vl(holdScreen,36,40,47,17,2)
+%alBATT
+
+# Battery Bar
+%Vl(holdScreen,83,42,209,14,-)
+%bl(0,0,209,13,BB,backdrop,BBB)
+
+# Battery %
+%Vl(holdScreen,292,40,47,17,2)
+%ac%bl%%
+
+# Song/Artist
+%Vl(holdScreen,36,208,303,18,2)
+%s%ia - %it
+
+# Play/Pause Icons
+%Vl(holdScreen,36,237,13,13,-)
+%?mp<%xd(T)|%xd(L)|%xd(Z)>
+
+# Time Remaining
+%Vl(holdScreen,246,232,93,18,2)
+%ar-%pr
+
+# Line
+%Vl(holdScreen,36,256,303,1,-)
+%dr(0,0,303,1)

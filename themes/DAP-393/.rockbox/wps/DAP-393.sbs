@@ -1,0 +1,171 @@
+# Theme: DAP-393
+# Version 1.0
+# Last Update: 17/07/2026 (DD/MM/YYYY)
+# License: CC-BY-SA 3.0
+# A 360ad theme
+# Created during July, 2026
+# All assets drawn by me in Photoshop.
+# Absolutely NO AI has been used during the creation of this theme.
+#
+#
+%Fl(2,6-DAP393.fnt)
+%Fl(3,11-DAP393.fnt)
+%X(/.rockbox/backdrops/393SBS.bmp)
+#
+%xl(V,USB.bmp,22,30)
+#
+#
+# This bit handles the USB screen. Semi-reused code from my DSi theme.
+#
+%Vi(MainUI,42,74,163,143,1)
+%Vi(clearScreen,22,30,1,1,-)
+%?if(%cs, =, 21)<%VI(clearScreen)%Vd(usb_connected)|%VI(MainUI)>
+#
+#
+# This section is for the system time. Similar to my WPS play counter as they both grab assets from the same BMP.
+# If you wish to reuse (I don't know why you would) then note the following:
+# The file it grabs from has 100 different images for numbers ranging 00 - 99
+# I did originally make it with numbers 0 - 9, however given the nature of the theme,
+# I wanted to have an outer glow around all 'display' elements, which includes the time.
+# This way is more size-heavy BUT it works so shut up.
+# The clock is drawn in 2 halves (one for each double-digit) and the colon is just baked into the backdrop.
+#
+# Oh yeah and there's also a thing for AM or PM. 
+# I didn't want people to get confused between this and the WPS play counter, as they literally look the same
+# so I think this resolves that.
+#
+%V(0,0,375,320,0)
+%Vb(-)
+%xl(A,numbers.bmp,263,247,100)
+%xl(B,numbers.bmp,295,247,100)
+%xl(C,ampm.bmp,325,248,2)
+%xl(D,SBSplaymodes.bmp,222,188,3)
+%xl(E,SBSempty.bmp,309,59)
+%xl(F,SBSvolume.bmp,309,59)
+%xl(G,SBSempty.bmp,280,59)
+%xl(H,SBSbright.bmp,280,59)
+%?ss(0,2,%cH,number)<%xd(A)|%xd(A,2)|%xd(A,3)|%xd(A,4)|%xd(A,5)|%xd(A,6)|%xd(A,7)|%xd(A,8)|%xd(A,9)|%xd(A,10)|%xd(A,11)|%xd(A,12)|%xd(A,13)|%xd(A,2)|%xd(A,3)|%xd(A,4)|%xd(A,5)|%xd(A,6)|%xd(A,7)|%xd(A,8)|%xd(A,9)|%xd(A,10)|%xd(A,11)|%xd(A,12)>
+%?ss(0,2,%cM,number)<%xd(B)|%xd(B,2)|%xd(B,3)|%xd(B,4)|%xd(B,5)|%xd(B,6)|%xd(B,7)|%xd(B,8)|%xd(B,9)|%xd(B,10)|%xd(B,11)|%xd(B,12)|%xd(B,13)|%xd(B,14)|%xd(B,15)|%xd(B,16)|%xd(B,17)|%xd(B,18)|%xd(B,19)|%xd(B,20)|%xd(B,21)|%xd(B,22)|%xd(B,23)|%xd(B,24)|%xd(B,25)|%xd(B,26)|%xd(B,27)|%xd(B,28)|%xd(B,29)|%xd(B,30)|%xd(B,31)|%xd(B,32)|%xd(B,33)|%xd(B,34)|%xd(B,35)|%xd(B,36)|%xd(B,37)|%xd(B,38)|%xd(B,39)|%xd(B,40)|%xd(B,41)|%xd(B,42)|%xd(B,43)|%xd(B,44)|%xd(B,45)|%xd(B,46)|%xd(B,47)|%xd(B,48)|%xd(B,49)|%xd(B,50)|%xd(B,51)|%xd(B,52)|%xd(B,53)|%xd(B,54)|%xd(B,55)|%xd(B,56)|%xd(B,57)|%xd(B,58)|%xd(B,59)|%xd(B,60)>
+%?if(%cH, <, 12)<%xd(C)|%xd(C,2)>
+#
+#
+#
+# This is the playmodes thing, not as complex as the WPS one, it literally just shows if 
+# something's playing, paused, or if there's nothing playing at all.
+#
+%?mp<%xd(D)|%xd(D,2)|%xd(D,3)|%xd(D,2)|%xd(D,2)>
+#
+#
+# And the volume bar, This one's simple, just a full image and a not-full image. 
+# I love designing these kind of displays :)
+#
+%pv(309,59,12,59,image,F,backdrop,E,vertical)
+#
+#
+# The volume bar, but now yellow (and it manages brightness levels)
+#
+%St(280,59,12,59,setting,brightness,image,H,backdrop,G,vertical)
+#
+#
+# This right here is the battery display. 
+# No Timmy you don't get any numerical values this isn't FreshOS(tm)
+# The charging indicator is a single frame because *aesthetic* or something like that (or because I'm lazy but
+# that's a lie like look at the code right 'ere y'know)
+# Believe it or not, I have submitted official code with these kinds of comments. 
+#
+%V(283,188,70,29,0)
+%Vb(-)
+%xl(J,SBSbattery.bmp,0,0,9)
+%?bp<%xd(J,9)|%?if(%bl, <, 13)<%xd(J)|%?if(%bl, <, 25)<%xd(J,2)|%?if(%bl, <, 38)<%xd(J,3)|%?if(%bl, <, 50)<%xd(J,4)|%?if(%bl, <, 63)<%xd(J,5)|%?if(%bl, <, 75)<%xd(J,6)|%?if(%bl, <, 88)<%xd(J,7)|%xd(J,8)>>>>>>>>
+#
+#
+# The hold/lock switch. I've called it LOCK because it's more akin to what you'd find on one of these YAMAHA decks.
+# And honestly? That's iconic. It's the perfect blend of nostalgia and usability. It's not just a indicator, it's a 
+# revolution (OKAY I am done taking the piss out of AI. You really thought I'd used AI right there, huh? eh, ha, heh heh)
+#
+%V(222,147,68,29,0)
+%Vb(-)
+%xl(I,lock.bmp,0,0,2)
+%?mh<%xd(I,2)|%xd(I)>
+#
+#
+# This is for the menu title. It it a TEENY BIT smaller than I would've liked, so some screens will have it be scrolling.
+# Don't like it? Use ADWAITAPOD!
+#
+%V(226,112,61,8,2)
+%Vb(-)
+%Vf(F3381F)
+%ac%?if(%Lt,=,Rockbox)<MAIN|%Lt%s>
+#
+#
+# Music indicator. Basically what happens when you forgot to convert your album art to the exact type of JPEG that rockbox
+# supports. Still looks pretty neat.
+#
+%V(36,242,35,36,0)
+%Vb(-)
+%xl(P,music.bmp,0,0,2)
+%Cl(0,0,34,34,c,c)
+%?mp<|%?C<%Cd|%xd(P,2)>|%?C<%Cd|%xd(P,2)>|%?C<%Cd|%xd(P,2)>|%?C<%Cd|%xd(P,2)>>
+#
+#
+# The following is the title, album and artist that shows on the bottom of the SBS. 
+# When not playing, it just isn't there (waow)
+#
+%V(93,244,169,12,2)
+%Vb(-)
+%Vf(F3381F)
+%s%?it<%it|%fn>
+#
+%V(93,256,169,12,2)
+%Vb(-)
+%Vf(FBBC36)
+%s%?id<%id| >
+#
+%V(93,268,169,12,2)
+%Vb(-)
+%Vf(FBBC36)
+%s%?ia<%ia| >
+#
+#
+# The USB screen that I HATE(d setting up because I'd used some f***ery to get the viewports working earlier
+# so I have to redo EVERYTHING in order to get this to work without deleting the entire viewport when it was
+# done. Reuse it, PLEASE)
+#
+# It shows a 320x240 BMP, with the time, AM/PM indicator and the battery indicator drawn over it.
+# Apparently, transparency goes through overlayed images, so the overlays here are USB specific versions
+# so that they don't act as damn windows to the original backdrop.
+#
+%Vl(usb_connected,0,0,375,320,-)
+%Vb(ffffff)
+%dr(0,0,331,248,ffffff)
+%xd(V)
+%xl(L,USBnumber.bmp,230,222,100)
+%xl(M,USBnumber.bmp,262,222,100)
+%xl(N,USBampm.bmp,243,247,2)
+%?ss(0,2,%cH,number)<%xd(L)|%xd(L,2)|%xd(L,3)|%xd(L,4)|%xd(L,5)|%xd(L,6)|%xd(L,7)|%xd(L,8)|%xd(L,9)|%xd(L,10)|%xd(L,11)|%xd(L,12)|%xd(L,13)|%xd(L,2)|%xd(L,3)|%xd(L,4)|%xd(L,5)|%xd(L,6)|%xd(L,7)|%xd(L,8)|%xd(L,9)|%xd(L,10)|%xd(L,11)|%xd(L,12)>
+%?ss(0,2,%cM,number)<%xd(M)|%xd(M,2)|%xd(M,3)|%xd(M,4)|%xd(M,5)|%xd(M,6)|%xd(M,7)|%xd(M,8)|%xd(M,9)|%xd(M,10)|%xd(M,11)|%xd(M,12)|%xd(M,13)|%xd(M,14)|%xd(M,15)|%xd(M,16)|%xd(M,17)|%xd(M,18)|%xd(M,19)|%xd(M,20)|%xd(M,21)|%xd(M,22)|%xd(M,23)|%xd(M,24)|%xd(M,25)|%xd(M,26)|%xd(M,27)|%xd(M,28)|%xd(M,29)|%xd(M,30)|%xd(M,31)|%xd(M,32)|%xd(M,33)|%xd(M,34)|%xd(M,35)|%xd(M,36)|%xd(M,37)|%xd(M,38)|%xd(M,39)|%xd(M,40)|%xd(M,41)|%xd(M,42)|%xd(M,43)|%xd(M,44)|%xd(M,45)|%xd(M,46)|%xd(M,47)|%xd(M,48)|%xd(M,49)|%xd(M,50)|%xd(M,51)|%xd(M,52)|%xd(M,53)|%xd(M,54)|%xd(M,55)|%xd(M,56)|%xd(M,57)|%xd(M,58)|%xd(M,59)|%xd(M,60)>
+%?if(%cH, <, 12)<%xd(N)|%xd(N,2)>
+%xl(O,USBbattery.bmp,235,201,9)
+%?bp<%xd(O,9)|%?if(%bl, <, 13)<%xd(O)|%?if(%bl, <, 25)<%xd(O,2)|%?if(%bl, <, 38)<%xd(O,3)|%?if(%bl, <, 50)<%xd(O,4)|%?if(%bl, <, 63)<%xd(O,5)|%?if(%bl, <, 75)<%xd(O,6)|%?if(%bl, <, 88)<%xd(O,7)|%xd(O,8)>>>>>>>>
+#
+#
+# The main menu list that I (love so much. This worked first time and definitely didn't need rewriting, and heavy troubleshooting.
+# Thanks D00K for showing me how to debug :teary_eyes:
+#
+%Vi(MainUI,42,74,163,143,1)
+#
+%?if(%St(font),=,6-DAP393)<%Lb(menu_item,293,13)|%?if(%St(font),=,11-DAP393)<%Lb(menu_item,293,19)|%Lb(menu_item,293,13)>>
+#
+%Vl(menu_item,0,0,163,13,1)
+%Vb(-)
+%?Lc<%Vf(F3381F)%s|%Vf(FBBC36)>%LT
+#
+#
+#
+#
+#
+#
+# And this is it, the end of the line.
+#
+# "Well, I hope you enjoyed our time together today. You know, it seems harder and harder to sit back and enjoy the
+# finer things in life. Well, 'till next time, ta ta"

@@ -1,0 +1,80 @@
+# Theme by Guillaume Cocatre-Zilgien <gcocatre@gmail.com>
+# CC-BY-SA
+
+# Disable Status Bar
+%wd
+
+# Clear Backdrop
+%X(d)
+
+# Preload Font
+%Fl(2,14-Nimbus.fnt)
+
+# Preload Images
+%xl(battery,battery.bmp,0,0,5)
+%xl(playmodes,playmodes.bmp,0,0,9)
+%xl(pbbd,progressbar_backdrop.bmp,0,0)
+
+# Display Viewports
+%Vd(playbackmode)
+%Vd(title)
+%?if(%St(battery display), =, numeric)<%Vd(batteryn)|%?if(%bc, =, c)<%Vd(batteryn)|%?if(%bp, =, p)<%Vd(batteryn)|%Vd(batteryg)>>>
+%Vd(topbar)
+%Vd(metadata)
+%?mv<%Vd(volume)|%Vd(freqpos)>
+
+# Playback Mode Icons
+%Vl(playbackmode,28,36,14,15,-)
+%xd(playmodes,%mp)
+
+# WPS Title
+%Vl(title,60,34,255,21,-)
+%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<…|>FM Radio%?if(%lh, =, h)<…|>%?if(%mh, =, h)< ]|>
+
+# Battery (graphical)
+%Vl(batteryg,321,36,26,15,-)
+%?if(%bl, >, 88)<%xd(battery,5)|%?if(%bl, >, 63)<%xd(battery,4)|%?if(%bl, >, 38)<%xd(battery,3)|%?if(%bl, >, 13)<%xd(battery,2)|%xd(battery,1)>>>>
+
+# Battery (numerical)
+%Vl(batteryn,312,38,35,15,2)
+%ar%bl%%
+
+# Top Bar Separator Line
+%Vl(topbar,22,57,331,2,-)
+%dr(0,0,331,2)
+
+# Preset Number
+%Vl(metadata,28,65,319,15,2)
+%al%?Ti<%Ti of %Tc|>
+
+# Preset Name or RDS Name
+%Vl(metadata,28,108,319,21,-)
+%s%ac%?Tn<%Tn|%?ty<%ty|%tf MHz>>
+
+# RDS Text
+%Vl(metadata,28,135,319,21,-)
+%s%ac%?tz<%tz|No RDS Data>
+
+# Signal Strength
+%Vl(metadata,28,162,319,21,-)
+%s%ac%?tr<Weak|Good|Strong|Strong> Signal
+
+# Mono / Stereo
+%Vl(metadata,28,189,319,21,-)
+%s%ac%?ts<Stereo|Mono>
+
+# Frequency
+%Vl(freqpos,28,252,58,21,-)
+%ac%tf
+
+# Frequency Bar
+%Vl(freqpos,87,252,254,18,-)
+%pb(0,0,253,18,progressbar.bmp,backdrop,pbbd)
+
+# Volume
+%Vl(volume,28,252,58,21,-)
+%ac%?if(%pv, >, 0)<+|>%pvdB
+
+# Volume Bar
+%Vl(volume,87,252,254,18,-)
+%pv(0,0,253,18,progressbar.bmp,backdrop,pbbd)

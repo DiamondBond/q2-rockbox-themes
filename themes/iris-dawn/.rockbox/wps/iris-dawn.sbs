@@ -1,0 +1,122 @@
+# Iris Dawn - Rose Pine Dawn (light) - base skin
+#
+# Fonts
+%Fl(2,11-Inter-SemiBold.fnt)
+%Fl(3,12-Inter-Regular.fnt)
+%Fl(4,16-Inter-Bold.fnt)
+%Fl(5,60-Inter-SemiBold.fnt)
+#
+# lock screen logic
+%?mh<%VI(h)|%VI(m)>
+%?mh<%Vd(lkbg)%Vd(lkc)%Vd(lkd)%?if(%mp, >, 1)<%Vd(lkb)%Vd(lkt)%Vd(lka)%Vd(lke)%Vd(lkp)%Vd(lkr)>|%?if(%cs, =, 2)<%Vd(tbnp)|%?if(%mp, >, 1)<%Vd(tbsa)%Vd(tbst)>>>
+#
+# ---------------- Sidebar ----------------
+%V(0,0,36,320,-)
+%Vf(907aa9)
+%Vb(f2e9e1)
+%dr(15,38,7,7,907aa9)
+#
+# volume bar
+%V(15,136,7,80,-)
+%Vf(907aa9)
+%Vb(dfdad9)
+%pv(0,0,7,80,vertical,noborder)
+#
+# stacked clock HH / MM
+%V(0,224,36,34,2)
+%Vf(797593)
+%Vb(f2e9e1)
+%ac%?cf<%cH|%cl>
+%ac%cM
+#
+# battery pill
+%V(0,266,36,12,-)
+%Vf(797593)
+%Vb(f2e9e1)
+%dr(8,1,19,9,797593)
+%dr(9,2,16,7,f2e9e1)
+%bl(8,4,14,5,noborder)
+%dr(27,3,2,5,797593)
+#
+# ---------------- Topbar ----------------
+%V(36,0,339,32,-)
+%Vb(faf4ed)
+%dr(0,31,339,1,dfdad9)
+#
+# screen title
+%V(60,10,179,16,2)
+%Vf(797593)
+%Vb(faf4ed)
+%al%?mh<L O C K E D|%?cs<R O C K B O X|N O W  P L A Y I N G|R E C O R D I N G|F M  R A D I O|P L A Y L I S T|S E T T I N G S|F I L E S|D A T A B A S E|P L U G I N S|Q U I C K  S E T T I N G S|P I T C H|%Lt|P L A Y L I S T S|P L U G I N|M E N U|S Y S T E M|T I M E  &  D A T E|B O O K M A R K S|S H O R T C U T S|T R A C K  I N F O|U S B|%Lt>>
+#
+# topbar: playlist position on WPS
+%Vl(tbnp,240,10,90,17,3)
+%Vf(797593)
+%Vb(faf4ed)
+%ar%pp / %pe
+#
+# topbar: now playing info + album thumb
+%Vl(tbsa,316,10,14,16,-)
+%Vb(faf4ed)
+%Cl(0,0,14,14,c,c)
+%Cd
+#
+%Vl(tbst,150,10,160,17,3)
+%Vf(797593)
+%Vb(faf4ed)
+%s%ar%?it<%it|%fn>%?ia< — %ia|>
+#
+# ---------------- Lists ----------------
+%Vi(m,36,32,323,268,-)
+%Vf(575279)
+%Vb(faf4ed)
+#
+# collapsed 1x1 stub used while locked
+%Vi(h,36,32,1,1,-)
+%Vf(faf4ed)
+%Vb(faf4ed)
+#
+# ---------------- Lock screen ----------------
+%Vl(lkbg,36,32,339,288,-)
+%Vb(faf4ed)
+%dr(0,0,339,288,faf4ed)
+#
+%Vl(lkc,36,70,339,85,5)
+%Vf(575279)
+%Vb(faf4ed)
+%ac%?cf<%cH|%cl>:%cM
+#
+%Vl(lkd,36,160,339,16,2)
+%Vf(797593)
+%Vb(faf4ed)
+%ac%ca %cd %cb
+#
+# bottom strip: track info and seek bar
+%Vl(lkb,60,226,280,76,-)
+%Vb(fffaf3)
+%dr(0,0,280,1,dfdad9)
+#
+%Vl(lkt,72,234,256,24,4)
+%Vf(575279)
+%Vb(fffaf3)
+%s%al%?it<%it|%fn>
+#
+%Vl(lka,72,258,256,17,3)
+%Vf(797593)
+%Vb(fffaf3)
+%s%al%ia%?id< — %id|>
+#
+%Vl(lke,72,278,52,16,3)
+%Vf(9893a5)
+%Vb(fffaf3)
+%al%pc
+#
+%Vl(lkp,126,284,148,4,-)
+%Vf(907aa9)
+%Vb(dfdad9)
+%pb(0,0,148,4,noborder)
+#
+%Vl(lkr,276,278,52,16,3)
+%Vf(9893a5)
+%Vb(fffaf3)
+%ar%pt

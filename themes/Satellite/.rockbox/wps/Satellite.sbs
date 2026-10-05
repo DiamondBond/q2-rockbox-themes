@@ -1,0 +1,156 @@
+#__Satellite
+#__by__Jihoon_Kim_
+#__based_on_AdwaitaPod_and_Adwaitapod_dark_by_Dook
+#__licence__CC-BY-SA 4.0
+#__version__1.1
+#__2025
+#__target resolution 320x240
+#__tested on Surfans F20
+#
+%wd
+%Fl(3,18-Cantarell-Regular.fnt)
+%Fl(4,18-Cantarell-Bold.fnt)
+%Fl(5,20-Cantarell-Regular.fnt)
+%Fl(6,20-Cantarell-Bold.fnt)
+#-- Icons --#
+%xl(SleepIcon,SleepStatus.bmp,2,1)
+%xl(HoldIcon,HoldStatus.bmp,2,1)
+%xl(L,LoadingStatus.bmp,12)
+%xl(BatteryIcon,BatteryStatus.bmp,12)
+%xl(ChargingIcon,ChargeStatus.bmp,11)
+#-- Album Art --#
+%xl(CoverArtMask,SbsAlbumCover.bmp)
+%xl(Fallback1,amber-d-sbs.bmp,22,84)
+%xl(Fallback2,fold-d-sbs.bmp,22,84)
+%xl(Fallback3,glass-chip-l-sbs.bmp,22,84)
+%xl(Fallback4,pixel-pusher-d-sbs.bmp,22,84)
+%xl(Fallback5,sheet-d-sbs.bmp,22,84)
+#-- Player UI --#
+%xl(PlayIcon,PlayIcon.bmp,5)
+#-- Volume Slider --#
+%xl(VolumeIcons,VolumeIcons.bmp,4)
+#-- Circular Progress Bar --#
+%xl(Scroll0,Scroll0.bmp)
+%xl(Scroll1,Scroll1.bmp)
+%xl(Scroll2,Scroll2.bmp)
+%xl(Scroll3,Scroll3.bmp)
+%xl(Scroll4,Scroll4.bmp)
+%xl(ScrollTop1,ScrollBottom1.bmp)
+%xl(ScrollTop2,ScrollBottom2.bmp)
+%xl(ScrollBottom1,ScrollTop1.bmp)
+%xl(ScrollBottom2,ScrollTop2.bmp)
+%xl(HighlightBar,HighlightStub.bmp,69,155)
+%xl(iconsLite,adwaitapod.bmp,0,0,44)
+%xl(icons,adwaitapod-dark.bmp,0,0,44)
+%xl(icons1,SbsIcons1.bmp,0,0,44)
+%xl(icons2,SbsIcons2.bmp,0,0,44)
+#
+#------------ Background Layer ------------#
+%V(0,0,375,320,-)%VB
+%Cl(-94,84,166,166)
+%dr(0,134,375,186,424142)
+%dr(68,123,-,22,424142)
+%xd(HighlightBar)
+%Cd
+%?C<|%?ss(-1,1,%pt,number)<%xd(Fallback1)|%xd(Fallback2)|%xd(Fallback3)|%xd(Fallback4)|%xd(Fallback5)|%xd(Fallback1)|%xd(Fallback2)|%xd(Fallback3)|%xd(Fallback4)|%xd(Fallback5)>>
+#
+#------------ Foreground Layer ------------#
+#
+#-- Menu title --#
+#
+%V(68,32,239,20,4)
+%s%ac%?cf<%cH:%cM|%cl:%cM %cP>
+#
+%V(26,34,17,18,-)%?mh<%xd(HoldIcon,%mh)|%xd(SleepIcon,%bs)>
+%V(47,34,16,18,-)%?mh<%xd(SleepIcon,%bs)|>
+%V(335,34,15,18,-)%?bp<%xd(ChargingIcon,%bl)|%xd(BatteryIcon,%bl)>
+%V(315,34,16,18,-)
+%?lh<%t(0.1)%xd(La);%t(0.1)%xd(Lb);%t(0.1)%xd(Lc);%t(0.1)%xd(Ld);%t(0.1)%xd(Le);%t(0.1)%xd(Lf);%t(0.1)%xd(Lg);%t(0.1)%xd(Lh);%t(0.1)%xd(Li);%t(0.1)%xd(Lj);%t(0.1)%xd(Lk);%t(0.1)%xd(Ll)>
+
+
+#
+#-- List Items --#
+#
+# List Viewport definition
+%Vi(-,0,84,375,166,-)
+%Lb(listItem,375,166)
+
+#
+#-- List Title --#
+# Title selector (removes empty space when no icon is available)
+%?if(%Li,<=,1)<%Vd(woIcon)|%Vd(withIcon)>
+
+#-- List Title (with icon) --#
+%Vl(withIcon,56,57,25,17,-)
+%xd(icons,%Li,-1)
+%Vl(withIcon,94,56,273,24,4)
+%al%s%Lt
+
+#-- List Title (w/o icon) --#
+%Vl(woIcon,56,56,311,24,4)
+%al%s%Lt
+
+#
+#-- Album Art Mask --#
+%Vl(listItem,0,0,72,166,-)
+%xd(CoverArtMask)
+
+# Only show scrollbar when there are no less than 5 elements
+#%?LT(0,nowrap)<%?if(%LN,>,4)<%Vd(ScrollBar)|%?LT(1,nowrap)<%?if(%LN,>,3)<%Vd(ScrollBar)|%?LT(2,nowrap)<%?if(%LN,>,2)<%Vd(ScrollBar)|%?LT(3,nowrap)<%?if(%LN,>,1)<%Vd(ScrollBar)|%?LT(4,nowrap)<%Vd(ScrollBar)>>>>>>>>>>
+
+# End of list definition
+%Vl(listItem,34,9,35,147,-)
+%?LT(2,nowrap)<|%xd(ScrollTop1)>
+%?LT(1,nowrap)<|%xd(ScrollTop2)>
+%?if(%LN,=,1)<%xd(ScrollBottom2)>
+%?if(%LN,=,2)<%xd(ScrollBottom1)>
+
+# Scroll movement definition
+# repeats every 5th index, to provide visuals indifinitely
+# offset by 3 (due to the end of list definitions above)
+
+# list index < 10 (slicing with %ss malfunctions with a single digit)
+%?if(%LN,<,10)<%?or(%if(%LN,=,3),%if(%LN,=,8))<%xd(Scroll0)>%?or(%if(%LN,=,4),%if(%LN,=,9))<%xd(Scroll1)>%?or(%if(%LN,=,5),%if(%LN,=,0))<%xd(Scroll2)>%?or(%if(%LN,=,6),%if(%LN,=,1))<%xd(Scroll3)>%?or(%if(%LN,=,7),%if(%LN,=,2))<%xd(Scroll4)>>
+
+# list index >= 10 (using %ss to slice from the end)
+%?if(%LN,>=,10)<%?or(%if(%ss(-1,1,%LN),=,3),%if(%ss(-1,1,%LN),=,8))<%xd(Scroll0)>%?or(%if(%ss(-1,1,%LN),=,4),%if(%ss(-1,1,%LN),=,9))<%xd(Scroll1)>%?or(%if(%ss(-1,1,%LN),=,5),%if(%ss(-1,1,%LN),=,0))<%xd(Scroll2)>%?or(%if(%ss(-1,1,%LN),=,6),%if(%ss(-1,1,%LN),=,1))<%xd(Scroll3)>%?or(%if(%ss(-1,1,%LN),=,7),%if(%ss(-1,1,%LN),=,2))<%xd(Scroll4)>>
+
+
+# Previous menu entries (text)
+%Vl(listItem,87,2,-,22,3)%Vf(bdbabd)
+%?if(%LN,>,2)<%LT(-2)|>
+%Vl(listItem,99,34,-,25,5)%Vf(bdbabd)
+%?if(%LN,>,1)<%LT(-1)|>
+
+# Next menu entries (text)
+%Vl(listItem,99,109,-,25,5)%Vf(bdbabd)
+%?LT(1,nowrap)<%LT(1)|>
+%Vl(listItem,87,139,-,22,3)%Vf(bdbabd)
+%?LT(2,nowrap)<%LT(2)|>
+
+
+# Previous menu entries (icons)
+%Vl(listItem,58,4,25,17,4)%Vf(292829)
+%?if(%LN,>,2)<%xd(icons2,%LI(-2,nowrap),1)|     %Vs(invert)>
+%Vl(listItem,72,37,25,17,4)%Vf(292829)
+%?if(%LN,>,1)<%xd(icons2,%LI(-1,nowrap),1)|     %Vs(invert)>
+
+# Next menu entries (icons)
+%Vl(listItem,72,112,25,17,4)%Vf(424142)
+%?LT(1,nowrap)<%xd(icons1,%LI(1,nowrap),1)|     %Vs(invert)>
+%Vl(listItem,58,143,25,17,4)%Vf(424142)
+%?LT(2,nowrap)<%xd(icons1,%LI(2,nowrap),1)|     %Vs(invert)>
+
+# Selected menu entry icon
+%Vl(listItem,79,74,25,17,-)
+%xd(iconsLite,%LI,1)
+
+# Selected menu entry title (must come last in order to scroll)
+%Vl(listItem,107,71,-,23,6)%Vf(ffffff)
+%s %LT
+
+#-- Bottom Song Info --#
+%V(31,258,31,32,-)
+%xd(PlayIcon,%mp)
+%V(72,261,273,23,3)
+%s%?ia<%ia%?it< - %it>|%fn>

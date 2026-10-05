@@ -1,0 +1,103 @@
+# LookAtMe by Serge Fnstll
+# 2026-06-23 v1.0
+# Shanling Q2 (375x320) port, 2026: layout redrawn for the larger screen and
+# kept inside the glass's rounded corners; SF Pro replaced by Inter.
+
+# Disable Status Bar
+%wd
+
+# Preload Font
+%Fl(3,32-Inter-Black.fnt)
+%Fl(4,16-Inter-Bold.fnt)
+%Fl(5,18-Inter-Regular.fnt)
+
+# Preload Images
+%xl(battery,battery.bmp,0,0,12)
+%xl(battery_charging,battery_charging.bmp,0,0,12)
+%xl(usb,usb.bmp,0,0)
+%xl(a,usb_animation.bmp,0,0,8)
+%xl(L,lock.bmp)
+%xl(menuback,menu_bg.bmp)
+%xl(f,rf menu.bmp,0,0)
+%xl(star,nocover2.bmp,0,0)
+%xl(prog,prog.bmp,0,0)
+%xl(progbg,progbg.bmp,0,0)
+%Cl(0,-49,375,375,c,c)
+
+# Viewport Rules
+%?if(%cs, =, 21)<%Vd(usb_img)%Vd(usb_txt)%VI(usb_hide)|%Vd(blackout)%Vd(progress)%Vd(rfmenu)%?bc<%Vd(battCharging)|%?if(%bl,>=,15)<%Vd(batt)|%Vd(lowBatt)>>%?if(%cs, =, 10)<%Vd(qsTitle)%?C<%Vd(noStar)|%Vd(withStar)>|%VI(menu)%Vd(info)%?C<%Vd(noStar)|%Vd(withStar)>>>
+
+# Display Viewports
+
+# USB cleaner
+%Vi(usb_hide,0,0,1,1,-)
+
+# With Album Art
+%Vl(noStar,0,0,375,90,-)%VB
+%Cd
+
+# No Album Art
+%Vl(withStar,0,0,375,90,-)%VB
+%xd(star)
+
+# Transparent foreground status
+%Vl(rfmenu,0,0,375,90,-)
+%?if(%mp, =, 3)<%xd(f)|>
+
+# Menu
+%Vi(menu,28,126,319,174,-)%Vf(c3c3c3)
+%Lb(menuRow,319,29)
+
+# Menu row renderer
+%Vl(menuRow,0,0,319,29,5)
+%?Lc<%Vf(e3e3e3)|%Vf(737373)>
+%?if(%LT,=,%Sx(Now Playing))<%sNow Playing: %?it<%it|%fn>|%?if(%St(scroll speed),=,1)<|%s>%LT>
+
+# Menu Title
+%Vl(info,28,99,260,20,4)
+%Vf(e3e3e3)
+%al%s%?cs<Main Menu|%?Lt<%Lt>>
+
+# Hold
+%Vl(info,306,104,8,10,-)
+%Vf(ff7508)
+%?mh<%xd(L)>
+
+# Quick Screen title viewport
+%Vl(qsTitle,28,99,140,20,4)
+%Vf(e3e3e3)
+%alQuick Screen
+
+# Battery viewports
+%Vl(batt,323,102,24,13,-)
+%?if(%bl, =, 100)<%xd(battery,11)|%?if(%bl,>=,90)<%xd(battery,10)|%?if(%bl,>=,80)<%xd(battery,9)|%?if(%bl,>=,70)<%xd(battery,8)|%?if(%bl,>=,60)<%xd(battery,7)|%?if(%bl,>=,50)<%xd(battery,6)|%?if(%bl,>=,40)<%xd(battery,5)|%?if(%bl,>=,30)<%xd(battery,4)|%?if(%bl,>=,20)<%xd(battery,3)|%?if(%bl,>=,10)<%xd(battery,2)|%xd(battery,1)>>>>>>>>>>
+
+%Vl(lowBatt,323,102,24,13,-)
+%t(1)%?if(%bl,>=,10)<%xd(battery,1)|%xd(battery,1)>;%t(1)%xd(battery,2)
+
+%Vl(battCharging,323,102,24,13,-)
+%?if(%bl, =, 100)<%xd(battery_charging,11)|%?if(%bl,>=,90)<%xd(battery_charging,10)|%?if(%bl,>=,80)<%xd(battery_charging,9)|%?if(%bl,>=,70)<%xd(battery_charging,8)|%?if(%bl,>=,60)<%xd(battery_charging,7)|%?if(%bl,>=,50)<%xd(battery_charging,6)|%?if(%bl,>=,40)<%xd(battery_charging,5)|%?if(%bl,>=,30)<%xd(battery_charging,4)|%?if(%bl,>=,20)<%xd(battery_charging,3)|%?if(%bl,>=,10)<%xd(battery_charging,2)|%xd(battery_charging,1)>>>>>>>>>>
+
+# Progress Bar (inside the glass's bottom corners)
+%Vl(progress,48,309,279,4,-)%Vf(-)
+%pb(0,0,279,4,prog,backdrop,progbg)
+
+# Clear screen
+%Vl(blackout,0,90,375,230,-)%VB
+%xd(menuback)
+
+# USB Background Layer
+%Vl(usb_img,0,0,375,320,-)%VB
+%xd(usb)
+
+# USB Animation Viewport
+%Vi(usb_anim,30,70,12,12,-)
+%?if(%cs, =, 21)<%t(0.1)%xd(a,1);%t(0.1)%xd(a,2);%t(0.1)%xd(a,3);%t(0.1)%xd(a,4);%t(0.1)%xd(a,5);%t(0.1)%xd(a,6);%t(0.1)%xd(a,7);%t(0.1)%xd(a,8)>
+
+# USB Text Layer
+%Vl(usb_txt,28,110,319,40,3)%Vf(e3e3e3)
+%acUSB CONNECTED
+
+%Vl(usb_txt,28,150,319,25,5)
+%Vf(737373)
+%acEject Before Disconnecting

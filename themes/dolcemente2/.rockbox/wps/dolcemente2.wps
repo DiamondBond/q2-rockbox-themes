@@ -1,0 +1,99 @@
+# Theme Name: dolcemente
+# By: Eamon Halpin
+# Platform: Surfans F20, HiWi Walker H2 (320x240x16)
+# Version 3.1
+# License: CC-BY-SA 3.0
+# Theme derived from: "rayboradio_OB" CC-BY-SA 3.0, a theme by Humberto Santana (humbertosantana@hotmail.com)
+
+# First Release: December 17th, 2023
+
+# WPS File
+#
+# Status bar disabled
+%wd
+
+# Background
+%X(dolcemente_bg2.bmp)
+
+# Additional fonts
+%Fl(2,16-Inter-SemiBold.fnt)
+%Fl(3,19-Inter-V-padded.fnt)
+
+# Battery text
+%V(310,36,39,18,2)%Vf(999999)
+%ar%bl%%
+
+# Volume
+%V(24,36,56,18,2)%Vf(999999)
+%al%?if(%pv, >, 0)<+|>%pv dB
+
+# Track Number
+%V(125,36,125,18,2)%Vf(999999)
+%ac%pp of %pe
+
+# AA CONDITIONALS
+%?C<%Vd(a)|%Vd(a)>
+
+# Album Art + Frame
+%xl(t,frameTop.bmp,0,0)
+%Vl(a,23,67,151,14,-) 
+%xd(t)
+
+%xl(l,frameLeft.bmp,0,0)
+%Vl(a,23,81,13,130,-) 
+%xd(l)
+
+%Cl(0,0,124,124,c,c)
+%Vl(a,36,81,125,130,-) 
+%Cd
+
+%xl(r,frameRight.bmp,0,0)
+%Vl(a,161,81,16,130,-) 
+%xd(r)
+
+%xl(b,frameBottom.bmp,0,0)
+%Vl(a,23,211,151,14,-) 
+%xd(b)
+
+# Artist
+%Vl(a,176,78,170,212,3)%Vf(D5D5D5)
+%al%s%?ia<%ia|%?d(3)<%d(2)|%Sx(Artist)>>
+
+# Title
+%Vl(a,176,105,170,185,3)%Vf(A2A2A2)
+%al%s%?it<%s%it|%fn>
+
+# Album
+%Vl(a,176,132,170,158,3)%Vf(D5D5D5)
+%al%s%?id<%id|%?d(3)<%d(1)|%Sx(Album)>>
+
+# Album Year
+%Vl(a,176,159,170,131,3)%Vf(A2A2A2)
+%s%al%?iy<Year: %iy|Year:  ---->
+
+# Codecs
+%Vl(a,176,186,170,104,3)%Vf(D5D5D5)
+%s%al%fc | %fk  kHz%?rg<| %| %rg| %| %rg| %| %rg| %| %rg|>
+
+# Playing Track
+#%Vl(n,10,49,300,16,2)%Vf(BFBFBF)
+#%s%ac%?it<%it|%fn>
+
+## Slider
+%V(22,232,331,12,-)
+%pb(0,0,-,-,pb.bmp,slider,p)
+
+# Track partial/total times
+%V(25,252,325,17,2)%Vf(999999)
+%al%pc%ar%pt
+
+# Play, Pause, FFW, REW
+%xl(m,play_pause.bmp,71,11,2)
+%xl(n,next.bmp,121,6)
+%xl(o,back.bmp,4,6)
+%V(112,244,151,38,-)
+%?mp<|%xd(ma)|%xd(mb)|%xd(n)|%xd(o)>
+#
+
+
+

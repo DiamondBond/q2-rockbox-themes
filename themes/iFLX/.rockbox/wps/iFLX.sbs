@@ -1,0 +1,38 @@
+# Theme: iFLX 
+# based on the iClassic Theme by Humberto Santana (humbertosantana@hotmail.com)
+# License: Creative Commons Attribution-Share Alike 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
+# This Theme is copletely base on the wonderful iclassic Theme. I just fixed some alignment issues and tweak the structure of the menu items,
+# that the majotiry of them will show inside the statusbar. Sometimes <ERR> is still shown - maybe fixed in future updates
+# Version 1.0
+# Last Update: March, 03 2026
+# First Version: March, 03 2026
+#
+# SBS File
+#
+%wd
+%T(0,0,145,20,menu)
+%T(0,0,145,20,&cancel)
+%T(178,5,141,62,prev)
+%T(178,5,141,62,&rwd)
+%T(178,181,141,62,next)
+%T(178,181,141,62,&ffwd)
+%T(178,93,141,62,select)
+%T(178,93,141,62,&cancel)
+%Fl(2,14-Adobe-Helvetica-Bold.fnt)
+#%Fl(4,12-Adobe-Helvetica-Bold.fnt,12)
+%Vi(-,22,51,331,239,1)%Vf(000000)%Vb(FFFFFF)
+%?cs<%Vd(t)|%Vd(n)|%Vd(n)|%Vd(n)|%Vd(n)>
+%Vl(t,28,33,269,15,2)%Vf(000000)
+#%s%al%?if(%Li, =, 0)<|%?if(%Li, <=, 32)<%Lt|%?if(%Li, =, 33)<iPod|>>>
+%s%al%?if(%Li, =, 0)<|%?if(%Li, <=, 32)<%Lt|%?if(%Li, =, 33)<%?if(%Tp, =, 1)<Cowon D2|iPod>|>>>
+%Vl(n,26,33,271,15,2)%Vf(000000)
+%s%al%?cs<%Lt||%Sx(Recording)|%Sx(FM Radio)|%Lt|%Lt|%Lt|%Lt|%Lt||%Sx(Pitch)|%Sx(Setting chooser)|%Sx(Playlist Catalogue)|%Sx(Plugin)|%Sx(Context)|%Sx(System Info)|%Sx(Time and Date)|%Sx(Bookmarks)|%Sx(Shortcuts)|%Sx(Track Info)>
+%xl(B,Battery.bmp,0,0,24)
+%V(323,34,26,12,-)
+%?bp<%?bc<%t(1.0)%xd(Ba);%t(1.0)%xd(Bb)|%xd(Bc)>|%?bl<%xd(Bd)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)|%xd(Bk)|%xd(Bl)|%xd(Bm)|%xd(Bn)|%xd(Bo)|%xd(Bp)|%xd(Bq)|%xd(Br)|%xd(Bs)|%xd(Bt)|%xd(Bu)|%xd(Bv)|%xd(Bw)|%xd(Bx)||>>
+%xl(h,Hold Icon.bmp,0,1)
+#%xl(M,Memory Access.bmp,0,0,6)
+%xl(P,Playing Status.bmp,0,0,4)
+%V(302,33,17,14,-)
+#%?mh<%xd(h)|%?lh<%t(0.1)%xd(Ma);%t(0.1)%xd(Mb);%t(0.1)%xd(Mc);%t(0.1)%xd(Md);%t(0.1)%xd(Me);%t(0.1)%xd(Mf)|%?mp<|%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)|%xd(Pa)|%xd(Pb)|%xd(Pa)|%xd(Pb)>>>
+%?mh<%xd(h)|%?mp<|%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)|%xd(Pa)|%xd(Pb)|%xd(Pa)|%xd(Pb)>>

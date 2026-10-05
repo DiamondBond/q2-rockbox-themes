@@ -1,0 +1,93 @@
+# Theme by Guillaume Cocatre-Zilgien <gcocatre@gmail.com>
+# CC-BY-SA
+# Based on iClassic Square, by Humberto Santana
+
+# Disable status bar
+%wd
+# Backdrop
+%X(wps.bmp)
+
+
+# Status bar
+%?if(%pv, >, 0)<%?if(%pv, >, 3)<%Vd(volumeveryhigh)|%Vd(volumehigh)>|%Vd(volume)>
+%?if(%lh, =, h)<%Vd(storageon)|%Vd(storageoff)>
+%Vd(statusplaymode)
+%?if(%bl, <, 10)<%?if(%bl, <, 5)<%Vd(batteryverylow)|%Vd(batterylow)>|%Vd(battery)>
+
+%Vl(volume,32,33,89,14,-)
+%Vf(555555)
+%al%pv dB
+
+%Vl(volumehigh,32,33,89,14,-)
+%Vf(186dbd)
+%al%pv dB
+
+%Vl(volumeveryhigh,32,33,89,14,-)
+%Vf(ff0000)
+%al%pv dB
+
+%Vl(storageon,125,33,74,14,-)
+%Vf(186dbd)
+%arHDD
+
+%Vl(storageoff,125,33,74,14,-)
+%Vf(999999)
+%arHDD
+
+%Vl(statusplaymode,203,35,9,10,-)
+%xl(playmode,playmode.bmp,0,0,9)
+%xd(playmode,%mp,0)
+
+%Vl(battery,253,33,90,14,-)
+%Vf(555555)
+%ar%bl%%
+
+%Vl(batterylow,253,33,90,14,-)
+%Vf(186dbd)
+%ar%bl%%
+
+%Vl(batteryverylow,253,33,90,14,-)
+%Vf(ff0000)
+%ar%bl%%
+
+# Cover Artwork
+%V(32,86,124,130,-)
+%Cl(0,0,124,124,c,c)
+%Cd
+
+# Metadata
+%V(167,91,176,21,-)
+%Vf(a0a0a0)
+%s%acTrack %?in<%in|%pp> (%pt)
+
+%V(167,112,176,22,-)
+%Vf(000000)
+%s%ac%?it<%it|%fn>
+
+%V(167,134,176,22,-)
+%Vf(186dbd)
+%s%ac%?ia<%ia|Unknown>
+
+%V(167,156,176,21,-)
+%Vf(666666)
+%s%ac%?id<%id|Untitled>
+
+%V(167,177,176,22,-)
+%Vf(a0a0a0)
+%s%acReleased: %?iy< %iy|unknown>
+
+%V(167,199,176,22,-)
+%Vf(a0a0a0)
+%s%ac%?Fn<%?It<Next: %It|Next: %Fn>|End of Playlist>
+
+# elapsed time
+%V(32,254,50,14,-)
+%ac%pc
+
+# Progress Bar
+%V(82,253,211,25,-)
+%pb(0,0,211,24,progressbar.bmp)
+
+# remaining time
+%V(293,254,50,14,-)
+%ac-%pr

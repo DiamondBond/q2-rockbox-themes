@@ -1,0 +1,84 @@
+
+# Modified by E. Halpin
+# Theme by Guillaume Cocatre-Zilgien <gcocatre@gmail.com>
+# CC-BY-SA
+
+# Disable Status Bar
+%wd
+
+# Backdrop
+%X(Slatey3.bmp)
+
+# Preload Font
+%Fl(2,16-Inter-SemiBold.fnt)
+%Fl(3,20-Inter-V.fnt)
+
+# Display Viewports
+%Vd(volume)
+%Vd(title)
+%?if(%St(battery display), =, numeric)<%Vd(batteryn)|%?if(%bc, =, c)<%Vd(batteryn)|%?if(%bp, =, p)<%Vd(batteryn)|%Vd(batteryg)>>>
+%Vd(metadata)
+%?if(%ig, =, Chamber Music)<%Vd(composer)|%?if(%ig, =, Classical)<%Vd(composer)|%?if(%ig, =, Opera)<%Vd(composer)|%?if(%ig, =, Sonata)<%Vd(composer)|%?if(%ig, =, Symphony)<%Vd(composer)|%Vd(artist)>>>>>
+%Vd(coverart)
+%Vd(extrameta)
+%?if(%mp, =, 3)<%Vd(movingtrackpos)%Vd(progressbar)|%?if(%mp, =, 4)<%Vd(movingtrackpos)%Vd(progressbar)|%?if(%mp, =, 5)<%Vd(movingtrackpos)%Vd(progressbar)|%Vd(trackpos)%Vd(progressbar)>>>
+
+# Cover Artwork
+%Vl(coverart,24,197,87,91,-)
+%Cl(0,0,87,87,c,c)
+%Cd
+
+# Volume
+%Vl(volume,24,34,52,18,2)
+%Vf(626262)
+%al%?if(%pv, >, 0)<+|>%pv dB
+
+# WPS Title
+%Vl(title,76,34,223,18,2)
+%Vf(626262)
+%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<|>%pp/%pe%?if(%lh, =, h)<|>%?if(%mh, =, h)< ]|>
+
+# Battery (numerical)
+%V(310,34,39,18,2)
+%Vf(626262)
+%ar%?if(%bc, =, c)<+|>%bl%%
+
+# Track Title or Filename
+%Vl(metadata,22,69,331,22,3)
+%Vf(CFCFCF)
+%s%ac%?it<%it|%fn>
+
+# Artist or Album Artist
+%Vl(artist,22,98,331,22,3)
+%Vf(FFFFFF)
+%s%ac%?ia<%ia|%?iA<by %iA|Unknown Artist>>
+ 
+# Album Title and Year
+%Vl(metadata,22,128,331,21,3)
+%Vf(CFCFCF)
+%s%ac%?id<%id|Untitled Album>%?iy< %| %iy|>
+
+# Codec Name and Bitrate / Replaygain
+%Vl(extrameta,22,157,331,21,3)
+%Vf(FFFFFF)
+%ac%fc | %fk kHz%?rg<| %| %rg| %| %rg| %| %rg| %| %rg|>
+
+# Track Position
+%V(121,208,215,17,2)
+%Vf(626262)
+%al%?mp<Stopped|Playing|Paused|Seeking|Seeking|Recording|Paused|Position|Position>: %pc %| %px%% %| -%pr
+
+# Shuffle / Repeat
+%Vl(extrameta,121,235,215,17,2)
+%Vf(626262)
+%alMode: %?if(%ps, =, s)<|%?mm<Normal|>>%?ps<Shuffle|>%?mm<|%?ps< %| Repeat |Repeat >>%?mm<|All|One|Shuffle|A-B>
+
+# Next Track
+%Vl(extrameta,121,262,207,17,2)
+%Vf(626262)
+%s%al%?It<Next: %It|End of Playlist>
+
+# Progress Bar
+%Vl(progressbar,339,199,10,87,-)
+#%Vl(progressbar,307,157,10,80,-)
+%pb(0,0,10,83,progressbar.bmp,vertical)

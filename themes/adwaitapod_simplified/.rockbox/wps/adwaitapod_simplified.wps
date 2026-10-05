@@ -1,0 +1,180 @@
+#
+#
+#                              $?$?$?$?$∙
+#                              ?$?$?$?'
+#                              $?$?$'
+#                              ?$?'
+#                              $'
+#               '08080808080808∙:.:.:.;
+#                '0808080808080 ':.:.:.
+#                  '80808080808   '.:.;
+#                    '080808080     ':.
+#                      '8080808       `
+#                        '08080      
+#                          '808
+#                            '0
+#
+#                   adwaitapod - version 3.4
+#                         Dook  2023
+#                          CC-BY-SA
+#
+#                      changelog v3.0:
+#  Full Rebuild and Redesign. New Quickscreen, Lockscreen and Miniplayer. 
+#  Improved RAM usage, reduced total filesize. Added User Preference Settings,
+#  Always on Display, Homescreen Widgets and theme info in system.
+#
+#  (v) Check the wiki to find out more about extra Wallpapers & Fonts (v)
+#                     https://d00k.net/adw
+#-------------------------------------------------------------------  
+%wd
+%Fl(3,18-Cantarell-Regular.fnt)
+%Fl(4,18-Cantarell-Bold.fnt)
+%Fl(5,20-Cantarell-Regular.fnt)
+%Fl(6,20-Cantarell-Bold.fnt)
+%Fl(7,66-Cantarell-Light.fnt,16)
+#-- Icons --#
+%xl(SleepIcon,SleepStatus.bmp,2,1)
+%xl(SleepIconDark,SleepStatusDark.bmp,2,1)
+%xl(HoldIcon,HoldStatus.bmp,2,1)
+%xl(L,LoadingStatus.bmp,12)
+%xl(I,LoadingStatusDark.bmp,12)
+%xl(BatteryIcon,BatteryStatus.bmp,12)
+%xl(ChargingIcon,ChargeStatus.bmp,11)
+%xl(BatteryIconDark,BatteryStatusDark.bmp,12)
+%xl(ChargingIconDark,ChargeStatusDark.bmp,11)
+%xl(BatteryIconAOD,BatteryStatusAOD.bmp,12)
+%xl(ChargingIconAOD,ChargeStatusAOD.bmp,11)
+%xl(PlaybackStatus,PlaybackStatusIcons.bmp,6)
+#-- Playtime Slider --#
+%xl(PlayerSlider,PlayerSlider.bmp)
+%xl(SliderBackdrop,SliderBackdrop.bmp)
+#-- Album Art --#
+%xl(TLoverlay,WpsTL.bmp)
+%xl(TRoverlay,WpsTR.bmp,179,0)
+%xl(BLoverlay,WpsBL.bmp,0,179)
+%xl(BRoverlay,WpsBR.bmp,179,179)
+%xl(BackdropL,WpsBackdropL.bmp,14,18)
+%xl(BackdropR,WpsBackdropR.bmp,214,18)
+%xl(BackdropT,WpsBackdropT.bmp,26,18)
+%xl(BackdropB,WpsBackdropB.bmp,26,218)
+%xl(PlayerFallback,PlayerFallback.bmp,26,30)
+#-- Player UI --#
+%xl(PlayerStatusButton,PlayerStatusButton.bmp,24,258)
+%xl(PlayIcon,PlayIcon.bmp,4)
+%xl(PlaylistPositionIcon,PlaylistPositionIndicators.bmp,4)
+#-- Volume Slider Overlay --#
+%xl(VolumeBackdrop,VolumeBackdrop.bmp)
+%xl(VolumeIcons,VolumePromptIcons.bmp,4)
+%xl(VolumeSliderBackdrop,VolumeSliderBackdrop.bmp)
+%xl(VolumeSliderEnd,VolumeSliderEnd.bmp)
+#--- Lockscreen Images ---#
+%xl(Lockscreen,Wallpaper.bmp)
+%xl(LockPlayIcon,NotifPlayIcon.bmp,2)
+%xl(NotificationMusic,NotifMusic.bmp,16,14)
+%xl(NotificationBackdrop,Notification.bmp,19,176)
+#
+#------------ Background Layer ------------#
+%V(0,0,-,-,-)%VB
+%Cl(26,30,188,188)
+%?if(%St(battery display), =, graphic)<%?mh<%?if(%St(backlight on button hold), =, off)<%dr(0,0,-,-,ffffff)|%xd(Lockscreen)%?mp<|%xd(NotificationBackdrop)>>|%dr(0,246,-,1,dcdcdc)%xd(PlayerStatusButton)%Cd%?C<%xd(BackdropL)%xd(BackdropT)%xd(BackdropR)%xd(BackdropB)|%xd(PlayerFallback)>>|%dr(0,246,-,1,dcdcdc)%xd(PlayerStatusButton)%Cd%?C<%xd(BackdropL)%xd(BackdropT)%xd(BackdropR)%xd(BackdropB)|%xd(PlayerFallback)>>
+#
+#------------ Foreground Layer ------------#
+%V(0,0,-,-,-)
+%?if(%St(battery display), =, graphic)<%?if(%St(backlight on button hold), !=, off)<%?mh<%Vd(Lockscreen)>>>
+%?if(%St(battery display), =, graphic)<%?if(%St(backlight on button hold), =, off)<%?mh<%Vd(AlwaysOnDisplay)>>>
+#-- Refresh Song info after volume pop-up --#
+%?if(%St(battery display), =, graphic)<%?mh<|%Vd(Player)%?it<%?if(%ss(0, 26, %it), =, %it)<%?if(%ss(0, 14, %it), =, %it)<%Vd(titlesingle)|%Vd(nobreak)>|%Vd(titlesingle)>|%Vd(titlesingle)>>|%Vd(Player)%?it<%?if(%ss(0, 26, %it), =, %it)<%?if(%ss(0, 14, %it), =, %it)<%Vd(titlesingle)|%Vd(nobreak)>|%Vd(titlesingle)>|%Vd(titlesingle)>>
+#
+#-- Icon Stuff --#
+%Vl(Player,300,5,16,21,-)%?bp<%xd(ChargingIcon,%bl)|%xd(BatteryIcon,%bl)>
+%Vl(Player,284,5,19,21,-)%?mh<%xd(HoldIcon,%mh)|%xd(SleepIcon,%bs)>
+#
+%Vl(Player,284,5,19,21,-)
+%?mh<%xd(HoldIcon,%mh)|%?bs<%xd(SleepIcon)|%?lh<%t(0.1)%xd(La);%t(0.1)%xd(Lb);%t(0.1)%xd(Lc);%t(0.1)%xd(Ld);%t(0.1)%xd(Le);%t(0.1)%xd(Lf);%t(0.1)%xd(Lg);%t(0.1)%xd(Lh);%t(0.1)%xd(Li);%t(0.1)%xd(Lj);%t(0.1)%xd(Lk);%t(0.1)%xd(Ll)>>>
+%Vl(Player,267,5,19,21,-)
+%?mh<%?bs<%xd(SleepIcon)|%?lh<%t(0.1)%xd(La);%t(0.1)%xd(Lb);%t(0.1)%xd(Lc);%t(0.1)%xd(Ld);%t(0.1)%xd(Le);%t(0.1)%xd(Lf);%t(0.1)%xd(Lg);%t(0.1)%xd(Lh);%t(0.1)%xd(Li);%t(0.1)%xd(Lj);%t(0.1)%xd(Lk);%t(0.1)%xd(Ll)>|%?bs<%t(0.1)%xd(La);%t(0.1)%xd(Lb);%t(0.1)%xd(Lc);%t(0.1)%xd(Ld);%t(0.1)%xd(Le);%t(0.1)%xd(Lf);%t(0.1)%xd(Lg);%t(0.1)%xd(Lh);%t(0.1)%xd(Li);%t(0.1)%xd(Lj);%t(0.1)%xd(Lk);%t(0.1)%xd(Ll)>>>
+%Vl(Player,285,5,19,21,-)
+%?mh<%?bs<%?lh<%t(0.1)%xd(La);%t(0.1)%xd(Lb);%t(0.1)%xd(Lc);%t(0.1)%xd(Ld);%t(0.1)%xd(Le);%t(0.1)%xd(Lf);%t(0.1)%xd(Lg);%t(0.1)%xd(Lh);%t(0.1)%xd(Li);%t(0.1)%xd(Lj);%t(0.1)%xd(Lk);%t(0.1)%xd(Ll)>>>
+#
+#-- Album Art --#
+%Vl(Player,26,30,188,188,-)
+# If Set to Numerical, turn off rounded corners #
+%?if(%St(volume display), =, graphic)<%?C<%xd(TLoverlay)%xd(TRoverlay)%xd(BLoverlay)%xd(BRoverlay)>>
+#
+%Vl(Player,257,197,70,40,-)
+%xd(PlayIcon,%mp,-1)
+#
+%Vl(Player,236,209,16,16,-)
+%?if(%pp, =, 1)<%xd(PlaylistPositionIcon,1)|%xd(PlaylistPositionIcon,2)>
+%Vl(Player,334,209,16,16,-)
+%?if(%pp, =, %pe)<%xd(PlaylistPositionIcon,3)|%xd(PlaylistPositionIcon,4)>
+#-- Song Info --#
+#
+%Vl(titlesingle,228,72,133,37,6)
+%s%al%?it<%it|%fn>
+#
+%Vl(nobreak,228,41,133,37,6)
+%al%ss(0, 12, %it)
+%Vl(nobreak,228,72,133,37,6)
+%al%ss(12, 26, %it)
+#
+#-- Toggle the Secondary info according to user preference --#
+%Vl(Player,228,111,133,28,5)
+%s%al%?it<%?if(%St(statusbar), =,off)<%t(6)%ia;%t(6)%id;%t(0)>%?if(%St(statusbar), =,top)<%id>%?if(%St(statusbar), =,bottom)<%ia>|%d(1)>
+#
+%Vl(Player,228,149,133,28,3)%Vf(6b6d6b)
+%s%al%?it<%ss(0,4,%iy) %?ig<-> %ig|%fc>
+#
+%Vl(Player,33,264,20,21,-)
+%?ps<|%?mm<%xd(PlaybackStatus,1)>>#No statuses
+%?ps<%?mm<%xd(PlaybackStatus,2)|>>#Shuffle On
+%?ps<%t(7)%xd(PlaybackStatus,2);%t(7)%?mm<|%xd(PlaybackStatus,%mm,1)>;|%?mm<|%xd(PlaybackStatus,%mm,1)>>#Repeat On | Shuffle + Repeat On
+#
+%Vl(Player,96,265,253,19,-)
+%pb(0,0,253,16,Slider.bmp,slider,PlayerSlider,backdrop,SliderBackdrop)
+#
+#--- Volume Overlay ---#
+%?mv(1.2)<%Vd(volume)|>
+%Vl(volume,82,247,211,60,-)%xd(VolumeBackdrop)
+%Vl(volume,98,263,28,28,-)
+%?if(%pv, =, -90)<%xd(VolumeIcons,1)>
+%?and(%if(%pv, <=, -60),%if(%pv, >, -90))<%xd(VolumeIcons,2)>
+%?and(%if(%pv, <=, -30),%if(%pv, >, -60))<%xd(VolumeIcons,3)>
+%?if(%pv, >, -30)<%xd(VolumeIcons,4)>
+%Vl(volume,136,273,137,7,-)
+%?if(%pv, =, -90)<%xd(VolumeSliderBackdrop)|%pv(0,0,137,6,VolumeSlider.bmp,slider,VolumeSliderEnd,backdrop,VolumeSliderBackdrop)>
+#
+#------------ Lockscreen Layer ------------#
+%Vl(Lockscreen,0,0,-,-,-)
+%Vl(LockRefresh,5,40,205,276,-)
+%Vl(Lockscreen,59,5,19,21,-)%xd(SleepIconDark,%bs)
+%Vl(Lockscreen,300,5,16,21,-)%?bp<%xd(ChargingIconDark,%bl)|%xd(BatteryIconDark,%bl)>
+%Vl(Lockscreen,284,5,19,21,-)
+%?lh<%t(0.1)%xd(Ia);%t(0.1)%xd(Ib);%t(0.1)%xd(Ic);%t(0.1)%xd(Id);%t(0.1)%xd(Ie);%t(0.1)%xd(If);%t(0.1)%xd(Ig);%t(0.1)%xd(Ih);%t(0.1)%xd(Ii);%t(0.1)%xd(Ij);%t(0.1)%xd(Ik);%t(0.1)%xd(Il)>
+#
+%Vl(Lockscreen,13,43,349,73,7)%Vf(ffffff)%ac%?cf<%cH:%cM|%cl:%cM %cP>
+%Vl(Lockscreen,4,135,367,27,3)%Vf(ffffff)%ac%?if(%ss(0,7,%St(lang)), =, english)<%?cu<Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday>|%ca> %?or(%if(%ss(0,7,%St(lang)), =, chinese),%if(%St(lang), =, magyar),%if(%St(lang), =, lietuviu),%if(%St(lang), =, japanese),%if(%St(lang), =, korean))<%cb %cd|%?if(%St(lang), =, english-us)<%cb %cd|%cd %cb>>
+#
+#---Notification---#
+%Vl(Lockscreen,29,200,317,100,-)%xd(NotificationMusic)
+%Vl(Lockscreen,306,240,14,19,-)%?mp<|%xd(LockPlayIcon,1)|%xd(LockPlayIcon,2)|>
+%Vl(Lockscreen,109,217,185,27,4)%Vf(ffffff)%s%al%?it<%it|%fn>
+%Vl(Lockscreen,109,244,185,29,3)%Vf(ffffff)
+%s%al%?it<%?if(%St(statusbar), =,off)<%t(6)%ia;%t(6)%id;%t(0)>%?if(%St(statusbar), =,top)<%id>%?if(%St(statusbar), =,bottom)<%ia>|%d(1)>
+#
+#------------ Always on Display ------------#
+%Vl(AlwaysOnDisplay,0,0,-,-,-)
+%Vl(AlwaysOnDisplay,59,5,19,21,-)%xd(SleepIcon,%bs)
+%Vl(AlwaysOnDisplay,269,5,16,21,-)%?bp<%xd(ChargingIconAOD,%bl)|%xd(BatteryIconAOD,%bl)>
+%Vl(AlwaysOnDisplay,271,4,42,23,4)%Vf(000000)
+%?or(%if(%bl, <, 22),%if(%bl, =, 31),%if(%bl, =, 41),%if(%bl, =, 51),%if(%bl, =, 61),%if(%bl, =, 71),%if(%bl, =, 81),%if(%bl, =, 91))<%ac|%al>%?if(%bl, =, 100)<CGD|%bl%%>
+#
+%Vl(AlwaysOnDisplay,286,5,19,21,-)
+%?lh<%t(0.1)%xd(La);%t(0.1)%xd(Lb);%t(0.1)%xd(Lc);%t(0.1)%xd(Ld);%t(0.1)%xd(Le);%t(0.1)%xd(Lf);%t(0.1)%xd(Lg);%t(0.1)%xd(Lh);%t(0.1)%xd(Li);%t(0.1)%xd(Lj);%t(0.1)%xd(Lk);%t(0.1)%xd(Ll)>
+#
+%Vl(AlwaysOnDisplay,13,43,349,73,7)%Vf(000000)%ac%?cf<%cH:%cM|%cl:%cM %cP>
+%Vl(AlwaysOnDisplay,4,135,367,27,3)%Vf(000000)%ac%?if(%ss(0,7,%St(lang)), =, english)<%?cu<Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday>|%ca> %?or(%if(%ss(0,7,%St(lang)), =, chinese),%if(%St(lang), =, magyar),%if(%St(lang), =, lietuviu),%if(%St(lang), =, japanese),%if(%St(lang), =, korean))<%cb %cd|%?if(%St(lang), =, english-us)<%cb %cd|%cd %cb>>
+#
+%Vl(AlwaysOnDisplay,12,217,351,27,4)%Vf(000000)%s%ac%?it<%it|%fn>
+%Vl(AlwaysOnDisplay,12,244,351,29,3)%Vf(000000)
+%s%ac%?it<%?if(%St(statusbar), =,off)<%t(6)%ia;%t(6)%id>%?if(%St(statusbar), =,top)<%id>%?if(%St(statusbar), =,bottom)<%ia>|%d(1)>

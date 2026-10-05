@@ -1,0 +1,59 @@
+
+# Modified by E. Halpin
+# Theme by Guillaume Cocatre-Zilgien <gcocatre@gmail.com>
+# CC-BY-SA
+
+# Disable Status Bar
+%wd
+
+# Preload Font
+%Fl(2,16-Inter-SemiBold.fnt)
+%Fl(3,19-Inter-V-padded.fnt)
+
+# Preload Images
+%xl(playmodes,playmodes.bmp,0,0,9)
+%xl(battery,battery.bmp,0,0,5)
+
+# Menu
+%Vi(-,24,64,327,200,3)
+%Vf(bfbfbf)
+
+# Display Viewports
+%Vd(volume)
+%?if(%Lt, =, themes)<%Vd(themetitle)|%Vd(title)>
+%?if(%St(battery display), =, numeric)<%Vd(batteryn)|%?if(%bc, =, c)<%Vd(batteryn)|%?if(%bp, =, p)<%Vd(batteryn)|%Vd(batteryg)>>>
+# Playback stopped
+%?if(%mp, =, 1)<%?if(%Lt, =, themes)<%Vd(themesurl)|%Vd(date)>|>
+# Playback not stopped, playing music
+%?if(%mp, >, 1)<%?if(%mp, <=, 7)<%?if(%ig, =, Chamber Music)<%Vd(art)%Vd(composer)%Vd(playbackmode)|%?if(%ig, =, Classical)<%Vd(art)%Vd(composer)%Vd(playbackmode)|%?if(%ig, =, Opera)<%Vd(art)%Vd(composer)%Vd(playbackmode)|%?if(%ig, =, Sonata)<%Vd(art)%Vd(composer)%Vd(playbackmode)|%?if(%ig, =, Symphony)<%Vd(art)%Vd(composer)%Vd(playbackmode)|%Vd(art)%Vd(metadata)%Vd(playbackmode)>>>>>|>|>
+# Playback not stopped, listening to the radio
+%?if(%mp, >, 1)<%?if(%mp, >=, 8)<%Vd(art)%Vd(radio)%Vd(playbackmode)|>|>
+
+# Menu Title
+%Vl(title,28,34,319,18,2)
+%Vf(626262)
+%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<|>%?Lt<%Lt|Rockbox>%?if(%lh, =, h)<|>%?if(%mh, =, h)< ]|>
+
+# Theme Menu Title
+%Vl(themetitle,28,34,319,18,2)
+%Vf(626262)
+%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<|>Slatey3%?if(%lh, =, h)<|>%?if(%mh, =, h)< ]|>
+
+# Cover Artwork
+%Vl(art,24,264,23,24,-)
+%Cl(0,0,23,23,c,c)
+%Cd
+
+# Song Metadata
+%V(49,266,277,18,2)
+%Vf(626262)
+%s%ac %?it<%it>
+
+# Playback Mode Icons
+%Vl(playbackmode,333,268,14,14,-)
+%xd(playmodes,%mp)
+
+# Date / Time
+%Vl(date,49,268,277,18,2)
+%Vf(626262)
+%s%ac %cH:%cM %cP 

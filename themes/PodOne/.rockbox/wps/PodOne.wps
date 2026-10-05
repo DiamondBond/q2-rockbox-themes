@@ -1,0 +1,85 @@
+# Theme by Guillaume Cocatre-Zilgien <gcocatre@gmail.com>
+# CC-BY-SA
+
+# Disable Status Bar
+%wd
+
+# Clear Backdrop
+%X(d)
+
+# Preload Font
+%Fl(2,14-Nimbus.fnt)
+
+# Preload Images
+%xl(battery,battery.bmp,0,0,5)
+%xl(playmodes,playmodes.bmp,0,0,9)
+%xl(pbbd,progressbar_backdrop.bmp,0,0)
+
+# Display Viewports
+%Vd(playbackmode)
+%Vd(title)
+%?if(%St(battery display), =, numeric)<%Vd(batteryn)|%?if(%bc, =, c)<%Vd(batteryn)|%?if(%bp, =, p)<%Vd(batteryn)|%Vd(batteryg)>>>
+%Vd(topbar)
+%Vd(metadata)
+%?if(%ig, =, Chamber Music)<%Vd(composer)|%?if(%ig, =, Classical)<%Vd(composer)|%?if(%ig, =, Opera)<%Vd(composer)|%?if(%ig, =, Sonata)<%Vd(composer)|%?if(%ig, =, Symphony)<%Vd(composer)|%Vd(artist)>>>>>
+%?mv<%Vd(volume)|%Vd(trackpos)>
+
+# Playback Mode Icons
+%Vl(playbackmode,28,36,14,15,-)
+%xd(playmodes,%mp)
+
+# WPS Title
+%Vl(title,63,33,249,21,-)
+%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<…|>Now Playing%?if(%lh, =, h)<…|>%?if(%mh, =, h)< ]|>
+
+# Battery (graphical)
+%Vl(batteryg,321,36,26,15,-)
+%?if(%bl, >, 88)<%xd(battery,5)|%?if(%bl, >, 63)<%xd(battery,4)|%?if(%bl, >, 38)<%xd(battery,3)|%?if(%bl, >, 13)<%xd(battery,2)|%xd(battery,1)>>>>
+
+# Battery (numerical)
+%Vl(batteryn,312,38,35,15,2)
+%ar%bl%%
+
+# Top Bar Separator Line
+%Vl(topbar,22,57,331,2,-)
+%dr(0,0,331,2)
+
+# Playlist Entry
+%Vl(metadata,28,65,319,15,2)
+%al%pp of %pe
+
+# Disc and Track Number
+%Vl(metadata,28,108,319,21,-)
+%s%ac%?ik<Disc %ik %| %?in<Track %in|Entry %pp>|%?in<Track %in|Entry %pp>>
+
+# Track Title or Filename
+%Vl(metadata,28,135,319,21,-)
+%s%ac%?it<“%it”|%fn>
+
+# Artist or Album Artist
+%Vl(artist,28,162,319,21,-)
+%s%ac%?ia<by %ia|%?iA<by %iA|Unknown Artist>>
+
+# Composer, Artist or Album Artist
+%Vl(composer,28,162,319,21,-)
+%s%ac%?ic<by %ic|%?ia<by %ia|%?iA<by %iA|Unknown Artist>>>
+
+# Album Title and Year
+%Vl(metadata,28,189,319,21,-)
+%s%ac%?id<%id|Untitled Album>%?iy< %| %iy|>
+
+# Track Position
+%Vl(trackpos,28,252,58,21,-)
+%ac%pc
+
+# Progress Bar
+%Vl(trackpos,87,252,254,18,-)
+%pb(0,0,253,18,progressbar.bmp,backdrop,pbbd)
+
+# Volume
+%Vl(volume,28,252,58,21,-)
+%ac%?if(%pv, >, 0)<+|>%pvdB
+
+# Volume Bar
+%Vl(volume,87,252,254,18,-)
+%pv(0,0,253,18,progressbar.bmp,backdrop,pbbd)

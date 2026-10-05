@@ -1,0 +1,203 @@
+# Theme by Guillaume Cocatre-Zilgien <gcocatre@gmail.com>
+# CC-BY-SA
+
+# Disable status bar
+%wd
+
+# Clear Backdrop
+%X(d)
+
+# Preload Images
+%xl(battery,battery.bmp,0,0,5)
+%xl(sbborder,statusbar_border.bmp,0,0)
+%xl(pbbg,progressbar_bg.bmp,0,0)
+%xl(miniart,miniart.bmp,0,0)
+%xl(miniartright,miniart_right.bmp,0,0)
+%xl(miniartbottom,miniart_bottom.bmp,0,0)
+%xl(playmode,playmode.bmp,0,0,12)
+
+# Menu
+%Vi(-,22,56,331,197,-)
+%Vb(ffffff)
+%Vf(525152)
+
+# Load Viewports
+%Vd(whitebg)
+%Vd(statusbar)
+
+%?if(%ss(0, 6, %St(background color), number), =, 525153)<%Vd(statusbarpreset)%Vd(statusbardefault)|%?if(%St(background color), =, 425dad)<%Vd(statusbarpreset)%Vd(statusbarblue)|%?if(%St(background color), =, 425DAD)<%Vd(statusbarpreset)%Vd(statusbarblue)|%?if(%St(background color), =, 52aa42)<%Vd(statusbarpreset)%Vd(statusbargreen)|%?if(%St(background color), =, 52AA42)<%Vd(statusbarpreset)%Vd(statusbargreen)|%?if(%St(background color), =, b5c731)<%Vd(statusbarpreset)%Vd(statusbarlime)|%?if(%St(background color), =, B5C731)<%Vd(statusbarpreset)%Vd(statusbarlime)|%?if(%St(background color), =, ff8621)<%Vd(statusbarpreset)%Vd(statusbarorange)|%?if(%St(background color), =, FF8621)<%Vd(statusbarpreset)%Vd(statusbarorange)|%?if(%St(background color), =, d64939)<%Vd(statusbarpreset)%Vd(statusbarscarlet)|%?if(%St(background color), =, D64939)<%Vd(statusbarpreset)%Vd(statusbarscarlet)|%?if(%St(background color), =, 738a9c)<%Vd(statusbarpreset)%Vd(statusbarstorm)|%?if(%St(background color), =, 738A9C)<%Vd(statusbarpreset)%Vd(statusbarstorm)|%Vd(statusbargeneric)>>>>>>>>>>>>>
+
+%?if(%Lt, =, themes)<%Vd(themetitle)|%Vd(sbstitle)>
+%?if(%St(battery display), =, numeric)<%Vd(batteryn)|%?if(%bc, =, c)<%Vd(batteryn)|%?if(%bp, =, p)<%Vd(batteryn)|%Vd(batteryg)>>>
+%?mp<%Vd(pbbg)|%Vd(pb)>
+%Vd(artborders)
+%?C<%Vd(art)|%Vd(miniart)>
+# Playback stopped
+%?if(%mp, =, 1)<%?if(%Lt, =, themes)<%Vd(bottombar)%Vd(themesurl)|%Vd(bottombar)%Vd(date)>|>
+# Playback not stopped, playing music
+%?if(%mp, >, 1)<%?if(%mp, <=, 7)<%?if(%mp, <=, 7)<%?if(%ig, =, Chamber Music)<%Vd(bottombar)%Vd(composer)%Vd(play)|%?if(%ig, =, Classical)<%Vd(bottombar)%Vd(composer)%Vd(play)|%?if(%ig, =, Opera)<%Vd(bottombar)%Vd(composer)%Vd(play)|%?if(%ig, =, Sonata)<%Vd(bottombar)%Vd(composer)%Vd(play)|%?if(%ig, =, Symphony)<%Vd(bottombar)%Vd(composer)%Vd(play)|%Vd(bottombar)%Vd(metadata)%Vd(play)>>>>>>|>|>
+# Playback not stopped, listening to the radio
+%?if(%mp, >, 1)<%?if(%mp, >=, 8)<%Vd(bottombar)%Vd(radio)%Vd(play)|>|>
+
+# White BG
+%Vl(whitebg,22,54,331,201,-)
+%dr(0,0,331,192,ffffff)
+
+# Status Bar BG: the trailing space characters here are voluntary, in order to have the viewport draw the background color
+# top
+%Vl(statusbar,22,30,331,15,-)
+%Vb(-)
+%Vf(-)
+%al 
+%Vl(statusbargeneric,22,45,331,9,-)
+%Vb(-)
+%Vf(-)
+%al 
+%Vl(statusbarpreset,22,45,331,7,-)
+%Vb(-)
+%Vf(-)
+%al 
+# generic bottom border
+%Vl(statusbargeneric,22,52,331,2,-)
+%Vb(-)
+%Vf(-)
+%xd(sbborder)
+# default bottom border
+%Vl(statusbardefault,22,52,331,2,-)
+%Vb(393839)
+%Vf(-)
+%al 
+# blue bottom border
+%Vl(statusbarblue,22,52,331,2,-)
+%Vb(294173)
+%Vf(-)
+%al 
+# green bottom border
+%Vl(statusbargreen,22,52,331,2,-)
+%Vb(397531)
+%Vf(-)
+%al 
+# lime bottom border
+%Vl(statusbarlime,22,52,331,2,-)
+%Vb(7b8e21)
+%Vf(-)
+%al 
+# orange bottom border
+%Vl(statusbarorange,22,52,331,2,-)
+%Vb(b55d18)
+%Vf(-)
+%al 
+# scarlet bottom border
+%Vl(statusbarscarlet,22,52,331,2,-)
+%Vb(943429)
+%Vf(-)
+%al 
+# storm bottom border
+%Vl(statusbarstorm,22,52,331,2,-)
+%Vb(52616b)
+%Vf(-)
+%al 
+
+
+# Volume
+%Vl(statusbar,26,34,48,16,-)
+%Vb(-)
+%Vf(-)
+%al%?if(%pv, >, 0)<+|>%pv dB
+
+# Status Bar Title
+%Vl(sbstitle,74,34,227,16,-)
+%Vb(-)
+%Vf(-)
+%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<…|>%?Lt<%Lt|Rockbox>%?if(%lh, =, h)<…|>%?if(%mh, =, h)< ]|>
+
+# Status Bar Title
+%Vl(themetitle,74,34,227,16,-)
+%Vb(-)
+%Vf(-)
+%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<…|>Basta r80%?if(%lh, =, h)<…|>%?if(%mh, =, h)< ]|>
+
+# Battery (graphical)
+%Vl(batteryg,323,34,26,13,-)
+%Vb(-)
+%Vf(-)
+%?if(%bl, >, 88)<%xd(battery,5)|%?if(%bl, >, 63)<%xd(battery,4)|%?if(%bl, >, 38)<%xd(battery,3)|%?if(%bl, >, 13)<%xd(battery,2)|%xd(battery,1)>>>>
+
+# Battery (numerical)
+%Vl(batteryn,301,34,48,16,-)
+%Vb(-)
+%Vf(-)
+%ar%bl%%
+
+# Progress Bar
+%Vl(pb,22,255,331,3,-)
+%pb(0,0,331,2,progressbar.bmp,backdrop,pbbg)
+
+%Vl(pbbg,22,255,331,3,-)
+%xd(pbbg)
+
+# Bottom Bar
+%Vl(bottombar,22,258,331,15,-)
+%dr(0,0,331,14,e7e7e7)
+%Vl(bottombar,22,273,331,15,-)
+%dr(0,0,331,14,e7e7e7)
+%Vl(bottombar,22,288,331,2,-)
+%dr(0,0,331,2,e7e7e7)
+
+# Artwork Borders
+%Vl(artborders,49,262,4,24,-)
+%xd(miniartright)
+
+%Vl(artborders,26,286,27,4,-)
+%xd(miniartbottom)
+
+# Cover Artwork
+%Vl(art,26,262,23,24,-)
+%Cl(0,0,23,23,c,c)
+%Cd
+
+# Mini Artwork
+%Vl(miniart,26,262,23,24,-)
+%xd(miniart)
+
+# Song Metadata
+%Vl(metadata,57,266,268,15,-)
+%Vb(e7e7e7)
+%Vf(525152)
+%s%al%?it<“%it”|%fn>%?ia<%, by %ia|%?iA<%, by %iA|>>
+
+# Song Metadata (Composer)
+%Vl(composer,57,266,268,15,-)
+%Vb(e7e7e7)
+%Vf(525152)
+%s%al%?it<“%it”|%fn>%?ic<%, by %ic|%?ia<%, by %ia|%?iA<%, by %iA|>>>
+
+# Radio Name and Frequency
+%Vl(radio,57,266,268,15,-)
+%Vb(e7e7e7)
+%Vf(525152)
+%s%al%?Tn<%Tn %(%tf FM%)|%?ty<%ty %(%tf FM%)|FM Radio %(%tf MHz%)>>
+
+# Play Status
+%Vl(play,331,264,18,18,-)
+%Vb(e7e7e7)
+%Vf(525152)
+%xd(playmode,%mp,0)
+
+# Date
+%Vl(date,57,266,224,15,-)
+%Vb(e7e7e7)
+%Vf(525152)
+%s%al%?cu<Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday>, %?cm<January|February|March|April|May|June|July|August|September|October|November|December> %ce, %cY
+
+# Time
+%Vl(date,281,266,62,15,-)
+%Vb(e7e7e7)
+%Vf(525152)
+%s%ar%?cf<%cH:%cM|%cl:%cM %cP>
+
+# Themes URL
+%Vl(themesurl,57,266,286,15,-)
+%Vb(e7e7e7)
+%Vf(525152)
+%alhttp://caudec.net/rockbox/

@@ -1,0 +1,190 @@
+#        ______          __                                      __
+#       /\__  _\        /\ \__                                  /\ \
+#       \/_/\ \/     ___\ \ ,_\    __   _ __   _____     ___    \_\ \
+#          \ \ \   /' _ `\ \ \/  /'__`\/\`'__\/\ '__`\  / __`\  /'_` \
+#           \_\ \__/\ \/\ \ \ \_/\  __/\ \ \/ \ \ \L\ \/\ \L\ \/\ \L\ \
+#           /\_____\ \_\ \_\ \__\ \____\\ \_\  \ \ ,__/\ \____/\ \___,_\
+#           \/_____/\/_/\/_/\/__/\/____/ \/_/   \ \ \/  \/___/  \/__,_ /
+#                                                \ \_\
+#                                                 \/_/
+#                                    ___
+#                                  /'___`\
+#     v.2.4                       /\_\ /\ \           by Christian Soffke
+#     2024-05-21                  \/_/// /__                     CC-BY-SA
+#                                    // /_\ \
+#                                   /\______/
+#                                   \/_____/
+#
+#	Disable status bar
+%wd
+#
+#	Load needed fonts
+%Fl(3,15-Inter-Bold.fnt)
+%Fl(4,13-Inter-SemiBold.fnt)
+%Fl(8,20-Inter-SemiBold.fnt)
+%Fl(9,20-Inter-V.fnt)
+#
+#	Preload icons
+%xl(B,batt_status.bmp,0,5,10)
+%xl(R,repeat.bmp,30,1)
+%xl(X,repeatOne.bmp,11,0)
+%xl(Y,repeatShuffle.bmp,11,0)
+%xl(Z,repeatAB.bmp,0,0)
+%xl(S,shuffle.bmp,56,1)
+%xl(vb_backdrop,vb_backdrop.bmp,0,0)
+%xl(pb_backdrop,pb_backdrop.bmp,0,0)
+%xl(pb_active_backdrop,pb_active_backdrop.bmp,0,0)
+%xl(speaker_loud,speaker_loud.bmp,308,1)
+%xl(speaker_too_loud,speaker_too_loud.bmp,332,1)
+#
+#
+# ---------
+# Logic:
+# ---------
+#	Display lock icon if hold slider on
+%?mh<%Vd(locked)>
+#
+# 	Display volume bar instead of artist string while adjusting volume
+%?mv(1.2)<%Vd(volumebar)|%Vd(artist)>
+#
+%?bs<%Vd(sleeptimer)>
+#
+#   Show album art frame and progress bar, or show Pause overlay.
+#   Enlarge progress bar when seeking.
+#   Show elapsed/remaining when seeking, and during or right after volume changes, unless paused
+%?mp<|%Vd(playing)%Vd(pb)%?mv(5)<%Vd(elapsed_remaining)>|%Vd(paused)|%Vd(playing)%Vd(pb_active)%Vd(elapsed_remaining)>
+#
+#	Shorten track title when battery text is displayed
+%?if(%St(battery display), =,numeric)<%Vd(batterytext)%Vd(track_short)|%Vd(track_long)>
+#
+# ---------
+# Viewports:
+# ---------
+#    Background
+%V(0,0,-,-,-)%VB
+# 	Load Backdrop
+%x(WPSBackdrop,backdrop_wps.bmp,0,0)
+#
+%V(95,12,184,184,-)%VB
+%Vf(000000)
+%Vb(EAEAEA)
+%Cl(0,0,184,184,c,c)
+%?C<|%x(AlbumPlaceholder,albumPlaceholder.bmp,0,0)>
+%Cd
+#
+#    Foreground
+%V(0,0,-,-,-)
+#
+# Lock Icon
+%Vl(locked,56,10,15,15,-)
+%Vb(F7F7F7)
+%x(lock,lock.bmp,3,2)
+#
+#
+#	Battery percentage
+%Vl(batterytext,264,258,44,20,3)
+%Vf(000000)
+%Vb(F7F7F7)
+ %?if(%bl, =, 100)<CGD|%bl %%>
+#
+#
+# 	Battery Icon
+%V(312,254,32,27,3)
+%Vf(000000)
+%?bp<%?bl<%xd(Ba)|%xd(Ba)|%xd(Ba)|%xd(Bb)|%xd(Bb)|%xd(Bb)|%xd(Bb)|%xd(Bc)|%xd(Bc)|%xd(Bc)|%xd(Bc)|%xd(Bc)|%xd(Bc)|%xd(Bd)|%xd(Bd)|%xd(Bd)|%xd(Bd)|%xd(Bd)|%xd(Bd)|%xd(Bd)|%xd(Be)|%xd(Be)>|%?bl<%xd(Bf)|%xd(Bf)|%xd(Bf)|%xd(Bg)|%xd(Bg)|%xd(Bg)|%xd(Bg)|%xd(Bh)|%xd(Bh)|%xd(Bh)|%xd(Bh)|%xd(Bh)|%xd(Bh)|%xd(Bi)|%xd(Bi)|%xd(Bi)|%xd(Bi)|%xd(Bi)|%xd(Bi)|%xd(Bi)|%xd(Bj)|%xd(Bj)>>
+#
+#
+#	Sleep Timer
+%Vl(sleeptimer,270,10,64,20,3)
+%Vf(000000)
+%Vb(f8f8f8)
+%bs
+#
+# 	Repeat Mode and Shuffle indicators
+%V(264,229,90,17,-)
+%Vf(6f6f6f)
+%Vb(f8f8f8)
+%?mm<|%xd(Ra)|%xd(Ra)%xd(X)|%xd(Ra)%xd(Y)|%xd(Ra)%xd(Z)>
+%?if(%ps, =, s)<%xd(S)|>
+#
+# 	Album Art
+%Vl(playing,95,12,184,184,-)
+%?C<%x(AlbumFramed,albumFramed.bmp,0,0)>
+#
+#
+%Vl(paused,95,12,184,184,-)
+%x(paused,paused.bmp,0,0)
+#
+# --------------------------------------
+# -----------  Song Info   -------------
+# --------------------------------------
+#
+#
+# 	Position in Playlist and number of items in total 
+%V(30,226,230,19,3)
+%Vf(6f6f6f)
+%Vb(8E0808)
+%al%pp %Sx(of) %pe
+#
+#
+#	Current Track or filename  ----- if battery percentage is displayed
+%Vl(track_short,30,246,262,29,8)
+%Vf(000000)
+%Vb(F7F7F7)
+%s%al%?it<%it|%fn>
+#
+#	Current Track or filename ------ otherwise
+%Vl(track_long,30,246,300,29,8)
+%Vf(000000)
+%Vb(F7F7F7)
+%s%al%?it<%it|%fn>
+#
+#	Current Artist
+%Vl(artist,30,274,315,29,9)
+%Vf(000000)
+%Vb(f8f8f8)
+%al%s%?ia<%t(5)%?if(%ig,=,Classical)<%?ic<By %ic - >%ia|%ia>|%?it<%fn>>;%s%?id<%t(5)%id|%t(0)>
+#
+#
+# --------------------------
+# ----- Progress Bar -------
+# --------------------------
+#
+#	Progress Bar
+%Vl(pb,103,177,167,12,-)
+%x(pb_left,pb_left.bmp,0,0)
+%pb(5,0,157,12,image,pb.bmp,backdrop,pb_backdrop)
+%x(pb_right,pb_right.bmp,162,0)
+#
+%Vl(pb_active,103,172,167,20,-)
+%Vf(9E9EA6)
+%Vb(E0E0E0)
+%x(pb_active_left,pb_active_left.bmp,0,0)
+%pb(4,0,159,20,image,pb_active.bmp,backdrop,pb_active_backdrop)
+%x(pb_active_right,pb_active_right.bmp,163,0)
+#
+#	Time Elapsed and Remaining
+%Vl(elapsed_remaining,284,175,80,19,4)
+%Vf(6f6f6f)
+%Vb(f8f8f8)
+%s%al-%pr
+#
+%Vl(elapsed_remaining,11,175,80,19,4)
+%Vf(6f6f6f)
+%Vb(f8f8f8)
+%s%ar%pc
+#
+#
+# --------------------------------------
+# ----------   Volume Bar   ------------
+# --------------------------------------
+#
+%Vl(volumebar,0,282,375,24,-)
+%Vf(ededed)
+%Vb(ededed)
+%x(speaker_mute,speaker_mute.bmp,46,5)
+%pv(66,7,238,11,vb.bmp,backdrop,vb_backdrop)
+%xd(speaker_loud)
+%?if(%pv, >, 0)<%xd(speaker_too_loud)>
+#
+#

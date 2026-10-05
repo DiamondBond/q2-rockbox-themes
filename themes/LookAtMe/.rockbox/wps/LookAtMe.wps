@@ -1,0 +1,79 @@
+# LookAtMe by Serge Fnstll
+# 2026-06-23 v1.0
+# Shanling Q2 (375x320) port, 2026: layout redrawn for the larger screen and
+# kept inside the glass's rounded corners; SF Pro replaced by Inter.
+
+# Disable Status Bar
+%wd
+
+# Preload Font
+%Fl(3,16-Inter-Bold.fnt)
+%Fl(4,16-Inter-Regular.fnt)
+
+# Preload Images
+%xl(volbg,volbg.bmp,0,0)
+%xl(f,rf.bmp,0,0)
+%xl(prog,prog.bmp,0,0)
+%xl(progbg,progbg.bmp,0,0)
+%xl(L,lock.bmp)
+%xl(ncm,nocover_main_2.bmp)
+%xl(ncf,nocover_main.bmp)
+%xl(back,bg.bmp)
+%Cl(0,-40,375,375,c,c)
+
+# Viewport Rules
+
+# Screen changer
+%?or(%if(%mp,=,1),%if(%mp,=,3),%if(%mp,=,4),%if(%mp,=,5),%mv(5),%pS(5),%mh)<%Vd(meta)%Vd(lock)%Vd(prog)%?mv(5)<%Vd(volume)|>%?C<%Vd(metac)%Vd(metaback)|%Vd(metanc)%Vd(metaback)>|%Vd(prog)%?C<%Vd(full)|%Vd(fullnc)>>
+
+# Display Viewports
+
+# Album Art (Fullscreen)
+%Vl(full,0,0,375,306,-)
+%Cd
+
+# Album Art (Fullscreen)
+%Vl(fullnc,0,0,375,306,-)
+%xd(ncf)
+
+# Album Art (Meta-screen)
+%Vl(metac,0,0,375,250,-)%VB
+%Cd
+%Vl(metac,0,0,375,250,-)
+
+# Album Art (Meta-screen)
+%Vl(metanc,0,0,375,250,-)%VB
+%xd(ncm)
+%Vl(metanc,0,0,375,250,-)
+
+# Transparent foreground status
+%Vl(meta,0,0,375,250,-)
+%?if(%mp, =, 3)<%xd(f)|>
+
+# Background (Meta-screen)
+%Vl(metaback,0,250,375,56,-)%VB
+%xd(back)
+%Vl(metaback,0,250,375,56,-)
+
+# Title
+%Vl(meta,28,256,319,20,3)%Vf(e3e3e3)
+%al%s%it
+
+# Artist
+%Vl(meta,28,279,222,20,4)%Vf(c3c3c3)
+%al%s%ia
+
+# Volume bar
+%Vl(volume,262,288,80,3,-)%VB
+%?mv(5)<%?mh<|%xd(volbg)>|>
+%Vl(volume,262,288,80,3,-)-
+%?mv(5)<%?mh<|%pv(0,0,80,3,noborder)%Vf(e3e3e3)>|>
+
+# Lock
+%Vl(lock,334,283,8,10,-)
+%?mh<%xd(L)>
+%?mh<%Vd(lock)|%Vd(volume)>
+
+# Progress Bar (inside the glass's bottom corners)
+%Vl(prog,48,309,279,4,-)%Vf(-)
+%pb(0,0,279,4,prog,backdrop,progbg)

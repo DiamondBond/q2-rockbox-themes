@@ -1,0 +1,92 @@
+
+# Theme: BACKBONE
+# Version 1.0
+# Last Update: 01/17/2026
+# License: CC-BY-SA 3.0
+# By: Monica G.
+# Description: BACKBONE is a spinoff of the minimalist BONES theme by Chuck Nardo! Some additions / modifications include:
+# On the WPS, instead of track number, the playlist number is displayed / alternates with the time.
+# Battery level is displayed on the WPS and bitrate is also shown plus more file types.
+# Next song will display as the current track is ending.
+# If a song is currently playing it is displayed on the SBS as well as play status.
+# The menu title is displayed when navigating menus but will alternate to the time.
+# Quick menu utilizes a smaller font and displays time / play status.
+# A few lines are drawn in to add structure, but all icons remain unchanged.
+
+## SBS File ##
+
+# Disable Status Bar
+%wd
+
+# Disable Title
+%?Lt<|>
+
+# Preload Fonts
+%Fl(2,15-ProFont.fnt)
+%Fl(3,22-ProFont.fnt)
+
+# Preload Images
+%xl(X,bg_skull.bmp,0,0)
+%xl(T,stop_icon.bmp,0,0)
+%xl(L,play_icon.bmp,0,0)
+%xl(Z,pause_icon.bmp,0,0)
+
+# Display Viewports
+%?if(%cs, =, 21)<%VI(clearScreen)%Vd(usbScreen)|%Vd(mainMenu)<%VI(mainMenu)%Vd(mainMenu)>>
+
+# Clear Screen
+%Vi(clearScreen,0,0,2,5,-)
+
+## Main Menu ##
+
+# Main Menu UI Viewport
+%Vi(mainMenu,36,40,303,214,3)
+
+# Hold indicator / Menu Title / Time
+%Vl(mainMenu,36,14,280,18,2)
+%?mh<HOLD|%t(2)%Lt;%t(15)%?cf<%cH|%cl>:%cM%?cf<| %cP>>
+
+# Now Playing
+%Vl(mainMenu,36,266,303,18,2)
+%?mp<|%s%?it<%it|%fn>%?ia< - %ia>|>
+
+# Play/Pause Icons
+%Vl(mainMenu,326,16,13,13,-)
+%?mp<%xd(T)|%xd(L)|%xd(Z)>
+
+# Line
+%Vl(mainMenu,36,34,303,1,-)
+%dr(0,0,303,1)
+
+## Quick Screen ##
+
+# Clear Screen
+%?if(%cs, =, 10)<%Vd(QuickScreen)%VI(QuickScreen)>
+
+# Quick Screen Viewport
+%Vi(QuickScreen,36,40,303,214,2)
+
+# Quick Screen Time
+%Vl(QuickScreen,36,14,280,18,2)
+%?cf<%cH|%cl>:%cM%?cf<| %cP>
+
+# Quick Screen Line
+%Vl(QuickScreen,36,34,303,1,-)
+%dr(0,0,303,1)
+
+## USB Screen ##
+
+# USB Screen Viewport
+%Vl(usbScreen,0,0,375,320,-)
+
+# USB Text
+%Vl(usbScreen,36,14,303,26,3)
+%acUSB%Vs(invert)
+
+# Eject Warning
+%Vl(usbScreen,36,256,303,18,2)
+%ac%t(1)! EJECT BEFORE DISCONNECTING !;%t(.1)%ac
+
+# Skull
+%Vl(usbScreen,36,76,303,156,-)
+%xd(X)

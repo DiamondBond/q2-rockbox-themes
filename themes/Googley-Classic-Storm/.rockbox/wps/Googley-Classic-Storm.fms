@@ -1,0 +1,128 @@
+# Theme by Guillaume Cocatre-Zilgien <gcocatre@gmail.com>
+# CC-BY-SA
+
+# Disable status bar
+%wd
+# Backdrop
+%X(fms.bmp)
+
+# play icons
+%xl(playmode,playmode.bmp,0,0,12)
+
+# storage activity indicator off, lock on
+%xl(storageofflockon,storage_off-lock_on.bmp,0,0)
+# storage activity indicator on, lock off
+%xl(storageonlockoff,storage_on-lock_off.bmp,0,0)
+# storage activity indicator on, lock on
+%xl(storageonlockon,storage_on-lock_on.bmp,0,0)
+
+# Status bar: emphasize volume when > 0dB, storage activity, and battery level when < 10%
+# Rockbox bug/quirk: %?if() evaluates the number that's being tested to (number + 1).
+# Example: '14-Nimbus' will return true when tested to be equal to 15.
+# So here when I'm testing whether the font is '> 15', I'm really testing if the font size is strictly superior to 14, not 15.
+%?if(%ss(0, 2, %St(font), number), >, 15)<%Vd(status19)|%Vd(status14)>%Vd(storage)
+
+# Volume
+%Vl(status14,32,34,147,18,-)
+%Vf(e3e8eb)
+%?if(%pv, >, 0)<%ac[ %pv dB ]|%ac%pv dB>
+
+%Vl(status19,32,31,147,21,-)
+%Vf(e3e8eb)
+%?if(%pv, >, 0)<%ac[ %pv dB ]|%ac%pv dB>
+
+# Storage
+%Vl(storage,179,35,16,11,-)
+%?if(%lh, =, h)<%?if(%mh, =, h)<%xd(storageonlockon)|%xd(storageonlockoff)>|%?if(%mh, =, h)<%xd(storageofflockon)|>>
+
+# Battery
+%Vl(status14,195,34,148,18,-)
+%Vf(e3e8eb)
+%?if(%bc, =, c)<%ac+%bl%%|%?if(%bp, =, p)<%ac*%bl%%|%?if(%bl, <, 10)<%ac[ %bl%% ]|%ac%bl%%>>>
+
+%Vl(status19,195,31,148,21,-)
+%Vf(e3e8eb)
+%?if(%bc, =, c)<%ac+%bl%%|%?if(%bp, =, p)<%ac*%bl%%|%?if(%bl, <, 10)<%ac[ %bl%% ]|%ac%bl%%>>>
+
+# Cover Artwork
+%V(32,79,143,149,-)
+%Cl(0,0,143,143,c,c)
+%Cd
+
+# Metadata
+
+%?if(%ss(0, 2, %St(font), number), >, 15)<%Vd(metadata19)|%Vd(metadata14)>
+
+# Preset or Frequency
+%Vl(metadata14,188,95,155,27,-)
+%Vf(666666)
+%s%ac%?Ti<Preset %Ti/%Tc|%tf MHz>
+
+# Preset or RDS name
+%Vl(metadata14,188,122,155,27,-)
+%Vf(748c9c)
+%s%ac%?Tn<%Tn|%?ty<%ty|FM Radio>>
+
+# RDS information
+%Vl(metadata14,188,149,155,27,-)
+%Vf(000000)
+%s%ac%?tz<%tz|No RDS Data>
+
+# Signal strength
+%Vl(metadata14,188,176,155,27,-)
+%Vf(a0a0a0)
+%s%ac%?tr<Weak|Good|Strong|Strong> Signal
+
+# Mono/stereo
+%Vl(metadata14,188,203,155,27,-)
+%Vf(a0a0a0)
+%s%ac%?ts<Stereo|Mono>
+
+# Preset or Frequency
+%Vl(metadata19,188,91,155,27,-)
+%Vf(666666)
+%s%ac%?Ti<Preset %Ti/%Tc|%tf MHz>
+
+# Preset or RDS name
+%Vl(metadata19,188,118,155,27,-)
+%Vf(748c9c)
+%s%ac%?Tn<%Tn|%?ty<%ty|FM Radio>>
+
+# RDS information
+%Vl(metadata19,188,145,155,27,-)
+%Vf(000000)
+%s%ac%?tz<%tz|No RDS Data>
+
+# Signal strength
+%Vl(metadata19,188,172,155,27,-)
+%Vf(a0a0a0)
+%s%ac%?tr<Weak|Good|Strong|Strong> Signal
+
+# Mono/stereo
+%Vl(metadata19,188,199,155,27,-)
+%Vf(a0a0a0)
+%s%ac%?ts<Stereo|Mono>
+
+
+# Progress Bar
+%V(22,255,331,3,-)
+%pb(0,0,331,2,progressbar.bmp)
+
+# FM radio status
+%?if(%ss(0, 2, %St(font), number), >, 15)<%Vd(radiostatus19)|%Vd(radiostatus14)>
+
+%Vl(radiostatus14,22,266,156,24,-)
+%ac%?tm<Scan|%?Ti<Preset %Ti|No Preset>>
+
+%Vl(radiostatus19,22,263,156,24,-)
+%ac%?tm<Scan|%?Ti<Preset %Ti|No Preset>>
+
+%Vl(radiostatus14,196,266,157,24,-)
+%ac%tf MHz
+
+%Vl(radiostatus19,196,263,157,27,-)
+%ac%tf MHz
+
+# Radio
+%V(178,264,18,18,-)
+%xd(playmode,%mp,0)

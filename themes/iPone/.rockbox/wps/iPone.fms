@@ -1,0 +1,93 @@
+# Theme: iPone 
+# based on the iClassic Theme by Humberto Santana (humbertosantana@hotmail.com)
+# License: Creative Commons Attribution-Share Alike 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
+# This Theme is copletely base on the wonderful iclassic Theme. I just fixed some alignment issues and tweak the structure of the menu items,
+# that the majotiry of them will show inside the statusbar. Sometimes <ERR> is still shown - maybe fixed in future updates
+# Version 1.0
+# Last Update: March, 03 2026
+# First Version: March, 03 2026
+#
+# FMS File
+#
+%wd
+%X(iPone_bg.bmp)
+%T(0,0,223,19,menu)
+%T(0,0,223,19,&cancel)
+%T(0,207,60,26,prev)
+%T(0,207,60,26,&rwd)
+%T(166,137,67,16,presets)
+%T(271,207,60,26,next)
+%T(271,207,60,26,&ffwd)
+%T(248,0,47,19,play)
+%T(248,0,47,19,&stop)
+%T(60,213,211,24,progressbar)
+%Fl(2,14-Adobe-Helvetica-Bold.fnt)
+%Fl(3,16-Adobe-Helvetica-Bold.fnt)
+#%Fl(4,12-Adobe-Helvetica-Bold.fnt,12)
+%?mv(5)<%?St(battery display)<%Vd(title)|%Vd(titlebat)>|%?St(battery display)<%?mp<%Vd(clock)|%Vd(clock)|%Vd(clock)|%Vd(title)|%Vd(title)>|%?mp<%Vd(clock)|%Vd(clock)|%Vd(clock)|%Vd(titlebat)|%Vd(titlebat)>>>
+%Vl(title,27,33,255,15,2)%Vf(000000)
+%s%al%Sx(FM Radio)
+%Vl(titlebat,27,33,218,15,2)%Vf(000000)
+%s%al%Sx(FM Radio)
+%Vl(clock,27,33,218,15,2)%Vf(000000)
+%t(10)%s%al%Sx(FM Radio);%t(30)%s%al%?cf<%cH:%cM|%cl:%cM %cP>
+%xl(B,Battery.bmp,0,0,24)
+%V(323,34,26,12,-)
+%?bp<%?bc<%t(1.0)%xd(Ba);%t(1.0)%xd(Bb)|%xd(Bc)>|%?bl<%xd(Bd)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)|%xd(Bk)|%xd(Bl)|%xd(Bm)|%xd(Bn)|%xd(Bo)|%xd(Bp)|%xd(Bq)|%xd(Br)|%xd(Bs)|%xd(Bt)|%xd(Bu)|%xd(Bv)|%xd(Bw)|%xd(Bx)||>>
+%?St(battery display)<%Vd(nonumbat)|%Vd(numbat)>
+%Vl(numbat,286,33,33,13,2)%Vf(000000)
+%ac%bl%%
+%xl(P,Playing Status.bmp,0,0,4)
+%Vl(numbat,266,33,17,14,-)
+%?mp<|%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)|||%xd(Pa)|%xd(Pb)>
+%Vl(nonumbat,302,33,17,14,-)
+%?mp<|%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)|||%xd(Pa)|%xd(Pb)>
+%xl(h,Hold Icon.bmp,0,1)
+%xl(M,Memory Access.bmp,0,0,6)
+%Vl(numbat,247,33,14,14,-)
+%?lh<%t(0.1)%xd(Ma);%t(0.1)%xd(Mb);%t(0.1)%xd(Mc);%t(0.1)%xd(Md);%t(0.1)%xd(Me);%t(0.1)%xd(Mf)|%?mh<%xd(h)|>>
+%Vl(nonumbat,284,32,13,14,-)
+%?lh<%t(0.1)%xd(Ma);%t(0.1)%xd(Mb);%t(0.1)%xd(Mc);%t(0.1)%xd(Md);%t(0.1)%xd(Me);%t(0.1)%xd(Mf)|%?mh<%xd(h)|>>
+%xl(s,Stereo Icon.bmp,0,0)
+%V(327,53,18,15,-)
+%?ts<%xd(s)|>
+%?C<%Vd(aa)|%Vd(na)>
+%xl(w,FrameTop.bmp,0,0)
+%xl(x,FrameLeft.bmp,0,13)
+%xl(y,FrameRight.bmp,145,13)
+%xl(z,FrameBottom.bmp,0,141)
+%Cl(3,4,143,143,c,c)
+%Vl(aa,29,72,149,154,-)
+#%V(7,39,144,142,-)
+%Cd%xd(w)%xd(x)%xd(y)%xd(z)
+%xl(r,Radio Icon.bmp,4,4)
+%Vl(na,29,72,149,154,-)
+%xd(r)
+%V(188,88,162,23,1)%Vf(000000)
+%al%tf Mhz
+%V(188,113,162,21,3)%Vf(888888)
+%s%al%?Tn<%Tn|%?ty<%ty|%?tt<Tuned|tune>>>
+%V(188,134,162,21,3)%Vf(888888)
+%s%al%?tz<%tz|%Sx(Signal strength:)>
+%xl(R,Ratings.bmp,0,0,10)
+%V(188,156,68,14,-)
+%?tr<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)|%xd(Re)|%xd(Rf)|%xd(Rg)|%xd(Rh)|%xd(Ri)|%xd(Rj)>
+%V(188,175,162,15,2)%Vf(888888)
+%s%al%?tm<%Sx(Scan)|%Ti %Sx(of) %Tc>
+%?mv(2.0)<%Vd(volume)|%Vd(pb)>
+%Vl(pb,82,253,211,25,-) 
+%pb(0,0,211,24,PB.bmp)
+%Vl(volume,82,253,211,25,-)
+%pv(0,0,211,24,PB.bmp)
+%xl(V,Volume Right.bmp,0,0)
+%Vl(volume,304,250,22,23,-)
+%xd(V)
+%xl(v,Volume Left.bmp,0,0)
+%Vl(volume,57,251,14,21,-)
+%xd(v)
+%Vl(volume,82,276,211,14,2)%Vf(000000)
+%ac%?St(volume display)<|%pv dB>
+%Vl(pb,22,254,47,15,2)%Vf(000000)
+%ar%ta
+%Vl(pb,304,254,49,15,2)%Vf(000000)
+%al%tb

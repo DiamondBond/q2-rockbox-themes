@@ -1,0 +1,83 @@
+# Theme by Guillaume Cocatre-Zilgien <gcocatre@gmail.com>
+# CC-BY-SA
+# Based on iClassic Square, by Humberto Santana
+
+# Disable status bar
+%wd
+# Backdrop
+%X(fms.bmp)
+
+# Status bar
+%?if(%pv, >, 0)<%?if(%pv, >, 3)<%Vd(volumeveryhigh)|%Vd(volumehigh)>|%Vd(volume)>
+%?if(%lh, =, h)<%Vd(storageon)|%Vd(storageoff)>
+%Vd(statusplaymode)
+%?if(%bl, <, 10)<%?if(%bl, <, 5)<%Vd(batteryverylow)|%Vd(batterylow)>|%Vd(battery)>
+
+%Vl(volume,32,33,89,14,-)
+%Vf(555555)
+%al%pv dB
+
+%Vl(volumehigh,32,33,89,14,-)
+%Vf(186dbd)
+%al%pv dB
+
+%Vl(volumeveryhigh,32,33,89,14,-)
+%Vf(ff0000)
+%al%pv dB
+
+%Vl(storageon,125,33,74,14,-)
+%Vf(186dbd)
+%arHDD
+
+%Vl(storageoff,125,33,74,14,-)
+%Vf(999999)
+%arHDD
+
+%Vl(statusplaymode,203,35,9,10,-)
+%xl(playmode,playmode.bmp,0,0,9)
+%xd(playmode,%mp,0)
+
+%Vl(battery,253,33,90,14,-)
+%Vf(555555)
+%ar%bl%%
+
+%Vl(batterylow,253,33,90,14,-)
+%Vf(186dbd)
+%ar%bl%%
+
+%Vl(batteryverylow,253,33,90,14,-)
+%Vf(ff0000)
+%ar%bl%%
+
+# Metadata
+%V(167,90,176,15,-)
+%Vf(666666)
+%s%ac%tf FM
+
+%V(167,118,176,15,-)
+%Vf(186dbd)
+%s%ac%?ty<%ty|FM Radio>
+
+%V(167,145,176,15,-)
+%Vf(000000)
+%s%ac%?tz<%tz|No RDS information>
+
+%V(167,172,176,15,-)
+%Vf(a0a0a0)
+%s%ac%?ts<stereo|mono>, %?tr<%tr|0> dBu
+
+%V(167,199,176,15,-)
+%Vf(a0a0a0)
+%s%ac%?tm<Scan Mode|Preset %Ti/%Tc>
+
+# min FM frequency
+%V(32,254,50,14,-)
+%ac%ta
+
+# Progress Bar
+%V(82,253,211,25,-)
+%pb(0,0,211,24,progressbar.bmp)
+
+# max FM frequency
+%V(293,254,50,14,-)
+%ac%tb

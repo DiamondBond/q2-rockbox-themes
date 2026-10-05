@@ -1,0 +1,165 @@
+#__Die Bahn
+#__by__Jihoon_Kim_
+#__licence__CC-BY-SA 4.0
+#__version__1.6
+#__2025
+#__target resolution 320x240
+#__tested on Surfans F20
+
+# Draw backdrop (white stripe for title bar)
+%V(0,0,375,320,-) %VB
+%dr(64,106,2,101)
+%V(0,0,375,320,-)
+%dr(0,38,-,68)
+
+# Hide the status bar
+%wd
+
+# Font preload
+%Fl(3,15-Adobe-Helvetica.fnt)
+%Fl(4,16-Adobe-Helvetica-Bold.fnt)
+%Fl(5,18-Adobe-Helvetica-Bold.fnt)
+%Fl(6,21-Adobe-Helvetica-Bold.fnt)
+# Necessary since %Vl tag won't budge unless you have an appropriately sized font set for the viewport
+%Fl(7,08-Fixed.fnt)
+
+# Bitmap preload
+%xl(A,downarrow.bmp)
+%xl(I,info_icons.bmp,3)
+%xl(NRP,repeat_off.bmp,12,0)
+%xl(PBK,playback_status.bmp,1,2,3)
+%xl(PBK2,playback_status_2.bmp,1,2,2)
+%xl(RPT,repeat_all.bmp,3,0)
+%xl(RSH,repeat_shuffle.bmp)
+%xl(S,shuffle.bmp)
+%xl(SPK,speaker.bmp)
+%xl(STR,stripe.bmp)
+
+
+# Playlist title
+%V(29,37,228,20,5)
+%al%s%?pn<%pn|%?if(%Sx(Current Playlist),=,<ERR>)<Playlist|%Sx(Current Playlist)>>
+
+# Top Info Display Selector
+%?mv(3)<%Vd(volume)|%Vd(infobox)>
+
+# Top Info (Clock, Battery)
+%Vl(infobox,263,38,85,18,4)
+%t(4)%xd(I)%ar%?cf<%cH|%cl>:%cM%?cf<| %cp>;%t(3)%?bp<%xd(Ic)|%xd(Ib)>%ar%bl%%;%t(2)%?bp<%xd(Ic)%ar%bl%%|%xd(Ib)%ar%bt>
+
+# Top Info (Volume)
+%Vl(volume,263,38,16,17,-)
+%xd(SPK)
+%Vl(volume,284,44,64,6,-)
+%pv(0,0,-,5)
+
+# Highlighted Area (36 < y < 101): %Vs(invert)
+# x: |<6==50>|   |<74=========314>|
+
+# Position in song:
+%V(25,71,47,17,3)
+%arS%pp%Vs(invert)
+
+# Progress bar
+%V(83,71,2,63,-)
+%pb(-,-,-,-,vertical,invert,noborder)
+
+# Playback Status
+# Bitmaps are split into 2 so that bitmap is redrawn only in the necessary area.
+# (so that it doesn't interfere with the text right next to it)
+%V(97,72,22,13,-)
+%?mp<%xd(PBK,1)|%xd(PBK,2)|%xd(PBK,3)|%xd(PBK2,1)|%xd(PBK2,2)> %Vs(invert)
+
+# Playback Status (Text)
+%V(112,71,158,17,3)
+%?mp<Stop|Playing|On Pause|%t(1)   Fast Forward.;%t(1)   Fast Forward..;%t(1)   Fast Forward...|%t(1)   Rewinding.;%t(1)   Rewinding..;%t(1)   Rewinding...>%Vs(invert)
+
+# Played time
+%V(25,92,47,24,6)
+%ar%pc%Vs(invert)
+
+# Title
+%V(97,92,253,24,6)
+%s%?it<%it|%fn>%Vs(invert)
+
+# Total Time
+%V(25,117,47,16,3)
+%ar%pt%Vs(invert)
+
+# Artist
+%V(97,117,253,16,3)
+%t(8)%s%?ia<%ia|Unknown Artist>%Vs(invert);%t(7)%s%?id<%id|Unknown Album>%Vs(invert)
+
+# Next Songs Area
+#                  |line|
+#                |<61==62>|
+#    |   %pt   | |  tick  | |     %it/%fn     |
+# x: |<8====50>| |<58==66>| |<74==========314>|
+
+# Playlist end announcement
+%?if(%pp,=,%pe)<%Vd(finalMessage)|%?or(%if(%mm,=,3), %if(%mm,=,5))<%Vd(finalMessage)|%Vd(nextUp)>>
+
+# Shuffle indicator
+%V(41,147,17,17,-)
+%xd(S,%ps)
+
+# Next up arrow
+%V(78,151,17,9,-)
+%xd(A,%pE(30))
+
+# Repeat mode indicator
+%Vl(nextUp,68,266,26,18,-)
+%?mm<%xd(NRP)|%xd(RPT)||%xd(RSH)|>
+
+# Repeat mode indicator
+#%V(66,-24,238,16,-)
+#%?mm<Repeat Off|Repeat List||Repeat Shuffle|>
+
+# Next song announcement:
+%Vl(nextUp,97,146,278,17,4)
+%?if(%Sx(Next Track:),=,<ERR>)<Next Songs:|%Sx(Next Track:)>
+
+# Next:
+%Vl(nextUp,97,171,251,18,4)
+%Vp(1,%fn)
+%Vl(nextUp,97,198,251,17,4)
+%Vp(2,%fn)
+%Vl(nextUp,97,224,251,18,4)
+%Vp(3,%fn)
+
+
+%Vl(nextUp,27,171,45,18,4)
+%Vp(1,%ac%pp)
+%Vl(nextUp,27,198,45,17,4)
+%Vp(2,%ac%pp)
+%Vl(nextUp,27,224,45,18,4)
+%Vp(3,%ac%pp)
+%Vl(nextUp,27,242,45,18,4)
+%Vp(5,%ac%?fn<...>)
+
+
+# Next Song tick & line
+# Uses hack
+%Vl(nextUp,80,176,8,8,-)
+# Blink when the song ends in 30 seconds (except when paused).
+%?Fn<%?and(%pE(30),%if(%mp,!=,3))<%t(1) %Vs(invert);%t(1) %Vs(clear)| %Vs(invert)>>
+
+%Vl(nextUp,80,202,8,9,7)
+%Vp(2,%?fn< %Vs(invert)>)
+
+%Vl(nextUp,80,229,8,9,7)
+%Vp(3,%?fn< %Vs(invert)>)
+
+%Vl(nextUp,83,245,2,23,-)
+%xd(STR)
+
+%Vl(nextUp,27,266,45,18,4)
+%ac%pe
+
+
+%Vl(finalMessage,97,146,278,20,5)
+%?mm<End of playlist|End of playlist|Single repeat mode|End of playlist|Section repeat mode>
+
+%Vl(finalMessage,97,180,217,140,4)
+%?mm<|Current playlist will be|Current song will be|Current playlist will be|>
+%?mm<|repeated.|repeated.|shuffled and repeated.|>

@@ -1,0 +1,62 @@
+[shortcut]
+type: setting
+data: dac_power_mode
+name: Gain
+icon: -1
+talkclip: 
+
+[shortcut]
+type: setting
+data: brightness
+name: Brightness
+icon: -1
+talkclip: 
+
+[shortcut]
+type: setting
+data: show files
+name: Show Files
+icon: -1
+talkclip: 
+
+[shortcut]
+type: setting
+data: battery display
+name: Battery Icon
+icon: -1
+talkclip: 
+
+[shortcut]
+type: setting
+data: eq enabled
+name: Equalizer
+icon: -1
+talkclip: 
+
+[shortcut]
+type: browse
+data: /.rockbox/eqs/
+name: Equalizer Presets
+icon: -1
+talkclip: 
+
+[shortcut]
+type: setting
+data: balance
+name: L/R Balance
+icon: -1
+talkclip: 
+
+[shortcut]
+type: reboot
+data: 
+name: Reboot
+icon: -1
+talkclip: 
+
+[shortcut]
+type: shutdown
+data: 
+name: Shutdown
+icon: -1
+talkclip: 

@@ -1,0 +1,46 @@
+# Theme: iVideo
+# By: Humberto Santana (humbertosantana@hotmail.com)
+# License: Creative Commons Attribution-Share Alike 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
+# Derived from iLike Theme for 320x240 by Alan Brito, which was ported from the 176x132 version by H. Pearce
+# If used for other works, as per this license, please include the following Attribution Text: "Modified/Derived from iVideo theme for iPod Video (CC-BY-SA 3.0) by Humberto Santana"
+# Sorry for the mess in the code, the base theme wasn't commented and I was too lazy to do it.
+#
+# Version 1.2
+# Last Update: February 22nd, 2011
+# First Version: February 8th, 2011
+#
+# SBS File
+#
+%T(0,0,52,25,select)
+%T(0,0,52,25,&cancel)
+%T(62,0,207,25,menu)
+%T(62,0,207,25,&cancel)
+%wd
+%Fl(2,18-ChicagoFLF.fnt)
+%Fl(3,21-ChicagoFLF.fnt)
+%xl(A,Battery Icon.bmp,0,0,25)
+%xl(B,Disk Access.bmp,0,0,6)
+%xl(C,Hold Icon.bmp,0,0)
+%xl(D,Playmode Icon.bmp,0,0,4)
+%?St(battery display)<%?cs<%Vd(t)|%Vd(n)|%Vd(n)|%Vd(n)|%Vd(n)>|%?cs<%Vd(tbat)|%Vd(nbat)|%Vd(nbat)|%Vd(nbat)|%Vd(nbat)>%Vd(battery)>
+%Vl(n,77,34,221,20,2)%Vf(000000)%Vb(FFFFFF)
+%s%ac%?cs<||%?Rp<%Sx(Recording)>|%?tp<%Sx(FM Radio)>|%Sx(Playlist)>
+%Vl(t,77,34,221,20,2)%Vf(000000)%Vb(FFFFFF)
+%s%ac%?if(%Li, =, 0)<|%?if(%Li, <=, 32)<%Lt|%?if(%Li, =, 33)<%?if(%Tp, =, 1)<Cowon D2|>|>>>
+%?cs<%Vd(t)|%Vd(n)|%Vd(n)|%Vd(n)|%Vd(n)>
+%Vl(nbat,84,34,207,20,2)%Vf(000000)%Vb(FFFFFF)
+%s%ac%?cs<||%?Rp<%Sx(Recording)>|%?tp<%Sx(FM Radio)>|%Sx(Playlist)>
+%Vl(tbat,84,34,207,20,2)%Vf(000000)%Vb(FFFFFF)
+%s%ac%?if(%Li, =, 0)<|%?if(%Li, <=, 32)<%Lt|%?if(%Li, =, 33)<%?if(%Tp, =, 1)<Cowon D2|>|>>>
+%?lh<%Vd(a)|%Vd(b)>
+%Vl(battery,291,36,27,14,3)%Vf(000000)%Vb(FFFFFF)
+%ac%bl%%
+%Vl(b,59,35,11,15,-)%Vf(000000)%Vb(FFFFFF)
+%?mh<%xd(C)|%?mr<%xd(C)>>
+%Vi(-,24,56,328,264,1)%Vf(000000)%Vb(FFFFFF)
+%Vl(a,59,34,17,18,-)%Vf(000000)%Vb(FFFFFF)
+%t(0.1)%xd(Ba);%t(0.1)%xd(Bb);%t(0.1)%xd(Bc);%t(0.1)%xd(Bd);%t(0.1)%xd(Be);%t(0.1)%xd(Bf)
+%V(318,36,26,14,-)%Vf(000000)%Vb(FFFFFF)
+%?bp<%?bc<%t(1.0)%xd(Aa);%t(1.0)%xd(Ab)|%xd(Ac)>|%?bl<%xd(Ad)|%xd(Ad)|%xd(Ae)|%xd(Af)|%xd(Ag)|%xd(Ah)|%xd(Ai)|%xd(Aj)|%xd(Ak)|%xd(Al)|%xd(Am)|%xd(An)|%xd(Ao)|%xd(Ap)|%xd(Aq)|%xd(Ar)|%xd(As)|%xd(At)|%xd(Au)|%xd(Av)|%xd(Aw)|%xd(Ax)|%xd(Ay)>>
+%V(33,34,19,17,-)%Vf(000000)%Vb(FFFFFF)
+%?mp<|%xd(Da)|%xd(Db)|%xd(Dc)|%xd(Dd)|%?Rp<%xd(Da)>|%?Rp<%xd(Db)>|%?tp<%xd(Da)>|%?tp<%xd(Db)>>

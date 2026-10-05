@@ -1,0 +1,235 @@
+# Theme by Guillaume Cocatre-Zilgien <gcocatre@gmail.com>
+# CC-BY-SA
+
+# Disable status bar
+%wd
+
+# Clear Backdrop
+%X(d)
+
+# Preload Images
+%xl(battery,battery.bmp,0,0,5)
+%xl(sbborder,statusbar_border.bmp,0,0)
+%xl(arttop,art_top.bmp,0,0)
+%xl(artleft,art_left.bmp,0,0)
+%xl(artright,art_right.bmp,0,0)
+%xl(artbottom,art_bottom.bmp,0,0)
+%xl(artheadphones,art_headphones.bmp,0,0)
+%xl(pbbg,progressbar_bg.bmp,0,0)
+%xl(playmode,playmode.bmp,0,0,12)
+
+# Load Viewports
+%Vd(whitebg)
+%Vd(statusbar)
+
+%?if(%ss(0, 6, %St(background color), number), =, 525153)<%Vd(statusbarpreset)%Vd(statusbardefault)|%?if(%St(background color), =, 425dad)<%Vd(statusbarpreset)%Vd(statusbarblue)|%?if(%St(background color), =, 425DAD)<%Vd(statusbarpreset)%Vd(statusbarblue)|%?if(%St(background color), =, 52aa42)<%Vd(statusbarpreset)%Vd(statusbargreen)|%?if(%St(background color), =, 52AA42)<%Vd(statusbarpreset)%Vd(statusbargreen)|%?if(%St(background color), =, b5c731)<%Vd(statusbarpreset)%Vd(statusbarlime)|%?if(%St(background color), =, B5C731)<%Vd(statusbarpreset)%Vd(statusbarlime)|%?if(%St(background color), =, ff8621)<%Vd(statusbarpreset)%Vd(statusbarorange)|%?if(%St(background color), =, FF8621)<%Vd(statusbarpreset)%Vd(statusbarorange)|%?if(%St(background color), =, d64939)<%Vd(statusbarpreset)%Vd(statusbarscarlet)|%?if(%St(background color), =, D64939)<%Vd(statusbarpreset)%Vd(statusbarscarlet)|%?if(%St(background color), =, 738a9c)<%Vd(statusbarpreset)%Vd(statusbarstorm)|%?if(%St(background color), =, 738A9C)<%Vd(statusbarpreset)%Vd(statusbarstorm)|%Vd(statusbargeneric)>>>>>>>>>>>>>
+
+%?if(%St(battery display), =, numeric)<%Vd(batteryn)|%?if(%bc, =, c)<%Vd(batteryn)|%?if(%bp, =, p)<%Vd(batteryn)|%Vd(batteryg)>>>
+%Vd(artborders)
+%?C<%Vd(art)|%Vd(artheadphones)>
+%Vd(metadata)
+%?if(%ig, =, Chamber Music)<%Vd(composer)|%?if(%ig, =, Classical)<%Vd(composer)|%?if(%ig, =, Opera)<%Vd(composer)|%?if(%ig, =, Sonata)<%Vd(composer)|%?if(%ig, =, Symphony)<%Vd(composer)|%Vd(artist)>>>>>
+%?if(%St(brightness), =, 61)<%Vd(datecodec)|%?if(%St(statusbar), =, off)<%?if(%mp, =, 3)<%Vd(nexttrack)|%Vd(datecodec)>|%?if(%St(statusbar), =, top)<%?if(%mp, =, 3)<%Vd(datecodec)|%Vd(nexttrack)>|%Vd(altline)>>>
+%Vd(pb)
+%Vd(bottombar)
+%Vd(trackpos)
+%Vd(playicons)
+%Vd(shufflerepeat)
+
+# White BG
+%Vl(whitebg,22,54,331,201,-)
+%dr(0,0,331,192,ffffff)
+
+# Status Bar BG: the trailing space characters here are voluntary, in order to have the viewport draw the background color
+# top
+%Vl(statusbar,22,30,331,15,-)
+%Vb(-)
+%Vf(-)
+%al 
+%Vl(statusbargeneric,22,45,331,9,-)
+%Vb(-)
+%Vf(-)
+%al 
+%Vl(statusbarpreset,22,45,331,7,-)
+%Vb(-)
+%Vf(-)
+%al 
+# generic bottom border
+%Vl(statusbargeneric,22,52,331,2,-)
+%Vb(-)
+%Vf(-)
+%xd(sbborder)
+# default bottom border
+%Vl(statusbardefault,22,52,331,2,-)
+%Vb(393839)
+%Vf(-)
+%al 
+# blue bottom border
+%Vl(statusbarblue,22,52,331,2,-)
+%Vb(294173)
+%Vf(-)
+%al 
+# green bottom border
+%Vl(statusbargreen,22,52,331,2,-)
+%Vb(397531)
+%Vf(-)
+%al 
+# lime bottom border
+%Vl(statusbarlime,22,52,331,2,-)
+%Vb(7b8e21)
+%Vf(-)
+%al 
+# orange bottom border
+%Vl(statusbarorange,22,52,331,2,-)
+%Vb(b55d18)
+%Vf(-)
+%al 
+# scarlet bottom border
+%Vl(statusbarscarlet,22,52,331,2,-)
+%Vb(943429)
+%Vf(-)
+%al 
+# storm bottom border
+%Vl(statusbarstorm,22,52,331,2,-)
+%Vb(52616b)
+%Vf(-)
+%al 
+
+
+# Volume
+%Vl(statusbar,26,34,48,16,-)
+%Vb(-)
+%Vf(-)
+%al%?if(%pv, >, 0)<+|>%pv dB
+
+# Status Bar Title
+%Vl(statusbar,74,34,227,16,-)
+%Vb(-)
+%Vf(-)
+%ac%?if(%mh, =, h)<[ |>%?if(%lh, =, h)<…|>Now Playing %pp/%pe%?if(%lh, =, h)<…|>%?if(%mh, =, h)< ]|>
+
+# Battery (graphical)
+%Vl(batteryg,323,34,26,13,-)
+%Vb(-)
+%Vf(-)
+%?if(%bl, >, 88)<%xd(battery,5)|%?if(%bl, >, 63)<%xd(battery,4)|%?if(%bl, >, 38)<%xd(battery,3)|%?if(%bl, >, 13)<%xd(battery,2)|%xd(battery,1)>>>>
+
+# Battery (numerical)
+%Vl(batteryn,301,34,48,16,-)
+%Vb(-)
+%Vf(-)
+%ar%bl%%
+
+# Album Art Borders
+%Vl(artborders,22,67,169,12,-)
+%xd(arttop)
+
+%Vl(artborders,22,79,10,149,-)
+%xd(artleft)
+
+%Vl(artborders,175,79,16,149,-)
+%xd(artright)
+
+%Vl(artborders,22,228,169,16,-)
+%xd(artbottom)
+
+# Cover Art
+%Vl(artheadphones,32,79,143,149,-)
+%xd(artheadphones)
+
+%Vl(art,32,79,143,149,-)
+%Cl(0,0,143,143,c,c)
+%Cd
+
+# Metadata
+
+# track number or playlist entry number
+%Vl(metadata,191,95,162,27,-)
+%Vb(ffffff)
+%Vf(a5a6a5)
+%s%ac%?ik<Disc %ik %| %?in<Track %in|Entry %pp>|%?in<Track %in|Entry %pp>>
+
+# track title
+%Vl(metadata,191,122,162,27,-)
+%Vb(ffffff)
+%Vf(525152)
+%s%ac%?it<“%it”|%fn>
+
+# artist
+%Vl(artist,191,149,162,27,-)
+%Vb(ffffff)
+%Vf(525152)
+%s%ac%?ia<by %ia|%?iA<by %iA|Unknown Artist>>
+
+# composer
+%Vl(composer,191,149,162,27,-)
+%Vb(ffffff)
+%Vf(525152)
+%s%ac%?ic<by %ic|%?ia<by %ia|%?iA<by %iA|Unknown Artist>>>
+
+# album title
+%Vl(metadata,191,176,162,27,-)
+%Vb(ffffff)
+%Vf(525152)
+%s%ac%?id<%id|Untitled Album>
+
+# date and codec
+%Vl(datecodec,191,203,162,27,-)
+%Vb(ffffff)
+%Vf(a5a6a5)
+%ac%?iy<%iy %| |>%fc %fb kbps
+#%?if(%St(statusbar), =, off)<%s%ac%?iy<%iy %| |>%fc %fb kbps|%ac%?Fn<%>%> %?It<%?if(%ss(0, 16, %It), =, %It)<%It|%ss(0, 16, %It)…>|%?if(%ss(0, 16, %Fn), =, %Fn)<%Fn|%ss(0, 16, %Fn)…>>|End of Playlist>>
+
+# next track
+%Vl(nexttrack,191,203,162,27,-)
+%Vb(ffffff)
+%Vf(a5a6a5)
+%ac%?Fn<%>%> %?It<%?if(%ss(0, 16, %It), =, %It)<%It|%ss(0, 16, %It)…>|%?if(%ss(0, 16, %Fn), =, %Fn)<%Fn|%ss(0, 16, %Fn)…>>|End of Playlist>
+
+# date and codec / next track
+%Vl(altline,191,203,162,27,-)
+%Vb(ffffff)
+%Vf(a5a6a5)
+%t(2)%ac%?Fn<%>%> %?It<%?if(%ss(0, 16, %It), =, %It)<%It|%ss(0, 16, %It)…>|%?if(%ss(0, 16, %Fn), =, %Fn)<%Fn|%ss(0, 16, %Fn)…>>|End of Playlist>;%t(2)%ac%?iy<%iy %| |>%fc %fb kbps
+
+# Progress Bar
+%Vl(pb,22,255,331,3,-)
+%pb(0,0,331,2,progressbar.bmp,backdrop,pbbg)
+
+# Bottom Bar
+%Vl(bottombar,22,258,331,15,-)
+%dr(0,0,331,14,e7e7e7)
+%Vl(bottombar,22,273,331,15,-)
+%dr(0,0,331,14,e7e7e7)
+%Vl(bottombar,22,288,331,2,-)
+%dr(0,0,331,2,e7e7e7)
+
+# Elapsed Time
+%Vl(trackpos,22,266,121,15,-)
+%Vb(e7e7e7)
+%Vf(525152)
+%ac%pc %| -%pr
+
+# Rewind
+%Vl(playicons,143,264,18,18,-)
+%Vb(e7e7e7)
+%Vf(525152)
+%?if(%mp, =, 5)<%xd(playmode,5,0)|%xd(playmode,12,0)>
+
+# Play / Pause
+%Vl(playicons,180,264,18,18,-)
+%Vb(e7e7e7)
+%Vf(525152)
+%?mp<%xd(playmode,10,0)|%xd(playmode,2,0)|%xd(playmode,3,0)|%xd(playmode,10,0)|%xd(playmode,10,0)|%xd(playmode,6,0)|%xd(playmode,7,0)|%xd(playmode,8,0)|%xd(playmode,9,0)>
+
+# Fast Forward
+%Vl(playicons,213,264,18,18,-)
+%Vb(e7e7e7)
+%Vf(525152)
+%?if(%mp, =, 4)<%xd(playmode,4,0)|%xd(playmode,11,0)>
+
+# Shuffle / Repeat
+%Vl(shufflerepeat,231,266,122,15,-)
+%Vb(e7e7e7)
+%Vf(525152)
+%ac%?if(%ps, =, s)<%?mm<Shuffle|Shuffle Loop|Repeat One|Repeat Shuffle|Repeat A-B>|%?mm<Linear|Repeat All|Repeat One|Repeat Shuffle|Repeat A-B>>

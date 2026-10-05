@@ -1,0 +1,45 @@
+# Iris - Rose Pine (dark) - while-playing screen
+#
+# Fonts
+%Fl(3,12-Inter-Regular.fnt)
+%Fl(4,16-Inter-Bold.fnt)
+#
+# keep the base skin (sidebar + topbar) visible
+%we
+#
+# lock screen logic
+%?mh<|%Vd(npa)%Vd(npt)%Vd(npr)%Vd(npl)%Vd(npp)%Vd(npe)>
+#
+# ---------------- Now playing ----------------
+# album art, 84x84
+%Vl(npa,140,52,130,130,-)
+%Vb(191724)
+%dr(0,0,130,130,524f67)
+%dr(1,1,128,128,21202e)
+%Cl(1,1,128,128,c,c)
+%Cd
+#
+%Vl(npt,40,196,331,24,4)
+%Vf(e0def4)
+%Vb(191724)
+%s%ac%?it<%it|%fn>
+#
+%Vl(npr,40,222,331,19,3)
+%Vf(c4a7e7)
+%Vb(191724)
+%s%ac%ia
+#
+%Vl(npl,40,242,331,19,3)
+%Vf(6e6a86)
+%Vb(191724)
+%s%ac%id
+#
+%Vl(npp,60,274,290,4,-)
+%Vf(c4a7e7)
+%Vb(403d52)
+%pb(0,0,290,4,noborder)
+#
+%Vl(npe,60,282,290,17,3)
+%Vf(6e6a86)
+%Vb(191724)
+%al%pc%ar%pt

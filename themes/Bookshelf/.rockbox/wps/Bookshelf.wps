@@ -1,0 +1,57 @@
+# Bookshelf v0.9b
+# by Arin Kim
+# Based on Iris by Glass Ocean
+# Optimised for 320x240
+#
+# Fonts
+%Fl(3,12-Inter-Regular.fnt)
+%Fl(4,16-Inter-Bold.fnt)
+#
+# keep the base skin (sidebar + topbar) visible
+%we
+#
+# lock screen logic
+%?mh<|%Vd(npa)%Vd(npt)%Vd(npr)%Vd(npl)%Vd(npy)%Vd(npp)%Vd(npe)>
+#
+# ---------------- Now playing ----------------
+# album art, 84x84
+%Vl(npa,148,40,110,110,-)
+%Vb(191724)
+%dr(0,0,110,110,524f67)
+%dr(1,1,108,108,21202e)
+%Cl(1,1,108,108,c,c)
+%Cd
+#
+%V(32,248,343,72,-)
+%Vb(1f1d2e)
+%dr(-,-,-,1,26233a)
+#
+%Vl(npt,32,162,343,18,4)
+%Vf(e0def4)
+%Vb(191724)
+%s%ac%?it<%it|%fn>
+#
+%Vl(npr,32,186,343,14,3)
+%Vf(c4a7e7)
+%Vb(191724)
+%s%ac%ia
+#
+%Vl(npl,32,204,343,14,3)
+%Vf(6e6a86)
+%Vb(191724)
+%s%ac%id
+#
+%Vl(npy,56,256,263,13,3)
+%Vf(908caa)
+%Vb(1f1d2e)
+%al%pp%ar%pe
+#
+%Vl(npp,56,277,263,3,-)
+%Vf(c4a7e7)
+%Vb(403d52)
+%pb(-,-,-,-,noborder)
+#
+%Vl(npe,56,286,263,13,3)
+%Vf(908caa)
+%Vb(1f1d2e)
+%al%pc%ar%pt

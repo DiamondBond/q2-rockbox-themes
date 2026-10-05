@@ -1,0 +1,230 @@
+# Theme: DAP-393
+# Version 1.0
+# Last Update: 17/07/2026 (DD/MM/YYYY)
+# License: CC-BY-SA 3.0
+# A 360ad theme
+# Created during July, 2026
+# All assets drawn by me in Photoshop.
+# Absolutely NO AI has been used during the creation of this theme.
+#
+%Fl(2,6-DAP393.fnt)
+%wd
+%X(/.rockbox/backdrops/393WPS.bmp)
+%Vd(volume_dial)
+%Vd(audio_bars)
+%Vd(codec_display)
+%Vd(shuffle_display)
+%Vd(true_shuffle_display)
+%Vd(lock_display)
+%Vd(playmode_display)
+%Vd(track_title_display)
+%Vd(album_display)
+%Vd(artist_display)
+%Vd(bitrate_display)
+%Vd(track_number_display)
+%Vd(playlist_total_display)
+%?if(%pr, <, 600)<%Vd(time_m_ss)|%?if(%pr, <, 3600)<%Vd(time_mm_ss)|%?if(%pr, <, 36000)<%Vd(time_h_mm_ss)|%Vd(time_hh_mm_ss)>>>
+#
+#
+#
+# This is the track number indicator. To be totally honest, as of writing this I don't know what happens if you
+# go over 9999 tracks in a playlist. It may eff it up. It works at least till 9999 tracks.
+# Each number is drawn individually from a file with numbers in it. 
+# They were custom drawn by me (this was BEFORE I made the DAP393 font to be used with the theme, so I was using
+# primitive methods. Bonus though, is that these (since they're images) can have an outer glow. neat!
+# It also renders NO leading zeros. We don't need'em!
+#
+%Vl(track_number_display,0,0,375,320,1)
+%Vb(-)
+%xl(S,number.bmp,159,124,10)
+%xl(T,number.bmp,163,124,10)
+%xl(U,number.bmp,167,124,10)
+%xl(V,number.bmp,171,124,10)
+%?if(%pp, >, 999)<%?ss(0,1,%pp,number)<%xd(S)|%xd(S,2)|%xd(S,3)|%xd(S,4)|%xd(S,5)|%xd(S,6)|%xd(S,7)|%xd(S,8)|%xd(S,9)|%xd(S,10)>|>
+%?if(%pp, >, 999)<%?ss(1,1,%pp,number)<%xd(T)|%xd(T,2)|%xd(T,3)|%xd(T,4)|%xd(T,5)|%xd(T,6)|%xd(T,7)|%xd(T,8)|%xd(T,9)|%xd(T,10)>|%?if(%pp, >, 99)<%?ss(0,1,%pp,number)<%xd(T)|%xd(T,2)|%xd(T,3)|%xd(T,4)|%xd(T,5)|%xd(T,6)|%xd(T,7)|%xd(T,8)|%xd(T,9)|%xd(T,10)>|>>
+%?if(%pp, >, 999)<%?ss(2,1,%pp,number)<%xd(U)|%xd(U,2)|%xd(U,3)|%xd(U,4)|%xd(U,5)|%xd(U,6)|%xd(U,7)|%xd(U,8)|%xd(U,9)|%xd(U,10)>|%?if(%pp, >, 99)<%?ss(1,1,%pp,number)<%xd(U)|%xd(U,2)|%xd(U,3)|%xd(U,4)|%xd(U,5)|%xd(U,6)|%xd(U,7)|%xd(U,8)|%xd(U,9)|%xd(U,10)>|%?if(%pp, >, 9)<%?ss(0,1,%pp,number)<%xd(U)|%xd(U,2)|%xd(U,3)|%xd(U,4)|%xd(U,5)|%xd(U,6)|%xd(U,7)|%xd(U,8)|%xd(U,9)|%xd(U,10)>|>>>
+%?if(%pp, >, 999)<%?ss(3,1,%pp,number)<%xd(V)|%xd(V,2)|%xd(V,3)|%xd(V,4)|%xd(V,5)|%xd(V,6)|%xd(V,7)|%xd(V,8)|%xd(V,9)|%xd(V,10)>|%?if(%pp, >, 99)<%?ss(2,1,%pp,number)<%xd(V)|%xd(V,2)|%xd(V,3)|%xd(V,4)|%xd(V,5)|%xd(V,6)|%xd(V,7)|%xd(V,8)|%xd(V,9)|%xd(V,10)>|%?if(%pp, >, 9)<%?ss(1,1,%pp,number)<%xd(V)|%xd(V,2)|%xd(V,3)|%xd(V,4)|%xd(V,5)|%xd(V,6)|%xd(V,7)|%xd(V,8)|%xd(V,9)|%xd(V,10)>|%?ss(0,1,%pp,number)<%xd(V)|%xd(V,2)|%xd(V,3)|%xd(V,4)|%xd(V,5)|%xd(V,6)|%xd(V,7)|%xd(V,8)|%xd(V,9)|%xd(V,10)>>>>
+#
+%Vl(playlist_total_display,0,0,375,320,1)
+%Vb(-)
+%xl(W,number.bmp,183,124,10)
+%xl(X,number.bmp,188,124,10)
+%xl(Y,number.bmp,192,124,10)
+%xl(Z,number.bmp,196,124,10)
+%?if(%pe, >, 999)<%?ss(0,1,%pe,number)<%xd(W)|%xd(W,2)|%xd(W,3)|%xd(W,4)|%xd(W,5)|%xd(W,6)|%xd(W,7)|%xd(W,8)|%xd(W,9)|%xd(W,10)>|>
+%?if(%pe, >, 999)<%?ss(1,1,%pe,number)<%xd(X)|%xd(X,2)|%xd(X,3)|%xd(X,4)|%xd(X,5)|%xd(X,6)|%xd(X,7)|%xd(X,8)|%xd(X,9)|%xd(X,10)>|%?if(%pe, >, 99)<%?ss(0,1,%pe,number)<%xd(X)|%xd(X,2)|%xd(X,3)|%xd(X,4)|%xd(X,5)|%xd(X,6)|%xd(X,7)|%xd(X,8)|%xd(X,9)|%xd(X,10)>|>>
+%?if(%pe, >, 999)<%?ss(2,1,%pe,number)<%xd(Y)|%xd(Y,2)|%xd(Y,3)|%xd(Y,4)|%xd(Y,5)|%xd(Y,6)|%xd(Y,7)|%xd(Y,8)|%xd(Y,9)|%xd(Y,10)>|%?if(%pe, >, 99)<%?ss(1,1,%pe,number)<%xd(Y)|%xd(Y,2)|%xd(Y,3)|%xd(Y,4)|%xd(Y,5)|%xd(Y,6)|%xd(Y,7)|%xd(Y,8)|%xd(Y,9)|%xd(Y,10)>|%?if(%pe, >, 9)<%?ss(0,1,%pe,number)<%xd(Y)|%xd(Y,2)|%xd(Y,3)|%xd(Y,4)|%xd(Y,5)|%xd(Y,6)|%xd(Y,7)|%xd(Y,8)|%xd(Y,9)|%xd(Y,10)>|>>>
+%?if(%pe, >, 999)<%?ss(3,1,%pe,number)<%xd(Z)|%xd(Z,2)|%xd(Z,3)|%xd(Z,4)|%xd(Z,5)|%xd(Z,6)|%xd(Z,7)|%xd(Z,8)|%xd(Z,9)|%xd(Z,10)>|%?if(%pe, >, 99)<%?ss(2,1,%pe,number)<%xd(Z)|%xd(Z,2)|%xd(Z,3)|%xd(Z,4)|%xd(Z,5)|%xd(Z,6)|%xd(Z,7)|%xd(Z,8)|%xd(Z,9)|%xd(Z,10)>|%?if(%pe, >, 9)<%?ss(1,1,%pe,number)<%xd(Z)|%xd(Z,2)|%xd(Z,3)|%xd(Z,4)|%xd(Z,5)|%xd(Z,6)|%xd(Z,7)|%xd(Z,8)|%xd(Z,9)|%xd(Z,10)>|%?ss(0,1,%pe,number)<%xd(Z)|%xd(Z,2)|%xd(Z,3)|%xd(Z,4)|%xd(Z,5)|%xd(Z,6)|%xd(Z,7)|%xd(Z,8)|%xd(Z,9)|%xd(Z,10)>>>>
+#
+#
+# This bit shows the codec. Well, at least 4 of them.
+# My most used codecs are FLAC and MP3.
+# Music from iTunes will be in AAC, so that's there too.
+# And WAV, because why not. 
+# Anything else is 'OTHER'.
+#
+%Vl(codec_display,0,0,375,320,1)
+%Vb(-)
+%xl(M,codecs.bmp,249,122,5)
+%?fc<%xd(M,5)|%xd(M,5)|%xd(M,1)|%xd(M,5)|%xd(M,4)|%xd(M,5)|%xd(M,2)|%xd(M,5)|%xd(M,5)|%xd(M,5)|%xd(M,5)|%xd(M,3)|%xd(M,5)|%xd(M,5)|%xd(M,5)|%xd(M,5)|%xd(M,5)|%xd(M,5)|%xd(M,5)|%xd(M,5)>
+#
+#
+# Don't be fooled, I called this section the 'SHUFFLE' display because I didn't realise that the shuffle option
+# within the repeat settings was its own thing, and NOT the same thing as the shuffle option.
+# So the real shuffle is called REALshuffle or a biosimilar.
+#
+# Anyhows this is the REPEAT display. When off, the button is unpressed and the OFF light is red.
+# When an option is enabled, it gets lit up, and the button gets pushed.
+#
+%Vl(shuffle_display,0,0,375,320,1)
+%Vb(-)
+%xl(R,shuffle.bmp,260,172,5)
+%?mm<%xd(R)|%xd(R,2)|%xd(R,3)|%xd(R,4)|%xd(R,5)>
+#
+#
+# And yup, here's the true shuffle. Just a little icon that I drew.
+# In FACT, you might even miss it. It comes on just after the red '8' at the peak end of the visualiser.
+# On the actual KX-393 deck, this is a + sign (so you know if it reaches that, your audio is clipping.)
+#
+%Vl(true_shuffle_display,0,0,375,320,1)
+%Vb(-)
+%xl(I,trueshuffle.bmp,326,88,2)
+%?ps<%xd(I,2)|%xd(I)>
+#
+#
+# Here's the playmode thing. It's the big four buttons on the left.
+# On the actual deck, the top two buttons are the same, but the bottom half is for the Intro Scan.
+# It's a pretty neat bit of old tech that FFs through your tape to find when a new track comes on,
+# then it rewinds to 5s before the track and plays. It's so cool.
+# Unfortunately, rockbox don't do dat, so it's just a boring rewind and fast forward display (boo)
+#
+# All the icons light up when pressed, and the actual buttons get pushed down.
+#
+%Vl(playmode_display,0,0,375,320,1)
+%Vb(-)
+%xl(b,playmodes.bmp,29,161,4)
+%?mp<%xd(b)|%xd(b,2)|%xd(b)|%xd(b,4)|%xd(b,3)>
+#
+#
+# This is the lock button. 
+# Same sitch as the repeat button, but with only OFF/ON.
+#
+%Vl(lock_display,0,0,375,320,1)
+%Vb(-)
+%xl(a,lock.bmp,272,228,2)
+%?mh<%xd(a,2)|%xd(a)>
+#
+#
+# This is similar to the track number display, but for the bitrate.
+# Looks very kewl. The 'kbps' is baked into the WPS backdrop as it doesn't need to be rendered.
+#
+%Vl(bitrate_display,0,0,375,320,1)
+%Vb(-)
+%xl(Q,number.bmp,208,124,10)
+%xl(P,number.bmp,212,124,10)
+%xl(O,number.bmp,216,124,10)
+%xl(N,number.bmp,221,124,10)
+#
+%?if(%fb, >, 999)<%?ss(0,1,%fb,number)<%xd(Q)|%xd(Q,2)|%xd(Q,3)|%xd(Q,4)|%xd(Q,5)|%xd(Q,6)|%xd(Q,7)|%xd(Q,8)|%xd(Q,9)|%xd(Q,10)>|>
+%?if(%fb, >, 999)<%?ss(1,1,%fb,number)<%xd(P)|%xd(P,2)|%xd(P,3)|%xd(P,4)|%xd(P,5)|%xd(P,6)|%xd(P,7)|%xd(P,8)|%xd(P,9)|%xd(P,10)>|%?if(%fb, >, 99)<%?ss(0,1,%fb,number)<%xd(P)|%xd(P,2)|%xd(P,3)|%xd(P,4)|%xd(P,5)|%xd(P,6)|%xd(P,7)|%xd(P,8)|%xd(P,9)|%xd(P,10)>|>>
+%?if(%fb, >, 999)<%?ss(2,1,%fb,number)<%xd(O)|%xd(O,2)|%xd(O,3)|%xd(O,4)|%xd(O,5)|%xd(O,6)|%xd(O,7)|%xd(O,8)|%xd(O,9)|%xd(O,10)>|%?if(%fb, >, 99)<%?ss(1,1,%fb,number)<%xd(O)|%xd(O,2)|%xd(O,3)|%xd(O,4)|%xd(O,5)|%xd(O,6)|%xd(O,7)|%xd(O,8)|%xd(O,9)|%xd(O,10)>|%?if(%fb, >, 9)<%?ss(0,1,%fb,number)<%xd(O)|%xd(O,2)|%xd(O,3)|%xd(O,4)|%xd(O,5)|%xd(O,6)|%xd(O,7)|%xd(O,8)|%xd(O,9)|%xd(O,10)>|>>>
+%?if(%fb, >, 999)<%?ss(3,1,%fb,number)<%xd(N)|%xd(N,2)|%xd(N,3)|%xd(N,4)|%xd(N,5)|%xd(N,6)|%xd(N,7)|%xd(N,8)|%xd(N,9)|%xd(N,10)>|%?if(%fb, >, 99)<%?ss(2,1,%fb,number)<%xd(N)|%xd(N,2)|%xd(N,3)|%xd(N,4)|%xd(N,5)|%xd(N,6)|%xd(N,7)|%xd(N,8)|%xd(N,9)|%xd(N,10)>|%?if(%fb, >, 9)<%?ss(1,1,%fb,number)<%xd(N)|%xd(N,2)|%xd(N,3)|%xd(N,4)|%xd(N,5)|%xd(N,6)|%xd(N,7)|%xd(N,8)|%xd(N,9)|%xd(N,10)>|%?ss(0,1,%fb,number)<%xd(N)|%xd(N,2)|%xd(N,3)|%xd(N,4)|%xd(N,5)|%xd(N,6)|%xd(N,7)|%xd(N,8)|%xd(N,9)|%xd(N,10)>>>>
+#
+#
+# Audio levels. Based DIRECTLY off the original deck. The original did have more levels like 17, 10 and a few more down
+# the red end. I had to shorten it a bit to get it to work and look like on a tiny display. I wish I could attach photos
+# of my deck here, it's so nice. Nice enough that I've made a whole theme based around it...
+#
+# Anyways, the code really didn't like that I was using multiple images instead of an on/off image thing. This is because
+# the real deck doesn't move neatly, the individual 'nodes' go all or nothing, which technically doesn't look as nice as 
+# if it used every individual line, but I wanted accuracy goddamnit!
+#
+# Long story short the image files that it reads from are in a weird layout. Maybe don't copy it? Do whatever. CC 3.0 or something.
+#
+%Vl(audio_bars,0,0,375,320,1)
+%Vb(-)
+%xl(K,leftbar.bmp,126,68,13)
+%xl(L,rightbar.bmp,126,99,13)
+%?mp<|%?pL<%xd(K,1)|%xd(K,2)|%xd(K,3)|%xd(K,4)|%xd(K,5)|%xd(K,6)|%xd(K,7)|%xd(K,8)|%xd(K,9)|%xd(K,10)|%xd(K,11)|%xd(K,12)|%xd(K,13)>|||>
+%?mp<|%?pR<%xd(L,1)|%xd(L,2)|%xd(L,3)|%xd(L,4)|%xd(L,5)|%xd(L,6)|%xd(L,7)|%xd(L,8)|%xd(L,9)|%xd(L,10)|%xd(L,11)|%xd(L,12)|%xd(L,13)>|||>
+#
+#
+# The volume dial a.k.a the bane of my existence. It spins!
+# I can't get it to look better than this, this is actually how the dials look on the player. 
+# It maxes out at 0dB althought rockbox will continue to increase the volume after this.
+# Even with some decent headphones I don't ever get close to 0dB so this shouldn't be an issue.
+# Think of it as a feature!
+#
+%Vl(volume_dial,0,0,375,320,1)
+%Vb(-)
+%xl(J,dial.bmp,195,195,85)
+%?pv<%xd(J,1)|%xd(J,2)|%xd(J,3)|%xd(J,4)|%xd(J,5)|%xd(J,6)|%xd(J,7)|%xd(J,8)|%xd(J,9)|%xd(J,10)|%xd(J,11)|%xd(J,12)|%xd(J,13)|%xd(J,14)|%xd(J,15)|%xd(J,16)|%xd(J,17)|%xd(J,18)|%xd(J,19)|%xd(J,20)|%xd(J,21)|%xd(J,22)|%xd(J,23)|%xd(J,24)|%xd(J,25)|%xd(J,26)|%xd(J,27)|%xd(J,28)|%xd(J,29)|%xd(J,30)|%xd(J,31)|%xd(J,32)|%xd(J,33)|%xd(J,34)|%xd(J,35)|%xd(J,36)|%xd(J,37)|%xd(J,38)|%xd(J,39)|%xd(J,40)|%xd(J,41)|%xd(J,42)|%xd(J,43)|%xd(J,44)|%xd(J,45)|%xd(J,46)|%xd(J,47)|%xd(J,48)|%xd(J,49)|%xd(J,50)|%xd(J,51)|%xd(J,52)|%xd(J,53)|%xd(J,54)|%xd(J,55)|%xd(J,56)|%xd(J,57)|%xd(J,58)|%xd(J,59)|%xd(J,60)|%xd(J,61)|%xd(J,62)|%xd(J,63)|%xd(J,64)|%xd(J,65)|%xd(J,66)|%xd(J,67)|%xd(J,68)|%xd(J,69)|%xd(J,70)|%xd(J,71)|%xd(J,72)|%xd(J,73)|%xd(J,74)|%xd(J,75)|%xd(J,76)|%xd(J,77)|%xd(J,78)|%xd(J,79)|%xd(J,80)|%xd(J,81)|%xd(J,82)|%xd(J,83)|%xd(J,84)|%xd(J,85)>
+#
+#
+# This is the time remaining for the track. You may know this from prior (later?) appearances in the SBS.
+# Refer to the SBS' clock for less info on how this works :}
+#
+%Vl(time_m_ss,0,0,375,320,1)
+%Vb(-)
+%xl(A,numbers.bmp,39,69,100)
+%xl(B,numbers.bmp,71,69,100)
+%?ss(0,1,%pr,number)<%xd(A)|%xd(A,2)|%xd(A,3)|%xd(A,4)|%xd(A,5)|%xd(A,6)|%xd(A,7)|%xd(A,8)|%xd(A,9)|%xd(A,10)|%xd(A,11)|%xd(A,12)|%xd(A,13)|%xd(A,14)|%xd(A,15)|%xd(A,16)|%xd(A,17)|%xd(A,18)|%xd(A,19)|%xd(A,20)|%xd(A,21)|%xd(A,22)|%xd(A,23)|%xd(A,24)|%xd(A,25)|%xd(A,26)|%xd(A,27)|%xd(A,28)|%xd(A,29)|%xd(A,30)|%xd(A,31)|%xd(A,32)|%xd(A,33)|%xd(A,34)|%xd(A,35)|%xd(A,36)|%xd(A,37)|%xd(A,38)|%xd(A,39)|%xd(A,40)|%xd(A,41)|%xd(A,42)|%xd(A,43)|%xd(A,44)|%xd(A,45)|%xd(A,46)|%xd(A,47)|%xd(A,48)|%xd(A,49)|%xd(A,50)|%xd(A,51)|%xd(A,52)|%xd(A,53)|%xd(A,54)|%xd(A,55)|%xd(A,56)|%xd(A,57)|%xd(A,58)|%xd(A,59)|%xd(A,60)>
+%?ss(2,2,%pr,number)<%xd(B)|%xd(B,2)|%xd(B,3)|%xd(B,4)|%xd(B,5)|%xd(B,6)|%xd(B,7)|%xd(B,8)|%xd(B,9)|%xd(B,10)|%xd(B,11)|%xd(B,12)|%xd(B,13)|%xd(B,14)|%xd(B,15)|%xd(B,16)|%xd(B,17)|%xd(B,18)|%xd(B,19)|%xd(B,20)|%xd(B,21)|%xd(B,22)|%xd(B,23)|%xd(B,24)|%xd(B,25)|%xd(B,26)|%xd(B,27)|%xd(B,28)|%xd(B,29)|%xd(B,30)|%xd(B,31)|%xd(B,32)|%xd(B,33)|%xd(B,34)|%xd(B,35)|%xd(B,36)|%xd(B,37)|%xd(B,38)|%xd(B,39)|%xd(B,40)|%xd(B,41)|%xd(B,42)|%xd(B,43)|%xd(B,44)|%xd(B,45)|%xd(B,46)|%xd(B,47)|%xd(B,48)|%xd(B,49)|%xd(B,50)|%xd(B,51)|%xd(B,52)|%xd(B,53)|%xd(B,54)|%xd(B,55)|%xd(B,56)|%xd(B,57)|%xd(B,58)|%xd(B,59)|%xd(B,60)>
+#
+#
+%Vl(time_mm_ss,0,0,375,320,1)
+%Vb(-)
+%xl(C,numbers.bmp,39,69,100)
+%xl(D,numbers.bmp,71,69,100)
+%?ss(0,2,%pr,number)<%xd(C)|%xd(C,2)|%xd(C,3)|%xd(C,4)|%xd(C,5)|%xd(C,6)|%xd(C,7)|%xd(C,8)|%xd(C,9)|%xd(C,10)|%xd(C,11)|%xd(C,12)|%xd(C,13)|%xd(C,14)|%xd(C,15)|%xd(C,16)|%xd(C,17)|%xd(C,18)|%xd(C,19)|%xd(C,20)|%xd(C,21)|%xd(C,22)|%xd(C,23)|%xd(C,24)|%xd(C,25)|%xd(C,26)|%xd(C,27)|%xd(C,28)|%xd(C,29)|%xd(C,30)|%xd(C,31)|%xd(C,32)|%xd(C,33)|%xd(C,34)|%xd(C,35)|%xd(C,36)|%xd(C,37)|%xd(C,38)|%xd(C,39)|%xd(C,40)|%xd(C,41)|%xd(C,42)|%xd(C,43)|%xd(C,44)|%xd(C,45)|%xd(C,46)|%xd(C,47)|%xd(C,48)|%xd(C,49)|%xd(C,50)|%xd(C,51)|%xd(C,52)|%xd(C,53)|%xd(C,54)|%xd(C,55)|%xd(C,56)|%xd(C,57)|%xd(C,58)|%xd(C,59)|%xd(C,60)>
+%?ss(3,2,%pr,number)<%xd(D)|%xd(D,2)|%xd(D,3)|%xd(D,4)|%xd(D,5)|%xd(D,6)|%xd(D,7)|%xd(D,8)|%xd(D,9)|%xd(D,10)|%xd(D,11)|%xd(D,12)|%xd(D,13)|%xd(D,14)|%xd(D,15)|%xd(D,16)|%xd(D,17)|%xd(D,18)|%xd(D,19)|%xd(D,20)|%xd(D,21)|%xd(D,22)|%xd(D,23)|%xd(D,24)|%xd(D,25)|%xd(D,26)|%xd(D,27)|%xd(D,28)|%xd(D,29)|%xd(D,30)|%xd(D,31)|%xd(D,32)|%xd(D,33)|%xd(D,34)|%xd(D,35)|%xd(D,36)|%xd(D,37)|%xd(D,38)|%xd(D,39)|%xd(D,40)|%xd(D,41)|%xd(D,42)|%xd(D,43)|%xd(D,44)|%xd(D,45)|%xd(D,46)|%xd(D,47)|%xd(D,48)|%xd(D,49)|%xd(D,50)|%xd(D,51)|%xd(D,52)|%xd(D,53)|%xd(D,54)|%xd(D,55)|%xd(D,56)|%xd(D,57)|%xd(D,58)|%xd(D,59)|%xd(D,60)>
+#
+#
+%Vl(time_h_mm_ss,0,0,375,320,1)
+%Vb(-)
+%xl(E,numbers.bmp,39,69,100)
+%xl(F,numbers.bmp,71,69,100)
+%?ss(2,2,%pr,number)<%xd(E)|%xd(E,2)|%xd(E,3)|%xd(E,4)|%xd(E,5)|%xd(E,6)|%xd(E,7)|%xd(E,8)|%xd(E,9)|%xd(E,10)|%xd(E,11)|%xd(E,12)|%xd(E,13)|%xd(E,14)|%xd(E,15)|%xd(E,16)|%xd(E,17)|%xd(E,18)|%xd(E,19)|%xd(E,20)|%xd(E,21)|%xd(E,22)|%xd(E,23)|%xd(E,24)|%xd(E,25)|%xd(E,26)|%xd(E,27)|%xd(E,28)|%xd(E,29)|%xd(E,30)|%xd(E,31)|%xd(E,32)|%xd(E,33)|%xd(E,34)|%xd(E,35)|%xd(E,36)|%xd(E,37)|%xd(E,38)|%xd(E,39)|%xd(E,40)|%xd(E,41)|%xd(E,42)|%xd(E,43)|%xd(E,44)|%xd(E,45)|%xd(E,46)|%xd(E,47)|%xd(E,48)|%xd(E,49)|%xd(E,50)|%xd(E,51)|%xd(E,52)|%xd(E,53)|%xd(E,54)|%xd(E,55)|%xd(E,56)|%xd(E,57)|%xd(E,58)|%xd(E,59)|%xd(E,60)>
+%?ss(5,2,%pr,number)<%xd(F)|%xd(F,2)|%xd(F,3)|%xd(F,4)|%xd(F,5)|%xd(F,6)|%xd(F,7)|%xd(F,8)|%xd(F,9)|%xd(F,10)|%xd(F,11)|%xd(F,12)|%xd(F,13)|%xd(F,14)|%xd(F,15)|%xd(F,16)|%xd(F,17)|%xd(F,18)|%xd(F,19)|%xd(F,20)|%xd(F,21)|%xd(F,22)|%xd(F,23)|%xd(F,24)|%xd(F,25)|%xd(F,26)|%xd(F,27)|%xd(F,28)|%xd(F,29)|%xd(F,30)|%xd(F,31)|%xd(F,32)|%xd(F,33)|%xd(F,34)|%xd(F,35)|%xd(F,36)|%xd(F,37)|%xd(F,38)|%xd(F,39)|%xd(F,40)|%xd(F,41)|%xd(F,42)|%xd(F,43)|%xd(F,44)|%xd(F,45)|%xd(F,46)|%xd(F,47)|%xd(F,48)|%xd(F,49)|%xd(F,50)|%xd(F,51)|%xd(F,52)|%xd(F,53)|%xd(F,54)|%xd(F,55)|%xd(F,56)|%xd(F,57)|%xd(F,58)|%xd(F,59)|%xd(F,60)>
+#
+#
+%Vl(time_hh_mm_ss,0,0,375,320,1)
+%Vb(-)
+%xl(G,numbers.bmp,39,69,100)
+%xl(H,numbers.bmp,71,69,100)
+%?ss(3,2,%pr,number)<%xd(G)|%xd(G,2)|%xd(G,3)|%xd(G,4)|%xd(G,5)|%xd(G,6)|%xd(G,7)|%xd(G,8)|%xd(G,9)|%xd(G,10)|%xd(G,11)|%xd(G,12)|%xd(G,13)|%xd(G,14)|%xd(G,15)|%xd(G,16)|%xd(G,17)|%xd(G,18)|%xd(G,19)|%xd(G,20)|%xd(G,21)|%xd(G,22)|%xd(G,23)|%xd(G,24)|%xd(G,25)|%xd(G,26)|%xd(G,27)|%xd(G,28)|%xd(G,29)|%xd(G,30)|%xd(G,31)|%xd(G,32)|%xd(G,33)|%xd(G,34)|%xd(G,35)|%xd(G,36)|%xd(G,37)|%xd(G,38)|%xd(G,39)|%xd(G,40)|%xd(G,41)|%xd(G,42)|%xd(G,43)|%xd(G,44)|%xd(G,45)|%xd(G,46)|%xd(G,47)|%xd(G,48)|%xd(G,49)|%xd(G,50)|%xd(G,51)|%xd(G,52)|%xd(G,53)|%xd(G,54)|%xd(G,55)|%xd(G,56)|%xd(G,57)|%xd(G,58)|%xd(G,59)|%xd(G,60)>
+%?ss(6,2,%pr,number)<%xd(H)|%xd(H,2)|%xd(H,3)|%xd(H,4)|%xd(H,5)|%xd(H,6)|%xd(H,7)|%xd(H,8)|%xd(H,9)|%xd(H,10)|%xd(H,11)|%xd(H,12)|%xd(H,13)|%xd(H,14)|%xd(H,15)|%xd(H,16)|%xd(H,17)|%xd(H,18)|%xd(H,19)|%xd(H,20)|%xd(H,21)|%xd(H,22)|%xd(H,23)|%xd(H,24)|%xd(H,25)|%xd(H,26)|%xd(H,27)|%xd(H,28)|%xd(H,29)|%xd(H,30)|%xd(H,31)|%xd(H,32)|%xd(H,33)|%xd(H,34)|%xd(H,35)|%xd(H,36)|%xd(H,37)|%xd(H,38)|%xd(H,39)|%xd(H,40)|%xd(H,41)|%xd(H,42)|%xd(H,43)|%xd(H,44)|%xd(H,45)|%xd(H,46)|%xd(H,47)|%xd(H,48)|%xd(H,49)|%xd(H,50)|%xd(H,51)|%xd(H,52)|%xd(H,53)|%xd(H,54)|%xd(H,55)|%xd(H,56)|%xd(H,57)|%xd(H,58)|%xd(H,59)|%xd(H,60)>
+#
+#
+# This is the track title/album name/artist display
+# I really wanted to use my custom font for this, but loading every letter of the alphabet + special characters
+# as a BMP seemed really, just really damn stupid.
+# So I made a font! Called DAP393 (like the theme).
+# This theme contains two versions: 6-DAP393 (The 1px version) and 11-DAP393 (the 2px version)
+# This menu uses 6-DAP393
+#
+%Vl(track_title_display,43,99,67,18,2)
+%Vb(-)
+%Vf(F3381F)
+%s%?it<%it|%fn>
+#
+%Vl(album_display,43,112,69,18,2)
+%Vb(-)
+%Vf(FBBC36)
+%s%?id<%id| >
+#
+%Vl(artist_display,43,125,76,18,2)
+%Vb(-)
+%Vf(FBBC36)
+%s%?ia<%ia| >
+#
+#
+#
+#
+#
+#
+#
+# And this is it, the end of the line.
+#
+# "Well, I hope you enjoyed our time together today. You know, it seems harder and harder to sit back and enjoy the
+# finer things in life. Well, 'till next time, ta ta"

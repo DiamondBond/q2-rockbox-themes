@@ -1,0 +1,190 @@
+#######################################
+## THEME NAME: dst (D's Simple Theme)
+## BY D Juarez  2026
+#######################################
+# Hi everyone! This is my latest theme.
+# It's s simpler take on my previous
+# theme digitalRedux. It's gone through
+# many iterations until I finally landed
+# on this one, which I"m really fond of.
+# The typeface is a mixture of M PLUS
+# Rounded and Noto Sans taken from the
+# Google fonts pages. This also includes
+# the unicode characters. Please, if you
+# spot any erros in the typeface (like
+# missing characters) please let me know
+# in the forum or the Rockbox subreddit.
+# Happy listening!
+#
+# Version 1.1 Update:
+# Changelog:
+#    * Revised battery icon
+#    * Revised battery icon logic
+#    * Altered themes (shouldn't be noticeable)
+#    * Alignment fixed
+#    * Split or whole screen logic change
+#
+# Version 1.2 Update:
+# Changelog:
+#    * Replaced progress bar and backdrop
+#    * Added battery percentage toggle option
+#      via battery display numeric option
+#    * Added split screen toggle option
+#      via volume display graphic option
+#	 * Changed split screen sizing. Made menu
+#	   side 20 pixels bigger and the album art
+#	   side 20 pixels smaller
+#    * Fixed split screen bug when track with
+#      no album art is present or album art
+#      is switched off
+#######################################
+#### WPS FILE ########################
+
+## Fonts Used
+%Fl(4,13-MPLUSRounded1c-Bold_REDUCED.fnt)
+%Fl(5,14-MPLUSRounded1c-Medium_NUMBERS.fnt)
+%Fl(6,20-MPLUSRounded1c-Bold.fnt)
+%Fl(7,20-NotoSansSymbols2-Regular_REDUCED.fnt)
+%Fl(8,17-MPLUSRounded1c-Medium_EXTENDED_V1_C1.fnt)
+
+############ Status Bar ##############
+## Disable Status Bar
+%wd
+%Vi(-,43,52,289,216,-)
+
+%xl(p,foreground.bmp,0,0,1)
+%xl(q,background.bmp,0,0,1)
+
+## Toggle Battery Percent Level
+%?if(%St(battery display),=,numeric)<%VI(batteryLevel)%Vd(batteryLevel)|%VI(noBatteryLevel)%Vd(noBatteryLevel)>
+
+## Playstatus
+%V(43,44,15,18,7)%Vf(-)%Vb(-)
+%al%?mp<⏹|⏵|⏸|⏩|⏪|>
+
+## Volume Level
+%V(60,48,38,22,4)%Vf(-)%Vb(-)
+%pvdb
+
+## Playlist Position
+%V(104,48,134,19,4)%Vf(e2d9d1)%Vb(-)
+%al%pp / %pe
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Battery Percent level Disabled
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## Repeat
+%Vl(noBatteryLevel,243,47,16,21,6)%Vf(-)%Vb(-)
+%?mm<|∞|∞|∞|∞>
+
+## Shuffle
+%Vl(noBatteryLevel,280,50,15,20,6)%Vf(-)%Vb(-)
+%?ps<⇄|>
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Battery Percent level Enabled
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## Repeat
+%Vl(batteryLevel,230,50,15,20,6)%Vf(-)%Vb(-)
+%?mm<|∞|∞|∞|∞>
+
+## Shuffle
+%Vl(batteryLevel,260,52,15,20,6)%Vf(-)%Vb(-)
+%?ps<⇄|>
+
+## Battery Percent Level
+%Vl(batteryLevel,282,52,25,20,5)%Vf(-)%Vb(-)
+%ar%bl
+
+## Battery Icon
+%xl(H,battery_level.bmp,0,0,14)
+%V(313,52,19,12,0)%Vb(-)%Vf(-)
+%?bp<
+    %?bc<
+	    %?bl<|
+	        %t(0.6)%xd(H,3);%t(0.6)%xd(H,4);%t(0.6)%xd(H,5);%t(0.6)%xd(H,6);%t(0.6)%xd(H,7);%t(0.6)%xd(H,8);%t(0.6)%xd(H,9);%t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,4);%t(0.6)%xd(H,5);%t(0.6)%xd(H,6);%t(0.6)%xd(H,7);%t(0.6)%xd(H,8);%t(0.6)%xd(H,9);%t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,5);%t(0.6)%xd(H,6);%t(0.6)%xd(H,7);%t(0.6)%xd(H,8);%t(0.6)%xd(H,9);%t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,6);%t(0.6)%xd(H,7);%t(0.6)%xd(H,8);%t(0.6)%xd(H,9);%t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,7);%t(0.6)%xd(H,8);%t(0.6)%xd(H,9);%t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,8);%t(0.6)%xd(H,9);%t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,9);%t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,12);%t(0.6)%xd(H,13)>|
+		%xd(H,14)>|
+	%?bl<|
+	    %t(0.6)%xd(H,2);%t(0.6)%xd(H,1)|
+		%xd(H,3)|
+		%xd(H,4)|
+		%xd(H,5)|
+		%xd(H,6)|
+		%xd(H,7)|
+		%xd(H,8)|
+		%xd(H,9)|
+		%xd(H,10)|
+		%xd(H,11)|
+		%xd(H,12)|
+		%xd(H,13)|
+		%xd(H,13)>>
+
+############### Main View #################
+
+# Album Art/Info Viewport Conditional
+%?C<%Vd(a)|%Vd(b)>
+
+### If Album Art Present --------------------
+
+## Album Cover
+%Vl(a,43,82,134,141,-)
+%Cl(0,0,134,134,c,c)
+%Cd
+
+## Track Name
+%Vl(a,184,90,148,27,6)%Vf(e2d9d1)%Vb(-)
+%s%it
+
+## Artists Name
+%Vl(a,184,116,148,27,8)%Vf(e2d9d1)%Vb(-)
+%?if(%ss(0,18,%ia), =,%ia)<%ia|%ss(0,16,%ia)...>
+
+## Album Name
+%Vl(a,184,148,148,27,8)%Vf(e2d9d1)%Vb(-)
+%?if(%ss(0,18,%id), =,%id)<%id|%ss(0,16,%id)...>
+
+## Time Elapsed / Total Time
+%Vl(a,184,200,148,27,8)%Vf(e2d9d1)%Vb(-)
+%pc/%pt
+
+### If Album Art Not Present --------------------
+
+## Track Name
+%Vl(b,43,103,289,27,6)%Vf(e2d9d1)%Vb(-)
+%s%ac%it
+
+## Artists Name
+%Vl(b,43,126,289,28,8)%Vf(e2d9d1)%Vb(-)
+%s%ac%ia
+
+## Album Name
+%Vl(b,43,156,289,27,8)%Vf(e2d9d1)%Vb(-)
+%s%ac%id
+
+## Time Elapsed / Total Time
+%Vl(b,43,200,289,27,8)%Vf(e2d9d1)%Vb(-)
+%pc/%pt
+
+##################### Bottom View #####################
+
+## Bottom Bar
+%V(22,241,331,49,-)%Vb(-)%Vf(-)
+
+## Track Progress Bar
+%V(43,239,289,8,-)%Vf(-)%Vb(-)
+%pb(0,0,-,7,p,backdrop,q)
+
+## Track File Format, Track Bitrate, and Track Frequency
+%V(58,255,259,27,4)%Vf(e2d9d1)%Vb(-)
+%al%fc%ac%fbkbps%ar%fk KHz

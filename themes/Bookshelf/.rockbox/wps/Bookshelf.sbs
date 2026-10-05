@@ -1,0 +1,166 @@
+# Bookshelf v0.9b
+# by Arin Kim
+# Based on Iris by Glass Ocean
+# Optimised for 320x240
+#
+# Fonts
+%Fl(2,11-Inter-SemiBold.fnt)
+%Fl(3,12-Inter-Regular.fnt)
+%Fl(4,16-Inter-Bold.fnt)
+%Fl(5,20-Inter-SemiBold.fnt)
+%Fl(6,60-Inter-SemiBold.fnt)
+#
+# lock screen / playback info logic
+%?or(%if(%cs,<=,4),%if(%cs,=,10),%if(%cs,=,11),%if(%cs,=,14),%if(%cs,=,16),%if(%cs,=,17),%if(%cs,>=,20))<%?mh<%VI(h)|%VI(m)>|%?mh<%VI(h)|%VI(lib)%Vd(selectedTitle)>%Lb(book,11,122,tile)>
+
+%?mh<%Vd(lkbg)%Vd(lkc)%Vd(lkd)%?if(%mp,>,1)<%Vd(trackInfo)>>
+%?and(%if(%mp, >, 1), %or(%if(%cs,<,2),%if(%cs,>,4)))<%Vd(trackInfo)>
+
+#
+# ---------------- Sidebar ----------------
+%V(0,0,32,320,2)
+%Vf(c4a7e7)
+%Vb(26233a)
+%dr(12,36,8,8,c4a7e7)
+%V(14,38,4,4,2)
+%Vf(c4a7e7)
+%Vb(26233a)
+%?lh<|  %Vs(invert)>
+#
+# volume bar
+%V(13,136,6,74,-)
+%Vf(c4a7e7)
+%Vb(403d52)
+%pv(0,0,6,74,vertical,noborder)
+#
+# stacked clock HH / MM
+%V(0,224,32,28,2)
+%Vf(908caa)
+%Vb(26233a)
+%ac%?cf<%cH|%cl>
+%ac%cM
+#
+# battery pill
+%V(0,262,32,12,-)
+%Vf(908caa)
+%Vb(26233a)
+%dr(7,1,16,8,908caa)
+%dr(8,2,14,6,26233a)
+%bl(9,3,12,4,noborder)
+%dr(23,3,2,4,908caa)
+#
+# ---------------- Topbar ----------------
+%V(32,0,343,26,-)
+%Vb(191724)
+%dr(0,25,343,1,26233a)
+#
+# screen title
+%V(58,9,165,12,2)
+%Vf(908caa)
+%Vb(191724)
+%al%?mh< L O C K E D| %?cs<R O C K B O X|N O W  P L A Y I N G|R E C O R D I N G|F M  R A D I O|P L A Y L I S T|S E T T I N G S|F I L E S|D A T A B A S E|P L U G I N S|Q U I C K  S E T T I N G S|P I T C H|%Lt|P L A Y L I S T S|P L U G I N|M E N U|S Y S T E M|T I M E  &  D A T E|B O O K M A R K S|S H O R T C U T S|T R A C K  I N F O|U S B|%Lt>>
+#
+# -------------- Bottom bar --------------
+%Vl(trackInfo,32,248,343,72,-)
+%Vb(1f1d2e)
+%dr(-,-,-,1,26233a)
+#
+%Vl(trackInfo,56,254,263,18,4)
+%Vf(e0def4)
+%Vb(1f1d2e)
+%s%al%?it<%it|%fn>
+#
+%Vl(trackInfo,56,273,263,13,3)
+%Vf(908caa)
+%Vb(1f1d2e)
+%s%al%ia%?id< — %id|>
+#
+%Vl(trackInfo,56,288,44,12,3)
+%Vf(6e6a86)
+%Vb(1f1d2e)
+%al%pc
+#
+%Vl(trackInfo,104,293,166,3,-)
+%Vf(c4a7e7)
+%Vb(403d52)
+%pb(-,-,-,-,noborder)
+#
+%Vl(trackInfo,274,288,46,12,3)
+%Vf(6e6a86)
+%Vb(1f1d2e)
+%ar%pt
+#
+# ---------------- Lists ----------------
+%Vi(m,38,30,321,216,-)
+%Vf(e0def4)
+%Vb(191724)
+#
+# Library/Book View definition
+%Vi(lib,58,96,286,122,-)
+%Vl(book,1,0,10,104,-)
+%dr(1,1,1,1,191724)
+%?if(%ss(0,66,%LT),!=,%LT)<%?Lc<%dr(2,5,6,5,c4a7e7)|%dr(2,5,6,5,403d52)>>
+%?if(%ss(0,60,%LT),!=,%LT)<%?Lc<%dr(2,10,6,5,c4a7e7)|%dr(2,10,6,5,403d52)>>
+%?if(%ss(0,58,%LT),!=,%LT)<%?Lc<%dr(2,15,6,5,c4a7e7)|%dr(2,15,6,5,403d52)>>
+%?if(%ss(0,52,%LT),!=,%LT)<%?Lc<%dr(2,20,6,5,c4a7e7)|%dr(2,20,6,5,403d52)>>
+%?if(%ss(0,46,%LT),!=,%LT)<%?Lc<%dr(2,25,6,5,c4a7e7)|%dr(2,25,6,5,403d52)>>
+%?if(%ss(0,42,%LT),!=,%LT)<%?Lc<%dr(2,30,6,5,c4a7e7)|%dr(2,30,6,5,403d52)>>
+%?if(%ss(0,40,%LT),!=,%LT)<%?Lc<%dr(2,35,6,5,c4a7e7)|%dr(2,35,6,5,403d52)>>
+%?if(%ss(0,36,%LT),!=,%LT)<%?Lc<%dr(2,40,6,5,c4a7e7)|%dr(2,40,6,5,403d52)>>
+%?if(%ss(0,30,%LT),!=,%LT)<%?Lc<%dr(2,45,6,5,c4a7e7)|%dr(2,45,6,5,403d52)>>
+%?if(%ss(0,28,%LT),!=,%LT)<%?Lc<%dr(2,50,6,5,c4a7e7)|%dr(2,50,6,5,403d52)>>
+%?if(%ss(0,22,%LT),!=,%LT)<%?Lc<%dr(2,55,6,5,c4a7e7)|%dr(2,55,6,5,403d52)>>
+%?if(%ss(0,18,%LT),!=,%LT)<%?Lc<%dr(2,60,6,5,c4a7e7)|%dr(2,60,6,5,403d52)>>
+%?if(%ss(0,16,%LT),!=,%LT)<%?Lc<%dr(2,65,6,5,c4a7e7)|%dr(2,65,6,5,403d52)>>
+%?if(%ss(0,12,%LT),!=,%LT)<%?Lc<%dr(2,70,6,5,c4a7e7)|%dr(2,70,6,5,403d52)>>
+%?if(%ss(0,10,%LT),!=,%LT)<%?Lc<%dr(2,75,6,5,c4a7e7)|%dr(2,75,6,5,403d52)>>
+%?if(%ss(0,6,%LT),!=,%LT)<%?Lc<%dr(2,80,6,5,c4a7e7)|%dr(2,80,6,5,403d52)>>
+%?if(%ss(0,4,%LT),!=,%LT)<%?Lc<%dr(2,85,6,5,c4a7e7)|%dr(2,85,6,5,403d52)>>
+%?if(%ss(0,2,%LT),!=,%LT)<%?Lc<%dr(2,90,6,5,c4a7e7)|%dr(2,90,6,5,403d52)>>
+%?if(%ss(0,1,%LT),!=,%LT)<%?Lc<%dr(2,95,6,5,c4a7e7)|%dr(2,95,6,5,403d52)>>
+%?Lc<%dr(2,100,6,4,c4a7e7)|%dr(2,100,6,4,403d52)>
+#
+# Initial Letters
+%Vl(book,0,107,11,15,2)
+%?and(%if(%cs,=,5),%if(%ss(0,1,%LT),=,[))<|%ac%?or(%if(%LC,=,1),%if(%ss(0,1,%LT(-1,nowrap)),!=,%ss(0,1,%LT)))<%ss(0,1,%LT)>>
+#
+# Now Playing Song selector
+%Vl(book,3,109,6,6,2)
+%Vf(c4a7e7)
+%?and(%if(%cs,=,5),%if(%ss(0,1,%LT),=,[))<  %Vs(invert)>
+#
+%Vl(selectedTitle,32,26,343,62,-)
+%Vf(e0def4)
+%Vb(26233a)
+#
+%Vl(selectedTitle,32,44,343,24,5)
+%Vf(e0def4)
+%Vb(26233a)
+%al%s   %LT
+#
+%Vl(selectedTitle,58,200,286,2,-)
+%Vf(6e6a86)
+%Vb(403d52)
+%?LB<%LB(-,-,-,-,noborder)>
+#
+# collapsed 1x1 stub used while locked
+%Vi(h,32,26,1,1,-)
+%Vf(191724)
+%Vb(191724)
+#
+# ---------------- Lock screen ----------------
+%Vl(lkbg,32,26,343,222,-)
+%Vb(191724)
+%dr(0,0,343,222,191724)
+#
+# time
+%Vl(lkc,32,70,343,64,6)
+%Vf(e0def4)
+%Vb(191724)
+%ac%?cf<%cH|%cl>:%cM
+#
+# date
+%Vl(lkd,32,140,343,12,2)
+%Vf(908caa)
+%Vb(191724)
+%ac%ca %cd %cb

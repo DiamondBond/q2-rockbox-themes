@@ -1,0 +1,81 @@
+# Theme: retroTape
+# By: Humberto Santana (humbertosantana@hotmail.com)
+# License: Creative Commons Attribution-Share Alike 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
+# Original graphics. Layout & general idea based on "phkTape" Theme by Paulo Henrique Kikunaga
+# Special thanks to Wesley Clifford "Yotto" for the refined wheel images
+# If used for other works, as per this license, please include the following Attribution Text: "Modified/Derived from retroTape theme for iPod Video (CC-BY-SA 3.0) by Humberto Santana"
+#
+# Version 3.0
+# Last Update: February 8th, 2010
+# First Version: March 6th, 2010
+#
+# RetroTape improvements by OlsroFR (2024)
+#
+# SBS File
+#
+backdrop: /.rockbox/backdrops/retroTapeFixed_bd.bmp
+#
+# ABSOLUTE POINT TOUCH AREAS
+#
+# Menu & Cancel
+%T(0,0,166,24,menu)
+%T(0,0,166,24,&cancel)
+#
+# Menu Up
+%T(178,5,141,62,prev)
+%T(178,5,141,62,&rwd)
+#
+# Menu Down
+%T(178,181,141,62,next)
+%T(178,181,141,62,&ffwd)
+#
+# Select + Cancel
+%T(178,93,141,62,select)
+%T(178,93,141,62,&cancel)
+#
+# Font Loading
+%Fl(3,09-Nedore.fnt)
+#
+# AA Handling (never enabled in quick menu because it causes visual glitches)
+<%?and(%if(%C, =, 1), %if(%cs, !=, 10))<%Vd(a)|%Vd(n)>
+#
+# AA viewport
+%Cl(0,0,248,248,c,c)
+%Vl(a,146,30,207,260,-)
+%Cd
+#
+# AA Left Side Cleaning For Centering Effect
+%Vl(a,146,30,42,260,-)
+# 
+#
+# Track & info when no AA
+%Vl(n,189,180,163,19,1)%Vf(4a4a4a)
+%t(6)%ac%?fn<%?ia<%ia|%?d(2)<%d(2)|>>|>;%t(6)%s%ac%?fn<%?ia<%ia|%?d(2)<%d(2)|>>|>
+%Vl(n,189,203,163,20,1)%Vf(353535)
+%t(6)%s%ac%?it<%it|%?fn<%fn|retroTape>>;%t(6)%ac%?it<%it|%?fn<%fn|retroTape>>
+%Vl(n,189,227,163,20,1)%Vf(4a4a4a)
+%t(6)%ac%?fn<%?id<%id|%?d(1)<%d(1)|>>|v3.0>;%t(6)%s%ac%?fn<%?id<%id|%?d(1)<%d(1)|>>|v3.0>
+#
+# Date / Time
+%V(102,33,81,10,3)%Vf(000000)
+%al%ca %cd%ar%?cf<%cH:%cM|%cl:%cM>
+#%al%Sx(%ca)%ar%?cf<%cH:%cM|%cl:%cM %cP>
+#
+# Menu Title
+%V(23,62,163,16,1)%Vf(000000)
+%ac%s%?Lt<%Lt|>
+#
+%xl(y,bd_b.bmp,0,0)
+%V(25,33,17,22,0)
+%?C<%?cu<%?fv<|%xd(y)>|%?fv<|%xd(y)>|%?fv<%xd(y)|>|%?fv<|%xd(y)>|%?fv<%xd(y)|>|%?fv<|%xd(y)>|%?fv<%xd(y)|>>|%?cu<%?fv<%xd(y)|>|%?fv<%xd(y)|>|%?fv<|%xd(y)>|%?fv<%xd(y)|>|%?fv<|%xd(y)>|%?fv<%xd(y)|>|%?fv<|%xd(y)>>>
+#
+# Vi AREA (MENU)
+%Vi(-,22,83,166,196,-)
+#
+# Current Track with AA
+%Vl(a,23,280,163,10,3)%Vf(767676)
+%ac%s%?it<%it|%?fn<%fn|%Sx(Volume): %pv dB>>
+#
+# Volume & Power with no AA
+%Vl(n,23,280,163,10,3)%Vf(767676)
+%ac%s%?fn<%pp of %pe|Vol: %pv dB        Bat: %bl%%>

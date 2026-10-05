@@ -1,0 +1,100 @@
+#
+#__OP_1
+#__by__CHUCK_LARDO
+#__licence__CC-BY-SA 4.0
+#__version__1.0
+#__2025
+#__target resolution 320x240
+#__tested on iPod Classic
+#
+#
+#
+#__WPS File
+#
+#__Hide The Status Bar
+%wd
+#
+#
+#__Load Backdrop
+%X(OP_backdrop.bmp)
+#
+#__Preload Fonts
+%Fl(2,20-Terminus.fnt)
+%Fl(3,22-Terminus-Bold.fnt)
+%Fl(4,32-Terminus.fnt)
+%Fl(5,20-Terminus-Bold.fnt)
+
+#
+#__Preload Images
+%xl(E,reel.bmp,0,0,4)
+%xl(T,stop_icon.bmp,0,0)
+%xl(L,play_icon.bmp,0,0)
+%xl(Z,pause_icon.bmp,0,0)
+%xl(F,forward_icon.bmp,0,0)
+%xl(R,rewind_icon.bmp,0,0)
+%xl(PBB,pb_back.bmp,0,0)
+%xl(PB,pb.bmp,0,0)
+#
+#
+#__Viewport Start
+#
+#__Track Number
+%V(30,24,34,38,4)
+%pp
+#
+#__Time Elapsed
+%V(142,42,90,23,5)
+%ac%pc
+#
+#__Repeat
+%V(300,30,45,38,2)%Vf(A369F7)
+%ar%?ps<S|0>_%?mm<0|R|R|R|R>
+#
+#__Reel Left
+%V(73,60,83,87,-)
+%al%?mp<%xd(Eb)|%t(0.6)%xd(Ed);%t(0.6)%xd(Ec);%t(0.6)%xd(Eb);%t(0.6)%xd(Ea)|%xd(Eb)|%t(0.3)%xd(Ed);%t(0.1)%xd(Ec);%t(0.3)%xd(Eb);%t(0.1)%xd(Ea)|%t(0.1)%xd(Ea);%t(0.3)%xd(Eb);%t(0.1)%xd(Ec);%t(0.3)%xd(Ed)>
+#
+#__Reel Right
+%V(219,60,83,87,-)
+%al%?mp<%xd(Ed)|%t(0.3)%xd(Ed);%t(0.3)%xd(Ec);%t(0.3)%xd(Eb);%t(0.3)%xd(Ea)|%xd(Ed)|%t(0.1)%xd(Ed);%t(0.3)%xd(Ec);%t(0.1)%xd(Eb);%t(0.3)%xd(Ea)|%t(0.3)%xd(Ea);%t(0.1)%xd(Eb);%t(0.3)%xd(Ec);%t(0.1)%xd(Ed)>
+#
+#__Play/Pause Icons
+%V(164,77,47,26,-)
+%?mp<%xd(T)|%xd(L)|%xd(Z)|%xd(F)|%xd(R)>
+#
+#__Battery Bar
+%V(168,117,34,18,-)%Vf(556471)
+%bl(0,0,34,17)
+%V(202,122,2,8,-)%Vf(556471)
+%dr(0,0,2,8)
+#
+#__Hold
+%V(30,152,43,16,-)%Vf(556471)
+%ac%?mh<HOLD|---->
+#
+#__Track Progress Bar
+%V(30,173,315,40,-)
+%pb(0,0,315,38,PBB,slider,PB)
+#
+#__Line
+%V(30,216,315,5,-)%Vf(49392F)
+%dr(0,0,315,5)
+#
+#__Volume Bar
+%V(339,65,5,107,-)%Vf(F6230A)
+%pv(0,0,4,101,vertical)
+#
+#__Track Info
+%V(30,233,225,26,3)
+%al%s%it
+%V(30,262,225,16,-)%Vb(49392F)
+%al%s%ia
+#
+#__Battery Charging Text
+%V(266,236,79,26,-)%Vf(A369F7)
+%ac%?bp<%t(.6)CHARGING;%t(.6)|%fbkbs>%Vs(invert)
+#
+#__File Type
+%V(266,262,79,16,-)%Vf(1AE89E)
+%ac%?fc<MP1|MP2|MP3|AIFF|WAV|VORBIS|FLAC|MPC|A52|WAVPAC|ALAC|AAC|SHORTEN|SID|ADX|NSF|SPEEX|SPC|APE|WMA|UNKNOWN?>%Vs(invert)
+#

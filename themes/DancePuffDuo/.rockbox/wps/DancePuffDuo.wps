@@ -1,0 +1,84 @@
+#
+# DancePuffDuo.wps originally made by Chris Oxtoby
+# Original uploaded by Stephen Carrol 2010-3-2
+#
+# Converted to 320x240 (and viewports) by P Poorten Feb 2018.  Icons from original, script largely rewritten.
+#
+# CCA3 licence
+
+%xl(A,playmode.bmp,0,0,5)
+%xl(B,repeat.bmp,0,0,4)
+%xl(C,Shf.bmp,0,0)
+%xl(D,Pow.bmp,5,0)
+%xl(E,battery.bmp,0,0,5)
+%xl(F,DancePuff.bmp,0,0,4)
+%xl(G,DancePuff.bmp,0,0,4)
+%xl(H,HoldM.bmp,0,0)
+%xl(I,HoldR.bmp,0,0)
+%xl(J,rating.bmp,0,0,11)
+%xl(K,codec.bmp,0,0,22)
+%xl(V,volicon.bmp,0,0)
+%wd
+
+%V(69,30,10,12,-)%Vf(-)%Vb(ffffff)
+%?mh<%xd(H)|>
+%V(80,30,10,12,-)%Vf(-)%Vb(ffffff)
+%?mr<%xd(I)|>
+
+%V(22,30,10,13,-)%Vf(-)%Vb(ffffff)
+%xd(V)
+
+#top area in white
+%V(22,30,331,13,-)%Vf(ffffff)%dr(0,0,-,-)
+#bottom area in white
+%V(22,277,331,13,-)%Vf(ffffff)%dr(0,0,-,-)
+
+#border line in foreground colour
+%V(22,43,331,1,-)%Vf(-)%dr(0,0,-,-)
+%V(22,237,331,1,-)%Vf(-)%dr(0,0,-,-)
+%V(22,276,331,1,-)%Vf(-)%dr(0,0,-,-)
+
+%V(179,30,14,12,-)%Vf(-)%Vb(ffffff)
+%?mp<%xd(Aa)|%xd(Ab)|%xd(Ac)|%xd(Ad)|%xd(Ae)>
+
+%V(337,30,15,12,-)%Vf(-)%Vb(ffffff)
+%?mm<|%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bd)>
+%V(324,30,11,12,-)%Vf(-)%Vb(ffffff)
+%?ps<%xd(C)|>
+
+%V(22,279,18,10,-)%Vf(-)%Vb(ffffff)
+%?bp<%xd(D)|%?bl<%xd(Ea)|%xd(Eb)|%xd(Ec)|%xd(Ed)|%xd(Ee)>>
+
+%V(43,279,41,11,0)%Vf(-)%Vb(ffffff)
+%?bt<%bt>
+
+%V(140,145,95,21,-)
+%?rr<%xd(Ja)|%xd(Jb)|%xd(Jc)|%xd(Jd)|%xd(Je)|%xd(Jf)|%xd(Jg)|%xd(Jh)|%xd(Ji)|%xd(Jj)|%xd(Jk)>
+
+%V(177,145,21,21,-)
+%?fc<%xd(Ka)|%xd(Kb)|%xd(Kc)|%xd(Kd)|%xd(Ke)|%xd(Kf)|%xd(Kg)|%xd(Kh)|%xd(Ki)|%xd(Kj)|%xd(Kk)|%xd(Kl)|%xd(Km)|%xd(Kn)|%xd(Ko)|%xd(Kp)|%xd(Kq)|%xd(Kr)|%xd(Ks)|%xd(Kt)|%xd(Ku)|%xd(Kv)>
+
+%V(27,144,28,30,-)
+%t(0.2)%xd(Fc);%t(0.2)%xd(Fd);%t(0.2)%xd(Fc);%t(0.2)%xd(Fd);%t(0.2)%xd(Fa);%t(0.2)%xd(Fb);%t(0.2)%xd(Fa);%t(0.2)%xd(Fb)
+%V(321,144,28,30,-)
+%t(0.2)%xd(Fa);%t(0.2)%xd(Fb);%t(0.2)%xd(Fa);%t(0.2)%xd(Fb);%t(0.2)%xd(Fc);%t(0.2)%xd(Fd);%t(0.2)%xd(Fc);%t(0.2)%xd(Fd)
+
+%V(43,192,289,14,-)%Vf(-)
+%pb
+
+%V(22,52,331,92,1)%Vf(-)
+%ac%?pp<[%pp/%pe]>
+%ac%s%?in<%in. |>%?it<%it|%fn>
+%ac%s%?ia<%ia|%d(2)>
+%ac%s%?id<%id|%d(1)>
+%ac%s%t(2)%?ig<%ig|> %?iy<%(%iy%)|>
+#
+%V(43,207,289,21,1)%Vf(-)
+%al%pc%ac[%pt]%ar-%pr
+
+%V(32,30,21,13,0)%Vf(-)%Vb(ffffff)
+%al%pv
+
+%V(22,238,331,38,1)%Vf(-)
+%ac%s%?In<%In. |>%?It<%It|%Fn>
+%ac%s%?Id<%Id|%D(1)>

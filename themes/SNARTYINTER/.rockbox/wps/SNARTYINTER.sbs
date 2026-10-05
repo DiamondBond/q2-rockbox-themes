@@ -1,0 +1,172 @@
+
+#__Status Bar Off
+%wd
+
+#--- Preload Fonts ---#
+%Fl(3,16-Inter-SemiBold.fnt)
+%Fl(7,19-Inter-V-padded.fnt)
+%Fl(8,17-Inter-V.fnt)
+%Fl(9,20-Inter-SemiBold.fnt)
+%Fl(10,22-ProFont.fnt)
+%Fl(11,20-Inter-V.fnt)
+
+#--- Preload Images ---#
+%xl(PBI,Playback_Icons.bmp,5)
+%xl(P,progress.bmp,12)
+#%xl(H,BatteryStatus.bmp,12)
+#%xl(repeat,RepeatStatus.bmp,4)
+#%xl(shuffle,ShuffleStatus.bmp,0,0)
+%xl(PBB,pb_back.bmp,0,0)
+%xl(PB,pb.bmp,0,0)
+
+#--- Quickscreen Images ---#
+%xl(Slider,Slider.bmp,0,0)
+%xl(SliderBack,QuickSliderBack.bmp,0,0)
+%xl(BrightnessIcons,QuickBrightness.bmp,0,0)
+%xl(VolumeIcons,VolumeIcons.bmp,4)
+
+#--- Clear Screen ---#
+%V(0,0,375,320,-)%VB
+%V(0,0,375,320,-)
+
+#------------- Status Bar Layer -----------#
+
+#__Username - Max 8 characters anything more will scroll
+#%V(20,8,64,17,3)
+#%al%sROCKBOX
+
+# Battery status
+#%V(265,2,-15,17,3)
+#%ar%bp<%xd(Bb)|%xd(Ba)>%ar%bl%%
+
+##__Hold
+#%V(220,20,81,17,4)
+#%?mh<%acLOCKED%Vs(invert)|>
+
+
+#__Repeat
+#%V(220,11,21,12,-)
+#%?and(%if(%ps, =, 1),%or(%if(%mm, =, 1),%if(%mm, >, 1)),%or(%if(%fc, !=, 4),%if(%fc, !=, 5),%if(%fc, !=, 7),%if(%fc, !=, 11),%if(%fc, !=, 13)))<%xd(shuffle,%ps)>
+#%?and(%if(%ps, =, 1),%or(%if(%mm, =, 1),%if(%mm, >, 1)),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11),%if(%fc, =, 13)))<%xd(shuffle,%ps)>
+#%?and(%if(%ps, !=, 1),%if(%mm, >, 1),%or(%if(%fc, !=, 4),%if(%fc, !=, 5),%if(%fc, !=, 7),%if(%fc, !=, 11),%if(%fc, !=, 13)))<%xd(repeat,%mm,-1)>
+
+#__Shuffle
+#%V(192,11,21,11,-)
+#%?and(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11),%if(%fc, =, 13)))<%xd(repeat,%mm)>
+#%?and(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, !=, 4),%if(%fc, !=, 5),%if(%fc, !=, 7),%if(%fc, !=, 11),%if(%fc, !=, 13)))<%xd(repeat,%mm,-1)>
+
+#__Battery Text
+#%V(265,8,35,20,3)
+#%ar%bl%%
+
+#__Battery Icon
+#%V(248,11,21,11,-)
+#%?bp<%xd(Hl)|%?bl<%xd(Ha)|%xd(Hb)|%xd(Hc)|%xd(Hd)|%xd(He)|%xd(Hf)|%xd(Hg)|%xd(Hh)|%xd(Hi)|%xd(Hj)|%xd(Hk)>>
+
+#------------ Main Screen Layer -----------#
+
+#__USB Screen
+%?if(%cs, =, 21)<%VI(clearScreen)%Vd(USB)|%VI(menuViewport)%Vd(MainDisplay)%?pE(15)<%?mp<|%Vd(nextInfo)>|%Vd(curInfo)>>
+
+#__Clear Screen
+%Vi(clearScreen,22,30,1,1,-)
+
+#__Title
+%Vl(MainDisplay,43,51,287,140,9)
+%al%Vs(invert)%s%?cs<Main Menu|%?Lt<%Lt>>
+
+#__QuickScreen
+%Vl(Quickscreen,43,48,207,141,9)
+%alQuick Screen
+
+#__Time / Day
+#%Vl(MainDisplay,-85,34,63,26,3)
+#%ar%t(5)%?cf<%cH:%cM|%?cl<1|2|3|4|5|6|7|8|9|10|11|12>:%cM%cp>;%ar%t(5)%cb %cd
+
+#__Top Line
+%Vl(MainDisplay,43,92,289,1,-)
+%dr(0,0,289,1)
+
+#__UI Viewport
+%Vi(menuViewport,43,95,289,144,7)
+
+#__Bottom Line
+#%Vl(MainDisplay,20,200,280,1,-)
+#%dr(0,0,280,1)
+
+#__Play/Pause Icons
+%Vl(MainDisplay,43,262,21,12,-)
+%?mp<%xd(PBI,1)|%xd(PBI,2)|%xd(PBI,3)|%xd(PBI,4)|%xd(PBI,5)>
+
+#__Now Playing
+%Vl(curInfo,66,259,262,18,8)
+%al%s%?ia<%ia - %it|%fn>
+
+#__Progress Bar
+#%Vl(curInfo,-35,211,15,15,-)
+#%ar%?if(%px, >, 8)<%?if(%px, >, 17)<%?if(%px, >, 25)<%?if(%px, >, 33)<%?if(%px, >, 42)<%?if(%px, >, 50)<%?if(%px, >, 58)<%?if(%px, >, 67)<%?if(%px, >, 75)<%?if(%px, >, 83)<%?if(%px, >, 92)<%xd(Pl)|%xd(Pk)>|%xd(Pj)>|%xd(Pi)>|%xd(Ph)>|%xd(Pg)>|%xd(Pf)>|%xd(Pe)>|%xd(Pd)>|%xd(Pc)>|%xd(Pb)>|%xd(Pa)>
+
+#__Next Up
+%Vl(nextInfo,65,259,23,18,8)
+%ac→%Vs(invert)
+%Vl(nextInfo,88,259,243,18,8)
+%ac%s%?Ia<%Ia%?It< - %It>|%Fn> %Vs(invert)
+
+#__Track Progress Bar
+%Vl(MainDisplay,43,240,289,1,-)
+%dr(0,0,289,1)
+%Vl(MainDisplay,43,241,289,6,-)
+%pb(0,0,289,5,PBB,slider,PB)
+%Vl(MainDisplay,43,247,289,1,-)
+%dr(0,0,289,1)
+
+
+#----------- Quick Screen Layer -----------#
+
+#--- Clear Screen ---#
+%V(0,0,375,320,-)
+
+#--- Quick Screen Default Location ---#
+%?if(%cs, =, 10)<%Vd(Quickscreen)%VI(QuickDefault)>
+
+#--- Quick Screen Sliders ---#
+%Vl(Quickscreen,49,110,16,15,-)
+%?if(%pv, =, -90)<%xd(VolumeIcons,1)>
+%?and(%if(%pv, <=, -60),%if(%pv, >, -90))<%xd(VolumeIcons,2)>
+%?and(%if(%pv, <=, -30),%if(%pv, >, -60))<%xd(VolumeIcons,3)>
+%?if(%pv, >, -30)<%xd(VolumeIcons,4)>
+%Vl(Quickscreen,72,111,254,13,-)%pv(0,0,254,12,Slider,backdrop,SliderBack)
+%Vl(Quickscreen,49,135,27,29,-)%xd(BrightnessIcons,1)
+%Vl(Quickscreen,72,137,254,13,-)%St(0,0,254,12,Slider,backdrop,SliderBack,setting,brightness)
+
+#--- Default Quickscreen ---#
+%Vi(QuickDefault,38,157,298,86,3)
+
+#---------------  USB Layer ---------------#
+
+#__USB
+%?if(%cs, =, 21)<%Vd(USB)>
+
+#__USB Text
+%Vl(USB,43,61,289,33,9)
+%acUSB CONNECTED%Vs(invert)
+
+#__USB Line Top
+%Vl(USB,43,92,289,1,-)
+%dr(0,0,289,1)
+
+#__USB Date
+%Vl(USB,43,106,289,54,9)
+%ac%s%?cu<Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday>, %?cm<January|February|March|April|May|June|July|August|September|October|November|December> %cd
+
+#__USB Time
+%Vl(USB,59,138,254,65,9)
+%ac%?cf<%cH:%cM:%cS|%?cl<1|2|3|4|5|6|7|8|9|10|11|12>:%cM%cP>
+
+#__USB Line Bottom
+%Vl(USB,43,247,289,1,-)
+%dr(0,0,289,1)
+
+#__USB Eject Warning
+%Vl(USB,46,258,282,21,9)
+%ac%t(1)EJECT BEFORE DISCONNECTING;%t(.1)%ac

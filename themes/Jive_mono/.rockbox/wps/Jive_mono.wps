@@ -1,0 +1,187 @@
+
+# Theme: New Theme - James Stevenson
+# Version 1.0
+# Last Update: 01/17/2026
+# License: CC-BY-SA 3.0
+# By: Monica G.
+# Description: BACKBONE is a spinoff of the minimalist BONES theme by Chuck Nardo! Some additions / modifications include:
+# On the WPS, instead of track number, the playlist number is displayed / alternates with the time.
+# Battery level is displayed on the WPS and bitrate is also shown plus more file types.
+# Next song will display as the current track is ending.
+# If a song is currently playing it is displayed on the SBS as well as play status.
+# The menu title is displayed when navigating menus but will alternate to the time.
+# Quick menu utilizes a smaller font and displays time / play status.
+# A few lines are drawn in to add structure, but all icons remain unchanged.
+
+## WPS File ##
+
+#Hide The Status Bar
+%wd
+
+## Preload Fonts ##
+%Fl(2,14-MPLUSRounded1c-Medium.fnt)
+%Fl(3,20-MPLUSRounded1c-Medium.fnt)
+%Fl(4,28-MPLUSRounded1c-Medium.fnt)
+%Fl(5,47-ProFont.fnt)
+
+## Preload Images ##
+%xl(E,battery.bmp,0,0,25)
+%xl(N,bggrey.bmp,0,0)
+%xl(RPTAB,repeat-ab.bmp,0,0)
+%xl(RPTSH,repeat-shf.bmp,0,0)
+%xl(RPT1,repeat-1.bmp,0,0)
+%xl(RPTA,repeat-all.bmp,0,0)
+%xl(SHF,shuffle.bmp,0,0)
+%xl(PBB,pb_back.bmp,0,0)
+%xl(PB,pb.bmp,0,0)
+%xl(VBB,vb_back.bmp,0,0)
+%xl(VB,vb.bmp,0,0)
+%xl(BBB,bb_back.bmp,0,0)
+%xl(BB,bb.bmp,0,0)
+%xl(T,stop_icon.bmp,0,0)
+%xl(L,play_icon.bmp,0,0)
+%xl(Z,pause_icon.bmp,0,0)
+%xl(battery,battery.bmp,0,0,10)
+%xl(S,sleep.bmp,0,0) 
+%xl(W,Icon_Play.bmp,0,0)
+%xl(X,Icon_Pause.bmp,0,0)
+%xl(Y,LOSSLESS_ICON.bmp,0,0)
+%xl(FAST,Icon_FF.bmp,0,0)
+%xl(REW,Icon_RW.bmp,0,0)
+
+
+#-- Circular Progress Bar --#
+%xl(Progressa,Progress_00.bmp)
+%xl(Progressb,Progress_01.bmp)
+%xl(Progressc,Progress_02.bmp)
+%xl(Progressd,Progress_03.bmp)
+%xl(Progresse,Progress_04.bmp)
+%xl(Progressf,Progress_05.bmp)
+%xl(Progressg,Progress_06.bmp)
+%xl(Progressh,Progress_07.bmp)
+%xl(Progressi,Progress_08.bmp)
+%xl(Progressj,Progress_09.bmp)
+%xl(Progressk,Progress_10.bmp)
+%xl(Progressl,Progress_11.bmp)
+%xl(Progressm,Progress_12.bmp)
+%xl(Progressn,Progress_13.bmp)
+%xl(Progresso,Progress_14.bmp)
+%xl(Progressp,Progress_15.bmp)
+%xl(Progressq,Progress_16.bmp)
+%xl(Progressr,Progress_17.bmp)
+%xl(Progresss,Progress_18.bmp)
+%xl(Progresst,Progress_19.bmp)
+%xl(Progressu,Progress_20.bmp)
+%xl(Progressv,Progress_21.bmp)
+%xl(Progressw,Progress_22.bmp)
+%xl(Progressx,Progress_23.bmp)
+%xl(Progressy,Progress_24.bmp)
+%xl(Progressz,Progress_25.bmp)
+%xl(Progress0,Progress_26.bmp)
+%xl(Progress1,Progress_27.bmp)
+%xl(Progress2,Progress_28.bmp)
+%xl(Progress3,Progress_29.bmp)
+%xl(Progress4,Progress_30.bmp)
+%xl(Progress5,Progress_31.bmp)
+%xl(Progress6,Progress_32.bmp)
+%xl(Progress7,Progress_33.bmp)
+%xl(Progress8,Progress_34.bmp)
+%xl(Progress9,Progress_35.bmp)
+%xl(Progress10,Progress_36.bmp)
+
+###################################################################################################
+
+
+# Show Main Display unless Hold Switch is on
+#%?mh<%Vd(holdScreen)|%Vd(mainDisplay)>
+%Vd(mainDisplay)>
+
+# ---------
+# Background Viewports:
+# ---------
+
+# Clear Screen
+%Vl(background,0,0,375,320,-)
+%X(bggrey.bmp)
+
+
+## Main Display ##
+
+# Clear Screen
+%Vl(mainDisplay,0,0,375,320,-)
+#xl(
+
+## Fullscreen BG ##
+%xd(N)%VB
+%Vl(mainDisplay,0,0,375,320,-)
+
+
+
+## Time ##
+%Vl(mainDisplay,262,31,113,289,2)
+%Vf(ffffff)
+%al%cl:%cM
+ 
+## Battery icon top right ##
+%V(304,31,35,17,2)%Vf(ffffff)
+%ar%bl%%
+
+## Circular Progress Bar ##
+%Vl(mainDisplay,262,67,77,77,-)
+%?px<%xd(Progressa)|%xd(Progressb)|%xd(Progressc)|%xd(Progressd)|%xd(Progresse)|%xd(Progressf)|%xd(Progressg)|%xd(Progressh)|%xd(Progressi)|%xd(Progressj)|%xd(Progressk)|%xd(Progressl)|%xd(Progressm)|%xd(Progressn)|%xd(Progresso)|%xd(Progressp)|%xd(Progressq)|%xd(Progressr)|%xd(Progresss)|%xd(Progresst)|%xd(Progressu)|%xd(Progressv)|%xd(Progressw)|%xd(Progressx)|%xd(Progressy)|%xd(Progressz)|%xd(Progress0)|%xd(Progress1)|%xd(Progress2)|%xd(Progress3)|%xd(Progress4)|%xd(Progress5)|%xd(Progress6)|%xd(Progress7)|%xd(Progress8)|%xd(Progress9)|%xd(Progress10)>
+
+## Track Title alternating with album - artist, left-aligned ##
+%Vl(mainDisplay,38,251,299,69,2)
+%ac%s%it
+%Vl(mainDisplay,38,267,299,53,2)
+%Vf(a3a3a3)
+%s%ac%?id<%ia — |>%?id<%id|%fn>
+
+## Album Art ##
+%Cl(0,0,207,207)
+%V(22,30,207,207,-)
+%?C<%Cd>
+
+## Lossless icon Small over icon ##
+# determine if 'lossless', aiff=4, wave=5, flac=7, alac=11, shorten=13
+%?or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11),%if(%fc, =, 13))<%Vd(lossless)>
+#-- Lossless Indicator Image
+%Vl(lossless,292,170,17,15,-)
+%Vb(ffffff)
+%xd(Y)
+
+
+## Shuffle ##
+%Vl(mainDisplay,331,58,13,12,4)
+%al%?ps<%xd(SHF)>
+
+## Repeat ##
+%Vl(mainDisplay,259,58,16,15,-)
+%ar%?mm<|%xd(RPTA)|%xd(RPT1)|%xd(RPTSH)|%xd(RPTAB)>
+
+## Play/Pause Icons ##
+%Vl(mainDisplay,286,98,31,17,-)
+%Vf(FFFFFF)
+%?mp<%xd(X)|%xd(X)|%xd(W)|%xd(FAST)|%xd(REW)>
+
+## Volume Bar ##
+%Vl(mainDisplay,273,221,57,5,-)
+%pv(0,0,57,5,VB,backdrop,VBB)
+
+## Time Elapsed / Total Time Remaining ##
+%Vl(mainDisplay,256,146,87,40,2)
+%Vf(ffffff)
+%ac%pc
+
+## Next track ##
+#%Vl(mainDisplay,15,156,280,15,2)
+#%al%?pE(20)<%?It<%s%Sx(Next:) %It - %Ia|>|>
+#%al%?pE(20)<%cH:%cM|%?It<%s%Sx(Next:) %It - %Ia|%fn>>
+
+## Track X of X ##
+%Vl(mainDisplay,256,190,87,23,2)
+#%Vf(87CAF3)
+%Vf(FFFFFF)
+%ac %pp of %pe
+
+

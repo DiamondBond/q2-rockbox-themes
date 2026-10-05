@@ -1,0 +1,145 @@
+#######################################
+## THEME NAME: digitalRedux (Version 2.0)
+## BY D Juarez  December 2026
+## Hi everyone! This is the updated version of my take on
+## the digital Theme. At this point I'm comfortable with calling
+## it my own work as pretty much all of the code is mine.
+## Changelog:
+## * Removed icon sets and loading icons and replaced them with
+##   unicode characters
+## * Different fonts for CJK support
+## * Split screens if music is playing
+## * New colorscheme
+## * Modified battery icon and icon display logic
+##
+## Comments or questions, let me know on the Rockbox forums or
+## on the Rockbox subreddit
+## Happy listening! :)))))
+#
+# Version 1.1 Update:
+# Changelog:
+#    * Revised battery icon
+#    * Revised battery icon logic
+#    * Altered themes (shouldn't be noticeable)
+#    * Alignment fixed
+#    * Split or whole screen logic change
+#
+# Version 1.2 Update:
+# Changelog:
+#    * Replaced progress bar and backdrop
+#    * Added battery percentage toggle option
+#      via battery display numeric option
+#    * Added split screen toggle option
+#      via volume display graphic option
+#    * Fixed split screen bug when track with
+#      no album art is present or album art
+#      is switched off
+#### SBS FILE ########################
+
+############ Status Bar ##############
+## Disable Status Bar
+%wd
+
+## Preload Fonts
+%Fl(2,20-MPLUSRounded1c-Bold_.fnt)
+%Fl(3,20-NotoSansSymbols2-Regular_REDUCED.fnt)
+%Fl(4,17-MPLUSRounded1c-Medium_NUMBERS.fnt)
+%Fl(5,18-MPLUSRounded1c-Medium_EXTENDED_V1.fnt)
+
+#Status Bar Background
+%V(22,30,331,17,-)%Vb(-)
+
+## Hide Menu Title
+%V(22,30,1,1,-)%Vf(000000)%Vb(000000)
+%Lt
+
+## Disk Working (Main Menu)
+%V(27,31,21,24,3)%Vf(-)%Vb(-)
+%?lh<⏳|>
+
+## Toggle Battery Percent Level
+%?if(%St(battery display),=,numeric)<%VI(batteryLevel)%Vd(batteryLevel)|%VI(noBatteryLevel)%Vd(noBatteryLevel)>
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Battery Percent level Disabled
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## Disk Working
+##%Vl(noBatteryLevel,180,2,12,20,3)%Vf(-)%Vb(-)
+##%?lh<⏳|>
+
+## Repeat
+%Vl(noBatteryLevel,265,33,16,21,2)%Vf(-)%Vb(-)
+%?mm<|∞|∞|∞|∞>
+
+## Shuffle
+%Vl(noBatteryLevel,294,35,16,21,2)%Vf(-)%Vb(-)
+%?ps<⇄|>
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Battery Percent level Enabled
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## Disk Working
+##%Vl(batteryLevel,180,2,12,20,3)%Vf(-)%Vb(-)
+##%?lh<⏳|>
+
+## Repeat
+%Vl(batteryLevel,238,33,16,21,2)%Vf(-)%Vb(-)
+%?mm<|∞|∞|∞|∞>
+
+## Shuffle
+%Vl(batteryLevel,271,35,16,21,2)%Vf(-)%Vb(-)
+%?ps<⇄|>
+
+## Battery Percent Level
+%Vl(batteryLevel,293,30,29,21,4)%Vf(-)%Vb(-)
+%ar%bl
+
+## Battery Icon
+%xl(H,battery_level.bmp,0,0,14)
+%V(328,35,20,12,5)%Vb(-)%Vf(-)
+%?bp<
+    %?bc<
+	    %?bl<|
+	        %t(0.6)%xd(H,3);%t(0.6)%xd(H,4);%t(0.6)%xd(H,5);%t(0.6)%xd(H,6);%t(0.6)%xd(H,7);%t(0.6)%xd(H,8);%t(0.6)%xd(H,9);%t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,4);%t(0.6)%xd(H,5);%t(0.6)%xd(H,6);%t(0.6)%xd(H,7);%t(0.6)%xd(H,8);%t(0.6)%xd(H,9);%t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,5);%t(0.6)%xd(H,6);%t(0.6)%xd(H,7);%t(0.6)%xd(H,8);%t(0.6)%xd(H,9);%t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,6);%t(0.6)%xd(H,7);%t(0.6)%xd(H,8);%t(0.6)%xd(H,9);%t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,7);%t(0.6)%xd(H,8);%t(0.6)%xd(H,9);%t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,8);%t(0.6)%xd(H,9);%t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,9);%t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,10);%t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,11);%t(0.6)%xd(H,12);%t(0.6)%xd(H,13)|
+	        %t(0.6)%xd(H,12);%t(0.6)%xd(H,13)>|
+		%xd(H,14)>|
+	%?bl<|
+	    %t(0.6)%xd(H,2);%t(0.6)%xd(H,1)|
+		%xd(H,3)|
+		%xd(H,4)|
+		%xd(H,5)|
+		%xd(H,6)|
+		%xd(H,7)|
+		%xd(H,8)|
+		%xd(H,9)|
+		%xd(H,10)|
+		%xd(H,11)|
+		%xd(H,12)|
+		%xd(H,13)|
+		%xd(H,13)>>
+
+## Main Panel
+
+## Logic to for when to split the screen into single or dual viewports
+# Play, Pause, and album artwork ------> split
+# else -----> whole screen
+
+# %?or(%if(%cs,=,1),%if(%cs,=,7),%if(%cs,=,8))<%?mp<%?C<%VI(split)%Vd(split)|%VI(whole)%Vd(whole)>|%?C<%VI(split)%Vd(split)|%VI(whole)%Vd(whole)>|%?C<%VI(split)%Vd(split)|%VI(whole)%Vd(whole)>>|%VI(whole)%Vd(whole)>
+%?if(%St(volume display),=,graphic)<%?or(%if(%cs,=,1),%if(%cs,=,7),%if(%cs,=,8))<%?mp<%?C<%VI(split)%Vd(split)|%VI(whole)%Vd(whole)>|%?C<%VI(split)%Vd(split)|%VI(whole)%Vd(whole)>|%?C<%VI(split)%Vd(split)|%VI(whole)%Vd(whole)>>|%VI(whole)%Vd(whole)>|%VI(whole)%Vd(whole)>
+
+%Vi(whole,27,62,321,223,5)%Vf(e2d9d1)%Vb(-)
+%Vi(split,27,62,197,223,5)%Vf(e2d9d1)%Vb(-)
+
+%Vl(split,224,62,124,217,-)
+%Cl(-20,0,331,248,l,l)
+%Cd
