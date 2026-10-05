@@ -1,7 +1,7 @@
 # Q2 Rockbox themes
 
 Unofficial ports of Rockbox themes to the **Shanling Q2** (375x320), for the
-[Shanling Q2 Rockbox port](https://github.com/DiamondBond/rockbox) running
+[Shanling Q2 Rockbox port](https://github.com/DiamondBond/q2-rockbox) running
 under [Q2 Pod](https://github.com/DiamondBond/q2-pod) V8.3 or later.
 
 These come from themes.rockbox.org, mainly for the Eros Q / Hifiwalker H2

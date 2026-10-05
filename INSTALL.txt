@@ -8,7 +8,7 @@ Q2 Rockbox theme collection
 
 Requires the Shanling Q2 Rockbox port, and Q2 Pod V8.3 or later to boot it:
 
-    https://github.com/DiamondBond/rockbox
+    https://github.com/DiamondBond/q2-rockbox
     https://github.com/DiamondBond/q2-pod
 
 Themes ported to 375x320 from themes.rockbox.org. Credits and licence notes
