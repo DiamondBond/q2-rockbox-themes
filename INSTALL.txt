@@ -1,0 +1,15 @@
+Q2 Rockbox theme collection
+===========================
+
+1. Unzip this archive onto the card's root, next to .rockbox. The themes'
+   files merge into the existing .rockbox.
+2. On the player: Settings > Theme Settings > Browse Theme Files, then pick a
+   theme and load it.
+
+Requires the Shanling Q2 Rockbox port, and Q2 Pod V8.3 or later to boot it:
+
+    https://github.com/DiamondBond/rockbox
+    https://github.com/DiamondBond/q2-pod
+
+Themes ported to 375x320 from themes.rockbox.org. Credits and licence notes
+are still being completed.
