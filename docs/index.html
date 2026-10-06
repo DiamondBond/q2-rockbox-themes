@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q2 Rockbox Themes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Q2 Rockbox Themes</h1>
+  <p class="lead">Unofficial ports of Rockbox themes to the <strong>Shanling Q2</strong>
+  (375&times;320), remapped from their original layouts rather than squashed,
+  and kept clear of the glass's rounded corners.</p>
+  <p class="install">
+    <strong>Install:</strong>
+    put the <a href="https://github.com/DiamondBond/q2-rockbox">Q2 Rockbox port</a>
+    and <a href="https://github.com/DiamondBond/q2-pod">Q2 Pod V8.3+</a> on the player,
+    unzip a theme onto the card's root next to <code>.rockbox</code>, then pick it in
+    <em>Settings &rsaquo; Theme Settings &rsaquo; Browse Theme Files</em>.
+    The <a href="https://github.com/DiamondBond/q2-rockbox-themes/releases">full pack</a>
+    installs every theme at once.
+  </p>
+</header>
+
+<main>
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="Search themes or authors&hellip;" autocomplete="off">
+    <span id="count"></span>
+  </div>
+  <div id="grid" class="grid"></div>
+</main>
+
+<footer>
+  <p>Ports by <a href="https://github.com/DiamondBond/q2-rockbox-themes">DiamondBond/q2-rockbox-themes</a>.
+  Themes are by their original authors on <a href="https://themes.rockbox.org/">themes.rockbox.org</a>;
+  each card links its source. Licences: CC-BY-SA 3.0 unless noted.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
