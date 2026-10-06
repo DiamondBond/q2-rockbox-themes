@@ -1,0 +1,163 @@
+# Theme name: nerdSketch
+# by: Humberto Santana (humbertosantana@hotmail.com)
+# Version: 4.0
+# Last updated: October 25th, 2010
+# First version: July 10th, 2008
+# License: Creative Commons Attribution-Noncommercial-ShareAlike License 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+# Font license: Mattt's rope by Matt Chrisholm. Licensed under the GNU GPL http://www.theory.org/~matt/fonts/free/?font=mwtsrc
+# Iconset: Derived from Pen & Paper Theme's iconset by Johan Swetzen, under Creative Commons Attribution-Share Alike 3.0 License  
+#
+# If used for other works, as per this license, please include the following Attribution Text: "Modified/Derived from nerdSketch theme for iPod Video (CC-BY-SA 3.0) by Humberto Santana"
+#
+# WPS File
+#
+# TOUCHSCREEN AREAS
+#
+# Menu + Quickscreen
+%T(14,48,100,125,menu)
+%T(14,48,100,125,&quickscreen)
+#
+# Files/DB + Context Menu
+%T(101,207,204,61,browse)
+%T(101,207,204,61,&contextmenu)
+#
+# Playlist
+%T(12,283,352,29,playlist)
+#
+# Shuffle
+%T(141,56,84,32,shuffle)
+#
+# Play/Pause
+%T(9,192,73,40,play)
+#
+# Previous + REW
+%T(136,160,56,32,prev)
+%T(136,160,56,32,&rwd)
+#
+# Next + FFW
+%T(316,160,56,32,next)
+%T(316,160,56,32,&ffwd)
+#
+# Pause/Play + Stop
+%T(9,192,75,35,play)
+%T(9,192,75,35,&stop)
+#
+# Repeat
+%T(286,56,84,32,repmode)
+#
+# Volume Down
+%T(134,101,36,41,voldown)
+#
+# Volume Up
+%T(230,101,36,41,volup)
+#
+# Progressbar
+%T(207,159,97,21,progressbar)
+#
+#
+%wd
+%X(nerdSketch_bg.bmp)
+#
+# HDD
+%xl(H,hdd.bmp,0,0)
+%V(0,0,41,37,-)
+%?lh<%xd(H)|>
+#
+# Hold
+%xl(h,hold.bmp,0,0)
+%V(76,4,16,25,-)
+%?mh<%xd(h)|>
+#
+# Track position in playlist
+%V(185,5,128,24,1)%Vf(716a2e)%Vb(002c00)
+%s%ar%pp/%pe
+#
+# Album Art-Hold/Playing Status Animations Viewport
+#
+%xl(Clean,clean.bmp,4,12)
+%Cl(4,12,117,133,c,c)
+%xl(N,notes.bmp,0,3,13)
+%xl(E,eyes.bmp,64,68,2)
+%V(17,37,121,145,-)
+%?mh<%xd(Clean)|%?mp<||%xd(Clean)||>>
+%V(17,37,121,145,-)
+%t(2)%?mh<%xd(Clean)|%?C<%?mp<|%Cd|%xd(Clean)|%Cd|%Cd>|%xd(Clean)>>;%t(0.1)%?mh<%xd(Na)%xd(Eb)|%?C<%?mp<|%Cd|%xd(Na)%xd(Eb)|%Cd|%Cd>|%xd(Na)%xd(Eb)>>;%t(0.1)%?mh<%xd(Nb)%xd(Eb)|%?C<%?mp<|%Cd|%xd(Nb)%xd(Eb)|%Cd|%Cd>|%xd(Nb)%xd(Eb)>>;%t(0.1)%?mh<%xd(Nc)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nc)%xd(Ea)|%Cd|%Cd>|%xd(Nc)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nd)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nd)%xd(Ea)|%Cd|%Cd>|%xd(Nd)%xd(Ea)>>;%t(0.1)%?mh<%xd(Ne)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Ne)%xd(Ea)|%Cd|%Cd>|%xd(Ne)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nf)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nf)%xd(Ea)|%Cd|%Cd>|%xd(Nf)%xd(Ea)>>;%t(0.1)%?mh<%xd(Ng)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Ng)%xd(Ea)|%Cd|%Cd>|%xd(Ng)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nh)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nh)%xd(Ea)|%Cd|%Cd>|%xd(Nh)%xd(Ea)>>;%t(0.1)%?mh<%xd(Ni)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Ni)%xd(Ea)|%Cd|%Cd>|%xd(Ni)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nj)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nj)%xd(Ea)|%Cd|%Cd>|%xd(Nj)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nk)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nk)%xd(Ea)|%Cd|%Cd>|%xd(Nk)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nl)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nl)%xd(Ea)|%Cd|%Cd>|%xd(Nl)%xd(Ea)>>;%t(0.1)%?mh<%xd(Na)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Na)%xd(Ea)|%Cd|%Cd>|%xd(Na)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nb)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nb)%xd(Ea)|%Cd|%Cd>|%xd(Nb)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nc)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nc)%xd(Ea)|%Cd|%Cd>|%xd(Nc)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nd)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nd)%xd(Ea)|%Cd|%Cd>|%xd(Nd)%xd(Ea)>>;%t(0.1)%?mh<%xd(Ne)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Ne)%xd(Ea)|%Cd|%Cd>|%xd(Ne)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nf)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nf)%xd(Ea)|%Cd|%Cd>|%xd(Nf)%xd(Ea)>>;%t(0.1)%?mh<%xd(Ng)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Ng)%xd(Ea)|%Cd|%Cd>|%xd(Ng)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nh)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nh)%xd(Ea)|%Cd|%Cd>|%xd(Nh)%xd(Ea)>>;%t(0.1)%?mh<%xd(Ni)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Ni)%xd(Ea)|%Cd|%Cd>|%xd(Ni)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nj)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nj)%xd(Ea)|%Cd|%Cd>|%xd(Nj)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nk)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nk)%xd(Ea)|%Cd|%Cd>|%xd(Nk)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nl)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nl)%xd(Ea)|%Cd|%Cd>|%xd(Nl)%xd(Ea)>>;%t(1)%?mh<%xd(Nm)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nm)%xd(Ea)|%Cd|%Cd>|%xd(Nm)%xd(Ea)>>;%t(5)%?mh<%xd(Clean)|%?C<%?mp<|%Cd|%xd(Clean)|%Cd|%Cd>|%xd(Clean)>>;%t(0.4)%?mh<%xd(Nm)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nm)%xd(Ea)|%Cd|%Cd>|%xd(Nm)%xd(Ea)>>;%t(3)%?mh<%xd(Nm)%xd(Eb)|%?C<%?mp<|%Cd|%xd(Nm)%xd(Eb)|%Cd|%Cd>|%xd(Nm)%xd(Eb)>>;%t(0.2)%?mh<%xd(Nm)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nm)%xd(Ea)|%Cd|%Cd>|%xd(Nm)%xd(Ea)>>;%t(2)%?mh<%xd(Nm)%xd(Eb)|%?C<%?mp<|%Cd|%xd(Nm)%xd(Eb)|%Cd|%Cd>|%xd(Nm)%xd(Eb)>>;%t(0.1)%?mh<%xd(Na)%xd(Eb)|%?C<%?mp<|%Cd|%xd(Na)%xd(Eb)|%Cd|%Cd>|%xd(Na)%xd(Eb)>>;%t(0.1)%?mh<%xd(Nb)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nb)%xd(Ea)|%Cd|%Cd>|%xd(Nb)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nc)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nc)%xd(Ea)|%Cd|%Cd>|%xd(Nc)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nd)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nd)%xd(Ea)|%Cd|%Cd>|%xd(Nd)%xd(Ea)>>;%t(0.1)%?mh<%xd(Ne)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Ne)%xd(Ea)|%Cd|%Cd>|%xd(Ne)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nf)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nf)%xd(Ea)|%Cd|%Cd>|%xd(Nf)%xd(Ea)>>;%t(0.1)%?mh<%xd(Ng)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Ng)%xd(Ea)|%Cd|%Cd>|%xd(Ng)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nh)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nh)%xd(Ea)|%Cd|%Cd>|%xd(Nh)%xd(Ea)>>;%t(0.1)%?mh<%xd(Ni)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Ni)%xd(Ea)|%Cd|%Cd>|%xd(Ni)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nj)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nj)%xd(Ea)|%Cd|%Cd>|%xd(Nj)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nk)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nk)%xd(Ea)|%Cd|%Cd>|%xd(Nk)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nl)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nl)%xd(Ea)|%Cd|%Cd>|%xd(Nl)%xd(Ea)>>;%t(0.1)%?mh<%xd(Na)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Na)%xd(Ea)|%Cd|%Cd>|%xd(Na)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nb)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nb)%xd(Ea)|%Cd|%Cd>|%xd(Nb)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nc)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nc)%xd(Ea)|%Cd|%Cd>|%xd(Nc)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nd)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nd)%xd(Ea)|%Cd|%Cd>|%xd(Nd)%xd(Ea)>>;%t(0.1)%?mh<%xd(Ne)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Ne)%xd(Ea)|%Cd|%Cd>|%xd(Ne)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nf)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nf)%xd(Ea)|%Cd|%Cd>|%xd(Nf)%xd(Ea)>>;%t(0.1)%?mh<%xd(Ng)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Ng)%xd(Ea)|%Cd|%Cd>|%xd(Ng)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nh)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nh)%xd(Ea)|%Cd|%Cd>|%xd(Nh)%xd(Ea)>>;%t(0.1)%?mh<%xd(Ni)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Ni)%xd(Ea)|%Cd|%Cd>|%xd(Ni)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nj)%xd(Ea)|%?C<%?mp<|%Cd|%xd(Nj)%xd(Ea)|%Cd|%Cd>|%xd(Nj)%xd(Ea)>>;%t(0.1)%?mh<%xd(Nk)%xd(Eb)|%?C<%?mp<|%Cd|%xd(Nk)%xd(Eb)|%Cd|%Cd>|%xd(Nk)%xd(Eb)>>;%t(0.1)%?mh<%xd(Nl)%xd(Eb)|%?C<%?mp<|%Cd|%xd(Nl)%xd(Eb)|%Cd|%Cd>|%xd(Nl)%xd(Eb)>>;%t(4)%?mh<%xd(Clean)|%?C<%?mp<|%Cd|%xd(Clean)|%Cd|%Cd>|%xd(Clean)>>
+#%t(2)%?mh<%Vd(c)|%?C<%?mp<%Vd(c)|%Vd(a)|%Vd(c)|%Vd(a)|%Vd(a)>|%Vd(c)>>;%t(2.4)%?mh<%Vd(n)%Vd(e)|%?C<%?mp<%Vd(n)%Vd(e)|%Vd(a)|%Vd(n)%Vd(e)|%Vd(a)|%Vd(a)>|%Vd(n)%Vd(e)>>;%t(1)%?mh<%Vd(nc)%Vd(e)|%?C<%?mp<%Vd(nc)%Vd(e)|%Vd(a)|%Vd(nc)%Vd(e)|%Vd(a)|%Vd(a)>|%Vd(nc)%Vd(e)>>;%t(8)%?mh<%Vd(c)|%?C<%?mp<%Vd(c)|%Vd(a)|%Vd(c)|%Vd(a)|%Vd(a)>|%Vd(c)>>;%t(0.5)%?mh<%Vd(e)|%?C<%?mp<%Vd(e)|%Vd(a)|%Vd(e)|%Vd(a)|%Vd(a)>|%Vd(e)>>;%t(3)%?mh<%Vd(c)|%?C<%?mp<%Vd(c)|%Vd(a)|%Vd(c)|%Vd(a)|%Vd(a)>|%Vd(c)>>;%t(1)%?mh<%Vd(e)|%?C<%?mp<%Vd(e)|%Vd(a)|%Vd(e)|%Vd(a)|%Vd(a)>|%Vd(e)>>;%t(2.4)%?mh<%Vd(n)%Vd(e)|%?C<%?mp<%Vd(n)%Vd(e)|%Vd(a)|%Vd(n)%Vd(e)|%Vd(a)|%Vd(a)>|%Vd(n)%Vd(e)>>
+#
+# AA
+#%Cl(3,9,100,100,c,c)
+#%Vl(a,9,28,103,109,-)
+#%Cd
+#
+# Notes Secuence Animation Viewport
+#
+#%xl(N,notes.bmp,0,0,12)
+#%Vl(n,9,30,49,82,-)
+#%t(0.1)%xd(Na);%t(0.1)%xd(Nb);%t(0.1)%xd(Nc);%t(0.1)%xd(Nd);%t(0.1)%xd(Ne);%t(0.1)%xd(Nf);%t(0.1)%xd(Ng);%t(0.1)%xd(Nh);%t(0.1)%xd(Ni);%t(0.1)%xd(Nj);%t(0.1)%xd(Nk);%t(0.1)%xd(Nl);%t(0.1)%xd(Na);%t(0.1)%xd(Nb);%t(0.1)%xd(Nc);%t(0.1)%xd(Nd);%t(0.1)%xd(Ne);%t(0.1)%xd(Nf);%t(0.1)%xd(Ng);%t(0.1)%xd(Nh);%t(0.1)%xd(Ni);%t(0.1)%xd(Nj);%t(0.1)%xd(Nk);%t(0.1)%xd(Nl)
+#
+# Notes Viewport Cleaning
+#%Vl(nc,9,30,49,82,-)
+#
+# Eyes Looking Up Animation Viewport
+#%xl(E,eyes.bmp,0,00,2)
+#%Vl(e,64,79,36,10,-)
+#%xd(Ea)
+#
+# Eyes Animation Cleaning
+#%Vl(ec,64,79,36,10,-)
+#
+# Whole Album Art/Animations Cleaning
+#%Vl(c,9,28,103,109,-)
+#
+# Shuffle
+%xl(S,shuffle.bmp,0,0)
+%V(205,63,20,27,-)
+%?ps<%xd(S)|>
+#
+# Replay Gain
+%xl(G,rg.bmp,0,0,2)
+%V(259,64,23,33,-)
+%?rg<|%xd(Ga)|%xd(Ga)|%xd(Ga)|%xd(Ga)|%xd(Gb)>
+#
+# Repeat
+%xl(R,repeat.bmp,0,0,4)
+%V(284,63,87,31,-)
+%?mm<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)>
+#
+# Volume
+%xl(V,volume.bmp,0,0)
+%V(159,95,75,13,-)
+%pv(0,0,-,-,nofill,nobar,slider,V)
+#
+%V(161,123,63,24,1)%Vf(716a2e)%Vb(002c00)
+%ac%pv
+#
+# Power
+%xl(p,power.bmp,0,0,3)
+%V(332,101,41,39,-)
+%t(1)%?bp<%?bc<%xd(pa)|%xd(pb)>|%?bl<%xd(pc)|%xd(pc)||||||||>>;%t(1)%?bp<%?bc<%xd(pb)|%xd(pb)>|%?bl<%xd(pb)|%xd(pb)||||||||>>
+%V(275,113,49,24,1)%Vf(716a2e)%Vb(002c00)
+%ac%bl%%
+#
+# Track Progressbar & Times
+%V(139,160,64,24,1)%Vf(716a2e)%Vb(002c00)
+%ar%pc
+%V(211,160,93,19,-)
+%pb(0,0,93,19,pb.bmp)
+%V(311,160,62,21,1)%Vf(716a2e)%Vb(002c00)
+%al%pt
+#
+# Playing Status
+%xl(P,playingStatus.bmp,0,0,4)
+%V(54,196,34,28,1)%Vf(716a2e)%Vb(002c00)
+%?mp<|%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)>
+#
+# Track, Artist, Album, Next
+%V(94,199,275,24,1)%Vf(716a2e)%Vb(002c00)
+%t(7)%s%al%?it<%it|%fn>;%t(21)%al%?it<%it|%fn>
+%V(94,228,275,24,1)%Vf(716a2e)%Vb(002c00)
+%t(7)%al%?ia<%ia|%?d(2)<%d(2)|%(root%)>>;%t(7)%s%al%?ia<%ia|%?d(2)<%d(2)|%(root%)>>;%t(14)%al%?ia<%ia|%?d(2)<%d(2)|%(root%)>>
+%V(94,257,267,24,1)%Vf(716a2e)%Vb(002c00)
+%t(14)%al%?id<%id|%?d(1)<%d(1)|%(root%)>>;%t(7)%s%al%?id<%id|%?d(1)<%d(1)|%(root%)>>;%t(7)%al%?id<%id|%?d(1)<%d(1)|%(root%)>>
+%V(94,289,229,24,1)%Vf(8d8d45)%Vb(002c00)
+%?It<%t(21)%al%It|%?Fn<%t(21)%al%Fn|%al -  End  ->>;%?It<%t(7)%al%s%It|%?Fn<%t(7)%s%al%Fn|%al -  End  ->>

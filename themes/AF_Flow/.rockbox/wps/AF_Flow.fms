@@ -1,0 +1,99 @@
+#Theme Name: AF_Flow 
+#By: AsusFreak 
+#Platform: Cowon D2 (320x240) - Standard build
+#Version: 4.0
+#Last updated: May 7th, 2012
+
+#Font Inclusion
+%Fl(5,18-Adobe-Helvetica-AF.fnt)
+%Fl(4,14-Adobe-Helvetica-Bold-AF.fnt)
+%Fl(2,27-Adobe-Helvetica-AF.fnt)
+
+%wd
+
+%xl(t,volup1.bmp,6,15)
+%xl(s,voldown1.bmp,6,15)
+%xl(a,volup.bmp,6,15)
+%xl(b,voldown.bmp,6,15)
+%xl(c,up.bmp,7,17)
+%xl(d,down.bmp,12,17)
+%xl(j,back.bmp,15,17)
+%xl(h,rwd.bmp,7,17)
+%xl(i,fwd.bmp,12,17)
+%xl(v,presets.bmp,12,17)
+%xl(W,volume.bmp,0,0,21)
+%xl(Z,battery.bmp,0,0,22)
+
+# Top Viewport
+# (Preset & Number) or Scan; Mono/Stereo
+# Current Preset Name
+%V(96,37,178,24,5)%Vf(CCCCCC)
+%s%al%?tm<Scan|Preset: %Ti>%ar%?ts<Stereo|Mono>
+
+
+# The following section is for things that go to the right of the album art
+#Tuned Frequecy (larger font)
+%V(96,109,178,36,2)%Vf(CCCCCC)
+%ac%tf
+
+
+# ---- fm screen
+# FM Tuned Freq and Preset Name
+%V(96,208,178,24,5)%Vf(CCCCCC)%Vb(000000)
+%ac%?Tn<%Tn|Unknown Channel>
+
+%V(96,163,178,20,4)%Vf(5064F8)%Vb(000000)
+%ac%?tr<+|+ +|+ + +|+ + + +|+ + + + +|+ + + + + +|+ + + + + + +|+ + + + + + + +>
+
+
+### FM Screen
+%V(0,12,374,17,4)
+%al88     90       93     95     97    99      102   104   106
+
+%V(0,32,374,8,1)
+%pb(0,0,374,8,pb.bmp)
+
+# Up + Down Button
+%V(214,269,41,49,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,41,47,next)
+%T(0,0,41,47,ffwd,repeat_press)
+%xd(i)
+
+%V(121,269,41,49,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,41,47,prev)
+%T(0,0,41,47,rwd,repeat_press)
+%xd(h)
+
+# Cancel Button
+%V(330,209,41,49,-)
+%xd(j)
+%T(0,0,41,47,cancel)
+
+# Channel Button
+%V(166,269,41,49,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,40,45,presets)
+%xd(v)
+
+# Volume Up Button
+%V(52,263,41,49,-)
+%T(0,0,41,47,volup)
+%T(0,0,41,47,volup,repeat_press)
+%?mv(0.1)<%xd(t)|%xd(a)>
+
+# Volume Down Button
+%V(5,209,41,49,-)
+%T(0,0,41,47,voldown)
+%T(0,0,41,47,voldown,repeat_press)
+%?mv(0.1)<%xd(s)|%xd(b)>
+
+#Battery
+%V(3,231,95,4,0) %Vf(CCCCCC) %Vb(000000)
+%?bp<%xd(Zv)|%?bl<%xd(Zv)|%xd(Za)|%xd(Zb)|%xd(Zc)|%xd(Zd)|%xd(Ze)|%xd(Zf)|%xd(Zg)|%xd(Zh)|%xd(Zi)|%xd(Zj)|%xd(Zk)|%xd(Zl)|%xd(Zm)|%xd(Zn)|%xd(Zo)|%xd(Zp)|%xd(Zq)|%xd(Zr)|%xd(Zs)|%xd(Zt)|%xd(Zu)>>
+%V(5,239,46,19,0) %Vf(CCCCCC) %Vb(000000)
+%al%t(10)%bt;%al%t(10)%bl%%
+
+# Volume
+%V(279,231,94,4,0) %Vf(CCCCCC) %Vb(000000)
+%?pv<%xd(Wa)|%xd(Wb)|%xd(Wc)|%xd(Wd)|%xd(We)|%xd(Wf)|%xd(Wg)|%xd(Wh)|%xd(Wi)|%xd(Wj)|%xd(Wk)|%xd(Wl)|%xd(Wm)|%xd(Wn)|%xd(Wo)|%xd(Wp)|%xd(Wq)|%xd(Wr)|%xd(Ws)|%xd(Wt)|%xd(Wu)>
+%V(325,239,46,19,0) %Vf(CCCCCC) %Vb(000000)
+%ar%pvdB

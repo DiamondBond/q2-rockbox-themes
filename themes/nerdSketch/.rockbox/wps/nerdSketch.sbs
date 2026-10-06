@@ -1,0 +1,40 @@
+# Theme name: nerdSketch
+# by: Humberto Santana (humbertosantana@hotmail.com)
+# Version: 4.0
+# Last updated: October 25th, 2010
+# First version: July 10th, 2008
+#
+# License: Creative Commons Attribution-Noncommercial-ShareAlike License 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+# Font license: Mattt's rope by Matt Chrisholm. Licensed under the GNU GPL http://www.theory.org/~matt/fonts/free/?font=mwtsrc
+# Iconset: Derived from Pen & Paper Theme's iconset by Johan Swetzen, under Creative Commons Attribution-Share Alike 3.0 License (http://www.rockbox.org/twiki/bin/view/Main/WpsIpod5g#PenPaper) 
+#
+# If used for other works, as per this license, please include the following Attribution Text: "Modified/Derived from nerdSketch theme for iPod Video (CC-BY-SA 3.0) by Humberto Santana"
+#
+# SBS File
+#
+backdrop: /.rockbox/backdrops/nerdSketch_bd.bmp
+#
+# Album Art Conditional
+%?C<%Vd(a)|%Vd(n)>
+#
+# AA
+%Cl(0,0,38,43,c,c)
+%Vl(a,12,44,38,43,-)
+%Cd
+%Vl(n,12,44,38,43,-)
+#
+# Playing Status
+%xl(P,playingStatus.bmp,0,0,4)
+%V(59,15,34,28,-)
+%?mp<|%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)>
+#
+# Track
+%V(89,19,253,24,1)%Vf(716a2e)%Vb(002c00)
+%s%al%?it<%it|%?fn<%fn|nerdSketch v4.0>>
+#
+# Vi AREA (MENU)
+%Vi(-,12,77,352,193,-)
+#
+# Track Progressbar & Times
+%V(12,293,352,24,1)%Vf(716a2e)%Vb(002c00)
+%al%pp of %pe%ar%pc / %pt

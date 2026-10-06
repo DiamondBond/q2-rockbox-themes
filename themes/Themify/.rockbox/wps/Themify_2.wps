@@ -1,0 +1,404 @@
+# ===== =    = ===== ==   == ===== ===== =   =
+#   =   ====== ===   = === =   =   ===   =====
+#   =   =    = ===== =  =  = ===== =       =
+# 
+#	     Themify 2 - aquamarine
+#		   Dook  2026
+#
+#-----------------------------------------------#
+#	Search Index
+#	----------------------
+#	$VD - Viewport Declarations
+#	$GR - Graphics Reset
+#	$FL - Font-loading
+#	$AA - Album Art
+#	$SB - Status Bar
+#	$PS - Player & Playlist Status
+#	$SI - Song Info
+#	----------------------
+#
+#--- Viewport Declarations ---# $VD
+# these need to be here to prevent rendering issues.
+#
+%?or(%or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,off),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,off)),%or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,off),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,off)))<%?and(%if(%ss(0, 23, %it), =, %it),%if(%ss(0, 14, %it), !=, %it))<%?if(%ss(14,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(Dual_Line_Song_Title_Space_14)|%?if(%ss(13,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(Dual_Line_Song_Title_Space_13)|%?if(%ss(12,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(Dual_Line_Song_Title_Space_12)|%?if(%ss(11,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(Dual_Line_Song_Title_Space_11)|%?if(%ss(10,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(Dual_Line_Song_Title_Space_10)|%?if(%ss(9,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(Dual_Line_Song_Title_Space_9)|%?if(%ss(8,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(Dual_Line_Song_Title_Space_8)|%?if(%ss(7,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(Dual_Line_Song_Title_Space_7)|%?if(%ss(6,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(Dual_Line_Song_Title_Space_6)|%?if(%ss(5,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(Dual_Line_Song_Title_Space_5)|%?if(%ss(4,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(Dual_Line_Song_Title_Space_4)|%?if(%ss(3,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(Dual_Line_Song_Title_Space_3)|%Vd(Single_Line_Song_Title)>>>>>>>>>>>>|%Vd(Single_Line_Song_Title)>|%?and(%if(%ss(0, 23, %it), =, %it),%if(%ss(0, 14, %it), !=, %it))<%?if(%ss(14,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(High_Dual_Line_Song_Title_Space_14)|%?if(%ss(13,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(High_Dual_Line_Song_Title_Space_13)|%?if(%ss(12,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(High_Dual_Line_Song_Title_Space_12)|%?if(%ss(11,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(High_Dual_Line_Song_Title_Space_11)|%?if(%ss(10,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(High_Dual_Line_Song_Title_Space_10)|%?if(%ss(9,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(High_Dual_Line_Song_Title_Space_9)|%?if(%ss(8,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(High_Dual_Line_Song_Title_Space_8)|%?if(%ss(7,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(High_Dual_Line_Song_Title_Space_7)|%?if(%ss(6,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(High_Dual_Line_Song_Title_Space_6)|%?if(%ss(5,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(High_Dual_Line_Song_Title_Space_5)|%?if(%ss(4,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(High_Dual_Line_Song_Title_Space_4)|%?if(%ss(3,1,%it),=,%ft(themes/Themify_2.preferences,space:))<%Vd(High_Dual_Line_Song_Title_Space_3)|%Vd(High_Single_Line_Song_Title)>>>>>>>>>>>>|%Vd(High_Single_Line_Song_Title)>>
+#
+%?and(%if(%ss(0, 23, %it), =, %it),%if(%ss(0, 14, %it), !=, %it),%or(%if(%ss(14,1,%it),=,%ft(themes/Themify_2.preferences,space:)),%if(%ss(13,1,%it),=,%ft(themes/Themify_2.preferences,space:)),%if(%ss(12,1,%it),=,%ft(themes/Themify_2.preferences,space:)),%if(%ss(11,1,%it),=,%ft(themes/Themify_2.preferences,space:)),%if(%ss(10,1,%it),=,%ft(themes/Themify_2.preferences,space:)),%if(%ss(9,1,%it),=,%ft(themes/Themify_2.preferences,space:)),%if(%ss(8,1,%it),=,%ft(themes/Themify_2.preferences,space:)),%if(%ss(7,1,%it),=,%ft(themes/Themify_2.preferences,space:)),%if(%ss(6,1,%it),=,%ft(themes/Themify_2.preferences,space:)),%if(%ss(5,1,%it),=,%ft(themes/Themify_2.preferences,space:)),%if(%ss(4,1,%it),=,%ft(themes/Themify_2.preferences,space:)),%if(%ss(3,1,%it),=,%ft(themes/Themify_2.preferences,space:))))<%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,volume_meter),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,volume_meter))<%Vd(Dual_Line_Subline_Volume_Meter)|%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,off),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,off))<%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,rating),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,rating))<%Vd(Dual_Line_Subline_Rating)|%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,file_format),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,file_format))<%Vd(Dual_Line_File_Format)|%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,year),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,year))<%Vd(Dual_Line_Song_Year)|%Vd(Dual_Line_Subline_Text)>>>|%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,off),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,off))<%Vd(Dual_Line_Subline_Text)|%Vd(High_Dual_Line_Subline_Text)%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,rating),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,rating))<%Vd(High_Dual_Line_Subline_Rating)|%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,file_format),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,file_format))<%Vd(High_Dual_Line_File_Format)|%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,year),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,year))<%Vd(High_Dual_Line_Song_Year)|%Vd(High_Dual_Line_Extra_Subline_Text)>>>>>>|%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,volume_meter),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,volume_meter))<%Vd(Single_Line_Subline_Volume_Meter)|%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,off),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,off))<%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,rating),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,rating))<%Vd(Single_Line_Subline_Rating)|%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,file_format),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,file_format))<%Vd(Single_Line_File_Format)|%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,year),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,year))<%Vd(Single_Line_Song_Year)|%Vd(Single_Line_Subline_Text)>>>|%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,off),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,off))<%Vd(Single_Line_Subline_Text)|%Vd(High_Single_Line_Subline_Text)%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,rating),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,rating))<%Vd(High_Single_Line_Subline_Rating)|%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,file_format),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,file_format))<%Vd(High_Single_Line_File_Format)|%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,year),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,year))<%Vd(High_Single_Line_Song_Year)|%Vd(High_Single_Line_Extra_Subline_Text)>>>>>>>
+#
+#- Battery -#
+%?St(battery display)<%Vd(Battery_Graphical)|%Vd(Battery_Numeric)>
+#
+#- Status Bar -#
+%?bs<%Vd(Status_Bar_Long)|%?mh<%Vd(Status_Bar_Long)|%Vd(Status_Bar_Short)>>%Vd(Status_Bar)%?or(%if(%ft(themes/Themify_2.preferences,minimal player mode: ),=,on),%if(%ft(themes/Themify_2.preferences,minimal player mode:),=,on))<|%?bs<%Vd(Sub_Status_Bar_Long)|%?mh<%Vd(Sub_Status_Bar_Long)|%Vd(Sub_Status_Bar_Short)>>>
+#
+#- Playlist Position -#
+%?or(%if(%ft(themes/Themify_2.preferences,minimal player mode: ),=,on),%if(%ft(themes/Themify_2.preferences,minimal player mode:),=,on))<|%?if(%pe,!=,1)<%?if(%pe, >=, 100)<%Vd(Playlist_Position_Three_Lines)|%Vd(Playlist_Position_Single_Line)>>>
+#
+%?or(%if(%ft(themes/Themify_2.preferences,minimal player mode: ),=,on),%if(%ft(themes/Themify_2.preferences,minimal player mode:),=,on))<|%?or(%if(%bs,=,%bs),%if(%mh,=,h))<%Vd(Sub_Status_Backdrop_Long)%Vd(Sub_Status_Backdrop_Long_Flush)|%Vd(Sub_Status_Backdrop_Short)%Vd(Sub_Status_Backdrop_Short_Flush)>>
+#
+#--- END ---#
+#
+#
+#--- Graphics Reset ---# $GR
+# need to flush the background and foreground, or the previous screen's background remains.
+%V(0,0,-,-,-)%VB
+%V(0,0,-,-,-)
+%wd
+#
+#--- END ---#
+#
+#
+#--- Font-loading ---# $FL
+%Fl(2,22-LeagueSpartan-Bold.fnt) # song titles font
+%Fl(3,18-LeagueSpartan-Medium.fnt) # artist/album and playlist position font
+%Fl(4,Player_Icons.fnticons) # vector icons for the song playback status
+%Fl(5,16-LeagueSpartan-SemiBold.fnticons) # numeric battery Font
+%Fl(6,UI_Vectors.fnticons) # ui drawing vectors
+%Fl(7,Blank_Font.fnticons,5) # blank font
+%Fl(8,14x13_Compacticons.fnticons,120) # vector icons for the status bar
+%Fl(9,Graphics_Font.fnticons) # vector icons 
+#
+#--- END ---#
+#
+#
+#--- Album Art ---# $AA
+#
+# in this instance the character u is a 14% opacity block used to shade the background.
+%Vd(Album_Widget)%?C<%Vd(Album_Art)|%Vd(Album_Fallback_Art)>
+%Vl(Album_Art,0,29,188,213,9)%VB%Cl(0,0,188,213)%Cdvvvvvvv
+vvvvvvv
+vvvvvvv
+vvvvvvv
+vvvvvvv
+vvvvvvv
+vvvvvvv
+vvvvvvv
+%Vl(Album_Fallback_Art,23,29,165,56,9)%VB
+uuuuuuu
+uuuuuuu
+%Vl(Album_Fallback_Art,3,85,185,133,9)%VB
+abcdeuw
+fghijuw
+klmnopw
+uuqrstw
+%Vl(Album_Fallback_Art,4,219,184,24,9)%VB
+uuuuuuu
+#
+%Vl(Album_Fallback_Art,0,29,188,213,-)
+%V(186,29,1,1,-)%VB
+%Vl(Album_Widget,31,21,139,8,-)%VB%dr(0,0,-,-)
+%Vl(Album_Widget,188,51,7,171,-)%VB%dr(0,0,-,-)
+%Vl(Album_Widget,188,51,7,171,-)%dr(0,0,-,-)
+%Vl(Album_Widget,4,243,191,8,-)%VB%dr(0,0,-,-)
+%Vl(Album_Widget,26,251,169,44,-)%dr(0,0,-,-)
+# cutout the visible album art in the foreground layer
+%Vl(Album_Art,9,51,179,171,-)
+# draw the rounded edges
+%Vl(Album_Widget,31,21,164,29,6)%aRb
+%Vl(Album_Widget,4,221,191,29,6)%aRc
+%Vl(Album_Widget,169,265,26,29,6)d
+#
+#-- Song Position --#
+#
+# for cuesheet bookmarks
+%V(21,255,148,7,-)%VB%dr(0,0,-,-)
+%V(21,255,148,7,-)%pb(0,0,-,-,noborder)
+#
+#
+%V(20,261,149,7,7)%VB
+#
+#- Custom Slider -#
+# This draws the progress bar of the song using custom logic. Each 
+#
+#- Custom Player Slider Legend -#
+# Ø = Slider Rounded Start
+# Ò = Slider Rounded End
+# Ñ = 1px
+# Ô = 5px
+# Õ = 10px
+# Ö = 20px
+# × = 25px
+# Ó = Slider BG Rounded End
+#
+%V(20,261,149,7,6)%aLØ%aR%?px<ÒÖ××××Ó|ÒÖ××××Ó|ÒÑÑÑÑÔÕ××××Ó|ÒÑÑÑÔÕ××××Ó|ÒÑÑÔÕ××××Ó|ÒÑÔÕ××××Ó|ÒÔÕ××××Ó|ÒÑÑÑÑÕ××××Ó|ÒÑÑÑÕ××××Ó|ÒÑÑÕ××××Ó|ÒÑÕ××××Ó|ÒÕ××××Ó|ÒÑÑÑÑÔ××××Ó|ÒÑÑÑÔ××××Ó|ÒÑÑÔ××××Ó|ÒÑÔ××××Ó|ÒÔ××××Ó|ÒÑÑÑÑ××××Ó|ÒÑÑÑ××××Ó|ÒÑÑ××××Ó|ÒÑ××××Ó|Ò××××Ó|ÒÑÑÑÑÖ×××Ó|ÒÑÑÑÖ×××Ó|ÒÑÑÖ×××Ó|ÒÑÑÖ×××Ó|ÒÑÖ×××Ó|ÒÖ×××Ó|ÒÑÑÑÑÔÕ×××Ó|ÒÑÑÑÔÕ×××Ó|ÒÑÑÔÕ×××Ó|ÒÑÔÕ×××Ó|ÒÔÕ×××Ó|ÒÑÑÑÑÕ×××Ó|ÒÑÑÑÕ×××Ó|ÒÑÑÕ×××Ó|ÒÑÕ×××Ó|ÒÕ×××Ó|ÒÑÑÑÑÔ×××Ó|ÒÑÑÑÔ×××Ó|ÒÑÑÔ×××Ó|ÒÑÔ×××Ó|ÒÔ×××Ó|ÒÑÑÑÑ×××Ó|ÒÑÑÑ×××Ó|ÒÑÑ×××Ó|ÒÑ×××Ó|Ò×××Ó|ÒÑÑÑÑÖ××Ó|ÒÑÑÑÖ××Ó|ÒÑÑÖ××Ó|ÒÑÖ××Ó|ÒÖ××Ó|ÒÑÑÑÑÔÕ××Ó|ÒÑÑÑÔÕ××Ó|ÒÑÑÔÕ××Ó|ÒÑÔÕ××Ó|ÒÔÕ××Ó|ÒÑÑÑÑÕ××Ó|ÒÑÑÑÕ××Ó|ÒÑÑÕ××Ó|ÒÑÕ××Ó|ÒÕ××Ó|ÒÑÑÑÑÔ××Ó|ÒÑÑÑÔ××Ó|ÒÑÑÔ××Ó|ÒÑÔ××Ó|ÒÔ××Ó|ÒÑÑÑÑ××Ó|ÒÑÑÑ××Ó|ÒÑÑ××Ó|ÒÑ××Ó|Ò××Ó|ÒÑÑÑÑÖ×Ó|ÒÑÑÑÖ×Ó|ÒÑÑÖ×Ó|ÒÑÖ×Ó|ÒÖ×Ó|ÒÑÑÑÑÔÕ×Ó|ÒÑÑÑÔÕ×Ó|ÒÑÑÔÕ×Ó|ÒÑÔÕ×Ó|ÒÔÕ×Ó|ÒÑÑÑÑÕ×Ó|ÒÑÑÑÕ×Ó|ÒÑÑÕ×Ó|ÒÑÕ×Ó|ÒÕ×Ó|ÒÑÑÑÑÔ×Ó|ÒÑÑÑÔ×Ó|ÒÑÑÔ×Ó|ÒÑÔ×Ó|ÒÔ×Ó|ÒÑÑÑÑ×Ó|ÒÑÑÑ×Ó|ÒÑÑ×Ó|ÒÑ×Ó|Ò×Ó|ÒÑÑÑÑÖÓ|ÒÑÑÑÖÓ|ÒÑÑÖÓ|ÒÑÖÓ|ÒÖÓ|ÒÑÑÑÑÔÕÓ|ÒÑÑÑÔÕÓ|ÒÑÑÔÕÓ|ÒÑÔÕÓ|ÒÔÕÓ|ÒÑÑÑÑÕÓ|ÒÑÑÑÕÓ|ÒÑÑÕÓ|ÒÑÕÓ|ÒÕÓ|ÒÑÑÑÑÔÓ|ÒÑÑÑÔÓ|ÒÑÑÔÓ|ÒÑÔÓ|ÒÔÓ|ÒÑÑÑÑÓ|ÒÑÑÑÓ|ÒÑÑÓ|ÒÑÓ|ÒÓ|ÒÑ|Ù>
+#
+#--- END ---#
+#
+#
+#--- Status Bar ---# $SB
+#
+%V(299,19,43,39,-)%VB%dr(0,0,43,11)%dr(0,28,43,11)%dr(35,11,8,17)
+%V(299,19,43,39,-)
+%Vl(Status_Bar_Long,309,19,22,39,-)%VB%dr(0,0,22,11)%dr(0,28,22,11)%dr(14,11,8,17)
+%Vl(Status_Bar_Long,309,19,22,39,-)
+#
+#- Hold and Sleep Icons -#
+%Vl(Status_Bar_Long,308,29,15,19,8)%Vs(invert)%aL%?bs<%?mh<%t(3)o;%t(3)q|q>|%?mh<o>>
+#
+#-- Battery Status --#
+#
+#- Numerical Battery Display --#
+%Vl(Battery_Numeric,318,29,35,19,8)%Vs(invert)EFG
+%Vl(Battery_Numeric,328,32,28,12,5)%VB%?bc<%t(3)%ac%bl;%t(2)|%?if(%bl,<=,15)<%t(2)%ac%bl;%t(.5)|%ac%bl>>
+%Vl(Battery_Numeric,328,32,28,12,5)%?bc<%t(3)%ac%bl;%t(2)|%?if(%bl,<=,15)<%t(2)%ac%bl;%t(.5)|%ac%bl>>
+#
+# charging Icon
+%Vl(Battery_Numeric,339,29,14,17,8)%?bc<%t(3);%Vs(invert)%t(2)%acK|>
+#
+#- Graphical Battery Display --#
+#%?bl<unknown|...|100%>
+%Vl(Battery_Graphical,318,29,35,19,8)%aL%Vs(invert)%?bc<%?bl<|îö|ïö|ðö|ñö|òö|óö|ôö|õö|õö|õö|õö|õö|õö|õö|õö|õö|õø|õù|õú|õû|õü|õý>G|%?bl<|Öâ|×â|Øâ|Ùâ|Úâ|Ûâ|Üâ|Ýâ|Þâ|ßâ|àâ|áã|áä|áå|áæ|áç|áè|áé|áê|áë|áì|áí>>G
+#
+#
+#-- Sub Status Backdrops --#
+# the backdrop is broken down into 3 shapes, the end, the start and a filler. the end and start are shown if any are true, and the filler is shown in the middle if more than one icon is active, per icon.
+#
+# when hold or sleep icon isn't active.
+#- Short Backdrop -#
+%Vl(Sub_Status_Backdrop_Short,237,19,96,39,6)%VB
+%aR%?or(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<À>%?and(%if(%ps, !=, 1),%if(%mm, >, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<Á>%?and(%if(%ps, =, 1),%if(%mm, =, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<Á>%?and(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, !=, 4),%if(%fc, !=, 5),%if(%fc, !=, 7),%if(%fc, !=, 11),%if(%fc, !=, 13)))<Á>%?and(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<Á>%?or(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<Â>
+#
+%Vl(Sub_Status_Backdrop_Short_Flush,237,19,83,39,7)
+#
+#- Long Backdrop -#
+# shown when hold or sleep states are active.
+%Vl(Sub_Status_Backdrop_Long,214,19,96,39,6)%VB
+%aR%?or(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<À>%?and(%if(%ps, !=, 1),%if(%mm, >, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<Á>%?and(%if(%ps, =, 1),%if(%mm, =, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<Á>%?and(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, !=, 4),%if(%fc, !=, 5),%if(%fc, !=, 7),%if(%fc, !=, 11),%if(%fc, !=, 13)))<Á>%?and(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<Á>%?or(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<Â>
+#
+%Vl(Sub_Status_Backdrop_Long_Flush,214,19,83,39,7)
+#
+%Vl(Status_Bar_Short,320,19,12,39,6)%Vs(invert)%aL%?mh<a|a>
+%Vl(Status_Bar_Long,298,19,12,39,6)%Vs(invert)%aL%?mh<a|a>
+#
+# icon slot 1
+%Vl(Sub_Status_Bar_Short,295,29,16,17,8)%?and(%if(%ps, =, 1),%or(%if(%mm, =, 1),%if(%mm, >, 1)),%or(%if(%fc, !=, 4),%if(%fc, !=, 5),%if(%fc, !=, 7),%if(%fc, !=, 11)))<m>%?and(%if(%ps, =, 1),%or(%if(%mm, =, 1),%if(%mm, >, 1)),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<m>%?and(%if(%ps, !=, 1),%if(%mm, >, 1),%or(%if(%fc, !=, 4),%if(%fc, !=, 5),%if(%fc, !=, 7),%if(%fc, !=, 11)))<n>%?and(%if(%ps, !=, 1),%if(%mm, =, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<p>
+#
+# icon slot 1
+%Vl(Sub_Status_Bar_Long,272,29,16,17,8)%?and(%if(%ps, =, 1),%or(%if(%mm, =, 1),%if(%mm, >, 1)),%or(%if(%fc, !=, 4),%if(%fc, !=, 5),%if(%fc, !=, 7),%if(%fc, !=, 11)))<m>%?and(%if(%ps, =, 1),%or(%if(%mm, =, 1),%if(%mm, >, 1)),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<m>%?and(%if(%ps, !=, 1),%if(%mm, >, 1),%or(%if(%fc, !=, 4),%if(%fc, !=, 5),%if(%fc, !=, 7),%if(%fc, !=, 11)))<n>%?and(%if(%ps, !=, 1),%if(%mm, =, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<p>
+#
+# icon slot 2
+%Vl(Sub_Status_Bar_Short,271,29,16,17,8)%?and(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<n>%?and(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, !=, 4),%if(%fc, !=, 5),%if(%fc, !=, 7),%if(%fc, !=, 11)))<n>%?and(%or(%and(%if(%ps, !=, 1),%if(%mm, >, 1)),%and(%if(%ps, =, 1),%if(%mm, =, 1))),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<p>
+#
+# icon slot 2
+%Vl(Sub_Status_Bar_Long,247,29,16,17,8)%?and(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<n>%?and(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, !=, 4),%if(%fc, !=, 5),%if(%fc, !=, 7),%if(%fc, !=, 11)))<n>%?and(%or(%and(%if(%ps, !=, 1),%if(%mm, >, 1)),%and(%if(%ps, =, 1),%if(%mm, =, 1))),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<p>
+#
+# icon slot 3 - just hq audio
+%Vl(Sub_Status_Bar_Short,246,29,16,19,8)%?and(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<p>
+# icon slot 3 - just hq audio
+%Vl(Sub_Status_Bar_Long,223,29,16,19,8)%?and(%if(%ps, =, 1),%if(%mm, >, 1),%or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11)))<p>
+#
+#--- END ---#
+#
+#
+#--- Player & Playlist Status ---# $PS
+#-- Player Status Backdrops --#
+#
+%V(227,205,145,39,6)%VB
+%aR%?if(%mp,<=,3)<%?mv(1)<ÍÎ|%?mp<ÃÄ|ÉÊ|ÃÄ>>|ÃÄ>%?or(%if(%ft(themes/Themify_2.preferences,minimal player mode: ),=,on),%if(%ft(themes/Themify_2.preferences,minimal player mode:),=,on))<|%?if(%pe,!=,1)<ÇÇ>>È
+#
+%V(215,244,145,39,6)%VB
+%aR%?if(%mp,<=,3)<%?mv(1)<ÏÐ|%?mp<ÅÆ|ËÌ|ÅÆ>>|ÅÆ>%?or(%if(%ft(themes/Themify_2.preferences,minimal player mode: ),=,on),%if(%ft(themes/Themify_2.preferences,minimal player mode:),=,on))<|%?if(%pe,!=,1)<ÇÇ>>È
+#
+%V(216,205,145,76,7)
+#
+#
+#-- Play, Pause, Forward, Rewind and Volume --#
+# don't display volume if fastwarding etc.
+%?or(%if(%ft(themes/Themify_2.preferences,minimal player mode: ),=,on),%if(%ft(themes/Themify_2.preferences,minimal player mode:),=,on))<%?if(%mp,<=,3)<%?mv(1)<%Vd(Player_Volume_Short)|%Vd(Player_Status_Short)>|%Vd(Player_Status_Short)>|%?if(%pe,!=,1)<%?if(%mp,<=,3)<%?mv(1)<%Vd(Player_Volume_Long)|%Vd(Player_Status_Long)>|%Vd(Player_Status_Long)>|%?if(%mp,<=,3)<%?mv(1)<%Vd(Player_Volume_Short)|%Vd(Player_Status_Short)>|%Vd(Player_Status_Short)>>>
+#
+#- Shorter Dialog Positions -#
+# animate the fast forward and rewind icons, plus pause and play
+%Vl(Player_Status_Short,305,213,54,61,4)%?or(%if(%ft(themes/Themify_2.preferences,animations: ),=,off),%if(%ft(themes/Themify_2.preferences,animations:),=,off))<%?mp<|0|1|%t(0.1)æ|%t(0.1)õ;|>|%?mp<|%?pS(1)<0|%t(0.1)Ą;%t(0.1)ą;%t(0.1)Ć;%t(0.1)ć;%t(0.1)Ĉ;%t(0.1)ĉ;%t(0.1)Ċ;%t(0.1)ċ;%t(0.1)Č;%t(0.1)č;%t(0.1)Ď;%t(0.1)ď;%t(0.1)Đ;%t(0.1)đ;%t(0.1)Ē;%t(0.1)ē;%t(0.1)Ĕ;%t(0.1)ĕ;%t(0.1)Ė;%t(0.1)ė;%t(0.1)Ę;%t(0.1)ę;%t(0.1)Ě;%t(0.1)ě;%t(0.1)Ĝ;%t(0.1)ĝ;%t(0.1)Ğ;%t(0.1)ğ;%t(0.1)Ġ;%t(0.1)0>|1|%t(0.1)æ;%t(0.1)ç;%t(0.1)è;%t(0.1)é;%t(0.1)ê;%t(0.1)ë;%t(0.1)ì;%t(0.1)í;%t(0.1)î;%t(0.1)ï;%t(0.1)ð;%t(0.1)ñ;%t(0.1)ò;%t(0.1)ó;%t(0.1)ô;|%t(0.1)õ;%t(0.1)ö;%t(0.1)÷;%t(0.1)ø;%t(0.1)ù;%t(0.1)ú;%t(0.1)û;%t(0.1)ü;%t(0.1)ý;%t(0.1)þ;%t(0.1)ÿ;%t(0.1)Ā;%t(0.1)ā;%t(0.1)Ă;%t(0.1)ă;|>>
+# volume Slider, one character for the 91 positions of regular volume settings.
+%Vl(Player_Volume_Short,305,213,54,61,4)%?pv<4|5|6|7|8|9|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|À|Á|Â|Ã|Ä|Å|Ç|È|É|Ê|Ë|Ì|Í|Î|Ï|Ð|Ñ|Ò|Ó|Ô|Õ|Ö|×|Ø|Ù|Ú|Û|Ü|Ý|Þ|ß|à|á|â|ã|ä|ä|å>
+#
+#- Longer Dialog Positions -#
+# animate the fast forward and rewind icons, plus pause and play
+%Vl(Player_Status_Long,237,213,54,61,4)%?or(%if(%ft(themes/Themify_2.preferences,animations: ),=,off),%if(%ft(themes/Themify_2.preferences,animations:),=,off))<%?mp<|0|1|%t(0.1)æ|%t(0.1)õ;|>|%?mp<|%?pS(1)<0|%t(0.1)Ą;%t(0.1)ą;%t(0.1)Ć;%t(0.1)ć;%t(0.1)Ĉ;%t(0.1)ĉ;%t(0.1)Ċ;%t(0.1)ċ;%t(0.1)Č;%t(0.1)č;%t(0.1)Ď;%t(0.1)ď;%t(0.1)Đ;%t(0.1)đ;%t(0.1)Ē;%t(0.1)ē;%t(0.1)Ĕ;%t(0.1)ĕ;%t(0.1)Ė;%t(0.1)ė;%t(0.1)Ę;%t(0.1)ę;%t(0.1)Ě;%t(0.1)ě;%t(0.1)Ĝ;%t(0.1)ĝ;%t(0.1)Ğ;%t(0.1)ğ;%t(0.1)Ġ;%t(0.1)0>|1|%t(0.1)æ;%t(0.1)ç;%t(0.1)è;%t(0.1)é;%t(0.1)ê;%t(0.1)ë;%t(0.1)ì;%t(0.1)í;%t(0.1)î;%t(0.1)ï;%t(0.1)ð;%t(0.1)ñ;%t(0.1)ò;%t(0.1)ó;%t(0.1)ô;|%t(0.1)õ;%t(0.1)ö;%t(0.1)÷;%t(0.1)ø;%t(0.1)ù;%t(0.1)ú;%t(0.1)û;%t(0.1)ü;%t(0.1)ý;%t(0.1)þ;%t(0.1)ÿ;%t(0.1)Ā;%t(0.1)ā;%t(0.1)Ă;%t(0.1)ă;|>>
+# volume Slider, one character for the 91 positions of regular volume settings.
+#
+%Vl(Player_Volume_Long,237,213,54,61,4)%?pv<4|5|6|7|8|9|A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|À|Á|Â|Ã|Ä|Å|Ç|È|É|Ê|Ë|Ì|Í|Î|Ï|Ð|Ñ|Ò|Ó|Ô|Õ|Ö|×|Ø|Ù|Ú|Û|Ü|Ý|Þ|ß|à|á|â|ã|ä|ä|å>
+#
+#-- Playlist Position --#
+#
+%Vl(Playlist_Position_Three_Lines,293,223,80,16,3)%?mv<%?mp<%ac%pp %Sx(of)|%ac%pp %Sx(of)|%ac%pp %Sx(of)|%ac%pp %Sx(of)|%ac%pp %Sx(of)||||>|%?mp<%ac%pp %Sx(of)|%ac%pp %Sx(of)|%ac%pp %Sx(of)|%ac%pp %Sx(of)|%ac%pp %Sx(of)||||>>
+%Vl(Playlist_Position_Three_Lines,289,249,80,16,3)%ac%pe
+#
+%Vl(Playlist_Position_Single_Line,292,235,80,16,3)%ac%pp %Sx(of) %pe
+#
+#--- END ---#
+#
+#
+#--- Song Info ---# $SI
+#
+#-- Single Line Title --#
+#
+#- Single Line Title when one subline active -#
+%Vl(Single_Line_Song_Title,211,101,155,24,2)%?if(%St(scroll speed),=,1)<|%s>%aL%?it<%it|%fn>
+#
+%Vl(Single_Line_Subline_Text,211,136,155,21,3)%?if(%St(scroll speed),=,1)<|%s>%aL%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,off),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,off))<%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,artist),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,artist))<%?ia<%ia|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,album),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,album))<%?id<%id|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,genre),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,genre))<%?ig<%ig|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,playlist_name),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,playlist_name))<%?pn<%pn|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,bitrate),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,bitrate))<%fbkbps>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,song_playtime),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,song_playtime))<%pc/%pt>|%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,artist),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,artist))<%?ia<%ia|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,album),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,album))<%?id<%id|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,genre),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,genre))<%?ig<%ig|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,playlist_name),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,playlist_name))<%?pn<%pn|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,bitrate),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,bitrate))<%fbkbps>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,song_playtime),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,song_playtime))<%pc/%pt>>
+#
+%Vl(Single_Line_Subline_Volume_Meter,211,141,155,24,6)%VB%aLllllllllllllllllll
+%Vl(Single_Line_Subline_Volume_Meter,211,141,155,24,6)%aL%?pS(0.2)<|%?if(%pL,=,0)<%t(2.5);%t(2)k|%?pL<k|kk|kkk|kkkk|kkkkk|kkkkkk|kkkkkkk|kkkkkkkk|kkkkkkkkk|kkkkkkkkkk|kkkkkkkkkkk|kkkkkkkkkkkk|kkkkkkkkkkkkk|kkkkkkkkkkkkkk|kkkkkkkkkkkkkkk|kkkkkkkkkkkkkkkk|kkkkkkkkkkkkkkkkk|kkkkkkkkkkkkkkkkkk>>>
+#
+%Vl(Single_Line_Subline_Rating,211,141,155,24,8)%aL%?rr<uuuuu|vuuuu|wuuuu|wvuuu|wwuuu|wwvuu|wwwuu|wwwvu|wwwwu|wwwwv|wwwww>
+#
+%Vl(Single_Line_File_Format,212,135,141,24,6)%aL%VBÚÛÛÛÛ%?if(%ss(8,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(7,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(6,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(5,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(4,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛ|%?if(%ss(3,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛ|%?if(%ss(2,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛ|%?if(%ss(1,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛ>>>>>>>>Ü
+%Vl(Single_Line_File_Format,212,135,141,24,7)
+%Vl(Single_Line_File_Format,220,139,141,24,3)%aL%fc
+#
+%Vl(Single_Line_Song_Year,212,135,59,27,6)%VB%aL%?iy<ÝÞÞÞÞÞß>
+%Vl(Single_Line_Song_Year,212,135,59,27,7)
+%Vl(Single_Line_Song_Year,219,140,43,21,3)%ac%?if(%ss(0,4,%iy),=,%iy)<%iy|%ss(0,4,%iy)>
+#
+#
+#-- Single Line Title when two sublines active --#
+#
+%Vl(High_Single_Line_Song_Title,211,88,155,24,2)%?if(%St(scroll speed),=,1)<|%s>%aL%?it<%it|%fn>
+#
+%Vl(High_Single_Line_Subline_Text,211,123,155,21,3)%?if(%St(scroll speed),=,1)<|%s>%aL%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,artist),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,artist))<%?ia<%ia|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,album),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,album))<%?id<%id|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,genre),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,genre))<%?ig<%ig|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,playlist_name),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,playlist_name))<%?pn<%pn|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,bitrate),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,bitrate))<%fbkbps>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,song_playtime),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,song_playtime))<%pc/%pt>
+#
+%Vl(High_Single_Line_Extra_Subline_Text,211,156,155,21,3)%?if(%St(scroll speed),=,1)<|%s>%aL%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,artist),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,artist))<%?ia<%ia|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,album),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,album))<%?id<%id|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,genre),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,genre))<%?ig<%ig|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,playlist_name),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,playlist_name))<%?pn<%pn|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,bitrate),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,bitrate))<%fbkbps>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,song_playtime),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,song_playtime))<%pc/%pt>
+#
+%Vl(High_Single_Line_Subline_Rating,211,155,155,24,8)%aL%?rr<uuuuu|vuuuu|wuuuu|wvuuu|wwuuu|wwvuu|wwwuu|wwwvu|wwwwu|wwwwv|wwwww>
+#
+%Vl(High_Single_Line_File_Format,212,155,141,24,6)%aL%VBÚÛÛÛÛ%?if(%ss(8,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(7,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(6,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(5,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(4,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛ|%?if(%ss(3,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛ|%?if(%ss(2,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛ|%?if(%ss(1,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛ>>>>>>>>Ü
+%Vl(High_Single_Line_File_Format,212,155,141,24,-)
+%Vl(High_Single_Line_File_Format,220,159,141,24,3)%aL%fc
+#
+%Vl(High_Single_Line_Song_Year,212,155,59,27,6)%VB%aL%?iy<ÝÞÞÞÞÞß>
+%Vl(High_Single_Line_Song_Year,212,155,59,27,-)
+%Vl(High_Single_Line_Song_Year,219,160,43,21,3)%ac%?if(%ss(0,4,%iy),=,%iy)<%iy|%ss(0,4,%iy)>
+#
+#-- Dual Line Title --#
+#
+#- Dual Line Titles when one subline active -#
+#
+%Vl(Dual_Line_Song_Title_Space_14,211,83,155,80,2)
+%ss(0,15,%it)
+%ss(15,26,%it)
+#
+%Vl(Dual_Line_Song_Title_Space_13,211,83,155,80,2)
+%ss(0,14,%it)
+%ss(14,26,%it)
+#
+%Vl(Dual_Line_Song_Title_Space_12,211,83,155,80,2)
+%ss(0,13,%it)
+%ss(13,26,%it)
+#
+%Vl(Dual_Line_Song_Title_Space_11,211,83,155,80,2)
+%ss(0,12,%it)
+%ss(12,26,%it)
+#
+%Vl(Dual_Line_Song_Title_Space_10,211,83,155,80,2)
+%ss(0,11,%it)
+%ss(11,26,%it)
+#
+%Vl(Dual_Line_Song_Title_Space_9,211,83,155,80,2)
+%ss(0,10,%it)
+%ss(10,26,%it)
+#
+%Vl(Dual_Line_Song_Title_Space_8,211,83,155,80,2)
+%ss(0,9,%it)
+%ss(9,26,%it)
+#
+%Vl(Dual_Line_Song_Title_Space_7,211,83,155,80,2)
+%ss(0,8,%it)
+%ss(8,26,%it)
+#
+%Vl(Dual_Line_Song_Title_Space_6,211,83,155,80,2)
+%ss(0,7,%it)
+%ss(7,26,%it)
+#
+%Vl(Dual_Line_Song_Title_Space_5,211,83,155,80,2)
+%ss(0,6,%it)
+%ss(6,26,%it)
+#
+%Vl(Dual_Line_Song_Title_Space_4,211,83,155,80,2)
+%ss(0,5,%it)
+%ss(5,26,%it)
+#
+%Vl(Dual_Line_Song_Title_Space_3,211,83,155,80,2)
+%ss(0,4,%it)
+%ss(4,26,%it)
+#
+%Vl(Dual_Line_Subline_Text,211,149,155,21,3)%?if(%St(scroll speed),=,1)<|%s>%aL%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,off),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,off))<%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,artist),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,artist))<%?ia<%ia|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,album),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,album))<%?id<%id|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,genre),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,genre))<%?ig<%ig|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,playlist_name),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,playlist_name))<%?pn<%pn|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,bitrate),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,bitrate))<%fbkbps>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,song_playtime),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,song_playtime))<%pc/%pt>|%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,artist),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,artist))<%?ia<%ia|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,album),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,album))<%?id<%id|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,genre),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,genre))<%?ig<%ig|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,playlist_name),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,playlist_name))<%?pn<%pn|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,bitrate),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,bitrate))<%fbkbps>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,song_playtime),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,song_playtime))<%pc/%pt>>
+#
+%Vl(Dual_Line_Subline_Volume_Meter,211,152,155,24,6)%aL%?pS(0.2)<|%?if(%pL,=,0)<%t(2.5);%t(2)k|%?pL<k|kk|kkk|kkkk|kkkkk|kkkkkk|kkkkkkk|kkkkkkkk|kkkkkkkkk|kkkkkkkkkk|kkkkkkkkkkk|kkkkkkkkkkkk|kkkkkkkkkkkkk|kkkkkkkkkkkkkk|kkkkkkkkkkkkkkk|kkkkkkkkkkkkkkkk|kkkkkkkkkkkkkkkkk|kkkkkkkkkkkkkkkkkk>>>
+%Vl(Dual_Line_Subline_Volume_Meter,211,152,155,24,6)%VB%aLllllllllllllllllll
+#
+%Vl(Dual_Line_File_Format,212,152,141,24,6)%aL%VBÚÛÛÛÛ%?if(%ss(8,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(7,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(6,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(5,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(4,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛ|%?if(%ss(3,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛ|%?if(%ss(2,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛ|%?if(%ss(1,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛ>>>>>>>>Ü
+%Vl(Dual_Line_File_Format,212,152,141,24,-)
+%Vl(Dual_Line_File_Format,220,156,141,24,3)%aL%fc
+#
+%Vl(Dual_Line_Song_Year,212,152,59,27,6)%VB%aL%?iy<ÝÞÞÞÞÞß>
+%Vl(Dual_Line_Song_Year,212,152,59,27,-)
+%Vl(Dual_Line_Song_Year,219,157,43,21,3)%ac%?if(%ss(0,4,%iy),=,%iy)<%iy|%ss(0,4,%iy)>
+#
+%Vl(Dual_Line_Subline_Rating,211,152,155,24,8)%aL%?rr<uuuuu|vuuuu|wuuuu|wvuuu|wwuuu|wwvuu|wwwuu|wwwvu|wwwwu|wwwwv|wwwww>
+#
+#
+#- Dual Line Title when two sublines active -#
+%Vl(High_Dual_Line_Song_Title_Space_14,211,69,155,80,2)
+%ss(0,15,%it)
+%ss(15,26,%it)
+#
+%Vl(High_Dual_Line_Song_Title_Space_13,211,69,155,80,2)
+%ss(0,14,%it)
+%ss(14,26,%it)
+#
+%Vl(High_Dual_Line_Song_Title_Space_12,211,69,155,80,2)
+%ss(0,13,%it)
+%ss(13,26,%it)
+#
+%Vl(High_Dual_Line_Song_Title_Space_11,211,69,155,80,2)
+%ss(0,12,%it)
+%ss(12,26,%it)
+#
+%Vl(High_Dual_Line_Song_Title_Space_10,211,69,155,80,2)
+%ss(0,11,%it)
+%ss(11,26,%it)
+#
+%Vl(High_Dual_Line_Song_Title_Space_9,211,69,155,80,2)
+%ss(0,10,%it)
+%ss(10,26,%it)
+#
+%Vl(High_Dual_Line_Song_Title_Space_8,211,69,155,80,2)
+%ss(0,9,%it)
+%ss(9,26,%it)
+#
+%Vl(High_Dual_Line_Song_Title_Space_7,211,69,155,80,2)
+%ss(0,8,%it)
+%ss(8,26,%it)
+#
+%Vl(High_Dual_Line_Song_Title_Space_6,211,69,155,80,2)
+%ss(0,7,%it)
+%ss(7,26,%it)
+#
+%Vl(High_Dual_Line_Song_Title_Space_5,211,69,155,80,2)
+%ss(0,6,%it)
+%ss(6,26,%it)
+#
+%Vl(High_Dual_Line_Song_Title_Space_4,211,69,155,80,2)
+%ss(0,5,%it)
+%ss(5,26,%it)
+#
+%Vl(High_Dual_Line_Song_Title_Space_3,211,69,155,80,2)
+%ss(0,4,%it)
+%ss(4,26,%it)
+#
+%Vl(High_Dual_Line_Subline_Text,211,136,155,21,3)%?if(%St(scroll speed),=,1)<|%s>%aL%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,artist),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,artist))<%?ia<%ia|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,album),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,album))<%?id<%id|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,genre),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,genre))<%?ig<%ig|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,playlist_name),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,playlist_name))<%?pn<%pn|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,bitrate),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,bitrate))<%fbkbps>%?or(%if(%ft(themes/Themify_2.preferences,sub-line mode: ),=,song_playtime),%if(%ft(themes/Themify_2.preferences,sub-line mode:),=,song_playtime))<%pc/%pt>
+#
+%Vl(High_Dual_Line_Extra_Subline_Text,211,169,155,21,3)%?if(%St(scroll speed),=,1)<|%s>%aL%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,artist),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,artist))<%?ia<%ia|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,album),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,album))<%?id<%id|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,genre),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,genre))<%?ig<%ig|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,playlist_name),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,playlist_name))<%?pn<%pn|%d(1)>>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,bitrate),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,bitrate))<%fbkbps>%?or(%if(%ft(themes/Themify_2.preferences,extra sub-line mode: ),=,song_playtime),%if(%ft(themes/Themify_2.preferences,extra sub-line mode:),=,song_playtime))<%pc/%pt>
+#
+%Vl(High_Dual_Line_File_Format,212,168,141,24,6)%aL%VBÚÛÛÛÛ%?if(%ss(8,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(7,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(6,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(5,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛÛÛ|%?if(%ss(4,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛÛÛ|%?if(%ss(3,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛÛÛ|%?if(%ss(2,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛÛ|%?if(%ss(1,2,%fc),=,%ss(-2,-,%fc))<ÛÛÛ>>>>>>>>Ü
+%Vl(High_Dual_Line_File_Format,212,168,141,24,-)
+%Vl(High_Dual_Line_File_Format,220,172,141,24,3)%aL%fc
+#
+%Vl(High_Dual_Line_Song_Year,212,168,59,27,6)%VB%aL%?iy<ÝÞÞÞÞÞß>
+%Vl(High_Dual_Line_Song_Year,212,168,59,27,-)
+%Vl(High_Dual_Line_Song_Year,219,173,43,21,3)%ac%?if(%ss(0,4,%iy),=,%iy)<%iy|%ss(0,4,%iy)>
+#
+%Vl(High_Dual_Line_Subline_Rating,211,168,155,24,8)%aL%?rr<uuuuu|vuuuu|wuuuu|wvuuu|wwuuu|wwvuu|wwwuu|wwwvu|wwwwu|wwwwv|wwwww>
+#--- END ---#
+#
+#

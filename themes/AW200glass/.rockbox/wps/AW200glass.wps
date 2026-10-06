@@ -1,0 +1,209 @@
+# Theme: AW200glass
+# By: Humberto Santana (humbertosantana@hotmail.com)
+# Original graphics. Derived from AW200 theme for iPod Video (some graphics appearance inspired in Glasklart by Max Rudberg http://www.maxthemes.com/)
+# License: Creative Commons Attribution-Share Alike 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
+# If used for other works, as per this license, please include the following Attribution Text: "Modified/Derived from AW200glass theme for iPod Video (CC-BY-SA 3.0) by Humberto Santana"
+#
+# Version 1.4
+# Updated: July 14th, 2011
+# First Version: August 20th, 2010
+#
+# WPS File
+#
+# TOUCHSCREEN AREAS
+#
+# Menu + Quickscreen
+%T(128,68,129,147,menu)
+%T(128,68,129,147,&quickscreen)
+#
+# Browse + Context Menu
+%T(69,253,240,27,browse)
+%T(69,253,240,27,&contextmenu)
+#
+# Shuffle
+%T(8,116,47,53,shuffle)
+#
+# Play/Pause + Stop
+%T(319,35,47,53,play)
+%T(319,35,47,53,&stop)
+#
+# Previous + REW
+%T(1,284,49,33,prev)
+%T(1,284,49,33,&rwd)
+#
+# Next + FFW
+%T(322,284,49,33,next)
+%T(322,284,49,33,&ffwd)
+#
+# Repeat
+%T(319,116,47,53,repmode)
+#
+# Volume Down
+%T(4,79,96,27,voldown)
+%T(4,79,96,27,&voldown)
+#
+# Volume Up
+%T(4,4,96,27,volup)
+%T(4,4,96,27,&volup)
+#
+# Progressbar
+%T(68,303,241,17,progressbar)
+#
+#
+%wd
+%X(AW200glass_bg.bmp)
+#
+%Fl(2,21-Adobe-Helvetica-Bold.fnt,80)
+#
+#Widgets & Icons/Info
+#
+%xl(L,lock.bmp,0,0)
+%V(26,26,15,9,1)
+%?mh<%xd(L)|>
+#
+%xl(H,hdd.bmp,0,0)
+%V(43,13,48,11,1)
+%?lh<%xd(H)|>
+#
+%xl(V,vol.bmp,0,0,12)
+%V(13,48,40,32,1)
+%?pv<|%xd(Va)|%xd(Vb)|%xd(Vc)|%xd(Vd)|%xd(Ve)|%xd(Vf)|%xd(Vg)|%xd(Vh)|%xd(Vi)|%xd(Vj)|%xd(Vk)|%xd(Vl)>
+%V(8,93,47,9,0)%Vf(b0b0b0)%Vb(000000)
+%ac%pv dB
+#
+# Shuffle
+#
+%xl(S,Shuffle.bmp,0,0)
+%V(7,132,52,52,1)
+%?ps<%xd(S)|>
+#
+# Calendar
+#
+%xl(D,days.bmp,0,0,6)
+%V(9,200,47,16,0)
+%?cu<|%xd(Da)|%xd(Db)|%xd(Dc)|%xd(Dd)|%xd(De)|%xd(Df)>
+#
+# Numerical Date
+%V(11,221,47,37,2)%Vf(abadb5)%Vb(9c9ea5)
+%ac%cd
+#
+%xl(M,Months.bmp,0,0,11)
+%V(10,256,50,15,0)
+%?cm<%xd(Ma)|%xd(Mb)||%xd(Mc)|%xd(Md)|%xd(Me)|%xd(Mf)|%xd(Mg)|%xd(Mh)|%xd(Mi)|%xd(Mj)|%xd(Mk)>
+#
+%xl(B,batt.bmp,0,0,9)
+%V(312,20,32,13,0)%Vf(b6b6b6)%Vb(000000)
+%ac%bl%%
+%V(285,5,28,13,1)
+%t(1)%?bp<%?bc<%xd(Bi)|%xd(Bh)>|%?bl<|%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bg)>>;%t(1)%?bp<%xd(Bh)|%?bl<|%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bg)>>
+#
+#Playlist Position
+%V(282,24,66,9,0)%Vf(b6b6b6)%Vb(000000)
+%s%ac%pp/%pe
+#
+%xl(P,playing_status.bmp,6,11,4)
+%xl(p,playing_status_2.bmp,5,56,4)
+%V(312,37,47,69,0)
+%?mp<|%xd(Pa)%xd(pa)|%xd(Pb)%xd(pb)|%xd(Pc)%xd(pc)|%xd(Pd)%xd(pd)>
+#
+%xl(R,Repeat.bmp,0,0,4)
+%V(313,143,59,44,-)
+%?mm<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)>
+#
+# Clock
+%xl(N,numbers.bmp,0,0,10)
+#
+# Clock 12/24 Conditional
+%?cf<%Vd(twentyfour)|%Vd(twelve)>
+#
+# Hours, pt. 1, twelve
+%Vl(twelve,322,219,9,15,-)
+%?cl<%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Nb)|%xd(Nb)|%xd(Nb)>
+# Hours, pt. 1, twentyfour
+%Vl(twentyfour,322,219,9,15,-)
+%?ck<%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Na)>
+#
+# Hours, pt. 2, twelve
+%Vl(twelve,332,219,9,15,-)
+%?cl<%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)>
+# Hours, pt. 2, twentyfour
+%Vl(twentyfour,332,219,9,15,-)
+%?ck<%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Na)>
+#
+# Minutes, pt. 1
+%V(345,219,9,15,-)
+%?cM<%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Na)>
+#
+# Minutes, pt. 2
+%V(354,219,9,15,-)
+%?cM<%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)>
+#
+# Blink
+%xl(b,blink.bmp,0,0,2)
+%V(341,221,4,9,-)
+%t(0.5)%xd(ba);%t(0.5)%xd(bb)
+#
+# AM/PM
+%Vl(twelve,338,239,23,9,0)%Vf(959ca2)%Vb(a1a8af)
+%ar%cP
+#
+# Sleep Timer
+%xl(z,SleepOff.bmp,7,0)
+%V(309,256,59,12,0)%Vf(b6b6b6)%Vb(CDB79E)
+%?bs<%ac%bs|%xd(z)>
+#
+# AA / Hold Conditionals
+#%?mh<%?C<%Vd(h)|%Vd(n)>|%?C<%Vd(a)|%Vd(n)>>
+%?mh<%Vd(h)|%?C<%Vd(a)|%Vd(h)>>
+#
+# AlbumArt VP
+%Cl(2,3,230,261,c,c)
+%Vl(a,70,0,234,267,-)
+%Cd
+#
+# Current Track & Artist
+#
+%Vl(a,0,267,375,21,1)%Vf(C4C4C4)%Vb(000000)
+%t(10)%s%ac%?ia<%ia|%?d(2)<%d(2)|%(Unknown Artist%)>>;%t(10)%ac%?ia<%ia|%?d(2)<%d(2)|%(Unknown Artist%)>>
+%Vl(a,0,288,375,21,1)%Vf(FFFFFF)%Vb(000000)
+%t(10)%ac%?it<%it|%fn>;%t(10)%s%ac%?it<%it|%fn>
+#
+# Current track % playlist viewer info when no AA
+# Note: wanted it to be also the "Hold" screen, but at the time this theme is being written,
+# the playlist viewer takes forever to load, making the whole "hold" action really slow
+#
+# AA Cleaning
+%Vl(h,70,0,234,267,-)
+#
+%Vl(h,70,45,234,28,2)%Vf(FFFFFF)%Vb(000000)
+%t(7)%s%ac%?id<%id|%?d(1)<%d(1)|%(Unknown Album%)>>;%t(14)%ac%?id<%id|%?d(1)<%d(1)|%(Unknown Album%)>>
+%Vl(h,70,85,234,21,1)%Vf(acacac)%Vb(000000)
+%t(7)%ac%?ia<%ia|%?d(2)<%d(2)|%(Unknown Artist%)>>;%t(7)%s%ac%?ia<%ia|%?d(2)<%d(2)|%(Unknown Artist%)>>;%t(7)%ac%?ia<%ia|%?d(2)<%d(2)|%(Unknown Artist%)>>
+%Vl(h,70,111,234,21,1)%Vf(FFFFFF)%Vb(000000)
+%t(14)%ac%?it<%it|%fn>;%t(7)%s%ac%?it<%it|%fn>
+#
+# Playlist viewer when no AA
+%Vl(h,70,164,234,21,1)%Vf(C4C4C4)%Vb(000000)
+%acUpcoming Tracks:
+%Vl(h,70,195,234,21,1)%Vf(8c8c8c)
+%t(7)%s%ac%?It<%It|%?Fn<%Fn| -  End  ->>%?Ia<%, by %Ia|>;%t(14)%ac%?It<%It|%?Fn<%Fn| -  End  ->>%?Ia<%, by %Ia|>
+%Vl(h,70,216,234,43,1)%Vf(8c8c8c)
+%Vp(2,%ac%?it<%it|%fn>)
+#
+# Track Info Cleaning
+%Vl(h,0,267,375,43,-)
+#
+# Playlist info when on hold or no AA
+#
+%Vl(h,6,280,363,21,1)%Vf(C4C4C4)%Vb(000000)
+%s%ac%?pn<in %pn|>
+#
+#Track progress times
+%V(0,311,64,9,0)%Vf(C4C4C4)%Vb(000000)
+%ar%pc
+%V(311,311,64,9,0)%Vf(C4C4C4)%Vb(000000)
+%al%pt
+#
+# Progress Bar
+%V(70,312,237,5,0)
+%pb(0,0,237,5,pb.bmp)

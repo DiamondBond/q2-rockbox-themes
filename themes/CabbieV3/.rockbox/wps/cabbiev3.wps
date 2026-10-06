@@ -1,0 +1,77 @@
+#Theme Name: cabbie 3.0
+#By Johannes Voggenthaler (Johannes.Voggenthaler@naturalbornyoers.com; Zinc Alloy on forum and IRC)
+#Platform: 320x240 (Ipod Video)
+#Version: 7
+#Licensed CC-BY-SA 3.0
+#Last updated: Sep 03 2008
+%wd
+%X(wps.bmp)0%|0%|
+%xl(g,shufflegrey.bmp,204,0)
+%xl(h,repeatgrey.bmp,254,0)
+%xl(A,lockclosed.bmp,55,0)
+%xl(B,lockopen.bmp,55,0)
+%xl(C,battpl.bmp,97,0)
+%xl(D,battch.bmp,97,0)
+%xl(E,batt00.bmp,97,0)
+%xl(F,batt01.bmp,97,0)
+%xl(G,batt02.bmp,97,0)
+%xl(H,batt03.bmp,97,0)
+%xl(I,batt04.bmp,97,0)
+%xl(J,batt05.bmp,97,0)
+%xl(K,batt06.bmp,97,0)
+%xl(L,batt07.bmp,97,0)
+%xl(M,vol0.bmp,157,0)
+%xl(N,vol1.bmp,157,0)
+%xl(O,vol2.bmp,157,0)
+%xl(P,vol3.bmp,157,0)
+%xl(Q,vol4.bmp,157,0)
+%xl(b,vol5.bmp,157,0)
+%xl(c,vol6.bmp,157,0)
+%xl(d,vol7.bmp,157,0)
+%xl(e,vol8.bmp,157,0)
+%xl(R,shuffle.bmp,204,0)
+%xl(S,repeatall.bmp,254,0)
+%xl(T,repeatone.bmp,254,0)
+%xl(U,repeatshuffle.bmp,254,0)
+%xl(V,repeatab.bmp,254,0)
+%xl(W,stop.bmp,284,0)
+%xl(X,play.bmp,284,0)
+%xl(Y,pause.bmp,284,0)
+%xl(Z,ff.bmp,284,0)
+%xl(a,rew.bmp,284,0)
+#Progress Bar Viewport
+%V(12,197,352,20,-)
+%pb(0,0,352,20,pb.bmp)
+#Conditional Viewports
+%?C<%Vd(a)%Vd(b)%Cd|%Vd(c)>
+#Now Playing with AA
+%Vl(a,20,32,141,160,-)
+%Cl(0,0,141,160,c,c)
+%Vl(b,182,20,162,160,1)
+
+%s%al%?ia<%ia|%?d(2)<%d(2)|%(root%)>>
+%s%al%?it<%it|%fn>
+%s%al%?id<%id|%?d(1)<%d(1)|%(root%)>>
+
+%alNext Track:
+%s%al%?It<%It|%Fn>
+#Now Playing without AA
+%Vl(c,20,20,338,160,1)
+
+%s%ac%?ia<%ia|%?d(2)<%d(2)|%(root%)>>
+%s%ac%?it<%it|%fn>
+%s%ac%?id<%id|%?d(1)<%d(1)|%(root%)>>
+
+%acNext Track:
+%s%ac%?It<%It|%Fn>
+#Time and Track no
+%V(12,217,352,27,1)
+%al%pc%ac%pp of %pe%ar%pr
+#Icons
+%V(0,247,-,-,1)
+%?mh<%xd(A)|%xd(B)>
+%?bp<%?bc<%xd(D)|%xd(C)>|%?bl<|%xd(E)|%xd(F)|%xd(G)|%xd(H)|%xd(I)|%xd(J)|%xd(K)|%xd(L)>>
+%?pv<%xd(M)|%xd(N)|%xd(O)|%xd(P)|%xd(Q)|%xd(b)|%xd(c)|%xd(d)|%xd(e)|%xd(e)>
+%?ps<%xd(R)|%xd(g)>
+%?mm<%xd(h)|%xd(S)|%xd(T)|%xd(U)|%xd(V)>
+%?mp<%xd(W)|%xd(X)|%xd(Y)|%xd(Z)|%xd(a)>

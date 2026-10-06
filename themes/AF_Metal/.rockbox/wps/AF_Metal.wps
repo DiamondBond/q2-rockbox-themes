@@ -1,0 +1,160 @@
+#Theme Name: AF_Metal
+#By: AsusFreak 
+#Platform: Cowon D2 (320x240) - Standard build
+#Version: 5.0
+#Last updated: June 30th, 2010
+
+# Statusbar disabled
+%wd
+
+# Bitmap Definitions
+%X(bg.bmp)
+%xl(U,Battery1.bmp,21,8,14)
+%xl(a,playactive.bmp,0,0)
+%xl(b,pause.bmp,0,0)
+%xl(n,FFW.bmp,0,0)
+%xl(o,RWD.bmp,0,0)
+%xl(A,volB.bmp,0,0,13)
+%xl(e,hdd1.bmp,83,24)
+%xl(D,hold1.bmp,6,25)
+%xl(B,shuffle1.bmp,84,5)
+%xl(E,shuffle2.bmp,84,5)
+%xl(G,repeatOff.bmp,2,4)
+%xl(H,repeatAll.bmp,2,4)
+%xl(I,repeatOne.bmp,2,4)
+%xl(K,repeatAB.bmp,2,4)
+%xl(J,repeatShuffle.bmp,2,4)
+%xl(f,quick.bmp,0,0)
+%xl(g,menu.bmp,0,0)
+%xl(p,volup.bmp,0,0)
+%xl(q,voldown.bmp,0,0)
+%xl(r,playlist.bmp,0,0)
+%xl(L,play.bmp,8,8)
+%xl(M,ffwd.bmp,8,8)
+%xl(N,rwd1.bmp,8,8)
+%xl(O,menu.bmp,8,11)
+%xl(P,fake.bmp,0,0)
+%Cl(0,0,206,235)
+
+#Font Definitions
+%Fl(2,21-Adobe-Helvetica-Bold-AF.fnt)
+%Fl(3,16-Adobe-Helvetica-Bold-AF.fnt)
+%Fl(4,14-Adobe-Helvetica-Bold-AF.fnt)
+
+#Progressbar
+%V(68,4,187,15,0)%Vf(000000)%Vb(000000)
+%pb(0,0,187,15,pb.bmp)
+%T(0,0,187,15,progressbar)
+
+#Track Times
+%V(56,7,54,19,0)%Vf(000000)%Vb(000000)
+%ac%pc
+%V(261,7,54,19,0)%Vf(000000)%Vb(000000)
+%ac%pt
+
+# Artist
+%V(60,272,202,20,3)%Vf(000000)%Vb(000000)
+%ac%?ia<%ia|%?d(2)<%d(2)|>>
+# Title
+%V(60,292,202,21,3)%Vf(000000)%Vb(000000)
+%s%ac%t(10)%?it< %it | %fn >
+
+# Date
+%V(59,275,47,40,4)%Vf(404040)%Vb(000000)
+%ac%?cu<Mon|Tue|Wed|Thu|Fri|Sat|Sun>
+%ac%cd/%cm
+
+# Time
+%V(271,284,42,19,4)%Vf(404040)%Vb(000000)
+%ac%cH:%cM
+
+# Or Album Art
+%V(4,28,206,235,3)%Vf(B5B5B5)%Vb(000000)
+%T(0,0,206,235,hotkey)
+%?C<%Cd|%Vd(a)>
+
+#No Album Art
+%Vl(a,13,48,183,24,2)%Vf(6A7B95)%Vb(000000)
+%s%ac%?ia<%ia|%?d(2)<%d(2)|>>
+%Vl(a,13,80,183,24,3)%Vf(6A7B95)%Vb(000000)
+%s%ac%?id<%id|%?d(1)<%d(1)|-->>
+
+
+#File Information
+%V(217,79,96,184,0)%Vf(202020)%Vb(000000)
+%alTRACK NUMBER
+%al%pp/%pe
+
+NEXT TRACK
+%s%al%?It<%It| ->
+
+ALBUM NAME
+%s%al%?id<%id|%?d(1)<%d(1)|-->>
+
+YEAR          
+%al%?iy<%iy|-->
+
+GENRE            
+%al%?ig<%ig|-->
+
+%al%fc
+%al%?fv<VBR|CBR>%fb 
+
+# Volume
+%V(315,244,55,16,0)%Vf(606060)%Vb(000000)
+%ac%pvdB
+
+#Volume
+%V(277,261,46,52,-)
+%T(0,0,46,52,volup)
+%T(0,0,46,52,&voldown)
+%?pv<%xd(Aa)|%xd(Aa)|%xd(Ab)|%xd(Ac)|%xd(Ad)|%xd(Ae)|%xd(Af)|%xd(Ag)|%xd(Ah)|%xd(Ai)|%xd(Aj)|%xd(Ak)|%xd(Al)|%xd(Am)>
+
+
+# PLAY Button
+%V(323,48,43,52,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,43,52,play)
+%T(0,0,43,52,&stop)
+%?mp<|%xd(a)|%xd(b)|%xd(L)|%xd(L)>
+
+# FFW Button
+%V(323,60,43,52,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,43,52,next)
+%T(0,0,43,52,&ffwd)
+%?mp<%xd(M)|%xd(M)|%xd(M)|%xd(n)|%xd(M)>
+
+# RWD Button
+%V(323,117,43,52,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,43,52,prev)
+%T(0,0,43,52,&rwd)
+%?mp<%xd(N)|%xd(N)|%xd(N)|%xd(N)|%xd(o)>
+
+# Menu Button
+%V(323,172,43,52,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,43,52,menu)
+%T(0,0,43,52,&quickscreen)
+%xd(O)
+
+#Black Display
+%V(216,27,101,43,1)
+%T(0,0,50,43,repmode)
+%T(50,0,50,43,shuffle)
+
+# Battery status
+%?bp<%xd(Un)|%?bl<%xd(Un)|%xd(Ua)|%xd(Ub)|%xd(Uc)|%xd(Ud)|%xd(Ue)|%xd(Uf)|%xd(Ug)|%xd(Uh)|%xd(Ui)|%xd(Uj)|%xd(Uk)|%xd(Ul)|%xd(Um)>>
+
+#Repeat
+%?mm<%xd(G)|%xd(H)|%xd(I)|%xd(J)|%xd(K)>
+
+#Hold
+%?mh<%xd(D)|>
+
+#Shuffle
+%?ps<%xd(E)|%xd(B)>
+
+#HDD
+%?lh<%xd(e)|>
+
+#Battery Values
+%V(237,53,61,16,0)%Vf(6A7B95)%Vb(000000)
+%ac%t(10)%bt;%ac%t(10)%bl%%

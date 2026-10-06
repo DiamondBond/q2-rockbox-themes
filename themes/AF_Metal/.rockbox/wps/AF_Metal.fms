@@ -1,0 +1,45 @@
+#Theme Name: AF_Metal 
+#By: AsusFreak 
+#Platform: Cowon D2 (320x240) - Standard build
+#Version: 5.0
+#Last updated: June 30th, 2010
+
+# Load images
+%xl(n,border.bmp,0,0)
+%xl(r,channel.bmp,4,4)
+%xl(s,fmpb1.bmp,0,0)
+
+
+#Font Inclusion
+%Fl(5,18-Adobe-Helvetica-Bold-AF.fnt)
+%Fl(3,16-Adobe-Helvetica-AF.fnt)
+%Fl(2,27-Adobe-Helvetica-AF.fnt)
+
+# The following section is for things that go to the right of the album art
+#Tuned Frequecy (larger font)
+%V(176,69,84,31,2)%Vf(404040)
+%ac%tf
+
+# Previous Preset - Number
+#%V(150,100,75,8,5)%Vf(404040)%Vb(000000)
+#%Vp(-1,Prev: %Tf,)
+
+# Album art viewport
+%V(70,68,105,120,5)%Vf(404040)%Vb(000000)
+%xd(n)
+%xd(r)
+
+
+#FM Radio Scale
+%V(70,211,211,13,0)%Vf(404040)%Vb(000000)
+%al89   92  95  98  101 104 107
+
+#progress bar - just above line
+%V(67,224,199,8,0)
+%xd(s)
+%V(68,225,197,5,0)
+%pb(0,-,-,-,fmpb.bmp)
+
+# FM Tuned Freq and Preset Name
+%V(60,281,203,24,5)%Vf(404040)%Vb(000000)
+%s%ac%?Tn<%Tn|Unknown Channel>

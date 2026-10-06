@@ -1,0 +1,78 @@
+# License: Creative Commons Attribution-ShareAlike License 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
+# Cabbie 2++ Derived from "Cabbie 2.0" by Brian Marchant 2012
+# Cabbie 2.0 (C) 2007, Johannes Voggenthaler (Zinc Alloy)
+# Derived from "cabbie" (C) Yohann Misquitta
+#
+# Version 1.0
+# Last updated: November 4th, 2010
+#
+# SBS File
+#
+# Disable Status Bar
+%wd
+# Load Backdrop
+%X(sbsbackdrop-320x240x16.bmp)
+#
+# Preload Images
+%xl(L,lock-small-320x240x16.bmp,0,0,2)
+%xl(B,battery-small-320x240x16.bmp,0,0,10)
+%xl(V,volume-small-320x240x16.bmp,0,0,36)
+%xl(S,shuffle-small-320x240x16.bmp,0,0)
+%xl(R,repeat-small-320x240x16.bmp,0,0,4)
+%xl(P,playmode-small-320x240x16.bmp,0,0,5)
+%xl(H,hdd-led-sbs.bmp,0,0,2)
+#
+# Preload a specific font for some windows:
+%Fl(2,15-Adobe-Helvetica.fnt)
+#
+# Now-Playing info, if in PLAY/PAUSE/FF/RW mode:
+%?mp<|%Vd(n)|%Vd(n)|%Vd(n)|%Vd(n)|%Vd(n)|$sRECORDING||>
+#
+# Status bar
+%Vd(b)%Vd(l)%Vd(r)
+%Vd(p)
+%Vd(s)%Vd(h)%Vd(v)%?mp<|%Vd(c)|%Vd(c)|%Vd(c)|%Vd(c)|%Vd(c)|||>
+#
+# Now Playing line:
+%Vl(n,6,275,363,21,2)%Vf(FFFFFF)%Vb(000000)
+%s%al%?Sr<%pe\%pp|%pp/%pe> : %?it<%it|%fn> by %?ia<%ia|%?d(2)<%d(2)|%(root%)>>%Vd(h)
+#
+# Custom statusbar items:
+#
+# Battery
+%Vl(b,59,299,26,16,-)
+%?bp<%?bc<%xd(Ba)|%xd(Bb)>|%?bl<|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)>>
+#
+# Lock
+%Vl(l,38,289,26,16,-)
+%?mh<%xd(La)|%xd(Lb)>
+#
+# Repeat
+%Vl(r,63,299,11,16,-)
+%?mm<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)>
+#
+# Shuffle
+%Vl(s,289,297,33,16,-)
+%?ps<%xd(S)>
+#
+# Playback status icon
+%Vl(p,328,286,14,16,-)
+%?mp<|%xd(Pb)|%xd(Pc)|%xd(Pd)|%xd(Pe)>
+#
+# Volume
+%Vl(v,291,299,26,16,-)
+%?pv<%xd(Va)|%xd(Vb)|%xd(Vc)|%xd(Vd)|%xd(Ve)|%xd(Vf)|%xd(Vg)|%xd(Vh)|%xd(Vi)|%xd(Vj)|%xd(Vk)|%xd(Vl)|%xd(Vm)|%xd(Vn)|%xd(Vo)|%xd(Vp)|%xd(Vq)|%xd(Vr)|%xd(Vs)|%xd(Vt)|%xd(Vu)|%xd(Vv)|%xd(Vw)|%xd(Vx)|%xd(Vy)|%xd(Vz)|%xd(VA)|%xd(VB)|%xd(VC)|%xd(VD)|%xd(VE)|%xd(VF)|%xd(VG)|%xd(VH)|%xd(VI)|%xd(VJ)>
+#
+# Current time / track length. Alternating parts warn when track is ending when in Menu mode (non-WPS).
+%Vl(c,129,297,117,21,2)%Vf(FFFFFF)%Vb(000000)
+%ac%?pE(6)<%t(0.5)*;%t(0.5)|>%pc / %pt%?pE(6)<%t(0.5)*;%t(0.5)|>
+#
+# Disk activity
+%Vl(h,357,59,13,15,-)
+%?lh<%xd(Ha)|%xd(Hb)>
+#
+# Vi AREA (MENU) height varies depending on whether we're currently in STOP or PLAY/PAUSE/RECORD mode etc.
+%?mp<%VI(x)|%VI(y)>
+%Vi(x,6,5,346,291,-)
+%Vi(y,6,5,346,269,-)
+%Vf(FFFFFF)%Vb(000000)

@@ -1,0 +1,51 @@
+# Theme name: Deep Sea
+# Modified by: Alex Lototskaia murella@gmail.com (murella on the forum)
+# Original Theme: "�abbie 2.0 default" (c) Johannes Voggenthaler (Zinc Alloy)
+# License: Creative Commons Attribution-ShareAlike License 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
+# Platform: iPod 5G (320x240x16) - Standard build
+# Version: 1.0
+# Last updated: Sunday, September 13th 2009
+
+%wd
+%X(wpsbackdrop-320x240x16.bmp)
+%xl(A,lock-320x240x16.bmp,107,276,2)
+%xl(B,battery-320x240x16.bmp,148,276,10)
+%xl(C,volume-320x240x16.bmp,207,276,10)
+%xl(D,shuffle-320x240x16.bmp,255,281)
+%xl(E,repeat-320x240x16.bmp,306,276,4)
+%xl(F,playmode-320x240x16.bmp,335,276,5)
+%Cl(19,43,141,160)
+%pb(12,216,352,20,pb-320x240x16.bmp)
+%?mh<%xd(Aa)|%xd(Ab)>
+%?bp<%?bc<%xd(Ba)|%xd(Bb)>|%?bl<|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)>>
+%?pv<%xd(Ca)|%xd(Cb)|%xd(Cc)|%xd(Cd)|%xd(Ce)|%xd(Cf)|%xd(Cg)|%xd(Ch)|%xd(Ci)|%xd(Cj)>
+%?ps<%xd(D)>
+%?mm<|%xd(Ea)|%xd(Eb)|%xd(Ec)|%xd(Ed)>
+%?mp<%xd(Fa)|%xd(Fb)|%xd(Fc)|%xd(Fd)|%xd(Fe)>
+
+%?C<%Vd(a)%Cd|%Vd(b)>
+#NowPlaying
+
+%Vl(a,179,40,182,173,1)
+%s%al%?it<%it|%fn>
+%s%al%?ia<%ia|%?d(2)<%d(2)|%(root%)>>
+%s%al%?id<%id|%?d(1)<%d(1)|%(root%)>>
+%s%al%iy
+
+%s%alNext Track:
+%s%al%?It<%It|%Fn>
+%s%al%Ia
+
+%Vl(b,0,40,-,173,1)
+%s%ac%?it<%it|%fn>
+%s%ac%?ia<%ia|%?d(2)<%d(2)|%(root%)>>
+%s%ac%?id<%id|%?d(1)<%d(1)|%(root%)>>
+%s%ac%iy
+
+%acNext Track:
+%s%ac%?It<%It|%Fn>
+%s%ac%Ia
+
+%V(0,240,-,27,1)
+%al   %pc%ac%pp of %pe%ar%pr   
+

@@ -1,0 +1,127 @@
+#Theme Name: AF_Flow 
+#By: AsusFreak 
+#Platform: Cowon D2 (320x240) - Standard build
+#Version: 4.0
+#Last updated: May 7th, 2012
+
+
+# disable the status bar
+%wd
+
+# preloads album art 128x128
+%Cl(0,0,150,171)
+
+# preload images
+%X(bg.bmp)
+%xl(B,shuffle.bmp,0,0)
+%xl(D,hold.bmp,0,53)
+%xl(F,repeat1.bmp,4,29,5)
+%xl(H,hdd.bmp,0,0)
+%xl(W,volume.bmp,0,0,21)
+%xl(Z,battery.bmp,0,0,22)
+%xl(t,volup1.bmp,6,15)
+%xl(s,voldown1.bmp,6,15)
+%xl(L,rwd2.bmp,7,17)
+%xl(K,fwd1.bmp,12,17)
+%xl(A,play1.bmp,15,17)
+%xl(E,stop1.bmp,9,17)
+%xl(C,pause1.bmp,11,17)
+%xl(a,volup.bmp,6,15)
+%xl(b,voldown.bmp,6,15)
+%xl(c,rwd.bmp,7,17)
+%xl(d,fwd.bmp,12,17)
+%xl(e,play.bmp,15,17)
+%xl(f,config.bmp,15,17)
+
+#Font Definitions
+%Fl(3,16-Adobe-Helvetica-AF.fnt)
+%Fl(4,14-Adobe-Helvetica-Bold-AF.fnt)
+
+
+# Track/Playlist
+%V(9,260,53,9,0) %Vf(CCCCCC) %Vb(000000)
+%al%pp/%pe
+
+#Album Art
+%V(112,43,150,171,0)%Vf(000000)%Vb(000000)
+%T(0,0,150,171,hotkey)
+%Cd
+
+# Time
+%V(310,260,52,19,0)
+%ar%cH:%cM
+
+#Battery
+%V(3,231,95,4,0) %Vf(CCCCCC) %Vb(000000)
+%?bp<%xd(Zv)|%?bl<%xd(Zv)|%xd(Za)|%xd(Zb)|%xd(Zc)|%xd(Zd)|%xd(Ze)|%xd(Zf)|%xd(Zg)|%xd(Zh)|%xd(Zi)|%xd(Zj)|%xd(Zk)|%xd(Zl)|%xd(Zm)|%xd(Zn)|%xd(Zo)|%xd(Zp)|%xd(Zq)|%xd(Zr)|%xd(Zs)|%xd(Zt)|%xd(Zu)>>
+%V(5,239,46,19,0) %Vf(CCCCCC) %Vb(000000)
+%al%t(10)%bt;%al%t(10)%bl%%
+
+# Volume
+%V(279,231,94,4,0) %Vf(CCCCCC) %Vb(000000)
+%?pv<%xd(Wa)|%xd(Wb)|%xd(Wc)|%xd(Wd)|%xd(We)|%xd(Wf)|%xd(Wg)|%xd(Wh)|%xd(Wi)|%xd(Wj)|%xd(Wk)|%xd(Wl)|%xd(Wm)|%xd(Wn)|%xd(Wo)|%xd(Wp)|%xd(Wq)|%xd(Wr)|%xd(Ws)|%xd(Wt)|%xd(Wu)>
+%V(325,239,46,19,0) %Vf(CCCCCC) %Vb(000000)
+%ar%pvdB
+
+# Progress Bar
+%V(0,32,374,8,1)
+%T(0,0,374,8,progressbar)
+%pb(0,0,374,8,pb.bmp)
+
+# Progress Times
+%V(34,19,46,9,0) %Vf(CCCCCC) %Vb(000000)
+%al%pc
+%V(296,19,46,9,0) %Vf(CCCCCC) %Vb(000000)
+%ar%pt
+
+# Album
+%V(47,11,281,21,3) %Vf(FFFFFF) %Vb(000000)
+%ac%?id<%id|%?d(1)<%d(1)|>>
+
+# Artist
+%V(50,235,274,17,4)
+%ac%?ia<%ia|%?d(2)<%d(2)|>>
+# Title
+%V(50,255,274,17,4)
+%s%ac%t(10)%?it< %it | %fn > ;%s%ac%t(5)%?It< Next: %It |>
+
+# Volume Up Button
+%V(52,263,41,49,-)
+#%xd(a)
+%T(0,0,41,47,volup)
+%T(0,0,41,47,volup,repeat_press)
+%?mv(0.1)<%xd(t)|%xd(a)>
+
+# FWD + RWD Button
+%V(214,269,41,49,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,41,47,next)
+%T(0,0,41,47,ffwd,repeat_press)
+%?mp<%xd(d)|%xd(d)|%xd(d)|%xd(K)|%xd(d)>
+
+%V(121,269,41,49,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,41,47,prev)
+%T(0,0,41,47,rwd,repeat_press)
+%?mp<%xd(c)|%xd(c)|%xd(c)|%xd(c)|%xd(L)>
+
+# Volume Down Button
+%V(5,209,41,49,-)
+#%xd(b)
+%T(0,0,41,47,voldown)
+%T(0,0,41,47,voldown,repeat_press)
+%?mv(0.1)<%xd(s)|%xd(b)>
+
+# Menu Button
+%V(330,209,41,49,-)
+%xd(f)
+%T(0,0,41,47,menu)
+%T(0,0,41,47,quickscreen,repeat_press)
+
+# PLAY Button
+%V(166,269,41,49,0)%Vf(CCCCCC)%Vb(000000)
+#%xd(e)
+%T(0,0,41,47,play)
+%T(0,0,41,47,stop,repeat_press)
+%?mp<%xd(E)|%xd(A)|%xd(C)|%xd(e)|%xd(e)>
+
+
+ 

@@ -1,0 +1,109 @@
+# Theme name: Pen&Paper_plus
+# by: Humberto Santana (humbertosantana@hotmail.com)
+# Derived from "Pen&Paper" Theme by: Johan Swetz�n jswetzen@gmail.com (jswetzen on the forum). Additional original graphics added.
+# License: Creative Commons Attribution-ShareAlike License 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
+# Font license: Mattt's rope by Matt Chrisholm. Licensed under the GNU GPL. The TrueType font is available at http://www.theory.org/~strthrwr/fonts/free/index.php?font=mwtsrc
+#
+# Version 4.1
+# Last updated: August 19th, 2010
+# First Pen&Paper_plus version: April 29th, 2008
+# Original Pen&Paper version: August 15th(?), 2007
+#
+# WPS File
+#
+# TOUCHSCREEN AREAS
+#
+# Shuffle
+%T(118,0,48,39,shuffle)
+#
+# Menu + Quickscreen
+%T(9,57,117,133,menu)
+%T(9,57,117,133,&quickscreen)
+#
+# Previous + REW
+%T(0,215,49,64,prev)
+%T(0,215,49,64,&rwd)
+#
+# Files/DB + Context Menu
+%T(148,64,70,120,browse)
+%T(148,64,70,120,&contextmenu)
+#
+# Playlist
+%T(66,280,244,40,playlist)
+#
+# Next + FFW
+%T(326,216,49,64,next)
+%T(326,216,49,64,&ffwd)
+#
+# Volume Up
+%T(233,29,38,43,volup)
+%T(233,29,38,43,&volup)
+#
+# Volume Down
+%T(300,29,38,43,voldown)
+%T(300,29,38,43,&voldown)
+#
+# Pause/Play + Stop
+%T(15,8,35,40,play)
+%T(15,8,35,40,&stop)
+#
+# Repeat
+%T(175,0,52,39,repmode)
+#
+# Progressbar
+%T(73,215,227,27,progressbar)
+#
+%wd
+%X(bg.bmp)
+#
+#
+# Album Art Conditionals
+%?C<%Vd(a)|%Vd(n)>
+#
+#AA vp's
+%Cl(0,0,117,133,c,c)
+%Vl(a,9,57,117,133,-)
+%Cd
+#Text when AA is present
+%Vl(a,136,57,233,143,1)%Vf(6C6A6A)%Vb(ffffff)
+%t(6)%s%al%?it<%it|%fn>;%t(12)%al%?it<%it|%fn>
+
+%t(6)%al%?ia<%ia|%?d(2)<%d(2)|%(Unknown Artist%)>>;%t(6)%s%al%?ia<%ia|%?d(2)<%d(2)|%(Unknown Artist%)>>;%t(6)%al%?ia<%ia|%?d(2)<%d(2)|%(Unknown Artist%)>>
+
+%t(12)%al%?id<%id|%?d(1)<%d(1)|%(Unknown Album%)>>;%t(6)%s%al%?id<%id|%?d(1)<%d(1)|%(Unknown Album%)>>
+#
+# No AA vp
+%Vl(n,6,57,363,143,1)%Vf(6C6A6A)%Vb(ffffff)
+%s%ac%?it<%it|%fn>
+
+%s%ac%?ia<%ia|%?d(2)<%d(2)|%(Unknown Artist%)>>
+
+%s%ac%?id<%id|%?d(1)<%d(1)|%(Unknown Album%)>>
+#
+# Hold, Shuffle, Repeat, Volume, Battery, Playing Status, HDD
+%xl(g,hold.bmp,70,4)
+%xl(p,shuffle.bmp,135,8)
+%xl(R,repeat.bmp,175,4,4)
+%xl(V,vol.bmp,245,7,4)
+%xl(B,batt.bmp,311,13,6)
+%xl(P,playstatus.bmp,12,0,5)
+%xl(x,hdd.bmp,104,15)
+%V(0,0,375,47,-)
+%?mh<%xd(g)|>%?ps<%xd(p)|>%?mm<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)>%?pv<|%xd(Va)|%xd(Vb)|%xd(Vc)|%xd(Vc)|%xd(Vd)|%xd(Vd)>%?bp<%xd(Bf)|%?bl<|%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bd)|%xd(Be)>>
+%?mp<%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)|%xd(Pe)>%?lh<%xd(x)|>
+#
+# Progress / Total Track Times
+%V(4,220,67,28,1)%Vf(6C6A6A)%Vb(ffffff)
+%ar%pc
+%V(75,217,221,23,-)
+%pb(0,0,221,23,pb.bmp)
+%V(303,220,69,28,1)%Vf(6C6A6A)%Vb(ffffff)
+%al%pt 
+#
+# Next Track
+%V(148,283,20,37,1)%Vf(6C6A6A)%Vb(ffffff)
+%?It<%t(10)%ac%s%It|%?Fn<%ac%s%Fn|%ac-  End  ->>;%?Ia<%t(2)%acby|%t(0)>;%?Ia<%t(5)%ac%s%Ia|%t(0)>
+# Animation
+%xl(A,animation.bmp,0,23,3)
+%V(305,249,70,71,1)%Vf(6C6A6A)%Vb(ffffff)
+%t(0.1)%?mp<%xd(Aa)|%xd(Aa)|%xd(Aa)|%xd(Aa)|%xd(Aa)>;%t(0.1)%?mp<%xd(Aa)|%xd(Aa)|%xd(Ab)|%xd(Aa)|%xd(Aa)>;%t(0.1)%?mp<%xd(Aa)|%xd(Aa)|%xd(Ac)|%xd(Aa)|%xd(Aa)>;%t(0.1)%?mp<%xd(Aa)|%xd(Aa)|%xd(Ab)|%xd(Aa)|%xd(Aa)>

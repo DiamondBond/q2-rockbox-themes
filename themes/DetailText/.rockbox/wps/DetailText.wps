@@ -1,0 +1,20 @@
+# Name: DetailText
+# By: Rem Leafmoon
+# Platform: iPod Video (320x240x16) - Standard build
+# Version: 0.01.100727
+# License: CC-BY-SA or CC0
+%we
+%alBat:%bt [%bl%%]%ac%?bp<Plug|>%ar%ca %ce %cb %cY
+%alVolume:%pvdB%ac%?mp<Stop|Play|Pause|Ffwd|Rew|Rec|Rec Pause|FM|FM Pause>%ar%cH:%cM:%cS
+%alShuffle:%?ps<Yes|No>%ac%?bs<S.Timer:%bs|>%ar%?mm<Off|All|One|Shuffle|A-B>
+%s%ac%?ia<%ia|%?d(2)<%d(2)|%?d(1)<[Root]|>>>
+%s%ac%?id<%id|%?d(1)<%d(1)|[Root]>> %?iy<[%iy]|>
+%s%ac%?it<%?ik<%ik. |>%?in<%in. |>%it|%fm>
+%al[%pp/%pe] %ac%?mh<Hold|>%ar%pc/%pt %(%pr%)
+%pb(-,-,-,13,-)
+%al   %fc %?fv<VBR|CBR> %fbKbps %ffHz %(%fsKB%)%ar%?lh<HDD|>
+%pm
+%alC.Fade:%?xf<Off|Auto|Manual|Shuffle|Shuffle/Manual|Always>%arPitch:%Sp%%
+%acNext Song
+%s%ac%?Ia<%Ia|%?D(2)<%D(2)|%?D(1)<[Root]|>>> - %?Id<%Id|%?D(1)<%D(1)|[Root]>> %?Iy<[%Iy]|>
+%s%ac%?It<%?Ik<%Ik. |>%?In<%In. |>%It|%Fm>

@@ -1,0 +1,122 @@
+﻿#Color Palette (for text)
+#Dark Blue 184478
+#Light Blue 5d8ebe a4c0e4 6193cf(darker)
+#off white light (oxygen) E3E2E1 eeeeec(other)
+#light grey d3d7cf babdb6(darker) dee1db(lighter)
+#dark grey 888a85 555753(darker)
+#
+%wd
+%X(bg.bmp)
+
+%x(a,rockbox.bmp,21,8)
+
+
+#
+#EQ bars
+%xl(V,eq.bmp,14,191,10)
+#%?St|eq band 0 gain|<-240| -235| -230| -225| -220| -215| -210| -205| -200| -195| -190| -185| -180| -175| -170| -165| -160| -155|- 150|- 145|- 140| -135|- 130| -125|- 120|- 115|-1 10|-1 05|- 100| - 95| - 90| - 85|  -80|  -75|  -70|-  65| - 60|-  55| - 50|  -45|-  40|-  35|  -30|  -25|  -20|  -15|-  10|   -5|    0|   +5|+  10|+  15|+  20|  +25|  +30|  +35|  +40|  +45|  +50|  +60| + 65|  +70|  +75|  +80|  +85|  +90|  +95| +100| +105| +110| +115| +120| +125| +130| +135|+ 140| +145| +150| +155>
+%xl(W,eq.bmp,23,191,10)
+%xl(X,eq.bmp,33,191,10)
+%xl(Y,eq.bmp,42,191,10)
+%xl(Z,eq.bmp,52,191,10)
+
+#
+#battery
+%xl(B,battery.bmp,333,7,10)
+%?bl<%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)>
+
+#
+#charging
+%xl(b,charging.bmp,333,7)
+%?bp<%xd(b)|>
+
+#
+#rating
+%xl(R,rating.bmp,74,156,10)
+%?rr<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)|%xd(Re)|%xd(Rf)|%xd(Rg)|%xd(Rh)|%xd(Ri)|%xd(Rj)>
+
+#
+#playmode
+%xl(P,play.bmp,177,3,3)
+#%?mp<Stop|Play|Pause|Ffwd|Rew>
+%?mp<|%xd(Pa)||%xd(Pb)|%xd(Pc)>
+
+#
+#volume/speaker
+%xl(n,speaker.bmp,2,281)
+%xl(M,vol.bmp,50,287,17)
+%xl(m,mini-vol.bmp,4,12,5)
+%?pv<%xd(ma)|%xd(ma)|%xd(ma)|%xd(ma)|%xd(ma)|%xd(ma)|%xd(ma)|%xd(ma)|%xd(ma)|%xd(ma)|%xd(ma)|%xd(mb)|%xd(mb)|%xd(mb)|%xd(mb)|%xd(mb)|%xd(mb)|%xd(mb)|%xd(mc)|%xd(mc)|%xd(mc)|%xd(mc)|%xd(mc)|%xd(md)|%xd(md)|%xd(md)|%xd(md)|%xd(md)|%xd(me)>
+%?mv(2.5)<%Vd(v)%xd(n)%?pv<%xd(Ma)|%xd(Mb)|%xd(Mc)|%xd(Md)|%xd(Me)|%xd(Mf)|%xd(Mg)|%xd(Mh)|%xd(Mi)|%xd(Mj)|%xd(Mk)|%xd(Ml)|%xd(Mm)|%xd(Mn)|%xd(Mo)|%xd(Mp)|%xd(Mq)>|%Vd(t)>
+
+#
+#viewports start
+#time on either side of pb
+%Vl(t,5,291,366,21,0)%Vf(babdb6)%Vb(000000)
+%al%pc%ar-%pr
+#
+#progress bar
+%Vl(t,50,287,274,21,0)%Vf(babdb6)%Vb(000000)
+%pb(0,0,274,17,pb.bmp)
+
+#
+#volume dB
+%Vl(v,287,291,38,21,0)%Vf(babdb6)%Vb(000000)
+%ac%pvdb
+
+#
+#sound config info
+%V(73,195,101,40,0)%Vf(888a85)%Vb(000000)
+Treble: %St(treble)db
+
+%V(73,213,101,40,0)%Vf(888a85)%Vb(000000)
+Bass: %St(bass)db
+
+#
+#sleep timer
+%V(129,291,117,21,0)%Vf(babdb6)%Vb(000000)
+%?bs<%acSleep: %bs|>
+
+#
+# AA viewports
+%Cl(0,0,188,213,c,c)
+%V(177,48,188,213,1)%Vf(FFFFFF)%Vb(000000)
+%Cd
+
+#
+#track info
+#artist album track
+
+#show wide title if not album art found
+%?C<%Vd(a)|%Vd(b)>
+
+%Vl(b,28,48,253,27,1)%Vf(dee1db)%Vb(000000)
+%s%?ia<%ia|???>
+%Vl(b,28,84,253,27,1)%Vf(dee1db)%Vb(000000)
+%s%?id<%id|???>
+%Vl(b,28,119,253,27,1)%Vf(a4c0e4)%Vb(000000)
+%s%?it<%it|???>
+
+%Vl(a,28,48,141,27,1)%Vf(dee1db)%Vb(000000)
+%s%?ia<%ia|???>
+%Vl(a,28,84,141,27,1)%Vf(dee1db)%Vb(000000)
+%s%?id<%id|???>
+%Vl(a,28,119,141,27,1)%Vf(a4c0e4)%Vb(000000)
+%s%?it<%it|???>
+
+%V(9,151,141,27,1)%Vf(dee1db)%Vb(000000)
+%?iy<%iy|----> 
+
+#
+#file info
+%V(13,245,160,33,0)%Vf(888a85)%Vb(000000)
+%ac%fkkHz %fbKbps%?fv< AVG| CBR>
+
+#
+#advanced file info
+#%V|8|179|140|25|0|888a85|000000|
+#%t4%alCodec: %?fc<MP1|MPEG-Layer 2|MPEG-Layer 3|AIFF|WAV|Vorbis OGG|FLAC|MusePack|AC3|WavPack|ALAC|AAC|Shorten|SID|ADX|NSF|Speex|SPC|Monkey's Audio|WMA|MOD|SAP|Unknown>;%t4%alSample Rate: %fk kHz;%t4%alPlay Count: %rp;%t4%alRGain: %?rg<Off|%rg Track|%rg Album|%rg Track|%rg Album|No tag>
+#%V|8|189|140|15|0|888a85|000000|
+#%t4%alTotal Time: %pt;%t4%alBitRate: %fb Kbps%?fv< AVG| CBR>;%t4%alSize: %fs Kb;%t4%alAuto Score: %ra;%t4%alID3: v%iv
+
+# BUENOS AIRES - ARGENTINA

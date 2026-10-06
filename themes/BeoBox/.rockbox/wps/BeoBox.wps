@@ -1,0 +1,203 @@
+# Theme: BeoBox
+# By: Thanos Tsakiris (atsakir@yahoo.com)
+# License: CC-BY-SA 3.0 Creative Commons Attribution-Share Alike 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
+#
+# Version 1.01: May 7, 2010
+#
+# WPS File
+#
+# TOUCHSCREEN AREAS
+#
+# Shuffle
+%T(298,239,29,29,shuffle)
+%T(314,247,32,29,shuffle)
+# Repeat
+%T(298,59,29,29,repmode)
+%T(314,51,32,29,repmode)
+#
+# Menu + Quickscreen
+%T(29,73,230,188,menu)
+%T(29,73,230,188,&quickscreen)
+#  
+# Previous + RWD
+%T(272,193,27,27,prev)
+%T(272,193,27,27,&rwd)
+%T(281,212,26,25,prev)
+%T(281,212,26,25,&rwd)
+#
+# Files/DB + Context Menu
+%T(29,5,230,43,browse)
+%T(29,5,230,43,&contextmenu)
+#
+# Playlist
+%T(29,272,230,43,playlist)
+#     
+# Next + FFWD
+%T(281,89,26,25,next)
+%T(281,89,26,25,&ffwd)
+%T(272,107,27,27,next)
+%T(272,107,27,27,&ffwd)
+#
+# Volume Down
+%T(322,196,50,41,voldown)
+%T(322,196,50,41,&voldown)
+#
+# Volume Up
+%T(322,89,50,39,volup)
+%T(322,89,50,39,&volup)
+#  
+# Pause/Play + Stop
+%T(267,136,25,53,play)
+%T(267,136,25,53,&stop)
+#
+# Progress Bar
+%T(28,55,232,12,progressbar)
+#
+%wd
+#
+# AA CONDITIONALS
+%?C<%t(6)%Vd(b)|>;%?C<%t(7)%Vd(c)|>
+%?C<%t(6)%Vd(z)|>;%?C<%t(7)%Vd(x)|>
+%?C<|%Vd(c)>
+%?C<|%Vd(x)>
+#
+# AA PRESENT
+#
+# Album Art + Frame
+#
+# Sidebar
+%xl(s,sidebar.bmp,0,0,8)
+%V(63,5,19,21,-)
+%xd(sa)
+%V(24,28,19,21,-) 
+%xd(sb)
+# Album art / Extra info
+%Cl(35,0,162,184,c,c)
+%Vl(b,29,72,230,187,-)%Vf(99b4c2)%Vb(000000)
+%Cd
+%Vl(c,29,68,230,187,-)%Vf(99b4c2)%Vb(000000)
+%Vd(u)
+%Vd(v)
+%?C<%Vd(w)|%Vd(y)>
+#
+# No AA
+#
+%Vl(u,29,67,230,64,1)%Vf(99b4c2)%Vb(000000)
+%ac                                              .
+%s%ac%?id<%id|%?d(1)<%d(1)|Unknown Album>>%?iy< %(%iy%)|>
+%s%ac%?ig<%ig|Unknown Genre>
+%Vl(v,29,152,230,21,1)%Vf(99b4c2)%Vb(000000)
+%s%ac%pp/%pe%?pn< in "%pn"| in playlist>
+%Vl(w,29,189,230,64,1)%Vf(99b4c2)%Vb(000000)
+%s%ac%fc 
+%s%ac%?fv<~|>%fbkbps
+%ac                                              .
+%Vl(y,29,189,230,64,-)%Vf(99b4c2)%Vb(081821)
+%s%ac%fc %?fv<~|>%fbkbps
+%Vd(q)
+%Vl(q,29,216,230,43,-)%Vf(99b4c2)%Vb(081821)                     
+%pm
+%ac                                              .
+#
+%Vl(x,3,85,19,152,-) 
+%Vd(e)
+%Vd(g)
+%?C<%Vd(i)|%Vd(l)>
+%?C<%Vd(k)|>
+%Vl(e,3,85,19,21,-) 
+%xd(sc)
+%Vl(g,3,109,19,21,-) 
+%xd(sd)
+%Vl(i,3,187,19,21,-) 
+%xd(sf)
+%Vl(k,3,211,19,21,-) 
+%xd(sg)
+%Vl(l,3,187,19,21,-)
+%xd(sg)
+%Vl(z,3,85,19,152,-) 
+   .
+   .
+   .
+   .
+   .
+   .
+   .
+   .
+#
+# Artist
+%V(29,29,230,21,1)%Vf(2fb1f4)%Vb(000000)
+%s%ac%?ia<%ia|Unknown Artist>
+#
+# Playing Track
+%V(63,5,196,21,1)%Vf(ffffff)%Vb(000000)
+%s%ac%?in<%in. |>%?it<%it|%fn>
+#
+# Next Track Artist
+%V(63,295,196,21,1)%Vf(026da4)%Vb(000000)
+%s%ac%?Ia<%Ia|%?d(2)<%d(2)|%(root%)>>
+#
+# Next Track
+%V(29,269,230,21,1)%Vf(bbbbbb)%Vb(000000)
+%s%ac%?In<%In. |>%?It<%It|%Fn>
+#
+%V(20,267,19,21,-) 
+%xd(sh)
+%V(53,292,19,21,-) 
+%xd(sb)# Rating
+#%xl|I|rating.bmp|0|0|11|
+%V(303,152,70,19,1)%Vf(2fb1f4)%Vb(010101)
+%ar%?rr<-----|+----|*----|*+---|**---|**+--|***--|***+-|****-|****+|*****|>
+#
+#####################################################
+# Hold
+%xl(g,hold.bmp,0,0)
+%V(355,233,16,25,-)
+%?mh<%xd(g)|>
+#
+# Clock
+%V(214,3,82,21,1)%Vf(2fb1f4)%Vb(000000)
+%ar%cl:%cM%cp
+#
+# HDD
+%V(3,151,19,21,-)
+%?lh<%t(0.5)%xd(se)|>;%?lh<%t(0.5)|>
+#
+# Shuffle, Repeat
+%xl(h,shuff.bmp,0,0)
+%V(308,240,32,31,-)
+%?ps<%xd(h)|>
+%xl(i,repeat.bmp,1,0,4)
+%V(301,53,42,39,-)
+%?mm<|%xd(ia)|%xd(ib)|%xd(ic)|%xd(id)>
+#
+# Volume 
+%xl(A,vol.bmp,0,0,16)
+%V(308,75,64,53,-)
+%?pv<|%xd(Aa)|%xd(Ab)|%xd(Ac)|%xd(Ad)|%xd(Ae)|%xd(Af)|%xd(Ag)|%xd(Ah)|%xd(Ai)|%xd(Aj)|%xd(Ak)|%xd(Al)|%xd(Am)|%xd(An)|%xd(Ao)|%xd(Ap)>
+%V(326,105,47,21,1)%Vf(4b4a4b)%Vb(000000)
+%ar%pvdb 
+#
+# Play, Pause, FFW, REW
+%xl(m,media.bmp,0,0,5)
+%V(265,147,28,32,-)
+%?mp<|%xd(ma)|%xd(mb)|||%xd(mc)|||>
+%V(277,93,28,32,-)
+%?mp<|||%xd(md)|||||>
+%V(277,200,28,32,-)
+%?mp<||||%xd(me)||||>
+#
+# Battery
+%xl(a,batt.bmp,0,0,7)
+%V(308,196,64,53,-) 
+%?bp<%?bc<%xd(ag)|%xd(af)>|%?bl<||%xd(aa)|%xd(ab)|%xd(ac)|%xd(ad)|%xd(ae)>>
+%V(336,201,37,21,1)%Vf(4b4a4b)%Vb(000000)
+%ar%bl%% 
+#
+# Progress Bar
+%V(28,57,232,5,-) 
+%pb(0,0,232,5,pb.bmp)
+# Playing time
+%V(303,135,70,21,1)%Vf(2fb1f4)%Vb(000000)
+%ar%pc
+%V(303,169,70,21,1)%Vf(2fb1f4)%Vb(000000)
+%ar%pt
