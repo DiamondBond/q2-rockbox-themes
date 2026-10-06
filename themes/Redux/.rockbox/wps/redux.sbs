@@ -1,0 +1,48 @@
+#                  _               
+#                 | |              
+#   ____ _____  __| |_   _ _   _   
+#  / ___) ___ |/ _  | | | ( \ / )  
+# | |   | ____( (_| | |_| |) X (   
+# |_|   |_____)\____|____/(_/ \_)  
+#     
+#Theme Name: redux
+#Author: Justin Fite - jdotfite@gmail.com
+#Platform: iPod Video/Classic (320x240x16)
+#Version: 1.0
+#Licensed CC-BY-SA 3.0
+#Last updated: 5/11/14
+#
+# SBS File
+#
+# Load Fonts
+%Fl(6,09-Nedore.fnt)
+#
+%Vi(-,47,48,281,228,-)
+#
+# Preload Images
+%xl(A,lock-320x240x16.bmp,0,0,2)
+%xl(B,battery-320x240x16.bmp,0,0,10)
+%xl(C,volume-320x240x16.bmp,0,0,6)
+#
+# Hold
+#%V(244,27,7,7,-)
+#%?mh<%xd(Aa)|%xd(Ab)>
+#
+# Battery Numeric
+%V(306,35,18,13,6)%Vf(BBBBBB)
+%ar%bl
+# Battery Image
+%V(326,36,14,9,-)
+%?bp<%?bc<%xd(Ba)|%xd(Bb)>|%?bl<|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)>>
+#
+# Volume Numeric
+%V(253,35,18,13,6)%Vf(BBBBBB)
+%ar%pv
+# Volume
+%V(274,36,23,9,-)
+%?pv<%xd(Ca)|%xd(Cb)|%xd(Cc)|%xd(Cd)|%xd(Ce)|%xd(Cf)>
+#
+# Lock (Hold)
+%xl(g,lock-320x240x16.bmp,0,0)
+%V(237,36,8,9,-)
+%?mh<%xd(g)|>

@@ -1,0 +1,499 @@
+[
+ {
+  "dir": "240",
+  "name": "240",
+  "author": "Wesley Clifford",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=1280"
+ },
+ {
+  "dir": "AAFreak",
+  "name": "AAFreak",
+  "author": "Ben Zavala",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=152"
+ },
+ {
+  "dir": "AF_Flow",
+  "name": "AF Flow",
+  "author": "Carsten Eckartsberg (AsusFreak)",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=1613"
+ },
+ {
+  "dir": "AF_Metal",
+  "name": "AF Metal",
+  "author": "Carsten Eckartsberg (AsusFreak)",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=995"
+ },
+ {
+  "dir": "AW200glass",
+  "name": "AW200 Glass",
+  "author": "Humberto Santana",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=1391"
+ },
+ {
+  "dir": "Amarok",
+  "name": "Amarok",
+  "author": "Gary Light",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=317"
+ },
+ {
+  "dir": "AmarokPlus2",
+  "name": "Amarok Plus 2",
+  "author": "Pablo Mendoza",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=353"
+ },
+ {
+  "dir": "BACKBONE",
+  "name": "BACKBONE",
+  "author": "Monica G.",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3950"
+ },
+ {
+  "dir": "BONES",
+  "name": "BONES",
+  "author": "Chuck Lardo",
+  "licence": "CC-BY-SA 4.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3579"
+ },
+ {
+  "dir": "Basta",
+  "name": "Basta",
+  "author": "Guillaume Cocatre-Zilgien",
+  "licence": "CC-BY-SA",
+  "source": "https://themes.rockbox.org/index.php?themeid=2161"
+ },
+ {
+  "dir": "BeoBox",
+  "name": "BeoBox",
+  "author": "Thanos Tsakiris",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=779"
+ },
+ {
+  "dir": "Bookshelf",
+  "name": "Bookshelf",
+  "author": "Arin Kim",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=4090"
+ },
+ {
+  "dir": "CabbieV2PlusPlus",
+  "name": "Cabbie v2++",
+  "author": "Brian Marchant",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=1498"
+ },
+ {
+  "dir": "CabbieV3",
+  "name": "Cabbie v3",
+  "author": "Johannes Voggenthaler (Zinc Alloy)",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=1187"
+ },
+ {
+  "dir": "CenterArt",
+  "name": "CenterArt",
+  "author": "Wesley Clifford",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=1307"
+ },
+ {
+  "dir": "DAP-393",
+  "name": "DAP-393",
+  "author": "Adam Banks (360ad)",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=4091"
+ },
+ {
+  "dir": "DancePuffDuo",
+  "name": "DancePuffDuo",
+  "author": "P Poorten",
+  "licence": "CC-BY-SA 4.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=2727"
+ },
+ {
+  "dir": "DetailText",
+  "name": "DetailText",
+  "author": "Rem Leafmoon",
+  "licence": "CC-BY-SA or CC0",
+  "source": "https://themes.rockbox.org/index.php?themeid=946"
+ },
+ {
+  "dir": "DriveBox",
+  "name": "DriveBox",
+  "author": "Juan Prada (Countach)",
+  "licence": "GPLv2 or later",
+  "source": "https://themes.rockbox.org/index.php?themeid=1191"
+ },
+ {
+  "dir": "FSM",
+  "name": "FSM",
+  "author": "Jeffrey Rodriguez",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=1068"
+ },
+ {
+  "dir": "Googley-Classic-Storm",
+  "name": "Googley Classic Storm",
+  "author": "Guillaume Cocatre-Zilgien",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=2025"
+ },
+ {
+  "dir": "Interpod",
+  "name": "Interpod",
+  "author": "Christian Soffke",
+  "licence": "CC-BY-SA",
+  "source": "https://themes.rockbox.org/index.php?themeid=3359"
+ },
+ {
+  "dir": "Interpod-2",
+  "name": "Interpod 2",
+  "author": "Christian Soffke",
+  "licence": "CC-BY-SA",
+  "source": "https://themes.rockbox.org/index.php?themeid=3506"
+ },
+ {
+  "dir": "Jive_mono",
+  "name": "Jive Mono",
+  "author": "James S / bloom b.",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=4043"
+ },
+ {
+  "dir": "LookAtMe",
+  "name": "LookAtMe",
+  "author": "Serge Fahnenstell",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=4082"
+ },
+ {
+  "dir": "Nether",
+  "name": "Nether",
+  "author": "Jihoon Kim",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3924"
+ },
+ {
+  "dir": "OP_1",
+  "name": "OP 1",
+  "author": "Chuck Lardo",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3693"
+ },
+ {
+  "dir": "OSSA",
+  "name": "OSSA",
+  "author": "Arin Kim",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3939"
+ },
+ {
+  "dir": "PenPaper",
+  "name": "Pen & Paper Plus",
+  "author": "Humberto Santana, from Pen&Paper by Johan Swetzén",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=997"
+ },
+ {
+  "dir": "PodOne",
+  "name": "PodOne",
+  "author": "Guillaume Cocatre-Zilgien",
+  "licence": "CC-BY-SA",
+  "source": "https://themes.rockbox.org/index.php?themeid=2156"
+ },
+ {
+  "dir": "Redux",
+  "name": "Redux",
+  "author": "Justin Fite",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=2162"
+ },
+ {
+  "dir": "RockFlow",
+  "name": "RockFlow 2011",
+  "author": "Ben Zavala (uploaded by Stephen Carroll)",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=1312"
+ },
+ {
+  "dir": "SKIDMARK",
+  "name": "SKIDMARK",
+  "author": "Jihoon Kim",
+  "licence": "CC-BY-SA 4.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3672"
+ },
+ {
+  "dir": "SNARTYINTER",
+  "name": "SNARTYINTER",
+  "author": "E. Halpin",
+  "licence": "CC-BY-SA 4.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=4014"
+ },
+ {
+  "dir": "SNAZZ3",
+  "name": "SNAZZ3",
+  "author": "Vera B",
+  "licence": "CC-BY-SA 4.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3665"
+ },
+ {
+  "dir": "Satellite",
+  "name": "Satellite",
+  "author": "Jihoon Kim",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3897"
+ },
+ {
+  "dir": "Slatey3",
+  "name": "Slatey3",
+  "author": "E. Halpin, from a theme by Guillaume Cocatre-Zilgien",
+  "licence": "CC-BY-SA",
+  "source": ""
+ },
+ {
+  "dir": "Terminal",
+  "name": "Terminal",
+  "author": "Jeffrey Rodriguez",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=1739"
+ },
+ {
+  "dir": "Themify",
+  "name": "Themify 2",
+  "author": "Evan Kenny",
+  "licence": "CC-BY-SA 3.0; OFL fonts",
+  "source": "https://themes.rockbox.org/index.php?themeid=4096"
+ },
+ {
+  "dir": "Widepod",
+  "name": "Widepod",
+  "author": "Christian Soffke",
+  "licence": "CC-BY-SA",
+  "source": "https://themes.rockbox.org/index.php?themeid=3496"
+ },
+ {
+  "dir": "XPloRR",
+  "name": "XPloRR",
+  "author": "Xander Plorr",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=2448"
+ },
+ {
+  "dir": "adwaitapod",
+  "name": "AdwaitaPod",
+  "author": "Evan Kenny",
+  "licence": "CC-BY-SA",
+  "source": "https://themes.rockbox.org/index.php?themeid=3424"
+ },
+ {
+  "dir": "adwaitapod_dark",
+  "name": "AdwaitaPod Dark",
+  "author": "Evan Kenny",
+  "licence": "CC-BY-SA",
+  "source": "https://themes.rockbox.org/index.php?themeid=3425"
+ },
+ {
+  "dir": "adwaitapod_dark_simplified",
+  "name": "AdwaitaPod Dark Simplified",
+  "author": "Evan Kenny",
+  "licence": "CC-BY-SA",
+  "source": "https://themes.rockbox.org/index.php?themeid=3427"
+ },
+ {
+  "dir": "adwaitapod_simplified",
+  "name": "AdwaitaPod Simplified",
+  "author": "Evan Kenny",
+  "licence": "CC-BY-SA",
+  "source": "https://themes.rockbox.org/index.php?themeid=3426"
+ },
+ {
+  "dir": "bunnyPod",
+  "name": "bunnyPod",
+  "author": "Monica G.",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3985"
+ },
+ {
+  "dir": "crowPod",
+  "name": "crowPod",
+  "author": "Monica G.",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=4071"
+ },
+ {
+  "dir": "deep_sea",
+  "name": "Deep Sea",
+  "author": "Alex Lototskaia",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=216"
+ },
+ {
+  "dir": "die-bahn",
+  "name": "die-bahn",
+  "author": "Jihoon Kim",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3647"
+ },
+ {
+  "dir": "digitalRedux",
+  "name": "digitalRedux",
+  "author": "D Juarez",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3991"
+ },
+ {
+  "dir": "dolcemente2",
+  "name": "Dolcemente 2",
+  "author": "Eamon Halpin, from rayboradio_OB by Humberto Santana",
+  "licence": "CC-BY-SA 3.0",
+  "source": ""
+ },
+ {
+  "dir": "dst_dark",
+  "name": "DST Dark",
+  "author": "D Juarez",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3989"
+ },
+ {
+  "dir": "iBox",
+  "name": "iBox",
+  "author": "Guillaume Cocatre-Zilgien",
+  "licence": "CC-BY-SA",
+  "source": "https://themes.rockbox.org/index.php?themeid=2042"
+ },
+ {
+  "dir": "iClassic",
+  "name": "iClassic",
+  "author": "Humberto Santana",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=1310"
+ },
+ {
+  "dir": "iClassic-Square",
+  "name": "iClassic Square",
+  "author": "Humberto Santana",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=1311"
+ },
+ {
+  "dir": "iFLX",
+  "name": "iFLX",
+  "author": "Dennis Kromhout",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=4088"
+ },
+ {
+  "dir": "iLike",
+  "name": "iLike",
+  "author": "Alan Brito, from Hayden Pearce",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=1260"
+ },
+ {
+  "dir": "iMMXX",
+  "name": "iMMXX",
+  "author": "Matt Hawkins",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3111"
+ },
+ {
+  "dir": "iPod-reFresh-four",
+  "name": "iPod reFresh Four",
+  "author": "Ciprian Dragu",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3261"
+ },
+ {
+  "dir": "iPone",
+  "name": "iPone",
+  "author": "P Huels",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=4000"
+ },
+ {
+  "dir": "iRB_Modern",
+  "name": "iRB Modern",
+  "author": "I R D",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3247"
+ },
+ {
+  "dir": "iVideo",
+  "name": "iVideo",
+  "author": "Humberto Santana",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=1309"
+ },
+ {
+  "dir": "ipodWidgets",
+  "name": "ipodWidgets",
+  "author": "Keith Perri",
+  "licence": "CC-BY-NC-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=10"
+ },
+ {
+  "dir": "ipodmod3blkFixed",
+  "name": "ipodmod3blk Fixed",
+  "author": "K4sum1, Paul Sauro, OlsroFR",
+  "licence": "CC-BY-SA",
+  "source": "https://themes.rockbox.org/index.php?themeid=3547"
+ },
+ {
+  "dir": "iris",
+  "name": "Iris",
+  "author": "Glass Ocean",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=4123"
+ },
+ {
+  "dir": "iris-dawn",
+  "name": "Iris Dawn",
+  "author": "Glass Ocean",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=4125"
+ },
+ {
+  "dir": "minimal_RTCsync",
+  "name": "Minimal RTCsync",
+  "author": "Monica G.",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=4040"
+ },
+ {
+  "dir": "nerdSketch",
+  "name": "nerdSketch",
+  "author": "Humberto Santana, icons from Pen&Paper by Johan Swetzén",
+  "licence": "CC-BY-NC-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=1093"
+ },
+ {
+  "dir": "photoSkins-vinyl",
+  "name": "photoSkins Vinyl",
+  "author": "Humberto Santana, photo CC-BY (Monsieur Celsius)",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=746"
+ },
+ {
+  "dir": "radius-dark",
+  "name": "Radius Dark",
+  "author": "Malcolm P.",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3938"
+ },
+ {
+  "dir": "retroTapeFixed",
+  "name": "retroTape Fixed",
+  "author": "Paul Sauro, from retroTape by Humberto Santana",
+  "licence": "CC-BY-SA 3.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3545"
+ }
+]

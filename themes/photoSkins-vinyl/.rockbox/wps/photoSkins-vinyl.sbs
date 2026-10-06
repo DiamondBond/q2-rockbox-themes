@@ -1,0 +1,62 @@
+# Theme: photoSkins-vinyl (photoSkins series)
+# By: Humberto Santana (humbertosantana@hotmail.com)
+# License: Creative Commons Attribution-Share Alike 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
+# Layout idea based on the jClix Themes by P.I. Julius (http://pijulius.blogspot.com/2006/08/jclix-rockbox-themes-ipod-video.html)
+# photoSkins-vinyl: Base image taken/derived from "Abbey Road" by "Monsieur Celsius (hey)" (http://www.flickr.com/photos/marcduboucheron/3628395418/) License: http://creativecommons.org/licenses/by/2.0/deed.en
+# If used for other works, as per this license, please include the following Attribution Text: "Modified/Derived from "photoSkins-vinyl" theme for iPod Video (photoSkins Series) (CC-BY-SA 3.0) by Humberto Santana"
+#
+# Version 1.0
+# Last Update: March 29th, 2010
+#
+# SBS File
+#
+backdrop: /.rockbox/backdrops/photoSkins-vinyl_bd.bmp
+#
+%Fl(5,09-Nedore.fnt)
+#
+# Menu Icon + Title
+#
+%xl(i,tango_small.bmp,0,0,32)
+%V(47,60,16,19,-)
+%?Lt<%?Li<|%xd(ia)|%xd(ib)|%xd(ic)|%xd(id)|%xd(ie)|%xd(if)|%xd(ig)|%xd(ih)|%xd(ii)|%xd(ij)|%xd(ik)|%xd(il)|%xd(im)|%xd(in)|%xd(io)|%xd(ip)|%xd(iq)|%xd(ir)|%xd(is)|%xd(it)|%xd(iu)|%xd(iv)|%xd(iw)|%xd(ix)|%xd(iy)|%xd(iz)|%xd(iA)|%xd(iB)|%xd(iC)|%xd(iD)|%xd(iE)|%xd(iF)|>|>
+#
+%V(67,57,262,23,-)%Vf(ffffff)
+%?Lt<%Lt|>
+#
+# Vi AREA (MENU)
+%Vi(-,50,83,279,171,-)%Vf(eeeeee)
+#
+#
+# Shuffle
+%xl(s,Shuffle.bmp,0,0)
+%V(19,34,16,12,-)
+%?ps<%xd(s)|>
+#
+# Lock/Hold
+%xl(l,lock.bmp,0,0)
+%V(134,11,12,16,-)
+%?mh<%xd(l)|>
+#
+# HDD
+%xl(h,hdd.bmp,0,0)
+%V(227,9,16,19,-)
+%?lh<%xd(h)|>
+#
+# Battery
+%V(300,16,32,13,5)%Vf(eaeaea)
+%ar%bl%%
+%xl(B,batt.bmp,0,0,8)
+%V(311,15,26,12,-)
+%t(1)%?bp<%?bc<%xd(Bg)|%xd(Bh)>|%?bl<||%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)>>;%t(1)%?bp<%?bc<%xd(Bh)|%xd(Bh)>|%?bl<||%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)>>
+#
+# Volume
+%V(21,277,25,13,5)%Vf(eaeaea)
+%ac%pv
+%xl(V,vol.bmp,0,0,7)
+%V(55,292,22,13,-)
+%?pv<|%xd(Va)|%xd(Vb)|%xd(Vc)|%xd(Vd)|%xd(Ve)|%xd(Vf)|%xd(Vg)>
+#
+# Repeat
+%xl(R,Repeat.bmp,0,0,4)
+%V(335,264,21,25,-)
+%?mm<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)>

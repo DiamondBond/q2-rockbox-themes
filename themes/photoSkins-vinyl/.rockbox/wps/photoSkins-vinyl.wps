@@ -1,0 +1,154 @@
+# Theme: photoSkins-vinyl (photoSkins series)
+# By: Humberto Santana (humbertosantana@hotmail.com)
+# License: Creative Commons Attribution-Share Alike 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
+# Layout idea based on the jClix Themes by P.I. Julius (http://pijulius.blogspot.com/2006/08/jclix-rockbox-themes-ipod-video.html)
+# photoSkins-vinyl: Base image taken/derived from "Abbey Road" by "Monsieur Celsius (hey)" (http://www.flickr.com/photos/marcduboucheron/3628395418/) License: http://creativecommons.org/licenses/by/2.0/deed.en
+# If used for other works, as per this license, please include the following Attribution Text: "Modified/Derived from "photoSkins-vinyl" theme for iPod Video (photoSkins Series) (CC-BY-SA 3.0) by Humberto Santana"
+#
+# Version 1.1
+# Last Update: April 17th, 2010
+#
+# WPS File
+#
+#
+# TOUCHSCREEN AREAS
+#
+# Shuffle
+%T(11,7,33,43,shuffle)
+#
+# Menu + Quickscreen
+%T(156,0,63,47,menu)
+%T(156,0,63,47,&quickscreen)
+#
+# Previous + REW
+%T(0,148,32,80,prev)
+%T(0,148,32,80,&rwd)
+#
+# Files/DB + Context Menu
+%T(56,87,102,117,browse)
+%T(56,87,102,117,&contextmenu)
+#
+# Playlist
+%T(171,159,123,92,playlist)
+#
+# Next + FFW
+%T(343,148,32,80,next)
+%T(343,148,32,80,&ffwd)
+#
+# Volume Down
+%T(0,284,53,36,voldown)
+#
+# Volume Up
+%T(81,284,53,36,volup)
+#
+# Pause/Play + Stop
+%T(164,275,50,45,play)
+%T(164,275,50,45,&stop)
+#
+# Repeat
+%T(332,267,33,52,repmode)
+#
+#
+%wd
+%X(photoSkins-vinyl_bg.bmp)
+#
+# Font Loading
+%Fl(2,15-Adobe-Helvetica.fnt)
+%Fl(3,21-Adobe-Helvetica.fnt)
+%Fl(4,16-Adobe-Helvetica.fnt)
+%Fl(5,09-Nedore.fnt)
+#
+# Shuffle
+%xl(s,Shuffle.bmp,0,0)
+%V(19,34,16,12,-)
+%?ps<%xd(s)|>
+#
+# Lock/Hold
+%xl(l,lock.bmp,0,0)
+%V(134,11,12,16,-)
+%?mh<%xd(l)|>
+#
+# HDD
+%xl(h,hdd.bmp,0,0)
+%V(227,9,16,19,-)
+%?lh<%xd(h)|>
+#
+# Battery
+%V(300,16,32,13,5)%Vf(eaeaea)
+%ar%bl%%
+%xl(B,batt.bmp,0,0,8)
+%V(311,15,26,12,-)
+%t(1)%?bp<%?bc<%xd(Bg)|%xd(Bh)>|%?bl<||%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)>>;%t(1)%?bp<%?bc<%xd(Bh)|%xd(Bh)>|%?bl<||%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)>>
+#
+# Volume
+%V(21,277,25,13,5)%Vf(eaeaea)
+%ac%pv
+%xl(V,vol.bmp,0,0,7)
+%V(55,292,22,13,-)
+%?pv<|%xd(Va)|%xd(Vb)|%xd(Vc)|%xd(Vd)|%xd(Ve)|%xd(Vf)|%xd(Vg)>
+#
+# Repeat
+%xl(R,Repeat.bmp,0,0,4)
+%V(335,264,21,25,-)
+%?mm<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)>
+#
+# Playing Status
+# Rew
+%xl(r,rew.bmp,0,0,3)
+%V(3,148,30,39,-)
+%t(0.1)%?mp<||||%xd(ra)>;%t(0.1)%?mp<||||%xd(rb)>;%t(0.2)%?mp<||||%xd(rc)>
+#
+# Ffw
+%xl(f,ffw.bmp,0,0,3)
+%V(343,148,28,39,-)
+%t(0.1)%?mp<|||%xd(fa)|>;%t(0.1)%?mp<|||%xd(fb)|>;%t(0.2)%?mp<|||%xd(fc)|>
+#
+# Play/Pause
+%xl(p,pause.bmp,0,0,2)
+%V(180,278,18,40,-)
+%?mp<|%xd(pa)||%xd(pb)|%xd(pb)>
+#
+# GLASS
+#
+# Album Art
+%Cl(0,0,100,113,c,c)
+%V(57,88,100,113,-)
+%Cd
+#
+# Track
+%V(171,88,162,28,3)%Vf(ffffff)
+%t(6)%s%al%?it<%it|%fn>;%t(12)%al%?it<%it|%fn>
+#
+# Elapsed Track Time
+%V(170,119,38,16,2)%Vf(ffffff)
+%ar%pc
+#
+# PB
+%V(213,124,81,9,-)
+%pb(0,0,81,9,pb.bmp)
+#
+# Total Track Time
+%V(300,119,39,16,2)%Vf(ffffff)
+%al%pt
+#
+# Rating Stars
+%xl(S,stars.bmp,0,0,10)
+%V(225,140,57,13,-)
+%?rr<|%xd(Sa)|%xd(Sb)|%xd(Sc)|%xd(Sd)|%xd(Se)|%xd(Sf)|%xd(Sg)|%xd(Sh)|%xd(Si)|%xd(Sj)>
+#
+# Album
+%V(171,160,166,21,4)%Vf(ffffff)
+%t(6)%al%?id<%id|%?d(1)<%d(1)|%(Unknown Album%)>>;%t(6)%s%al%?id<%id|%?d(1)<%d(1)|%(Unknown Album%)>>;%t(6)%al%?id<%id|%?d(1)<%d(1)|%(Unknown Album%)>>
+#
+# Artist
+%V(171,183,166,21,1)%Vf(ffffff)
+%t(12)%al%?ia<%ia|%?d(2)<%d(2)|%(Unknown Artist%)>>;%t(6)%s%al%?ia<%ia|%?d(2)<%d(2)|%(Unknown Artist%)>>
+#
+# Position/Playlist & Next Track
+%V(171,212,166,41,2)%Vf(ffffff)
+%t(6)%al%pp/%pe%?pn< in "%pn"| in dynamic playlist>;%t(6)%s%al%pp/%pe%?pn< in "%pn"| in dynamic playlist>;%t(6)%al%pp/%pe%?pn< in "%pn"| in dynamic playlist>
+%t(8)%s%alNext: %?It<%It|%?Fn<%Fn| -  End  ->>;%?Ia<%t(8)%al%sby: %Ia|%t(0)>
+
+
+
+

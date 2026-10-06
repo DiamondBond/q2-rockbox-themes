@@ -1,0 +1,145 @@
+#Theme Name: AF_Metal 
+#By: AsusFreak 
+#Platform: Cowon D2 (320x240) - Standard build
+#Version: 5.0
+#Last updated: June 30th, 2010
+
+# Declaration of UI Viewport
+%Vi(-,11,35,289,227,-)
+
+#Font Definitions
+%Fl(2,21-Adobe-Helvetica-Bold-AF.fnt)
+%Fl(3,16-Adobe-Helvetica-Bold-AF.fnt)
+%Fl(4,14-Adobe-Helvetica-Bold-AF.fnt)
+%Fl(5,18-Adobe-Helvetica-Bold-AF.fnt)
+%Fl(6,16-Adobe-Helvetica-AF.fnt)
+
+
+%xl(U,Battery1.bmp,21,8,14)
+%xl(a,playactive.bmp,0,0)
+%xl(b,pause.bmp,0,0)
+%xl(n,FFW.bmp,0,0)
+%xl(o,RWD.bmp,0,0)
+%xl(A,volB.bmp,0,0,13)
+%xl(C,select.bmp,0,0)
+%xl(D,up.bmp,0,0)
+%xl(E,down.bmp,0,0)
+%xl(F,back.bmp,0,3)
+%xl(G,ffwd.bmp,0,0)
+%xl(H,rwd1.bmp,0,0)
+%xl(I,presets.bmp,0,0)
+%Cl(0,0,190,216)
+
+
+
+# Date
+%V(59,275,47,40,4)%Vf(404040)%Vb(000000)
+%ac%?cu<Mon|Tue|Wed|Thu|Fri|Sat|Sun>
+%ac%cd/%cm
+
+# Time
+%V(271,284,42,19,4)%Vf(404040)%Vb(000000)
+%ac%cH:%cM
+
+# Volume
+%V(315,244,55,16,0)%Vf(606060)%Vb(000000)
+%ac%pvdB
+
+#Volume
+%V(277,261,46,52,-)
+%?pv<%xd(Aa)|%xd(Aa)|%xd(Ab)|%xd(Ac)|%xd(Ad)|%xd(Ae)|%xd(Af)|%xd(Ag)|%xd(Ah)|%xd(Ai)|%xd(Aj)|%xd(Ak)|%xd(Al)|%xd(Am)>
+
+#%V(30,190,190,16,-)
+#%?cs<Menu|WPS|Recording|Radio|Playlist> %?mp<Stop|Play|Pause|Ffwd|Rew|Rec|Rec pause|FM|FM pause>
+
+# Which Screen ?
+%?cs<%Vd(m)|%Vd(w)|%Vd(r)|%Vd(f)|%Vd(p)>
+
+### Menu Screen
+
+#Track Times
+%Vl(m,56,7,54,19,0)%Vf(000000)%Vb(000000)
+%ac%pc
+%Vl(m,261,7,54,19,0)%Vf(000000)%Vb(000000)
+%ac%pt
+
+# Artist
+%Vl(m,60,272,202,20,3)%Vf(000000)%Vb(000000)
+%ac%?ia<%ia|%?d(2)<%d(2)|>>
+# Title
+%Vl(m,60,292,202,21,3)%Vf(000000)%Vb(000000)
+%s%ac%t(10)%?it< %it | %fn >
+
+#Progressbar
+%Vl(m,68,4,187,15,0)%Vf(000000)%Vb(000000)
+%pb(0,0,187,15,pb.bmp)
+%T(0,0,187,15,progressbar)
+
+# Select Button
+%Vl(m,332,38,28,36,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,28,36,select)
+%xd(C)
+
+# Up Button
+%Vl(m,332,68,28,36,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,28,36,rwd)
+%xd(D)
+
+# Down Button
+%Vl(m,332,125,28,36,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,28,36,ffwd)
+%xd(E)
+
+# Cancel Button
+%Vl(m,332,180,28,36,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,28,36,cancel)
+%xd(F)
+### End Of Menu Screen
+
+### Radio Screen
+
+# Preset Button
+%Vl(f,332,38,28,36,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,28,36,presets)
+%xd(I)
+
+# FFW Button
+%Vl(f,332,68,28,36,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,28,36,ffwd)
+%xd(G)
+
+# RWD Button
+%Vl(f,332,125,28,36,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,28,36,rwd)
+%xd(H)
+
+# Cancel Button
+%Vl(f,332,180,28,36,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,28,36,cancel)
+%xd(F)
+
+# Volume
+%Vl(f,315,244,55,16,0)%Vf(606060)%Vb(000000)
+%ac%pvdB
+
+#Volume
+%Vl(f,277,261,46,52,-)
+%T(0,0,46,52,volup)
+%T(0,0,46,52,&voldown)
+%?pv<%xd(Aa)|%xd(Aa)|%xd(Ab)|%xd(Ac)|%xd(Ad)|%xd(Ae)|%xd(Af)|%xd(Ag)|%xd(Ah)|%xd(Ai)|%xd(Aj)|%xd(Ak)|%xd(Al)|%xd(Am)>
+
+# FM Tuned Freq and Preset Name
+%Vl(f,60,281,203,24,5)%Vf(404040)%Vb(000000)
+%ac%?Tn<%Tn|Unknown Channel>
+
+# Top Viewport
+# (Preset & Number) or Scan; Mono/Stereo
+# Current Preset Name
+%Vl(f,4,68,56,21,6)%Vf(404040)
+%ac%?tm<Scan|No. %Ti>
+%Vl(f,151,1,20,21,6)%Vf(404040)
+%acRadio Station
+%Vl(f,258,6,56,21,6)%Vf(404040)
+%ac%?ts<Stereo|Mono>
+
+### End Of WPS Screen

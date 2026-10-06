@@ -1,0 +1,106 @@
+#Theme Name: AAFreak
+#By: Ben Zavala
+#Platform: iPod video (320x240x16) 
+#Last updated:   Sun, Oct 19, 2008
+#This work is licensed under a Creative Commons Attribution-Share Alike 3.0 Unported. 
+
+# disable the status bar
+%wd
+
+# preloads album art 240x240, progress bar
+%Cl(0,0,281,320,c,c)
+# preload images
+%X(bg.bmp)
+%xl(A,playmode.bmp,0,0,5)
+%xl(B,shuffle.bmp,0,0)
+%xl(C,repeat.bmp,0,33)
+%xl(D,hold.bmp,0,67)
+%xl(L,hdd.bmp,0,0)
+
+# Display viewports
+%Vd(a)
+%?C<%?mh<%Vd(c)|%Vd(b)>|%Vd(c)>
+%Vd(d)
+
+# Track/Playlist
+%Vl(a,0,1,47,9,0)%Vf(FFFFFF)%Vb(000000)
+%ac%pp/%pe
+
+# Time
+%Vl(a,328,0,47,19,0)%Vf(FFFFFF)%Vb(000000)
+%ac%cH:%cM
+
+#Battery
+%Vl(a,29,23,42,9,0)%Vf(FCBE00)%Vb(000000)
+%ac%t(10)%bt;%ac%t(10)%bl%%
+
+# Volume
+%Vl(a,305,23,42,9,0)%Vf(FCBE00)%Vb(000000)
+%ac%pvdB
+
+# Shuffle, Repeat, Hold
+%Vl(a,12,53,23,107,0)%Vf(FFFFFF)%Vb(000000)
+%?ps<%xd(B)|>
+%?mm<|%xd(C)|%xd(C)|%xd(C)|%xd(C)>
+%?mh<%xd(D)|>
+
+# Album Art
+%Vl(b,47,0,281,312,1)%Vf(FFFFFF)%Vb(000000)
+%Cd
+
+# Track Info (No Album Art)
+%Vl(c,47,0,281,312,0)%Vf(FFFFFF)%Vb(000000)
+
+%Vl(c,59,40,258,219,0)%Vf(FFFFFF)%Vb(000000)
+%ac[File info]
+%ac%fm
+%ac%fc @ %fbkbps%fv
+%ac%fk KHz
+
+
+%ac[Genre]
+%ac%?ig<%ig|-->
+
+%ac[Comment]
+%ac%?iC<%iC|-->
+
+%ac[Album Name]
+%ac%?id<%id|%?d(1)<%d(1)|-->>
+
+
+%acPlaycount: %rp
+%acRating: %rr
+
+# Play Status
+%Vl(a,340,147,23,27,1)%Vf(FFFFFF)%Vb(000000)
+%?mp<%xd(Aa)|%xd(Ab)|%xd(Ac)|%xd(Ad)|%xd(Ae)>
+
+# HDD
+%Vl(a,328,267,23,27,1)%Vf(FFFFFF)%Vb(000000)
+%?lh<%xd(L)|>
+
+# WHEN ALBUM ART EXISTS
+# Artist (original y:3)
+%Vl(b,50,273,274,19,1)%Vf(FFFFFF)%Vb(000000)
+%ac%?ia<%ia|%?d(2)<%d(2)|>>%?iy< %(%iy%)|>
+# Title
+%Vl(b,50,292,274,19,1)%Vf(FCBE00)%Vb(000000)
+%ac %?it<%it|%fn>
+
+# WHEN ALBUM ART DOESN'T EXIST
+# Artist (original y:3)
+%Vl(c,50,273,274,19,1)%Vf(FFFFFF)%Vb(000000)
+%ac%?ia<%ia|%?d(2)<%d(2)|>>%?iy< %(%iy%)|>
+# Title
+%Vl(c,50,292,274,19,1)%Vf(FCBE00)%Vb(000000)
+%ac %?it<%it|%fn>
+
+# Progress Bar
+%Vl(a,178,313,20,7,1)%Vf(FFFFFF)%Vb(000000)
+%pb(0,1,20,5,pb.bmp)
+
+# Progress Times
+%Vl(a,80,309,42,9,0)%Vf(FFFFFF)%Vb(000000)
+%ac%pc
+%Vl(a,254,309,42,9,0)%Vf(FFFFFF)%Vb(000000)
+%ac%pt

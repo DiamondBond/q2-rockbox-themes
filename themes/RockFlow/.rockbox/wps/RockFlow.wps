@@ -1,0 +1,92 @@
+#Theme Name: RockFlow
+#By: Ben Zavala
+#Platform: iPod video (320x240x16) 
+#Version: 1.1
+#Last updated:     Thu, Jul 10th, 2008
+#                  Sun, Jan 13th, 2008
+# disable the status bar
+%wd
+# background
+%X(bg.bmp)
+
+# preloading images
+# playback images
+%xl(a,pause.bmp,0,0)
+%xl(b,play.bmp,0,0)
+%xl(c,pause.bmp,0,0)
+%xl(d,forward.bmp,0,0)
+%xl(e,rewind.bmp,0,0)
+%xl(g,vol1.bmp,0,0)
+%xl(h,vol2.bmp,0,0)
+%xl(i,vol3.bmp,0,0)
+%xl(j,vol4.bmp,0,0)
+%xl(k,vol5.bmp,0,0)
+%xl(q,bat0.bmp,0,0)
+%xl(r,bat1.bmp,0,0)
+%xl(s,bat2.bmp,0,0)
+%xl(t,bat3.bmp,0,0)
+%xl(u,bat4.bmp,0,0)
+%xl(A,hdd.bmp,0,0)
+
+#Progressbar
+%V(61,248,253,9,1)
+%pb(0,0,253,9,pb.bmp)
+
+#Albumart
+%V(100,37,176,200,1)
+# uncomment this next line if you want 100x100 albumart (comment with # if you want 150x150)
+#%Cl(0,0,100,100)
+# uncomment this next line if you want 150x150 albumart (comment with # if you want 100x100)
+%Cl(0,0,176,200)
+%Cd
+
+#volume level ; battery level;
+
+#left header 1
+%V(6,59,53,17,1)%Vf(FFFFFF)%Vb(000000)
+%al%pvdB
+
+#left header 2
+%V(34,19,105,17,1)%Vf(FFFFFF)%Vb(000000)
+%al%pp of %pe
+
+#center header
+%V(141,8,94,17,1)%Vf(FFFFFF)%Vb(000000)
+%ac%cl:%cM %cp
+
+#right header
+%V(328,56,41,17,1)%Vf(FFFFFF)%Vb(000000)
+%ar%bl%%
+%V(266,19,76,17,1)%Vf(FFFFFF)%Vb(000000)
+%ar%bt
+
+#left counter
+%V(6,243,47,17,1)%Vf(FFFFFF)%Vb(000000)
+%ar%pc
+
+#right counter
+%V(322,243,47,19,1)%Vf(FFFFFF)%Vb(000000)
+%al%pt
+
+#artist
+%V(35,261,305,19,1)%Vf(FCBE00)%Vb(000000)
+%ac%?mh<%ig [ %fc %fbkbp %fv ]|%?ia<%ia|%?d(2)<%d(2)|>>>
+#title
+%V(35,280,305,19,1)%Vf(FFFFFF)%Vb(000000)
+%ac%?mh<Playcount: %rp   Autoscore: %ra   Rating: %rr|%?it<%it|%fn>>
+#album-year
+%V(80,299,216,19,1)%Vf(C8C7C7)%Vb(000000)
+%ac%?mh<%iC|%?id<%id%?iy< %(%iy%)|>|%?d(1)<%d(1)|>>>
+
+# volume level
+%V(66,5,23,13,1)%Vf(FFFFFF)%Vb(000000)
+%?pv<%xd(g)|%xd(g)|%xd(h)|%xd(h)|%xd(i)|%xd(j)|%xd(j)|%xd(j)|%xd(k)|%xd(k)>
+# battery level
+%V(305,10,23,13,1)%Vf(FFFFFF)%Vb(000000)
+%?bl<%xd(q)|%xd(r)|%xd(r)|%xd(r)|%xd(s)|%xd(s)|%xd(t)|%xd(t)|%xd(t)|%xd(u)>
+# play status
+%V(56,287,23,27,1)%Vf(FFFFFF)%Vb(000000)
+%?mp<%xd(a)|%xd(b)|%xd(c)|%xd(d)|%xd(e)>
+# hard disk drive
+%V(297,287,23,27,1)%Vf(FFFFFF)%Vb(000000)
+%?lh<%xd(A)|>

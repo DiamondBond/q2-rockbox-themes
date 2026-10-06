@@ -1,0 +1,188 @@
+#Theme Name: Terminal 
+#Platform: iPod Video (320x240x16) - Standard Build
+#Version 0.1 Beta
+#Created By: Jeffrey Rodriguez (jtrodriguez on Forums)
+#License CC-BY-SA
+#
+#Notes: The layout is based on the ncurses VLC player
+#
+#If you want to see your AA after hold is toggled set the backlight on hold setting to normal so there is a delay.
+#
+#If you want to change the color just use Notepad++ Ctrl+F -> Replace all instances of 55ff00 with your color and edit the pb.bmp in paint to be that color as well.
+
+%wd
+%X(d)
+
+
+%Cl(0,0,281,320)
+
+
+
+
+###Displays AA on Lock if available###
+%?mh<%?C<%Vd(d)|%Vd(a)%Vd(z)>|%Vd(z)>
+
+
+
+
+
+###Clears Screen Area###
+%Vl(z,0,0,375,320,1)%Vf(000000)%Vb(000000)
+
+###Title Bar###
+%Vl(z,0,0,375,20,1)%Vf(000000)%Vb(55ff00)
+%Vl(z,84,0,20,20,1)%Vf(000000)%Vb(55ff00)
+Rockbox Media Player
+
+%?lh<%Vd(q)|%Vd(p)>
+%Vl(q,281,6,35,20,1) %Vf(000000) %Vb(55ff00)
+HDD
+%Vl(p,281,6,35,20,1) %Vf(000000) %Vb(55ff00)
+
+###Labels###
+%Vl(z,25,27,59,80,1)%Vf(55ff00)%Vb(000000)
+Current
+State
+Position
+Volume
+
+###Song Information###
+%Vl(z,64,27,287,80,1)%Vf(55ff00)%Vb(000000)
+: %s%?ia<%ia - %it|N/A>
+: %?mp<Stop|Play|Pause|Fast Forward|Rewind|Recording|Recording Paused|FM|FM Paused>
+: %?pc<%pc / %pr %(%px%%%)|0:00 / 0:00 %(0%%%)>
+: %?pv<Mute|%pv dB|%pv dB|Peak> 
+
+###Progess Bar###
+%Vl(z,6,113,363,36,1)%Vf(000000)%Vb(55ff00)
+%Vl(z,7,115,361,33,1)%Vf(000000)%Vb(000000)
+%Vl(z,12,121,352,20,1)%Vf(55ff00)%Vb(000000)
+%pb(0,0,352,20,pb.bmp)
++
+###Border###
+%Vl(z,6,163,363,151,1)%Vf(000000)%Vb(55ff00)
+%Vl(z,7,164,361,148,1)%Vf(000000)%Vb(000000)
+
+
+
+###Pause Toggle###
+%V(1,1,1,1,1)%Vf(000000)%Vb(000000)
+#%?mh<|%?mp<|%Vda|%Vdb|>> ###Uncomment this line and comment the next line out if you want Details as default and Playlist on pause
+%?mh<|%?mp<|%Vd(b)|%Vd(a)|>>
+
+
+
+##########Playing#########
+
+
+###Title###
+%Vl(b,141,153,94,20,1)%Vf(55ff00)%Vb(000000)
+%?pn<%s%ac%pn|%acPlaylist>
+
+###Play List###
+%Vl(b,18,179,340,133,1)%Vf(55ff00)%Vb(000000)
+%Vp(1, %?it<%pp - %ia - %it|%pp - %fn>)
+
+
+###Battery###
+%Vl(b,328,56,41,20,1)%Vf(000000)%Vb(55ff00)
+%ar%bl%%
+###################################
+
+
+
+
+
+##########Paused##########
+
+###Clears Screen#
+%Vl(a,18,179,328,133,1)%Vf(55ff00)%Vb(000000)
+
+###Time###
+%Vl(a,328,56,41,20,1)%Vf(000000)%Vb(55ff00)
+%ar%cH:%cM
+
+###Title###
+%Vl(a,141,153,94,20,1)%Vf(55ff00)%Vb(000000)
+%acDetails
+
+###Info Labels###
+%Vl(a,18,153,41,133,1)%Vf(55ff00)%Vb(000000)
+
+Track
+Album
+Year
+Genre
+
+
+###Song Info####
+
+%Vl(a,76,179,105,133,1)%Vf(55ff00)%Vb(000000)
+
+%s%al%pp/%pe
+%s%al%id
+%s%al%iy
+%s%al%ig
+
+%Vl(a,64,179,6,133,1)%Vf(55ff00)%Vb(000000)
+
+:
+:
+:
+:
+
+###Spec Labels###
+%Vl(a,193,179,70,133,1)%Vf(55ff00)%Vb(000000)
+
+Codec
+Bitrate
+Frequency
+Size
+
+###Song Specs####
+
+%Vl(a,281,154,76,133,1)%Vf(55ff00)%Vb(000000)
+
+%s%al%fc
+%s%al%fb kbit/s
+%s%al%ff Hz
+%s%al%fs kB
+
+%Vl(a,270,179,6,133,1)%Vf(55ff00)%Vb(000000)
+
+:
+:
+:
+:
+
+
+###Album Art###
+
+
+
+###Clears Screen###
+%Vl(d,0,0,375,320,1)%Vf(55ff00)%Vb(000000)
+
+
+%Vl(d,0,0,281,320,1)%Vf(55ff00)%Vb(000000)
+%Cd
+
+%Vl(d,287,0,82,320,1)%Vf(55ff00)%Vb(000000)
+
+Album:
+%s%id
+
+Year:
+%s%iy
+
+Artist:
+%s%ia
+
+Song:
+%s%it
+
+Track:
+%s%pp/%pe
+
+
+##################################

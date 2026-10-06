@@ -1,0 +1,59 @@
+#Theme Name: FSM(Flying Spaghetti Monster) 
+#Platform: iPod Video - Standard Build
+#Version 3.0
+#Created By: Jeffrey Rodriguez (jtrodriguez on Forums)
+#License CC-BY-SA
+#
+#"Touched By His Noodly Appendage" credit to Niklas Jansson  http://itchstudios.com/psg/
+#"Pirate Fish" credit to http://www.venganza.org
+
+
+backdrop: /.rockbox/backdrops/FSM.bmp
+
+
+%xl(a,hdd.bmp,0,0)
+%xl(b,hold.bmp,0,0)
+%xl(c,battery.bmp,0,0,6)
+
+
+%Fl(2,10-Nimbus.fnt)
+%Fl(3,11-Nimbus.fnt)
+%Fl(4,12-Nimbus.fnt)
+%Fl(5,13-Nimbus.fnt)
+%Fl(6,14-Nimbus.fnt)
+
+##########Viewports##########
+
+#####Battery######
+%V(319,18,22,20,3)%Vf(f1f1f1)%Vb(000000)
+%?bp<%?bc<%xd(cf)|%xd(cf)>|%?bl<|%xd(ca)|%xd(cb)|%xd(cc)|%xd(cd)|%xd(ce)>>
+%V(278,5,35,17,3)%Vf(f1f1f1)%Vb(000000)
+%al%bl%%
+##################
+
+#####Hard Disk Activity#####
+%V(277,5,14,16,1)
+%?lh<%xd(a)|>
+############################
+
+#####Hold Switch On/Off#####
+%V(295,5,11,13,1)
+%?mh<%xd(b)|>
+############################
+
+#####Time#####
+%V(6,59,70,29,3)%Vf(f1f1f1)%Vb(000000)
+%al%cl:%cM %cp
+##############
+
+#####Menu Title#####
+%V(117,5,141,29,4)%Vf(ffffff)%Vb(000000)
+%?Lt<%ac%s%Lt|%?cs<||%acRecording|%acFM Radio||>>
+##############
+
+#####Menu#####
+%Vi(-,6,40,188,267,4)
+##############
+
+
+

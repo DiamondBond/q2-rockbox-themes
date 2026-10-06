@@ -1,0 +1,44 @@
+# Theme name: Pen&Paper_plus
+# by: Humberto Santana (humbertosantana@hotmail.com)
+# Derived from "Pen&Paper" Theme by: Johan Swetz�n jswetzen@gmail.com (jswetzen on the forum)
+# License: Creative Commons Attribution-ShareAlike License 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
+# Font license: Mattt's rope by Matt Chrisholm. Licensed under the GNU GPL. The TrueType font is available at http://www.theory.org/~strthrwr/fonts/free/index.php?font=mwtsrc
+#
+# Version 4.0c
+# Last updated: June 11th, 2010
+# First Pen&Paper_plus version: April 29th, 2008
+# Original Pen&Paper version: August 15th(?), 2007
+#
+# SBS File
+#
+backdrop: /.rockbox/backdrops/Pen&Paper_plus_bd.bmp
+#
+# Hold, Shuffle, Repeat, Volume, Battery, Playing Status, HDD
+%xl(g,hold.bmp,70,4)
+%xl(p,shuffle.bmp,135,8)
+%xl(R,repeat.bmp,175,4,4)
+%xl(V,vol.bmp,245,7,4)
+%xl(B,batt.bmp,311,13,6)
+%xl(P,playstatus.bmp,12,0,5)
+%xl(x,hdd.bmp,104,15)
+%V(0,0,375,47,-)
+%?mh<%xd(g)|>%?ps<%xd(p)|>%?mm<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)>%?pv<|%xd(Va)|%xd(Vb)|%xd(Vc)|%xd(Vc)|%xd(Vd)|%xd(Vd)>%?bp<%xd(Bf)|%?bl<|%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bd)|%xd(Be)>>
+%?mp<%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)|%xd(Pe)>%?lh<%xd(x)|>
+#
+# Album Art Conditionals
+%?C<%Vd(a)|%Vd(n)>
+#
+#AA vp's
+%Cl(0,0,42,48,c,c)
+%Vl(a,75,40,42,48,-)
+%Cd
+#Text when AA is present
+%Vl(a,136,57,233,37,1)%Vf(6C6A6A)%Vb(ffffff)
+%s%al%?it<%it|%?fn<%fn|Pen&Paper_Plus v4.0c>>
+#
+# No AA vp
+%Vl(n,6,57,363,37,1)%Vf(6C6A6A)%Vb(ffffff)
+%s%ac%?it<%it|%?fn<%fn|Pen&Paper_Plus v4.0c>>
+#
+# Vi AREA (MENU)
+%Vi(-,14,107,347,213,-)

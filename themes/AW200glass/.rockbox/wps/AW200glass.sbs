@@ -1,0 +1,172 @@
+# Theme: AW200glass
+# By: Humberto Santana (humbertosantana@hotmail.com)
+# Original graphics. Derived from AW200 theme for iPod Video (some graphics appearance inspired in Glasklart by Max Rudberg http://www.maxthemes.com/)
+# License: Creative Commons Attribution-Share Alike 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)
+# If used for other works, as per this license, please include the following Attribution Text: "Modified/Derived from AW200glass theme for iPod Video (CC-BY-SA 3.0) by Humberto Santana"
+#
+# Version 1.4
+# Updated: July 14th, 2011
+# First Version: August 20th, 2010
+#
+# SBS File
+#
+# TOUCHSCREEN AREAS
+#
+# Shuffle
+%T(8,116,47,1,shuffle)
+#
+# Select/Cancel
+%T(319,35,1,1,select)
+%T(319,35,1,1,&cancel)
+#
+# Menu Up
+%T(1,284,49,1,prev)
+%T(1,284,49,1,&rwd)
+#
+# Menu Down
+%T(322,284,1,1,next)
+%T(322,284,1,1,&ffwd)
+#
+# Repeat
+%T(319,116,1,1,repmode)
+#
+# Volume Down
+%T(4,79,96,1,voldown)
+%T(4,79,96,1,&voldown)
+#
+# Volume Up
+%T(4,4,96,1,volup)
+%T(4,4,96,1,&volup)
+#
+# Progressbar
+%T(68,303,169,1,progressbar)
+#
+backdrop: /.rockbox/backdrops/AW200glass_bd.bmp
+#
+%Fl(2,21-Adobe-Helvetica-Bold.fnt,80)
+#
+# Vi AREA (MENU)
+%Vi(-,83,60,209,176,-)
+#
+#
+#Widgets & Icons/Info
+#
+%xl(L,lock.bmp,0,0)
+%V(26,26,15,9,1)
+%?mh<%xd(L)|>
+#
+%xl(H,hdd.bmp,0,0)
+%V(43,13,48,11,1)
+%?lh<%xd(H)|>
+#
+%xl(V,vol.bmp,0,0,12)
+%V(13,48,40,32,1)
+%?pv<|%xd(Va)|%xd(Vb)|%xd(Vc)|%xd(Vd)|%xd(Ve)|%xd(Vf)|%xd(Vg)|%xd(Vh)|%xd(Vi)|%xd(Vj)|%xd(Vk)|%xd(Vl)>
+%V(8,93,47,9,0)%Vf(b0b0b0)%Vb(000000)
+%ac%pv dB
+#
+# Shuffle
+#
+%xl(S,Shuffle.bmp,0,0)
+%V(7,132,52,52,1)
+%?ps<%xd(S)|>
+#
+# Calendar
+#
+%xl(D,days.bmp,0,0,6)
+%V(9,200,47,16,0)
+%?cu<|%xd(Da)|%xd(Db)|%xd(Dc)|%xd(Dd)|%xd(De)|%xd(Df)>
+#
+# Numerical Date
+%V(11,221,47,37,2)%Vf(abadb5)%Vb(9c9ea5)
+%ac%cd
+#
+%xl(M,Months.bmp,0,0,11)
+%V(8,256,50,12,0)
+%?cm<%xd(Ma)|%xd(Mb)||%xd(Mc)|%xd(Md)|%xd(Me)|%xd(Mf)|%xd(Mg)|%xd(Mh)|%xd(Mi)|%xd(Mj)|%xd(Mk)>
+#
+%xl(B,batt.bmp,0,0,9)
+%V(312,20,32,13,0)%Vf(b6b6b6)%Vb(000000)
+%ac%bl%%
+%V(285,5,28,13,1)
+%t(1)%?bp<%?bc<%xd(Bi)|%xd(Bh)>|%?bl<|%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bg)>>;%t(1)%?bp<%xd(Bh)|%?bl<|%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bg)>>
+#
+#Playlist Position
+%V(282,24,66,9,0)%Vf(b6b6b6)%Vb(000000)
+%s%ac%?fn<%pp/%pe|>
+#
+# Album Art / Playing Status Conditional
+%?C<%Vd(a)|%Vd(n)>
+#
+%xl(P,playing_status.bmp,6,11,4)
+%xl(p,playing_status_2.bmp,5,56,4)
+%Vl(n,312,37,47,69,0)
+%?mp<|%xd(Pa)%xd(pa)|%xd(Pb)%xd(pb)|%xd(Pc)%xd(pc)|%xd(Pd)%xd(pd)>
+#
+# AlbumArt VP
+%Cl(0,0,47,53,c,c)
+%Vl(a,312,37,47,69,1)
+%Cd%?mp<|%xd(pa)|%xd(pb)|%xd(pc)|%xd(pd)>
+#
+%xl(R,Repeat.bmp,0,0,4)
+%V(313,143,59,44,-)
+%?mm<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)>
+#
+# Clock
+%xl(N,numbers.bmp,0,0,10)
+#
+# Clock 12/24 Conditional
+%?cf<%Vd(twentyfour)|%Vd(twelve)>
+#
+# Hours, pt. 1, twelve
+%Vl(twelve,322,219,9,15,-)
+%?cl<%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Nb)|%xd(Nb)|%xd(Nb)>
+# Hours, pt. 1, twentyfour
+%Vl(twentyfour,322,219,9,15,-)
+%?ck<%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Na)>
+#
+# Hours, pt. 2, twelve
+%Vl(twelve,332,219,9,15,-)
+%?cl<%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)>
+# Hours, pt. 2, twentyfour
+%Vl(twentyfour,332,219,9,15,-)
+%?ck<%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Na)>
+#
+# Minutes, pt. 1
+%V(345,219,9,15,-)
+%?cM<%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Na)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nb)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nc)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Nd)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Ne)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Nf)|%xd(Na)>
+#
+# Minutes, pt. 2
+%V(354,219,9,15,-)
+%?cM<%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)|%xd(Ne)|%xd(Nf)|%xd(Ng)|%xd(Nh)|%xd(Ni)|%xd(Nj)|%xd(Na)>
+#
+# Blink
+%xl(b,blink.bmp,0,0,2)
+%V(341,221,4,9,-)
+%t(0.5)%xd(ba);%t(0.5)%xd(bb)
+#
+# AM/PM
+%Vl(twelve,338,239,23,9,0)%Vf(959ca2)%Vb(a1a8af)
+%ar%cP
+#
+# Sleep Timer
+%xl(z,SleepOff.bmp,7,0)
+%V(309,256,59,12,0)%Vf(b6b6b6)%Vb(CDB79E)
+%?bs<%ac%bs|%xd(z)>
+#
+# Track info
+#
+%V(0,267,375,21,1)%Vf(C4C4C4)%Vb(000000)
+%s%ac%?ia<%ia|%?d(2)<%d(2)|%?fn<%(Unknown Artist%)|AW200glass  v1.4>>>
+%V(0,288,375,21,1)%Vf(FFFFFF)%Vb(000000)
+%s%ac%?it<%it|%?fn<%fn|>>
+#
+#Track progress times
+%V(0,311,64,9,0)%Vf(C4C4C4)%Vb(000000)
+%ar%pc
+%V(311,311,64,9,0)%Vf(C4C4C4)%Vb(000000)
+%al%pt
+#
+# Progress Bar
+%V(70,312,237,5,0)
+%pb(0,0,237,5,pb.bmp)

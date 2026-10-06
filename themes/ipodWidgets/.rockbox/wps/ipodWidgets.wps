@@ -1,0 +1,55 @@
+#Theme: arboxWidgets
+#By: Humberto Santana (rockbox -> hhannah)
+#Conversion to Gigabeat F By: Keith Perri (rockbox -> kperri)
+#License: Creative Commons Attribution-Noncommercial-Share Alike 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+#HDD, BATT & Crossfade icons derived from: Rokey, Deleket and Iconshock, respectively (iconarchive.com, All Free for Non-commercial use)
+#Recommended Build: recent official build
+#Version 1.0
+#Last Update: March 28th, 2008
+%X(ipodWidgets_bg.bmp)
+%xl(B,batt.bmp,193,16,12)
+%xl(H,hdd.bmp,15,24)
+%xl(h,hold.bmp,55,1)
+%xl(S,Shuffle.bmp,62,9)
+%xl(R,repeat.bmp,189,9,4)
+%xl(P,playmode.bmp,0,0,3)
+%xl(N,noAA.bmp,4,4)
+%xl(r,RG.bmp,124,11,5)
+%xl(V,vol.bmp,2,13,12)
+%xl(D,days.bmp,132,13,6)
+%Cl(0,0,117,133)
+
+%wd
+%V(61,12,81,15,1)%Vf(CCCCCC)%Vb(FF00FF)
+%?mp<||%xd(Pa)|%xd(Pb)|%xd(Pc)>
+%?mh<%xd(h)|>
+%V(185,84,188,63,1)%Vf(CCCCCC)%Vb(FF00FF)
+%s%?it<%it|%fn>
+%s%?ia<%ia|%?d(2)<%d(2)|%(root%)>>
+%s%?id<%id|%?d(1)<%d(1)|%(root%)>>%?iy< - %iy|>
+%V(185,156,188,41,1)%Vf(CCCCCC)%Vb(FF00FF)
+%s%?It<%It|%Fn>%?Ia< - %Ia|>
+%V(268,207,67,100,1)%Vf(CCCCCC)%Vb(FF00FF)
+%ar%pp/%pe
+%ar%s%?pn<"%pn"|"n/a">
+%ar%fc
+%ar%?fv<~|>%fbkb/s
+%ar%fskB
+%V(12,201,218,36,1)%Vf(CCCCCC)%Vb(FF00FF)
+%al%pc%ar%pt
+%pb(1,20,216,7,pb.bmp)
+%V(247,0,19,48,1)%Vf(CCCCCC)%Vb(FF00FF)
+%?pv<|%xd(Va)|%xd(Vb)|%xd(Vc)|%xd(Vd)|%xd(Ve)|%xd(Vf)|%xd(Vg)|%xd(Vh)|%xd(Vi)|%xd(Vj)|%xd(Vk)|%xd(Vl)> 
+%?cu<|%xd(Da)|%xd(Db)|%xd(Dc)|%xd(Dd)|%xd(De)|%xd(Df)>
+%?bp<%?bc<%xd(Bk)|%xd(Bl)>|%?bl<||%xd(Bj)|%xd(Bi)|%xd(Bh)|%xd(Bg)|%xd(Bf)|%xd(Be)|%xd(Bd)|%xd(Bc)|%xd(Bb)|%xd(Ba)>>
+%V(202,21,47,48,1)%Vf(CCCCCC)%Vb(FF00FF)
+%ac%cl:%cM
+%V(273,23,35,48,1)%Vf(000000)%Vb(FF00FF)
+%ac%cd
+%V(110,244,19,76,1)%Vf(CCCCCC)%Vb(FF00FF)
+%?lh<%xd(H)|>
+%?ps<%xd(S)|>
+%?rg<|%xd(ra)|%xd(rb)|%xd(rc)|%xd(rd)|%xd(re)>
+%?mm<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)>
+%V(12,45,117,133,1)%Vf(CCCCCC)%Vb(FF00FF)
+%?C<%Cd|%xd(N)>

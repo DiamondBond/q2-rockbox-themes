@@ -1,0 +1,83 @@
+#Theme Name: XPloRR
+#Platform: iPod Video/Classic 6G (320x240x16) - Standard build
+#Version: 2.6
+#Last updated: 21-02-2016
+#
+# SBS File
+#
+# Additional fonts
+%Fl(2,10-Nimbus.fnt,15)
+#
+# Vi AREA (MENU)
+%Vi(-,180,55,188,187,-)
+#
+# Battery
+%xl(a,batt.bmp,0,0,6)
+%V(9,51,29,33,-) 
+%?bp<%?bc<%xd(af)|%xd(ae)>|%?bl<||%xd(aa)|%xd(ab)|%xd(ac)|%xd(ad)|%xd(ad)>>
+%V(43,13,41,17,1)%Vf(B5B5B5)
+%al%bl%%
+#
+# Hold
+%xl(g,hold.bmp,0,0)
+%V(312,18,29,33,-)
+%?mh<%xd(g)|>
+#
+# HDD
+%xl(f,hdd.bmp,0,0)
+%V(341,51,26,33,-)
+%?lh<%xd(f)|>
+#
+# Clock
+%V(110,8,60,33,1)%Vf(B5B5B5)
+%?bs<%bs|%al%?cf<%cH:%cM|%cl:%cM %cp>>
+#
+# Album Art
+#
+%Cl(0,0,141,160,c,c)
+%V(20,61,141,160,-) 
+%Cd
+#
+# Progress Bar
+%V(0,245,375,7,-)
+%pb(0,0,375,7,pb.bmp)
+#
+# Track partial/total times
+%V(16,251,342,13,2)%Vf(B5B5B5)
+%al%pc%ar%pt
+#
+# Crossfade, Shuffle, Repeat
+%xl(h,shuffle.bmp,11,0)
+%xl(i,repeat.bmp,39,0,4)
+%xl(q,crossfade.bmp,75,0)
+%V(29,267,110,31,-)
+%?ps<%xd(h)|>
+%?mm<|%xd(ia)|%xd(ib)|%xd(ic)|%xd(id)>
+%?xf<|%xd(q)|%xd(q)|%xd(q)|%xd(q)|%xd(q)>
+#
+# Play, Pause, FFW, REW
+%xl(m,play.bmp,0,0)
+%xl(n,pause.bmp,0,0)
+%xl(o,next.bmp,0,0)
+%xl(p,prev.bmp,0,0)
+%V(102,267,157,31,-)
+%?mp<|%xd(m)|%xd(n)|%xd(o)|%xd(p)>
+#
+# Volume
+%xl(A,volumeicon.bmp,0,0,11)
+%V(259,267,25,31,-)
+%?pv<%xd(Aa)|%xd(Ab)|%xd(Ac)|%xd(Ad)|%xd(Ae)|%xd(Af)|%xd(Ag)|%xd(Ah)|%xd(Ai)|%xd(Aj)|%xd(Ak)>
+#
+%xl(B,volume.bmp,0,0)
+%V(284,275,71,15,-)
+%pv(0,0,-,-,nofill,nobar,slider,B)
+#
+#%V(238,221,62,15,1)%Vf(121212)
+#%ac%pv dB
+#
+# VU
+#%xl(x,vu1s.bmp,3,4)
+#%xl(y,vu1s.bmp,3,14)
+#%V(154,4,105,22,-)
+#%pR(3,4,102,4,vu1s.bmp)
+#%pL(3,14,102,4,vu1s.bmp)

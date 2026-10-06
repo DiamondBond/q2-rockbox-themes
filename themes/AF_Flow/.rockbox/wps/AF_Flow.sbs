@@ -1,0 +1,181 @@
+#Theme Name: AF_Flow 
+#By: AsusFreak 
+#Platform: Cowon D2 (320x240) - Standard build
+#Version: 4.0
+#Last updated: May 7th, 2012
+
+# Declaration of UI Viewport
+%Vi(-,114,44,148,172,1) %Vf(CCCCCC) %Vb(000000)
+
+# preload images
+%X(bg.bmp)
+%xl(B,shuffle.bmp,0,0)
+%xl(D,hold.bmp,0,53)
+%xl(F,repeat1.bmp,4,29,5)
+%xl(H,hdd.bmp,0,0)
+%xl(W,volume.bmp,0,0,21)
+%xl(Z,battery.bmp,0,0,22)
+%xl(t,volup1.bmp,6,15)
+%xl(s,voldown1.bmp,6,15)
+%xl(L,rwd2.bmp,7,17)
+%xl(K,fwd1.bmp,12,17)
+%xl(A,play1.bmp,15,17)
+%xl(E,stop1.bmp,9,17)
+%xl(C,pause1.bmp,11,17)
+%xl(a,volup.bmp,6,15)
+%xl(b,voldown.bmp,6,15)
+%xl(c,up.bmp,7,17)
+%xl(d,down.bmp,12,17)
+%xl(e,select.bmp,12,17)
+%xl(j,back.bmp,15,17)
+%xl(g,quickmenu.bmp,6,16)
+%xl(h,rwd.bmp,7,17)
+%xl(i,fwd.bmp,12,17)
+
+#Font Definitions
+%Fl(3,16-Adobe-Helvetica-AF.fnt)
+%Fl(4,14-Adobe-Helvetica-Bold-AF.fnt)
+
+%V(47,11,281,21,3) %Vf(CCCCCC) %Vb(000000)
+%ac%Lt
+
+# Track/Playlist
+%V(9,260,47,9,0) %Vf(CCCCCC) %Vb(000000)
+%al%pp/%pe
+
+# Time
+%V(315,260,47,19,0)
+%ar%cH:%cM
+
+#Battery
+%V(3,231,95,4,0) %Vf(CCCCCC) %Vb(000000)
+%?bp<%xd(Zv)|%?bl<%xd(Zv)|%xd(Za)|%xd(Zb)|%xd(Zc)|%xd(Zd)|%xd(Ze)|%xd(Zf)|%xd(Zg)|%xd(Zh)|%xd(Zi)|%xd(Zj)|%xd(Zk)|%xd(Zl)|%xd(Zm)|%xd(Zn)|%xd(Zo)|%xd(Zp)|%xd(Zq)|%xd(Zr)|%xd(Zs)|%xd(Zt)|%xd(Zu)>>
+%V(5,239,46,19,0) %Vf(CCCCCC) %Vb(000000)
+%al%t(10)%bt;%al%t(10)%bl%%
+
+# Volume
+%V(279,231,94,4,0) %Vf(CCCCCC) %Vb(000000)
+%?pv<%xd(Wa)|%xd(Wb)|%xd(Wc)|%xd(Wd)|%xd(We)|%xd(Wf)|%xd(Wg)|%xd(Wh)|%xd(Wi)|%xd(Wj)|%xd(Wk)|%xd(Wl)|%xd(Wm)|%xd(Wn)|%xd(Wo)|%xd(Wp)|%xd(Wq)|%xd(Wr)|%xd(Ws)|%xd(Wt)|%xd(Wu)>
+%V(325,239,46,19,0) %Vf(CCCCCC) %Vb(000000)
+%ar%pvdB
+
+# Progress Bar
+%V(0,32,374,8,1)
+%T(0,0,374,8,progressbar)
+%pb(0,0,374,8,pb.bmp)
+ 
+# Which Screen ?
+#%V(260,205,10,10,4)
+#%?cs<1%Vd(m)|2%Vd(w)|3%Vd(r)|4%Vd(f)|5%Vd(p)|6%Vd(m)|7%Vd(m)|8%Vd(m)|9%Vd(m)|a|b|c|d|e|f>
+%?cs<%Vd(m)|%Vd(w)|%Vd(r)|%Vd(f)|%Vd(p)|%Vd(m)|%Vd(m)|%Vd(m)|%Vd(m)||||||>
+#%?cs<%Vd(m)|%Vd(w)|%Vd(r)|%Vd(f)|%Vd(m)|Vd(m)|Vd(m)|Vd(m)|Vd(m)>
+
+### Menu Screen
+# Up + Down Button
+%Vl(m,214,269,41,49,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,41,47,next)
+%T(0,0,41,47,ffwd,repeat_press)
+%?mp<%xd(d)|%xd(d)|%xd(d)|%xd(K)|%xd(L)|||%xd(d)|%xd(d)>
+
+%Vl(m,121,269,41,49,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,41,47,prev)
+%T(0,0,41,47,rwd,repeat_press)
+%?mp<%xd(c)|%xd(c)|%xd(c)|%xd(K)|%xd(L)|||%xd(c)|%xd(c)>
+
+# Quickscreen Button
+%Vl(m,5,209,41,49,-)
+%?cs<%xd(g)||||>
+%T(0,0,41,47,quickscreen)
+
+# Cancel Button
+%Vl(m,330,209,41,49,-)
+%xd(j)
+%T(0,0,41,47,cancel)
+
+# Select Button
+%Vl(m,166,269,41,49,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,41,47,select)
+%T(0,0,41,47,stop,repeat_press)
+%?mp<%xd(e)|%xd(e)|%xd(e)|%xd(e)|%xd(e)>
+#%xd(e)
+
+# Album
+#%Vl(m,40,8,240,16,3) %Vf(FFFFFF) %Vb(000000)
+#%ac%?id<%id|%?d(1)<%d(1)|>>
+
+# Artist
+%Vl(m,50,235,274,17,4)
+%ac%?ia<%ia|%?d(2)<%d(2)|>>
+# Title
+%Vl(m,50,255,274,17,4)
+%s%ac%t(10)%?it< %it | %fn > ;%s%ac%t(5)%?It< Next: %It |> 
+
+# Progress Times
+%Vl(m,34,19,46,9,0) %Vf(CCCCCC) %Vb(000000)
+%al%pc
+%Vl(m,296,19,46,9,0) %Vf(CCCCCC) %Vb(000000)
+%ar%pt
+### End of Menu Screen
+
+
+### Playlist Screen
+# Up + Down Button
+%Vl(p,214,269,41,49,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,41,47,next)
+%T(0,0,41,47,ffwd,repeat_press)
+%?mp<%xd(d)|%xd(d)|%xd(d)|%xd(K)|%xd(L)|||%xd(d)|%xd(d)>
+
+%Vl(p,121,269,41,49,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,41,47,prev)
+%T(0,0,41,47,rwd,repeat_press)
+%?mp<%xd(c)|%xd(c)|%xd(c)|%xd(K)|%xd(L)|||%xd(c)|%xd(c)>
+
+# Cancel Button
+%Vl(p,330,209,41,49,-)
+%xd(j)
+%T(0,0,41,47,cancel)
+
+# Select Button
+%Vl(p,166,269,41,49,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,41,47,select)
+%T(0,0,41,47,stop,repeat_press)
+%?mp<%xd(e)|%xd(e)|%xd(e)|%xd(e)|%xd(e)>
+
+# Album
+%Vl(p,47,11,281,21,3) %Vf(FFFFFF) %Vb(000000)
+%ac%?id<%id|%?d(1)<%d(1)|>>
+
+# Artist
+%Vl(p,50,235,274,17,4)
+%ac%?ia<%ia|%?d(2)<%d(2)|>>
+# Title
+%Vl(m,50,255,274,17,4)
+%s%ac%t(10)%?it< %it | %fn > ;%s%ac%t(5)%?It< Next: %It |> 
+
+# Progress Times
+%Vl(p,34,19,46,9,0) %Vf(CCCCCC) %Vb(000000)
+%al%pc
+%Vl(p,296,19,46,9,0) %Vf(CCCCCC) %Vb(000000)
+%ar%pt
+### End of Playlist Screen
+
+### Menu Screen
+
+# Up + Down Button
+%Vl(f,214,269,41,49,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,41,47,next)
+%xd(d)
+
+%Vl(f,121,269,41,49,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,41,47,prev)
+%xd(c)
+
+# Cancel Button
+%Vl(f,330,209,41,49,-)
+%xd(j)
+%T(0,0,41,47,cancel)
+
+# Select Button
+%Vl(f,166,269,41,49,0)%Vf(CCCCCC)%Vb(000000)
+%T(0,0,41,47,select)
+%xd(e)
