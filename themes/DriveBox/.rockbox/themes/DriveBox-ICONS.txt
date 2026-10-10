@@ -1,4 +1,0 @@
-Icon pack used for this theme:
-"Tango Iconset" (Tango 20x16x16)
-
-The iconset is included in the pack.

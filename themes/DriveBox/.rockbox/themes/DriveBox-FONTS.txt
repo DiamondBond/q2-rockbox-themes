@@ -1,3 +1,0 @@
-The font family used for this theme is "21-Adobe-Helvetica-Bold", which is included in the pack,
-despite the font is a standard RockBox font.
-

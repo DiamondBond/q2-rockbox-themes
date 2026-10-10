@@ -14,7 +14,7 @@ are welcome in the issues.
 
 ## Install
 
-1. Download `q2-rockbox-themes-1.2.zip` from
+1. Download `q2-rockbox-themes-1.3.zip` from
    [Releases](https://github.com/DiamondBond/q2-rockbox-themes/releases).
 2. Unzip it onto the card's root, next to `.rockbox`. It merges the themes
    into the existing `.rockbox`.

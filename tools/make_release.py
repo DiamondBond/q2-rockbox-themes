@@ -135,7 +135,7 @@ def build_theme_zips(fonts):
 
 
 def main():
-    version = sys.argv[1] if len(sys.argv) > 1 else '1.2'
+    version = sys.argv[1] if len(sys.argv) > 1 else '1.3'
     fonts = font_files()
     build_pack(version, fonts)
     build_theme_zips(fonts)

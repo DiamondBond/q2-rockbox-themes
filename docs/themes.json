@@ -1,12 +1,5 @@
 [
  {
-  "dir": "240",
-  "name": "240",
-  "author": "Wesley Clifford",
-  "licence": "CC-BY-SA 3.0",
-  "source": "https://themes.rockbox.org/index.php?themeid=1280"
- },
- {
   "dir": "AAFreak",
   "name": "AAFreak",
   "author": "Ben Zavala",
@@ -33,20 +26,6 @@
   "author": "Humberto Santana",
   "licence": "CC-BY-SA 3.0",
   "source": "https://themes.rockbox.org/index.php?themeid=1391"
- },
- {
-  "dir": "Amarok",
-  "name": "Amarok",
-  "author": "Gary Light",
-  "licence": "CC-BY-SA 3.0",
-  "source": "https://themes.rockbox.org/index.php?themeid=317"
- },
- {
-  "dir": "AmarokPlus2",
-  "name": "Amarok Plus 2",
-  "author": "Pablo Mendoza",
-  "licence": "CC-BY-SA 3.0",
-  "source": "https://themes.rockbox.org/index.php?themeid=353"
  },
  {
   "dir": "BACKBONE",
@@ -126,20 +105,6 @@
   "source": "https://themes.rockbox.org/index.php?themeid=946"
  },
  {
-  "dir": "DriveBox",
-  "name": "DriveBox",
-  "author": "Juan Prada (Countach)",
-  "licence": "GPLv2 or later",
-  "source": "https://themes.rockbox.org/index.php?themeid=1191"
- },
- {
-  "dir": "FSM",
-  "name": "FSM",
-  "author": "Jeffrey Rodriguez",
-  "licence": "CC-BY-SA 3.0",
-  "source": "https://themes.rockbox.org/index.php?themeid=1068"
- },
- {
   "dir": "Googley-Classic-Storm",
   "name": "Googley Classic Storm",
   "author": "Guillaume Cocatre-Zilgien",
@@ -173,13 +138,6 @@
   "author": "Serge Fahnenstell",
   "licence": "CC-BY-SA 3.0",
   "source": "https://themes.rockbox.org/index.php?themeid=4082"
- },
- {
-  "dir": "Nether",
-  "name": "Nether",
-  "author": "Jihoon Kim",
-  "licence": "CC-BY-SA 3.0",
-  "source": "https://themes.rockbox.org/index.php?themeid=3924"
  },
  {
   "dir": "OP_1",
@@ -231,13 +189,6 @@
   "source": "https://themes.rockbox.org/index.php?themeid=3672"
  },
  {
-  "dir": "SNARTYINTER",
-  "name": "SNARTYINTER",
-  "author": "E. Halpin",
-  "licence": "CC-BY-SA 4.0",
-  "source": "https://themes.rockbox.org/index.php?themeid=4014"
- },
- {
   "dir": "SNAZZ3",
   "name": "SNAZZ3",
   "author": "Vera B",
@@ -257,20 +208,6 @@
   "author": "E. Halpin, from a theme by Guillaume Cocatre-Zilgien",
   "licence": "CC-BY-SA",
   "source": ""
- },
- {
-  "dir": "Terminal",
-  "name": "Terminal",
-  "author": "Jeffrey Rodriguez",
-  "licence": "CC-BY-SA 3.0",
-  "source": "https://themes.rockbox.org/index.php?themeid=1739"
- },
- {
-  "dir": "Themify",
-  "name": "Themify 2",
-  "author": "Evan Kenny",
-  "licence": "CC-BY-SA 3.0; OFL fonts",
-  "source": "https://themes.rockbox.org/index.php?themeid=4096"
  },
  {
   "dir": "Widepod",
@@ -343,27 +280,6 @@
   "source": "https://themes.rockbox.org/index.php?themeid=3647"
  },
  {
-  "dir": "digitalRedux",
-  "name": "digitalRedux",
-  "author": "D Juarez",
-  "licence": "CC-BY-SA 3.0",
-  "source": "https://themes.rockbox.org/index.php?themeid=3991"
- },
- {
-  "dir": "dolcemente2",
-  "name": "Dolcemente 2",
-  "author": "Eamon Halpin, from rayboradio_OB by Humberto Santana",
-  "licence": "CC-BY-SA 3.0",
-  "source": ""
- },
- {
-  "dir": "dst_dark",
-  "name": "DST Dark",
-  "author": "D Juarez",
-  "licence": "CC-BY-SA 3.0",
-  "source": "https://themes.rockbox.org/index.php?themeid=3989"
- },
- {
   "dir": "iBox",
   "name": "iBox",
   "author": "Guillaume Cocatre-Zilgien",
@@ -392,13 +308,6 @@
   "source": "https://themes.rockbox.org/index.php?themeid=4088"
  },
  {
-  "dir": "iLike",
-  "name": "iLike",
-  "author": "Alan Brito, from Hayden Pearce",
-  "licence": "CC-BY-SA 3.0",
-  "source": "https://themes.rockbox.org/index.php?themeid=1260"
- },
- {
   "dir": "iMMXX",
   "name": "iMMXX",
   "author": "Matt Hawkins",
@@ -406,25 +315,11 @@
   "source": "https://themes.rockbox.org/index.php?themeid=3111"
  },
  {
-  "dir": "iPod-reFresh-four",
-  "name": "iPod reFresh Four",
-  "author": "Ciprian Dragu",
-  "licence": "CC-BY-SA 3.0",
-  "source": "https://themes.rockbox.org/index.php?themeid=3261"
- },
- {
   "dir": "iPone",
   "name": "iPone",
   "author": "P Huels",
   "licence": "CC-BY-SA 3.0",
   "source": "https://themes.rockbox.org/index.php?themeid=4000"
- },
- {
-  "dir": "iRB_Modern",
-  "name": "iRB Modern",
-  "author": "I R D",
-  "licence": "CC-BY-SA 3.0",
-  "source": "https://themes.rockbox.org/index.php?themeid=3247"
  },
  {
   "dir": "iVideo",
@@ -488,12 +383,5 @@
   "author": "Malcolm P.",
   "licence": "CC-BY-SA 3.0",
   "source": "https://themes.rockbox.org/index.php?themeid=3938"
- },
- {
-  "dir": "retroTapeFixed",
-  "name": "retroTape Fixed",
-  "author": "Paul Sauro, from retroTape by Humberto Santana",
-  "licence": "CC-BY-SA 3.0",
-  "source": "https://themes.rockbox.org/index.php?themeid=3545"
  }
 ]
