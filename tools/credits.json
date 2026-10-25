@@ -328,5 +328,11 @@
   "author": "Malcolm P.",
   "licence": "CC-BY-SA 3.0",
   "source": "https://themes.rockbox.org/index.php?themeid=3938"
+ },
+ "OneBitMono": {
+  "name": "OneBitMono",
+  "author": "chronicallyoffline",
+  "licence": "CC-BY-SA",
+  "source": "https://themes.rockbox.org/index.php?themeid=3633"
  }
 }

@@ -1,0 +1,69 @@
+# Theme by chronicallyoffline <ben@chronicallyoffline.xyz>
+# CC-BY-SA
+# Credits to Chuck Lardo and D0-0K for inspiration and minor assets reused under CC-BY-SA and GPL V3 respectively.
+# chronicallyoffline.xyz
+# Date: 07-18-2024
+# Unofficial port to the Shanling Q2 (375x320): layout re-mapped from 320x240, peak-meter bitmaps regenerated.
+
+# Disable Status Bar
+%wd
+
+# Disable Title
+#%?Lt<|>
+
+
+
+# Preload Font
+%Fl(2,07-LanaPixel.fnt)
+%Fl(3,14-LanaPixel.fnt)
+%Fl(4,20-digital7mono.fnt)
+
+# Preload Images
+%xl(battery,battery.bmp,0,0,10)
+%xl(playmodes,playmodes.bmp,0,0,9)
+%xl(usb,usb.bmp,0,0)
+
+#__USB screen
+%?if(%cs, =, 21)<%VI(clearScreen)%Vd(usb)|%VI(menu)%Vd(info)>
+
+#__Clear Screen
+%Vi(clearScreen,0,0,1,1,-)
+
+# Display Viewports
+
+# Menu
+%Vi(menu,28,68,319,214,-)%Vf(-)%Vb(-)
+
+# Menu Title
+%Vl(info,34,20,114,17,2)
+%al%Lt
+
+# Clock
+%Vl(info,256,20,57,17,2)
+%ac%cl:%cM%cp
+
+# Battery (numerical)
+#%Vl(info,316,25,31,17,2)
+#%ar%bl%%
+
+#__Now Playing
+%Vl(info,60,277,264,21,2)
+%?if(%mp, >, 1)<%al%s%it - %ia - %id %(%ss(0,4, %iy)%)|>
+
+# Playback Icons
+%Vl(info,36,280,13,13,-)
+%?if(%mp, >, 1)<%xd(playmodes,%mp)|>
+
+# Battery (graphical)
+%Vl(info,321,25,23,10,-)
+?if(%bl, >, 90)<%xd(battery,10)|%?if(%bl, <, 90)<%xd(battery,9)|%?if(%bl, <, 80)<%xd(battery,8)|%?if(%bl, <, 70)<%xd(battery,7)|%?if(%bl, <, 60)<%xd(battery,6)|%?if(%bl, <, 50)<%xd(battery,5)|%?if(%bl, <, 40)<%xd(battery,4)|%?if(%bl, <, 30)<%xd(battery,3)|%?if(%bl, <, 20)<%xd(battery,2)|%?if(%bl, <, 10)<%xd(battery,1)>>>>>>>>>>
+
+#__USB
+%Vl(usb,57,42,260,130,-)
+%xd(usb)
+
+%Vl(usb,28,237,319,-,3)
+%acUSB CONNECTED
+
+%Vl(usb,28,276,319,-,2)
+%acEject Before Disconnecting

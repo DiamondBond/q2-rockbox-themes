@@ -154,6 +154,13 @@
   "source": "https://themes.rockbox.org/index.php?themeid=3939"
  },
  {
+  "dir": "OneBitMono",
+  "name": "OneBitMono",
+  "author": "chronicallyoffline",
+  "licence": "CC-BY-SA",
+  "source": "https://themes.rockbox.org/index.php?themeid=3633"
+ },
+ {
   "dir": "PenPaper",
   "name": "Pen & Paper Plus",
   "author": "Humberto Santana, from Pen&Paper by Johan Swetzén",
