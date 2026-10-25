@@ -334,5 +334,11 @@
   "author": "chronicallyoffline",
   "licence": "CC-BY-SA",
   "source": "https://themes.rockbox.org/index.php?themeid=3633"
+ },
+ "SNARTY": {
+  "name": "SNARTY",
+  "author": "Simon Andén (Tirim4)",
+  "licence": "CC-BY-SA 4.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3876"
  }
 }

@@ -196,6 +196,13 @@
   "source": "https://themes.rockbox.org/index.php?themeid=3672"
  },
  {
+  "dir": "SNARTY",
+  "name": "SNARTY",
+  "author": "Simon Andén (Tirim4)",
+  "licence": "CC-BY-SA 4.0",
+  "source": "https://themes.rockbox.org/index.php?themeid=3876"
+ },
+ {
   "dir": "SNAZZ3",
   "name": "SNAZZ3",
   "author": "Vera B",
