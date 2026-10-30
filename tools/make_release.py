@@ -17,6 +17,7 @@ Themes that share a file (an iconset, a backdrop) ship it once in the full
 pack. If two themes ship different files at the same path, the build fails
 rather than letting one silently overwrite the other on the card.
 """
+import glob
 import hashlib
 import os
 import re
@@ -49,6 +50,27 @@ def theme_fonts(theme):
                     refs.add(os.path.basename(
                         m.group(1).replace('/.rockbox/', '').strip()))
     return refs
+
+
+def check_cfgs():
+    """Every theme cfg sets every theme setting any of them sets.
+
+    Rockbox applies only the lines a cfg has and keeps the rest from the theme
+    loaded before, so a dark theme with no backdrop line kept the last one's
+    white backdrop under its white text. fms is left out: the Q2 has no tuner.
+    """
+    cfgs = {}
+    pattern = os.path.join(ROOT, 'themes', '*', '.rockbox', 'themes', '*.cfg')
+    for path in sorted(glob.glob(pattern)):
+        lines = open(path, encoding='latin-1').read().splitlines()
+        cfgs[path] = {l.split(':', 1)[0].strip() for l in lines
+                      if ':' in l and not l.lstrip().startswith('#')}
+    every = set().union(*cfgs.values()) - {'fms'}
+    bad = ['%s: %s' % (os.path.relpath(p, ROOT), ', '.join(sorted(every - k)))
+           for p, k in cfgs.items() if every - k]
+    if bad:
+        sys.exit('Theme cfgs leave settings to the theme before them:\n' +
+                 '\n'.join(bad))
 
 
 def font_files():
@@ -136,6 +158,7 @@ def build_theme_zips(fonts):
 
 def main():
     version = sys.argv[1] if len(sys.argv) > 1 else '1.5'
+    check_cfgs()
     fonts = font_files()
     build_pack(version, fonts)
     build_theme_zips(fonts)
