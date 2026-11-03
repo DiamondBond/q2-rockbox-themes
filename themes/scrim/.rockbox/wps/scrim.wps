@@ -59,15 +59,15 @@
 # Status icons, stacked to fit the strip - Transport: stopped C, playing A,
 # paused B, ffwd G, rewind F. play-pause icon: next in scrim.preferences
 # swaps A and B. Shuffle H, repeat J.
-%V(16,16,24,72,4)%Vf(ffffff)%Vb(d92626)
+%V(26,26,24,72,4)%Vf(ffffff)%Vb(d92626)
 %?if(%ft(themes/scrim.preferences,play-pause icon:),=,next)<%?mp<C|B|A|G|F>|%?mp<C|A|B|G|F>>
 %?ps<H>
 %?mm<|J|J|J|J>
 #
 # Volume overlay, on a band of its own: a hidden viewport shows the art under it
-%Vl(Volume,0,0,-,40,-)
-%dr(0,0,375,40,000000)
-%Vl(Volume,16,8,343,24,4)%Vg(000000,000000,ffffff)%Vf(ffffff)
+%Vl(Volume,0,0,-,44,-)
+%dr(0,0,375,44,000000)
+%Vl(Volume,50,10,275,24,4)%Vg(000000,000000,ffffff)%Vf(ffffff)
 %Vs(gradient)%?pv<M|N|N>%arO
-%Vl(Volume,48,17,279,6,-)%Vf(ffffff)
-%dr(0,0,279,6,3a3f49)%pv(0,0,279,6,noborder)
+%Vl(Volume,82,19,211,6,-)%Vf(ffffff)
+%dr(0,0,211,6,3a3f49)%pv(0,0,211,6,noborder)
