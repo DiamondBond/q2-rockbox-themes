@@ -1,0 +1,60 @@
+#-----------------------------------------------#
+#scrim
+#by Anthony Fletcher for PodBox
+#CC BY-SA 3.0 (unofficial Shanling Q2 port: 375x320)
+#-----------------------------------------------#
+#
+#--- Fonts ---#
+%Fl(2,24x24-icons.fnt)
+%Fl(3,18-noto-sans-bold.fnt)
+%Fl(4,18-noto-sans.fnt)
+#
+#--- Background layer ---#
+#
+%V(0,0,-,-,-)%VB
+%dr(0,0,375,42,d92626)
+#
+#--- Foreground layer ---#
+#
+%V(0,0,-,-,-)
+#
+# Top bar
+%?mv(3)<%Vd(Volume)|%Vd(Chrome)>
+#
+# Setup rows
+%Lb(Rows,347,36)
+#
+# - Title
+%Vl(Chrome,20,11,225,20,3)%Vf(ffffff)%Vb(d92626)
+%s%Lt
+#
+# - Time
+%Vl(Chrome,245,11,78,20,4)%Vf(ffffff)%Vb(d92626)
+%ar%?cf<%cH:%cM|%cl:%cM %cP>
+#
+# - Battery. The charging glyphs mirror the level glyphs band for band
+%Vl(Chrome,327,9,24,24,2)%Vf(ffffff)%Vb(d92626)
+%ar%?bc<%?bl<·|·|¸|¸|¸|¸|¹|º>|%?bl<1|1|2|3|4|5|6|7>>
+#
+# List viewport
+%Vi(-,14,50,347,252,-)
+#
+# - Row icon: the firmware's themable_icons (apps/gui/icon.h) drawn from the
+#   icon font, in place of PodBox's by-name row icons
+%Vl(Rows,4,6,24,24,2)
+%?Lc<%Vf(ffffff)|%Vf(a9aeb8)>%?if(%LI,=,0)<a>%?if(%LI,=,1)<¢>%?if(%LI,=,2)<ð>%?if(%LI,=,3)<Þ>%?if(%LI,=,4)<Ê>%?if(%LI,=,5)<ñ>%?if(%LI,=,6)<l>%?if(%LI,=,7)<»>%?if(%LI,=,8)<Ç>%?if(%LI,=,9)<Ó>%?if(%LI,=,10)<T>%?if(%LI,=,11)<W>%?if(%LI,=,12)<U>%?if(%LI,=,13)<U>%?if(%LI,=,14)<l>%?if(%LI,=,15)<Þ>%?if(%LI,=,16)<¿>%?if(%LI,=,17)<Í>%?if(%LI,=,18)<Þ>%?if(%LI,=,19)<Þ>%?if(%LI,=,20)<ß>%?if(%LI,=,23)<Ç>%?if(%LI,=,24)<Ò>%?if(%LI,=,25)<W>%?if(%LI,=,26)<Ê>%?if(%LI,=,27)<Ê>%?if(%LI,=,29)<¢>%?if(%LI,=,30)<P>%?if(%LI,=,31)<»>
+#
+# - Selection bar: a gradient fill of the line, since a conditional that flips
+#   clears its line's rect over anything %dr drew there
+%Vl(Rows,36,6,3,24,2)%Vg(d92626,d92626,ffffff)
+%?Lc<%Vs(gradient)> 
+#
+# - Row text
+%Vl(Rows,46,8,295,20,4)
+%?Lc<%Vf(ffffff)|%Vf(a9aeb8)>%s%LT
+#
+# Volume overlay, over the top bar
+%Vl(Volume,16,9,343,24,2)%Vf(ffffff)%Vb(d92626)
+%?pv<M|N|N>%arO
+%Vl(Volume,48,18,279,6,-)%Vf(ffffff)
+%dr(0,0,279,6,7a1515)%pv(0,0,279,6,noborder)

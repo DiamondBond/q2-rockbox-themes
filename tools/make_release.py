@@ -157,7 +157,7 @@ def build_theme_zips(fonts):
 
 
 def main():
-    version = sys.argv[1] if len(sys.argv) > 1 else '1.6'
+    version = sys.argv[1] if len(sys.argv) > 1 else '1.7'
     check_cfgs()
     fonts = font_files()
     build_pack(version, fonts)

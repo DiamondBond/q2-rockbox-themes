@@ -397,5 +397,19 @@
   "author": "Malcolm P.",
   "licence": "CC-BY-SA 3.0",
   "source": "https://themes.rockbox.org/index.php?themeid=3938"
+ },
+ {
+  "dir": "scrim",
+  "name": "scrim",
+  "author": "Anthony Fletcher",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://github.com/anthonyfletcher/podbox/tree/master/themes/scrim"
+ },
+ {
+  "dir": "scrim_p",
+  "name": "scrim_p",
+  "author": "Anthony Fletcher",
+  "licence": "CC BY-SA 3.0",
+  "source": "https://github.com/anthonyfletcher/podbox/tree/master/themes/scrim"
  }
 ]

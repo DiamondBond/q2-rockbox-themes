@@ -1,0 +1,19 @@
+#-----------------------------------------------#
+#scrim
+#by Anthony Fletcher for PodBox
+#CC BY-SA 3.0 (unofficial Shanling Q2 port: 375x320)
+#-----------------------------------------------#
+#
+#-- Sub Line --#
+# The line under the track title in the music player. Applies to both
+# scrim and scrim_p; reload the theme after changing it.
+# Possible Values: artist, album, artist-album, album-artist, playlist_name
+sub-line mode: artist
+#
+#-- Play-Pause Icon --#
+# What the play/pause icon shows: current shows the state (play while
+# playing), next shows what pressing Play will do (pause while playing).
+# scrim only; scrim_p shows large pause bars over the cover instead.
+# Reload the theme after changing it.
+# Possible Values: current, next
+play-pause icon: current
