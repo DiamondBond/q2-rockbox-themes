@@ -10,6 +10,13 @@
 %Fl(3,12-noto-sans.fnt)
 %Fl(4,24x24-icons.fnt)
 #
+#--- Images ---#
+#
+# The volume bar's track and fill. A bar drawn without a fill image clears its
+# empty part to what is behind it, even with a backdrop image
+%xl(vbg,volband.bmp,0,0)
+%xl(vwf,volfill.bmp,0,0)
+#
 #--- Background layer ---#
 #
 # Album art, alone: it is drawn at the end of its viewport, over anything else
@@ -59,7 +66,7 @@
 # Status icons, stacked to fit the strip - Transport: stopped C, playing A,
 # paused B, ffwd G, rewind F. play-pause icon: next in scrim.preferences
 # swaps A and B. Shuffle H, repeat J.
-%V(26,26,24,72,4)%Vf(ffffff)%Vb(d92626)
+%V(16,48,24,72,4)%Vf(ffffff)%Vb(d92626)
 %?if(%ft(themes/scrim.preferences,play-pause icon:),=,next)<%?mp<C|B|A|G|F>|%?mp<C|A|B|G|F>>
 %?ps<H>
 %?mm<|J|J|J|J>
@@ -70,4 +77,4 @@
 %Vl(Volume,50,10,275,24,4)%Vg(000000,000000,ffffff)%Vf(ffffff)
 %Vs(gradient)%?pv<M|N|N>%arO
 %Vl(Volume,82,19,211,6,-)%Vf(ffffff)
-%dr(0,0,211,6,3a3f49)%pv(0,0,211,6,noborder)
+%pv(0,0,211,6,image,vwf,backdrop,vbg)
